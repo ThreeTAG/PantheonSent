@@ -1,0 +1,111 @@
+{
+  "name": {
+    "translate": "power.pantheonsent.moon_knight"
+  },
+  "icon": "pantheonsent:textures/icon/moon_knight.png",
+  "abilities": {
+    "activate": {
+      "type": "palladium:interpolated_integer",
+      "title": "Summon Suit",
+      "list_index": 0,
+      "max_value": 16,
+      "hidden": false,
+      "icon": "pantheonsent:textures/icon/moon_knight.png",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "ticks": 3600,
+            "cooldown": 12000
+          }
+        ]
+      }
+    },
+    "render_layer": {
+      "type": "palladium:render_layer",
+      "render_layer": "pantheonsent:moon_knight"
+    },
+    "throw_dart": {
+      "type": "palladium:projectile",
+      "entity_type": "pantheonsent:crescent_dart",
+      "list_index": 1,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 60
+          }
+        ]
+      }
+    },
+    "healing": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": ["effect give @s minecraft:regeneration 5 2 true", "say heal!"],
+      "last_tick_commands": "null",
+      "commands": "null",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          }
+        ]
+      }
+    },
+    "resistance": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "minecraft:generic.armor",
+      "amount": 6,
+      "operation": 0,
+      "uuid": "d28fbccf-96c1-4443-85ae-933fef7a6554",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          }
+        ]
+      }
+    },
+    "strength": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "minecraft:generic.attack_damage",
+      "amount": 6,
+      "operation": 0,
+      "uuid": "d28fbccf-96c1-4443-85ae-933fef7a6554",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          }
+        ]
+      }
+    },
+    "speed": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "minecraft:generic.movement_speed",
+      "amount": 0.2,
+      "operation": 2,
+      "uuid": "d28fbccf-96c1-4443-85ae-933fef7a6554",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          }
+        ]
+      }
+    }
+  }
+}

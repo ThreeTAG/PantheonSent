@@ -1,0 +1,67 @@
+{
+  "mesh": {
+    "root": {
+      "cubes": [
+        {
+          "origin": [
+            -3.5,
+            -7.0,
+            0.0
+          ],
+          "dimensions": [
+            7.0,
+            7.0,
+            0.0
+          ],
+          "texture_offset": [
+            0.0,
+            6.0
+          ],
+          "deformation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mirror": false
+        },
+        {
+          "origin": [
+            -3.5,
+            -6.0,
+            -0.5
+          ],
+          "dimensions": [
+            3.0,
+            5.0,
+            1.0
+          ],
+          "texture_offset": [
+            0.0,
+            0.0
+          ],
+          "deformation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mirror": false
+        }
+      ],
+      "part_pose": {
+        "offset": [
+          0.0,
+          24.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "children": {}
+    }
+  },
+  "texture_width": 16,
+  "texture_height": 16
+}

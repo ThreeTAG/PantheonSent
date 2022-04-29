@@ -1,0 +1,36 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+license = "All rights reserved"
+issueTrackerURL = "https://github.com/ThreeTAG/PantheonSent/issues"
+
+[[mods]]
+modId = "pantheonsent"
+version = "${version}"
+displayName = "PantheonSent"
+authors = "Lucraft"
+description = '''
+Channel the power of the gods and serve their will!
+'''
+itemIcon = "minecraft:totem_of_undying"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/pantheonsent"
+
+[[dependencies.pantheonsent]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.pantheonsent]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.pantheonsent]]
+modId = "palladium"
+mandatory = true
+versionRange = "[4.0.0,)"
+ordering = "AFTER"
+side = "BOTH"
