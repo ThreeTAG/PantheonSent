@@ -5,6 +5,7 @@
   "client": [
   ],
   "mixins": [
+    "StructureFeatureAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,13 @@
+{
+  "type": "pantheonsent:khonshu_temple",
+
+  "config": {
+    "start_pool": "pantheonsent:khonshu_temple/start_pool",
+    "size": 2
+  },
+  "biomes": "#pantheonsent:has_structure/khonshu_temple",
+  "adapt_noise": true,
+  "spawn_overrides": {
+
+  }
+}

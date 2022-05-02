@@ -39,6 +39,10 @@ palladium:not</a>
 palladium:or</a>
 </li>
 <li>
+<a href="#palladium:has_power">
+palladium:has_power</a>
+</li>
+<li>
 <a href="#palladium:ability_unlocked">
 palladium:ability_unlocked</a>
 </li>
@@ -73,6 +77,14 @@ palladium:objective_score</a>
 <li>
 <a href="#palladium:ability_integer_property">
 palladium:ability_integer_property</a>
+</li>
+<li>
+<a href="#palladium:crouching">
+palladium:crouching</a>
+</li>
+<li>
+<a href="#palladium:pose">
+palladium:pose</a>
 </li>
 </ul>
 </p>
@@ -163,6 +175,50 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:or","conditions":[]}</pre>
+</div>
+<hr>
+
+<div id="palladium:has_power">
+<h2>
+palladium:has_power</h2>
+<p>
+Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+power</td>
+<td>
+ResourceLocation</td>
+<td>
+ID of the power that is required</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+example:power_id</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:has_power","power":"example:power_id"}</pre>
 </div>
 <hr>
 
@@ -679,6 +735,62 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:ability_integer_property","power":"null","ability":"ability_id","property":"value","min":0,"max":0}</pre>
+</div>
+<hr>
+
+<div id="palladium:crouching">
+<h2>
+palladium:crouching</h2>
+<p>
+Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:crouching"}</pre>
+</div>
+<hr>
+
+<div id="palladium:pose">
+<h2>
+palladium:pose</h2>
+<p>
+Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+pose</td>
+<td>
+Pose</td>
+<td>
+Determines the pose the entity must be in. Possible values: [standing, fall_flying, sleeping, swimming, spin_attack, crouching, long_jumping, dying]</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+CROUCHING</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:pose","pose":"crouching"}</pre>
 </div>
 <script>
 function syntaxHighlight(json) {

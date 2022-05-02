@@ -442,47 +442,47 @@
             ]
           },
           "children": {}
+        },
+        "cape": {
+          "cubes": [
+            {
+              "origin": [
+                -12.0,
+                0.0,
+                0.0
+              ],
+              "dimensions": [
+                24.0,
+                25.0,
+                0.0
+              ],
+              "texture_offset": [
+                56.0,
+                13.0
+              ],
+              "deformation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "mirror": false
+            }
+          ],
+          "part_pose": {
+            "offset": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "children": {}
         }
       }
-    },
-    "cape": {
-      "cubes": [
-        {
-          "origin": [
-            -12.0,
-            0.0,
-            0.0
-          ],
-          "dimensions": [
-            24.0,
-            25.0,
-            0.0
-          ],
-          "texture_offset": [
-            56.0,
-            13.0
-          ],
-          "deformation": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "mirror": false
-        }
-      ],
-      "part_pose": {
-        "offset": [
-          0.0,
-          0.0,
-          2.0
-        ],
-        "rotation": [
-          0.0,
-          0.0,
-          0.0
-        ]
-      },
-      "children": {}
     }
   },
   "texture_width": 128,

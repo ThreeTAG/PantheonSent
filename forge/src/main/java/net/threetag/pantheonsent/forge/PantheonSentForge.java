@@ -32,8 +32,9 @@ public class PantheonSentForge {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent e) {
-        e.getGenerator().addProvider(new PantheonSentLangProvider.English(e.getGenerator()));
-        e.getGenerator().addProvider(new PantheonSentLangProvider.German(e.getGenerator()));
-        e.getGenerator().addProvider(new PantheonSentLangProvider.Saxon(e.getGenerator()));
+        e.getGenerator().addProvider(new PSLangProvider.English(e.getGenerator()));
+        e.getGenerator().addProvider(new PSLangProvider.German(e.getGenerator()));
+        e.getGenerator().addProvider(new PSLangProvider.Saxon(e.getGenerator()));
+//        e.getGenerator().addProvider(new PSBiomeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
     }
 }

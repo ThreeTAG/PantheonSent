@@ -4,13 +4,13 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.threetag.pantheonsent.PantheonSent;
 
-public abstract class PantheonSentLangProvider extends LanguageProvider {
+public abstract class PSLangProvider extends LanguageProvider {
 
-    public PantheonSentLangProvider(DataGenerator gen, String locale) {
+    public PSLangProvider(DataGenerator gen, String locale) {
         super(gen, PantheonSent.MOD_ID, locale);
     }
 
-    public static class English extends PantheonSentLangProvider {
+    public static class English extends PSLangProvider {
 
         public English(DataGenerator gen) {
             super(gen, "en_us");
@@ -23,7 +23,7 @@ public abstract class PantheonSentLangProvider extends LanguageProvider {
         }
     }
 
-    public static class German extends PantheonSentLangProvider {
+    public static class German extends PSLangProvider {
 
         public German(DataGenerator gen) {
             super(gen, "de_de");
@@ -36,7 +36,7 @@ public abstract class PantheonSentLangProvider extends LanguageProvider {
         }
     }
 
-    public static class Saxon extends PantheonSentLangProvider {
+    public static class Saxon extends PSLangProvider {
 
         public Saxon(DataGenerator gen) {
             super(gen, "sxu");
