@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "pantheonsent:block/sandstone_totem_holder"
+    },
+    "active=true": {
+      "model": "pantheonsent:block/sandstone_totem_holder_active"
+    }
+  }
+}

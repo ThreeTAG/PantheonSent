@@ -35,6 +35,10 @@ public class PantheonSentForge {
         e.getGenerator().addProvider(new PSLangProvider.English(e.getGenerator()));
         e.getGenerator().addProvider(new PSLangProvider.German(e.getGenerator()));
         e.getGenerator().addProvider(new PSLangProvider.Saxon(e.getGenerator()));
+        e.getGenerator().addProvider(new PSBlockStateProvider(e.getGenerator(), e.getExistingFileHelper()));
+        e.getGenerator().addProvider(new PSItemModelProvider(e.getGenerator(), e.getExistingFileHelper()));
+        e.getGenerator().addProvider(new PSBlockTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
+        e.getGenerator().addProvider(new PSBlockLootTableProvider(e.getGenerator()));
 //        e.getGenerator().addProvider(new PSBiomeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
     }
 }

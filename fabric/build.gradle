@@ -35,6 +35,9 @@ dependencies {
         exclude group: "com.github.Virtuoel"
     })
 
+    // Disable Custom Worlds Advice
+    modLocalRuntime "curse.maven:disablecustomworldsadvice-401978:${rootProject.disablecustomworldsadvice_version}"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }

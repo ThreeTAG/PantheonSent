@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "phase=0": {
+      "model": "pantheonsent:block/lunar_stone_0"
+    },
+    "phase=1": {
+      "model": "pantheonsent:block/lunar_stone_1"
+    },
+    "phase=2": {
+      "model": "pantheonsent:block/lunar_stone_2"
+    },
+    "phase=3": {
+      "model": "pantheonsent:block/lunar_stone_3"
+    },
+    "phase=4": {
+      "model": "pantheonsent:block/lunar_stone_4"
+    },
+    "phase=5": {
+      "model": "pantheonsent:block/lunar_stone_5"
+    },
+    "phase=6": {
+      "model": "pantheonsent:block/lunar_stone_6"
+    },
+    "phase=7": {
+      "model": "pantheonsent:block/lunar_stone_7"
+    }
+  }
+}

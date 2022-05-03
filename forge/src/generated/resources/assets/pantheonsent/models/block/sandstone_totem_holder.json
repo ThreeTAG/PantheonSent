@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/chiseled_sandstone",
+  "textures": {
+    "side": "pantheonsent:block/sandstone_totem_holder"
+  }
+}
