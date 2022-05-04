@@ -1,0 +1,6 @@
+{
+  "parent": "pantheonsent:item/scarab_compass_held",
+  "textures": {
+    "layer0": "pantheonsent:item/scarab_compass_2"
+  }
+}

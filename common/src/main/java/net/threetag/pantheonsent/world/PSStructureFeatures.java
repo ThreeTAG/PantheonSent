@@ -9,7 +9,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfigura
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.mixin.StructureFeatureAccessor;
 
-public class PSStructures {
+public class PSStructureFeatures {
 
     public static final DeferredRegister<StructureFeature<?>> STRUCTURES = DeferredRegister.create(PantheonSent.MOD_ID, Registry.STRUCTURE_FEATURE_REGISTRY);
 

@@ -26,6 +26,7 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Items
             this.addItem(PSItems.LUNAR_TOTEM, "Lunar Totem");
+            this.addItem(PSItems.SCARAB_COMPASS, "Scarab Compass");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
@@ -46,6 +47,7 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Items
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
+            this.addItem(PSItems.SCARAB_COMPASS, "Skarab\u00E4uskompass");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
@@ -66,6 +68,7 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Items
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
+            this.addItem(PSItems.SCARAB_COMPASS, "Skarab\u00E4usgombass");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");

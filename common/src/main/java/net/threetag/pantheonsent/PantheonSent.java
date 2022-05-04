@@ -6,7 +6,7 @@ import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.item.PSItems;
-import net.threetag.pantheonsent.world.PSStructures;
+import net.threetag.pantheonsent.world.PSStructureFeatures;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,9 +20,9 @@ public class PantheonSent {
         PSBlockEntityTypes.BLOCK_ENTITIES.register();
         PSItems.ITEMS.register();
         PSEntityTypes.ENTITIES.register();
-        PSStructures.STRUCTURES.register();
+        PSStructureFeatures.STRUCTURES.register();
 
-        LifecycleEvent.SETUP.register(PSStructures::registerStructureFeatures);
+        LifecycleEvent.SETUP.register(PSStructureFeatures::registerStructureFeatures);
     }
 
     public static ResourceLocation id(String path) {
