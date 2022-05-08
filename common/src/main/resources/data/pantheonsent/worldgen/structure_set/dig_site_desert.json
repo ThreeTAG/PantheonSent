@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "pantheonsent:dig_site_desert",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 23475643,
+    "spacing": 12,
+    "separation": 4,
+    "type": "minecraft:random_spread"
+  }
+}

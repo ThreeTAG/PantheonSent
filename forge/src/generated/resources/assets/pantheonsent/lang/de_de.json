@@ -1,6 +1,10 @@
 {
   "block.pantheonsent.lunar_stone": "Lunarstein",
+  "block.pantheonsent.mysterious_dirt": "Mysteri\u00F6se Erde",
+  "block.pantheonsent.mysterious_gravel": "Mysteri\u00F6ser Kies",
+  "block.pantheonsent.mysterious_sand": "Mysteri\u00F6ser Sand",
   "block.pantheonsent.sandstone_totem_holder": "Sandsteintotemhalter",
+  "item.pantheonsent.brush": "B\u00FCrste",
   "item.pantheonsent.lunar_totem": "Lunartotem",
   "item.pantheonsent.scarab_compass": "Skarab\u00E4uskompass",
   "power.pantheonsent.moon_knight": "Moon Knight"

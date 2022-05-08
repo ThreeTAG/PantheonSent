@@ -18,6 +18,7 @@ public class PSBlockTagsProvider extends BlockTagsProvider {
     protected void addTags() {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(PSBlocks.SANDSTONE_TOTEM_HOLDER.get(), PSBlocks.LUNAR_STONE.get());
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(PSBlocks.LUNAR_STONE.get());
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(PSBlocks.MYSTERIOUS_DIRT.get(), PSBlocks.MYSTERIOUS_GRAVEL.get(), PSBlocks.MYSTERIOUS_SAND.get());
     }
 
     @Override

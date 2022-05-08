@@ -4,6 +4,10 @@ dependencies {
     modApi "com.github.ThreeTAG.palladium:Palladium:${rootProject.palladium_version}"
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/pantheonsent.accessWidener")
+}
+
 architectury {
     common()
 }

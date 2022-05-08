@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "stage=0": {
+      "model": "pantheonsent:block/mysterious_sand_0"
+    },
+    "stage=1": {
+      "model": "pantheonsent:block/mysterious_sand_1"
+    },
+    "stage=2": {
+      "model": "pantheonsent:block/mysterious_sand_2"
+    },
+    "stage=3": {
+      "model": "pantheonsent:block/mysterious_sand_3"
+    }
+  }
+}

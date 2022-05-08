@@ -28,6 +28,7 @@ public class PantheonSentForge {
     @SubscribeEvent
     public static void setupClient(FMLClientSetupEvent e) {
         PantheonSentClient.init();
+
     }
 
     @SubscribeEvent
@@ -41,4 +42,5 @@ public class PantheonSentForge {
         e.getGenerator().addProvider(new PSBlockLootTableProvider(e.getGenerator()));
 //        e.getGenerator().addProvider(new PSBiomeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
     }
+
 }

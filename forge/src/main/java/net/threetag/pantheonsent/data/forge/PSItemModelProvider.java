@@ -20,13 +20,17 @@ public class PSItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        this.defaultTool(PSItems.BRUSH);
         this.defaultItem(PSItems.LUNAR_TOTEM);
+        this.defaultBlockItem(PSItems.MYSTERIOUS_DIRT, PantheonSent.id("block/mysterious_dirt_0"));
+        this.defaultBlockItem(PSItems.MYSTERIOUS_GRAVEL, PantheonSent.id("block/mysterious_gravel_0"));
+        this.defaultBlockItem(PSItems.MYSTERIOUS_SAND, PantheonSent.id("block/mysterious_sand_0"));
         this.defaultBlockItem(PSItems.SANDSTONE_TOTEM_HOLDER);
         this.defaultBlockItem(PSItems.LUNAR_STONE, PantheonSent.id("block/lunar_stone_0"));
 
         // Scarab Compass
         var activeModel = this.withExistingParent("scarab_compass", "item/generated").texture("layer0", PantheonSent.id("item/scarab_compass_0"));
-        var parentModel = this.withExistingParent("scarab_compass_held", "item/generated").transforms()
+        this.withExistingParent("scarab_compass_held", "item/generated").transforms()
                 .transform(ModelBuilder.Perspective.FIRSTPERSON_RIGHT).rotation(-85F, -11F, -15F).translation(1.13F, 3.2F, 1.13F).scale(0.68F).end()
                 .transform(ModelBuilder.Perspective.FIRSTPERSON_LEFT).rotation(-85F, -11F, -15F).translation(1.13F, 3.2F, 1.13F).scale(0.68F).end();
         for (int i = -1; i < 8; i++) {
@@ -38,6 +42,10 @@ public class PSItemModelProvider extends ItemModelProvider {
                 activeModel.override().predicate(PantheonSent.id("angle"), i == 0 ? 0 : i / 8F).predicate(PantheonSent.id("active"), 1F).model(subModel).end();
             }
         }
+    }
+
+    public void defaultTool(Supplier<Item> item) {
+        this.defaultItem(item, "item/handheld");
     }
 
     public void defaultItem(Supplier<Item> item) {

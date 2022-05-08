@@ -11,6 +11,8 @@ architectury {
 version = version + "-forge"
 
 loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+
     runConfigs.configureEach {
         if (name == "client" || name == "data")
             runDir = "../run"
@@ -21,6 +23,9 @@ loom {
     forge {
         mixinConfig "pantheonsent-common.mixins.json"
         mixinConfig "pantheonsent.mixins.json"
+
+        convertAccessWideners = true
+        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
         dataGen {
             mod "pantheonsent"
@@ -70,6 +75,7 @@ sourceSets.main.resources {
 
 shadowJar {
     exclude "fabric.mod.json"
+    exclude "pantheonsent.common.json"
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"

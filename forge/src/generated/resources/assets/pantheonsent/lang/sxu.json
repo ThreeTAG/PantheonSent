@@ -1,7 +1,11 @@
 {
   "block.pantheonsent.lunar_stone": "Lunarschdeen",
+  "block.pantheonsent.mysterious_dirt": "Mysteri\u00F6se Erde",
+  "block.pantheonsent.mysterious_gravel": "Mysteri\u00F6ser Gies",
+  "block.pantheonsent.mysterious_sand": "Mysteri\u00F6ser Sand",
   "block.pantheonsent.sandstone_totem_holder": "Sandschdeentotemhalderr",
+  "item.pantheonsent.brush": "B\u00FCrschde",
   "item.pantheonsent.lunar_totem": "Lunartotem",
-  "item.pantheonsent.scarab_compass": "Skarab\u00E4usgombass",
+  "item.pantheonsent.scarab_compass": "Schgarab\u00E4usgombass",
   "power.pantheonsent.moon_knight": "Moon Knight"
 }

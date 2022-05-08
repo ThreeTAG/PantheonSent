@@ -6,7 +6,9 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.threetag.pantheonsent.PantheonSent;
+import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
 import net.threetag.pantheonsent.client.model.CrescentDartModel;
+import net.threetag.pantheonsent.client.renderer.blockentity.BrushableBlockEntityRenderer;
 import net.threetag.pantheonsent.client.renderer.entity.CrescentDartRenderer;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 
@@ -17,6 +19,7 @@ public class PSForgeEventHandler {
     @SubscribeEvent
     public static void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers e) {
         e.registerEntityRenderer(PSEntityTypes.CRESCENT_DART.get(), CrescentDartRenderer::new);
+        e.registerBlockEntityRenderer(PSBlockEntityTypes.BRUSHABLE.get(), BrushableBlockEntityRenderer::new);
     }
 
     @OnlyIn(Dist.CLIENT)

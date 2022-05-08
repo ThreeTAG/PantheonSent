@@ -1,0 +1,13 @@
+{
+  "type": "pantheonsent:khonshu_temple",
+
+  "config": {
+    "start_pool": "pantheonsent:dig_site/desert/start_pool",
+    "size": 2
+  },
+  "biomes": "#pantheonsent:has_structure/dig_site_desert",
+  "adapt_noise": true,
+  "spawn_overrides": {
+
+  }
+}

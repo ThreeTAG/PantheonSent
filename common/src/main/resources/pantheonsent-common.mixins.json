@@ -5,6 +5,7 @@
   "client": [
   ],
   "mixins": [
+    "ItemInHandRendererMixin",
     "StructureFeatureAccessor"
   ],
   "injectors": {
