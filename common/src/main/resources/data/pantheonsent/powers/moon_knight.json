@@ -8,7 +8,7 @@
       "type": "palladium:interpolated_integer",
       "title": "Summon Suit",
       "list_index": 0,
-      "max_value": 16,
+      "max_value": 19,
       "hidden": false,
       "icon": "pantheonsent:textures/icon/moon_knight.png",
       "conditions": {

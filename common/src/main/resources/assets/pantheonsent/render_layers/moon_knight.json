@@ -4,8 +4,7 @@
     {
       "model_layer": "pantheonsent:player#moon_knight_suit",
       "model": "pantheonsent:moon_knight_suit",
-      "texture": "pantheonsent:textures/models/moon_knight.png",
-      "texture_": {
+      "texture": {
         "base": "pantheonsent:textures/models/moon_knight.png",
         "transformers": [
           {
@@ -25,8 +24,8 @@
       }
     },
     {
-      "model_layer": "minecraft:player#main",
-      "model": "minecraft:player",
+      "model_layer": "pantheonsent:player#moon_knight_suit",
+      "model": "pantheonsent:moon_knight_suit",
       "texture": "pantheonsent:textures/models/moon_knight_lights.png",
       "render_type": "glow",
       "conditions": [
@@ -36,7 +35,7 @@
           "ability": "activate",
           "property": "value",
           "min": 1,
-          "max": 16
+          "max": 19
         }
       ]
     }
