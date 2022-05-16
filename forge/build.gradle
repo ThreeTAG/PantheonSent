@@ -50,7 +50,7 @@ configurations {
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
-    modApi ("com.github.ThreeTAG.palladium:Palladium-forge:${rootProject.palladium_version}", {
+    modApi ("net.threetag:Palladium:${rootProject.palladium_version}-forge", {
         exclude group: "com.github.Virtuoel"
     })
 
@@ -75,6 +75,7 @@ sourceSets.main.resources {
 
 shadowJar {
     exclude "fabric.mod.json"
+    exclude "pantheonsent.accessWidener"
     exclude "pantheonsent.common.json"
 
     configurations = [project.configurations.shadowCommon]

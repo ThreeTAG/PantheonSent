@@ -33,7 +33,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
-    modApi ("com.github.ThreeTAG.palladium:Palladium-fabric:${rootProject.palladium_version}", {
+    modApi ("net.threetag:Palladium:${rootProject.palladium_version}-fabric", {
         exclude group: "com.github.Virtuoel"
     })
 
@@ -58,6 +58,8 @@ sourceSets.main.resources {
 }
 
 shadowJar {
+    exclude "pantheonsent.accessWidener"
+    exclude "pantheonsent.common.json"
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
 }
