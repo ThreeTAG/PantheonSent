@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
+import net.threetag.pantheonsent.entity.PSPoiTypes;
 import net.threetag.pantheonsent.entity.PSVillagerProfessions;
 import net.threetag.pantheonsent.item.PSItems;
 import net.threetag.pantheonsent.world.PSStructureFeatures;
@@ -23,10 +24,14 @@ public class PantheonSent {
         PSItems.ITEMS.register();
         PSEntityTypes.ENTITIES.register();
         PSVillagerProfessions.PROFESSIONS.register();
+        PSPoiTypes.POI_TYPES.register();
         PSStructureFeatures.STRUCTURES.register();
         PSStructureProcessorTypes.PROCESSOR_TYPES.register();
 
-        LifecycleEvent.SETUP.register(PSStructureFeatures::registerStructureFeatures);
+        LifecycleEvent.SETUP.register(() -> {
+            PSStructureFeatures.registerStructureFeatures();
+            PSVillagerProfessions.init();
+        });
     }
 
     public static ResourceLocation id(String path) {

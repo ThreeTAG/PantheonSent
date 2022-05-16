@@ -58,7 +58,7 @@ public class MoonKnightSuitModel<T extends LivingEntity> extends HumanoidModel<T
             f1 = f1 + Mth.sin(Mth.lerp(partialTicks, entity.walkDistO, entity.walkDist) * 6.0F) * 32.0F * f4;
 
             float rotation = 6.0F + f2 / 2.0F + f1;
-            this.cape.xRot = (float) Math.toRadians(rotation);
+            this.cape.xRot = (float) Math.toRadians(rotation + 10F);
         }
     }
 

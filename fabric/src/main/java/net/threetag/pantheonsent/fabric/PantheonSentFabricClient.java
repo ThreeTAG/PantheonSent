@@ -17,4 +17,5 @@ public class PantheonSentFabricClient implements ClientModInitializer {
         EntityRendererRegistry.register(PSEntityTypes.CRESCENT_DART.get(), CrescentDartRenderer::new);
         BlockEntityRendererRegistry.register(PSBlockEntityTypes.BRUSHABLE.get(), BrushableBlockEntityRenderer::new);
     }
+
 }

@@ -34,7 +34,7 @@
           "power": "pantheonsent:moon_knight",
           "ability": "activate",
           "property": "value",
-          "min": 1,
+          "min": 19,
           "max": 19
         }
       ]
