@@ -44,10 +44,30 @@
         ]
       }
     },
+    "slowfall": {
+      "type": "palladium:slowfall",
+      "hidden": true,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:crouching"
+          }
+        ]
+      }
+    },
     "healing": {
       "type": "palladium:command",
       "hidden": true,
-      "first_tick_commands": ["effect give @s minecraft:regeneration 5 2 true", "say heal!"],
+      "first_tick_commands": [
+        "effect give @s minecraft:regeneration 5 2 true",
+        "say heal!"
+      ],
       "last_tick_commands": "null",
       "commands": "null",
       "conditions": {

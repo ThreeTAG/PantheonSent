@@ -2,14 +2,14 @@
   "type": "palladium:compound",
   "layers": [
     {
-      "model_layer": "pantheonsent:player#moon_knight_suit",
+      "model_layer": "pantheonsent:humanoid#moon_knight_suit",
       "model": "pantheonsent:moon_knight_suit",
       "texture": {
         "base": "pantheonsent:textures/models/moon_knight.png",
         "transformers": [
           {
             "type": "palladium:alpha_mask",
-            "mask": "pantheonsent:textures/models/alpha_masks/transformation/transformation_#TIMER.png"
+            "mask": "pantheonsent:textures/models/alpha_masks/moon_knight_suit_transformation/#TIMER.png"
           }
         ],
         "variables": {
@@ -20,11 +20,43 @@
             "property": "value"
           }
         },
-        "output": "pantheonsent:textures/models/armor/moon_knight_#TIMER"
+        "output": "pantheonsent:textures/models/moon_knight_#TIMER"
       }
     },
     {
-      "model_layer": "pantheonsent:player#moon_knight_suit",
+      "model_layer": "pantheonsent:humanoid#moon_knight_cape",
+      "model": "palladium:caped_humanoid",
+      "texture": {
+        "base": "pantheonsent:textures/models/moon_knight_cape/#STAGE.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "pantheonsent:textures/models/alpha_masks/moon_knight_cape_transformation/#TIMER.png"
+          }
+        ],
+        "variables": {
+          "STAGE": {
+            "type": "palladium:cape",
+            "bobbing": false,
+            "subtract": 9,
+            "divide": 10,
+            "max": 8,
+            "min": 0,
+            "round": "to_int"
+          },
+          "TIMER": {
+            "type": "palladium:ability_integer_property",
+            "power": "pantheonsent:moon_knight",
+            "ability": "activate",
+            "property": "value",
+            "min": 7
+          }
+        },
+        "output": "pantheonsent:textures/models/moon_knight_cape/#STAGE_#TIMER.png"
+      }
+    },
+    {
+      "model_layer": "pantheonsent:humanoid#moon_knight_suit",
       "model": "pantheonsent:moon_knight_suit",
       "texture": "pantheonsent:textures/models/moon_knight_lights.png",
       "render_type": "glow",
