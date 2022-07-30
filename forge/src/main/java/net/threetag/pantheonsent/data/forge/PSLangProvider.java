@@ -4,6 +4,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.block.PSBlocks;
+import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.item.PSItems;
 
 public abstract class PSLangProvider extends LanguageProvider {
@@ -34,6 +35,16 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
+
+            // Entities
+            this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_1", "You are a worthy candidate to serve me during this time.");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_2", "Do you swear to protect the travellers of the night...");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_3", "...and bring my vengeance to those who would do them harm?");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_4", "Then rise as my fist of vengeance...");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_5", "...as my...");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
+            this.addEntityType(PSEntityTypes.CRESCENT_DART, "Crescent Dart");
         }
     }
 
@@ -59,6 +70,16 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
+
+            // Entities
+            this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_1", "Du bist ein würdiger Kandidat mir in dieser Zeit zu dienen.");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_2", "Schwörst du hier die Reisenden der Nacht zu beschützen...");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_3", "...und meine Vergeltung an jenen zu üben, die ihnen Leid antun?");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_4", "Dann erhebe dich als meine Faust der Vergeltung!");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_5", "Du bist...");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
+            this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
         }
     }
 
@@ -84,6 +105,16 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
+
+            // Entities
+            this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_1", "Du bischd ehn würd'ger Kandidat mir in dieser Zeit zu dienen.");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_2", "Schwörste hier de Reisend'n der Nacht zu beschützen...");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_3", "...und mehne Verjeltung an jenen zu üben, die ihnen Lehd antun?");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_4", "Dann erheb' dich als mehne Faust der Verjeltung!");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_5", "Du bischd...");
+            this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
+            this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
         }
     }
 

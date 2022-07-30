@@ -1,6 +1,7 @@
 package net.threetag.pantheonsent;
 
 import dev.architectury.event.events.common.LifecycleEvent;
+import dev.architectury.platform.Platform;
 import net.minecraft.resources.ResourceLocation;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
@@ -8,6 +9,7 @@ import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.entity.PSPoiTypes;
 import net.threetag.pantheonsent.entity.PSVillagerProfessions;
 import net.threetag.pantheonsent.item.PSItems;
+import net.threetag.pantheonsent.util.PantheonSentProperties;
 import net.threetag.pantheonsent.world.PSStructureFeatures;
 import net.threetag.pantheonsent.world.PSStructureProcessorTypes;
 import org.apache.logging.log4j.LogManager;
@@ -28,10 +30,17 @@ public class PantheonSent {
         PSStructureFeatures.STRUCTURES.register();
         PSStructureProcessorTypes.PROCESSOR_TYPES.register();
 
+        PSEntityTypes.init();
+        PantheonSentProperties.init();
+
         LifecycleEvent.SETUP.register(() -> {
             PSStructureFeatures.registerStructureFeatures();
             PSVillagerProfessions.init();
         });
+
+        if (Platform.isDevelopmentEnvironment()) {
+            PantheonSentDebug.init();
+        }
     }
 
     public static ResourceLocation id(String path) {

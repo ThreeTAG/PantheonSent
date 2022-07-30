@@ -25,9 +25,19 @@ public class PSBlockLootTableProvider extends BlockLootTableProvider {
         this.add(PSBlocks.MYSTERIOUS_GRAVEL.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.GRAVEL));
         this.add(PSBlocks.MYSTERIOUS_SAND.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.SAND));
 
-        this.lootTables.put(PSLootTables.BRUSHABLE_DIRT, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.BONE)).add(LootItem.lootTableItem(Items.DIAMOND_BLOCK))));
-        this.lootTables.put(PSLootTables.BRUSHABLE_GRAVEL, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.IRON_NUGGET))));
-        this.lootTables.put(PSLootTables.BRUSHABLE_SAND, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(PSItems.SCARAB_COMPASS.get())).add(LootItem.lootTableItem(Items.CLOCK))));
+        this.lootTables.put(PSLootTables.BRUSHABLE_DIRT, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                .add(LootItem.lootTableItem(Items.BONE))
+                .add(LootItem.lootTableItem(Items.DIAMOND_BLOCK))));
+        this.lootTables.put(PSLootTables.BRUSHABLE_GRAVEL, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                .add(LootItem.lootTableItem(Items.IRON_NUGGET))));
+        this.lootTables.put(PSLootTables.BRUSHABLE_SAND, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(PSItems.SCARAB_COMPASS.get()))
+                        .add(LootItem.lootTableItem(Items.RAW_GOLD))
+                        .add(LootItem.lootTableItem(Items.CLOCK)))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F))
+                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET))
+                        .add(LootItem.lootTableItem(Items.DEAD_BUSH))));
     }
 
     @Override

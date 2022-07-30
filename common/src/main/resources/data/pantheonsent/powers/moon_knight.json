@@ -66,7 +66,7 @@
       "hidden": true,
       "first_tick_commands": [
         "effect give @s minecraft:regeneration 5 2 true",
-        "say heal!"
+        "say Summoned suit!"
       ],
       "last_tick_commands": "null",
       "commands": "null",

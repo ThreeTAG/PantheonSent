@@ -1,0 +1,44 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "model_layer": "pantheonsent:humanoid#moon_knight_suit",
+      "model": "pantheonsent:moon_knight_suit",
+      "texture": {
+        "base": "pantheonsent:textures/models/moon_knight.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "pantheonsent:textures/models/alpha_masks/moon_knight_suit_transformation/#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+            "type": "palladium:ability_integer_property",
+            "power": "pantheonsent:moon_knight_transformation",
+            "ability": "activate",
+            "property": "value",
+            "divide": 3
+          }
+        },
+        "output": "pantheonsent:textures/models/moon_knight_#TIMER"
+      }
+    },
+    {
+      "model_layer": "pantheonsent:humanoid#moon_knight_suit",
+      "model": "pantheonsent:moon_knight_suit",
+      "texture": "pantheonsent:textures/models/moon_knight_lights.png",
+      "render_type": "glow",
+      "conditions": [
+        {
+          "type": "palladium:ability_integer_property",
+          "power": "pantheonsent:moon_knight_transformation",
+          "ability": "activate",
+          "property": "value",
+          "min": 57,
+          "max": 57
+        }
+      ]
+    }
+  ]
+}

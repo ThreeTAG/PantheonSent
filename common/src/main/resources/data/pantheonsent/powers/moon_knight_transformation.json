@@ -1,0 +1,42 @@
+{
+  "name": {
+    "translate": "power.pantheonsent.moon_knight"
+  },
+  "icon": "pantheonsent:textures/icon/moon_knight.png",
+  "abilities": {
+    "render_layer": {
+      "type": "palladium:render_layer",
+      "render_layer": "pantheonsent:moon_knight_transformation"
+    },
+    "activate": {
+      "type": "palladium:interpolated_integer",
+      "max_value": 57,
+      "hidden": true,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_ticks",
+            "ability": "render_layer",
+            "min": 0,
+            "max": 160
+          }
+        ]
+      }
+    },
+    "switch_power": {
+      "type": "palladium:command",
+      "commands": "superpower set pantheonsent:moon_knight",
+      "hidden": true,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_ticks",
+            "ability": "render_layer",
+            "min": 217,
+            "max": 217
+          }
+        ]
+      }
+    }
+  }
+}
