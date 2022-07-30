@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pantheonsent:block/archeology_table_front",
+    "north": "pantheonsent:block/archeology_table_front",
+    "south": "pantheonsent:block/archeology_table_side",
+    "east": "pantheonsent:block/archeology_table_side",
+    "west": "pantheonsent:block/archeology_table_front",
+    "up": "pantheonsent:block/archeology_table_top",
+    "down": "minecraft:block/jungle_planks"
+  }
+}

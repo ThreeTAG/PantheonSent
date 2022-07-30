@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "pantheonsent:block/gilded_sandstone",
+    "end": "minecraft:block/gold_block"
+  }
+}

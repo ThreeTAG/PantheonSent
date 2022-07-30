@@ -20,6 +20,10 @@ public class PSBlockLootTableProvider extends BlockLootTableProvider {
 
     @Override
     public void addTables() {
+        this.dropSelf(PSBlocks.GILDED_SANDSTONE.get());
+        this.dropSelf(PSBlocks.GILDED_SANDSTONE_PILLAR.get());
+        this.dropSelf(PSBlocks.ARCHEOLOGY_TABLE.get());
+        this.dropSelf(PSBlocks.KHONSHU_USHABTI.get());
         this.dropWhenSilkTouch(PSBlocks.LUNAR_STONE.get());
         this.add(PSBlocks.MYSTERIOUS_DIRT.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.DIRT));
         this.add(PSBlocks.MYSTERIOUS_GRAVEL.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.GRAVEL));

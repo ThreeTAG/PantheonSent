@@ -2,8 +2,11 @@ package net.threetag.pantheonsent;
 
 import dev.architectury.registry.client.level.entity.EntityModelLayerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
+import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.renderer.RenderType;
 import net.threetag.palladium.client.renderer.renderlayer.ModelLookup;
+import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.client.model.CrescentDartModel;
 import net.threetag.pantheonsent.client.model.MoonKnightSuitModel;
 import net.threetag.pantheonsent.client.renderer.entity.KhonshuRenderer;
@@ -17,6 +20,8 @@ public class PantheonSentClient {
         EntityRendererRegistry.register(PSEntityTypes.KHONSHU, KhonshuRenderer::new);
         ModelLookup.register(PantheonSent.id("moon_knight_suit"), new ModelLookup.Model(MoonKnightSuitModel::new, (en, model) -> model instanceof HumanoidModel));
         PSItems.initProperties();
+
+        RenderTypeRegistry.register(RenderType.cutout(), PSBlocks.KHONSHU_USHABTI.get());
     }
 
 }

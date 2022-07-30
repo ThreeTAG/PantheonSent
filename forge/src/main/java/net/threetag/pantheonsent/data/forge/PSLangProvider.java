@@ -22,6 +22,10 @@ public abstract class PSLangProvider extends LanguageProvider {
         @Override
         protected void addTranslations() {
             // Blocks
+            this.addBlock(PSBlocks.GILDED_SANDSTONE, "Gilded Sandstone");
+            this.addBlock(PSBlocks.GILDED_SANDSTONE_PILLAR, "Gilded Sandstone Pillar");
+            this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Archeology Table");
+            this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Ushabti");
             this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysterious Dirt");
             this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysterious Gravel");
             this.addBlock(PSBlocks.MYSTERIOUS_SAND, "Mysterious Sand");
@@ -57,6 +61,10 @@ public abstract class PSLangProvider extends LanguageProvider {
         @Override
         protected void addTranslations() {
             // Blocks
+            this.addBlock(PSBlocks.GILDED_SANDSTONE, "Golddurchzogener Sandstein");
+            this.addBlock(PSBlocks.GILDED_SANDSTONE_PILLAR, "Golddurchzogene Sandsteins\u00E4ule");
+            this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Archeologietisch");
+            this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Uschebti");
             this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysteri\u00F6se Erde");
             this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysteri\u00F6ser Kies");
             this.addBlock(PSBlocks.MYSTERIOUS_SAND, "Mysteri\u00F6ser Sand");
@@ -92,6 +100,10 @@ public abstract class PSLangProvider extends LanguageProvider {
         @Override
         protected void addTranslations() {
             // Blocks
+            this.addBlock(PSBlocks.GILDED_SANDSTONE, "Golddurschzochnorr Sandstein");
+            this.addBlock(PSBlocks.GILDED_SANDSTONE_PILLAR, "Golddurschzochne Sandschdeens\u00E4ule");
+            this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Arscheolojiedisch");
+            this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Uschebti");
             this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysteri\u00F6se Erde");
             this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysteri\u00F6ser Gies");
             this.addBlock(PSBlocks.MYSTERIOUS_SAND, "Mysteri\u00F6ser Sand");

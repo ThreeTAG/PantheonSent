@@ -12,5 +12,5 @@ public class PSPoiTypes {
     public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(PantheonSent.MOD_ID, Registry.POINT_OF_INTEREST_TYPE_REGISTRY);
 
     public static final RegistrySupplier<PoiType> ARCHEOLOGIST = POI_TYPES.register("archeologist",
-            () -> PoiType.registerBlockStates(new PoiType("archeologist", PoiType.getBlockStates(PSBlocks.SANDSTONE_TOTEM_HOLDER.get()), 1, 1)));
+            () -> PoiType.registerBlockStates(new PoiType("archeologist", PoiType.getBlockStates(PSBlocks.ARCHEOLOGY_TABLE.get()), 1, 1)));
 }

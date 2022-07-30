@@ -1,6 +1,7 @@
 package net.threetag.pantheonsent.forge;
 
 import dev.architectury.platform.forge.EventBuses;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -33,12 +34,14 @@ public class PantheonSentForge {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent e) {
+        BlockTagsProvider blockTags = new PSBlockTagsProvider(e.getGenerator(), e.getExistingFileHelper());
         e.getGenerator().addProvider(new PSLangProvider.English(e.getGenerator()));
         e.getGenerator().addProvider(new PSLangProvider.German(e.getGenerator()));
         e.getGenerator().addProvider(new PSLangProvider.Saxon(e.getGenerator()));
         e.getGenerator().addProvider(new PSBlockStateProvider(e.getGenerator(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(new PSItemModelProvider(e.getGenerator(), e.getExistingFileHelper()));
-        e.getGenerator().addProvider(new PSBlockTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
+        e.getGenerator().addProvider(blockTags);
+        e.getGenerator().addProvider(new PSItemTagsProvider(e.getGenerator(), blockTags, e.getExistingFileHelper()));
         e.getGenerator().addProvider(new PSBlockLootTableProvider(e.getGenerator()));
 //        e.getGenerator().addProvider(new PSBiomeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
     }
