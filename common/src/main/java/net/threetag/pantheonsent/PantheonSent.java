@@ -8,7 +8,9 @@ import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.entity.PSPoiTypes;
 import net.threetag.pantheonsent.entity.PSVillagerProfessions;
+import net.threetag.pantheonsent.inventory.PSMenuTypes;
 import net.threetag.pantheonsent.item.PSItems;
+import net.threetag.pantheonsent.item.crafting.PSRecipeSerializers;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
 import net.threetag.pantheonsent.world.PSStructureFeatures;
 import net.threetag.pantheonsent.world.PSStructureProcessorTypes;
@@ -29,6 +31,9 @@ public class PantheonSent {
         PSPoiTypes.POI_TYPES.register();
         PSStructureFeatures.STRUCTURES.register();
         PSStructureProcessorTypes.PROCESSOR_TYPES.register();
+        PSRecipeSerializers.RECIPE_SERIALIZERS.register();
+        PSRecipeSerializers.RECIPE_TYPES.register();
+        PSMenuTypes.MENU_TYPES.register();
 
         PSEntityTypes.init();
         PantheonSentProperties.init();

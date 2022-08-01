@@ -43,6 +43,7 @@ public class PantheonSentForge {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent e) {
         BlockTagsProvider blockTags = new PSBlockTagsProvider(e.getGenerator(), e.getExistingFileHelper());
+        e.getGenerator().addProvider(new PSRecipeProvider(e.getGenerator()));
         e.getGenerator().addProvider(new PSLangProvider.English(e.getGenerator()));
         e.getGenerator().addProvider(new PSLangProvider.German(e.getGenerator()));
         e.getGenerator().addProvider(new PSLangProvider.Saxon(e.getGenerator()));

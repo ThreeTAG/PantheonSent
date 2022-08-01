@@ -1,0 +1,12 @@
+{
+  "type": "pantheonsent:restoration",
+  "base": {
+    "item": "minecraft:bone"
+  },
+  "addition": {
+    "item": "minecraft:gold_nugget"
+  },
+  "result": {
+    "item": "pantheonsent:eye_of_horus"
+  }
+}

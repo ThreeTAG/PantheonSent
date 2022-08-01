@@ -3,6 +3,7 @@ package net.threetag.pantheonsent.data.forge;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.threetag.pantheonsent.PantheonSent;
+import net.threetag.pantheonsent.block.ArcheologyTableBlock;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.item.PSItems;
@@ -40,6 +41,9 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
+
+            // Container
+            this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restoration");
 
             // Entities
             this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");
@@ -81,6 +85,9 @@ public abstract class PSLangProvider extends LanguageProvider {
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
 
+            // Container
+            this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restauration");
+
             // Entities
             this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");
             this.add("entity.pantheonsent.khonshu.recruitment_line_1", "Du bist ein würdiger Kandidat mir in dieser Zeit zu dienen.");
@@ -120,6 +127,9 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
+
+            // Container
+            this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restauration");
 
             // Entities
             this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");

@@ -17,6 +17,7 @@ import net.threetag.pantheonsent.client.model.MoonKnightSuitModel;
 import net.threetag.pantheonsent.client.renderer.entity.KhonshuRenderer;
 import net.threetag.pantheonsent.client.renderer.item.EyeOfHorusRenderer;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
+import net.threetag.pantheonsent.inventory.PSMenuTypes;
 import net.threetag.pantheonsent.item.PSItems;
 
 public class PantheonSentClient {
@@ -27,6 +28,7 @@ public class PantheonSentClient {
         EntityRendererRegistry.register(PSEntityTypes.KHONSHU, KhonshuRenderer::new);
         ModelLookup.register(PantheonSent.id("moon_knight_suit"), new ModelLookup.Model(MoonKnightSuitModel::new, (en, model) -> model instanceof HumanoidModel));
         PSItems.initProperties();
+        PSMenuTypes.initScreens();
 
         RenderTypeRegistry.register(RenderType.cutout(), PSBlocks.KHONSHU_USHABTI.get());
         CurioTrinketRegistry.registerRenderer(PSItems.EYE_OF_HORUS.get(), new EyeOfHorusRenderer(null));
