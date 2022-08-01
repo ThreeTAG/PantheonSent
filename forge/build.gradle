@@ -71,6 +71,7 @@ processResources {
 
 sourceSets.main.resources {
     exclude '**/data/pantheonsent/**/fabric/*'
+    exclude '**/data/trinkets/*'
 }
 
 shadowJar {

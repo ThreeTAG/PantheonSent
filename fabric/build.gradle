@@ -55,6 +55,7 @@ processResources {
 sourceSets.main.resources {
     srcDir project(":forge").file("src/generated/resources").absolutePath
     exclude '**/data/pantheonsent/**/forge/*'
+    exclude '**/data/curios/*'
 }
 
 shadowJar {

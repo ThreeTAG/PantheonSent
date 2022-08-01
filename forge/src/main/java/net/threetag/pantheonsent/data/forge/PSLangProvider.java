@@ -36,6 +36,7 @@ public abstract class PSLangProvider extends LanguageProvider {
             this.addItem(PSItems.BRUSH, "Brush");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunar Totem");
             this.addItem(PSItems.SCARAB_COMPASS, "Scarab Compass");
+            this.addItem(PSItems.EYE_OF_HORUS, "Eye of Horus");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
@@ -75,6 +76,7 @@ public abstract class PSLangProvider extends LanguageProvider {
             this.addItem(PSItems.BRUSH, "B\u00FCrste");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
             this.addItem(PSItems.SCARAB_COMPASS, "Skarab\u00E4uskompass");
+            this.addItem(PSItems.EYE_OF_HORUS, "Horusauge");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
@@ -114,6 +116,7 @@ public abstract class PSLangProvider extends LanguageProvider {
             this.addItem(PSItems.BRUSH, "B\u00FCrschde");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
             this.addItem(PSItems.SCARAB_COMPASS, "Schgarab\u00E4usgombass");
+            this.addItem(PSItems.EYE_OF_HORUS, "Horusooche");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");

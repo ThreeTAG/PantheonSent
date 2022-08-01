@@ -38,6 +38,7 @@ public class PSItems {
     public static final RegistrySupplier<Item> BRUSH = ITEMS.register("brush", () -> new BrushItem(new Item.Properties().durability(512).tab(CreativeModeTab.TAB_TOOLS)));
     public static final RegistrySupplier<Item> LUNAR_TOTEM = ITEMS.register("lunar_totem", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.UNCOMMON).stacksTo(1)));
     public static final RegistrySupplier<Item> SCARAB_COMPASS = ITEMS.register("scarab_compass", () -> new ScarabCompassItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1), FILLER_AFTER_COMPASS));
+    public static final RegistrySupplier<Item> EYE_OF_HORUS = ITEMS.register("eye_of_horus", () -> new EyeOfHorusItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(3)));
 
     @Environment(EnvType.CLIENT)
     public static void initProperties() {

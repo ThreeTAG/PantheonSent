@@ -23,6 +23,7 @@ public class PSItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         this.defaultTool(PSItems.BRUSH);
         this.defaultItem(PSItems.LUNAR_TOTEM);
+        this.defaultItem(PSItems.EYE_OF_HORUS);
         this.defaultBlockItem(PSItems.GILDED_SANDSTONE);
         this.defaultBlockItem(PSItems.GILDED_SANDSTONE_PILLAR);
         this.defaultBlockItem(PSItems.ARCHEOLOGY_TABLE);
