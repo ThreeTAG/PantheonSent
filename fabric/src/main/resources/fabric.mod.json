@@ -19,6 +19,12 @@
     ],
     "client": [
       "net.threetag.pantheonsent.fabric.PantheonSentFabricClient"
+    ],
+    "rei_client": [
+      "net.threetag.pantheonsent.compat.rei.fabric.PantheonSentREIClientPlugin"
+    ],
+    "rei_server": [
+      "net.threetag.pantheonsent.compat.rei.fabric.PantheonSentREIServerPlugin"
     ]
   },
   "mixins": [

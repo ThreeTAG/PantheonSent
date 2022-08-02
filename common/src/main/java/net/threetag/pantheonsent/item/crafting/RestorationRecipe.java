@@ -16,9 +16,9 @@ import java.util.stream.Stream;
 
 public class RestorationRecipe implements Recipe<Container> {
 
-    final Ingredient base;
-    final Ingredient addition;
-    final ItemStack result;
+    public final Ingredient base;
+    public final Ingredient addition;
+    public final ItemStack result;
     private final ResourceLocation id;
 
     public RestorationRecipe(ResourceLocation resourceLocation, Ingredient ingredient, Ingredient ingredient2, ItemStack itemStack) {
