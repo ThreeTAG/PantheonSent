@@ -28,24 +28,35 @@
     "throw_dart": {
       "type": "palladium:projectile",
       "entity_type": "pantheonsent:crescent_dart",
+      "icon": "pantheonsent:textures/icon/crescent_dart.png",
       "list_index": 1,
       "conditions": {
         "unlocking": [
           {
             "type": "palladium:ability_enabled",
             "ability": "activate"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "blocking"
+              }
+            ]
           }
         ],
         "enabling": [
           {
             "type": "palladium:action",
-            "cooldown": 60
+            "cooldown": 60,
+            "key_type": "left_click"
           }
         ]
       }
     },
-    "slowfall": {
-      "type": "palladium:slowfall",
+    "gliding": {
+      "type": "pantheonsent:moon_knight_gliding",
       "hidden": true,
       "conditions": {
         "unlocking": [
@@ -57,6 +68,25 @@
         "enabling": [
           {
             "type": "palladium:crouching"
+          }
+        ]
+      }
+    },
+    "blocking": {
+      "type": "pantheonsent:moon_knight_blocking",
+      "icon": "pantheonsent:textures/icon/moon_knight_blocking.png",
+      "list_index": 2,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "key_type": "right_click"
           }
         ]
       }

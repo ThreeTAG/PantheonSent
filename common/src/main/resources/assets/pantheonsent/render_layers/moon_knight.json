@@ -25,7 +25,7 @@
     },
     {
       "model_layer": "pantheonsent:humanoid#moon_knight_cape",
-      "model": "palladium:caped_humanoid",
+      "model": "pantheonsent:moon_knight_cape",
       "texture": {
         "base": "pantheonsent:textures/models/moon_knight_cape/#STAGE.png",
         "transformers": [
@@ -36,7 +36,7 @@
         ],
         "variables": {
           "STAGE": {
-            "type": "palladium:cape",
+            "type": "pantheonsent:moon_knight_cape",
             "bobbing": false,
             "subtract": 9,
             "divide": 10,

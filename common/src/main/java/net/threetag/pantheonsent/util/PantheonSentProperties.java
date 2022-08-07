@@ -1,10 +1,15 @@
 package net.threetag.pantheonsent.util;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.entity.Entity;
+import net.threetag.palladium.event.PalladiumClientEvents;
 import net.threetag.palladium.event.PalladiumEvents;
+import net.threetag.palladium.power.ability.Ability;
 import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
 import net.threetag.palladium.util.property.SyncType;
+import net.threetag.pantheonsent.ability.PSAbilities;
 import net.threetag.pantheonsent.entity.Khonshu;
 
 public class PantheonSentProperties {
@@ -26,9 +31,15 @@ public class PantheonSentProperties {
                 KHONSHU_RECRUITING_TIMER.set(entity, 0);
             }
         });
+    }
 
-        PalladiumEvents.MOVEMENT_INPUT_UPDATE.register((player, input) -> {
-            if (KHONSHU_RECRUITING_TIMER.isRegistered(player) && KHONSHU_RECRUITING_TIMER.get(player) > 0) {
+    @Environment(EnvType.CLIENT)
+    public static void initClient() {
+        PalladiumClientEvents.MOVEMENT_INPUT_UPDATE.register((player, input) -> {
+            if (
+                    (KHONSHU_RECRUITING_TIMER.isRegistered(player) && KHONSHU_RECRUITING_TIMER.get(player) > 0)
+                            || !Ability.getEnabledEntries(player, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()
+            ) {
                 input.up = input.down = input.left = input.right = input.jumping = input.shiftKeyDown = false;
                 input.forwardImpulse = input.leftImpulse = 0F;
             }

@@ -2,13 +2,15 @@ package net.threetag.pantheonsent.data.forge;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.threetag.palladium.data.forge.ExtendedLangProvider;
 import net.threetag.pantheonsent.PantheonSent;
+import net.threetag.pantheonsent.ability.PSAbilities;
 import net.threetag.pantheonsent.block.ArcheologyTableBlock;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.item.PSItems;
 
-public abstract class PSLangProvider extends LanguageProvider {
+public abstract class PSLangProvider extends ExtendedLangProvider {
 
     public PSLangProvider(DataGenerator gen, String locale) {
         super(gen, PantheonSent.MOD_ID, locale);
@@ -41,6 +43,10 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
+
+            // Abilities
+            this.addAbility(PSAbilities.MOON_KNIGHT_GLIDING, "Gliding");
+            this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocking");
 
             // Container
             this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restoration");
@@ -85,6 +91,10 @@ public abstract class PSLangProvider extends LanguageProvider {
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
 
+            // Abilities
+            this.addAbility(PSAbilities.MOON_KNIGHT_GLIDING, "Gleiten");
+            this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocken");
+
             // Container
             this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restauration");
 
@@ -127,6 +137,10 @@ public abstract class PSLangProvider extends LanguageProvider {
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
+
+            // Abilities
+            this.addAbility(PSAbilities.MOON_KNIGHT_GLIDING, "Gleiten");
+            this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocken");
 
             // Container
             this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restauration");
