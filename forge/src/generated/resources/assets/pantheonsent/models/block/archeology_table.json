@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "particle": "pantheonsent:block/archeology_table_front",
-    "north": "pantheonsent:block/archeology_table_front",
-    "south": "pantheonsent:block/archeology_table_side",
+    "down": "minecraft:block/jungle_planks",
     "east": "pantheonsent:block/archeology_table_side",
-    "west": "pantheonsent:block/archeology_table_front",
+    "north": "pantheonsent:block/archeology_table_front",
+    "particle": "pantheonsent:block/archeology_table_front",
+    "south": "pantheonsent:block/archeology_table_side",
     "up": "pantheonsent:block/archeology_table_top",
-    "down": "minecraft:block/jungle_planks"
+    "west": "pantheonsent:block/archeology_table_front"
   }
 }

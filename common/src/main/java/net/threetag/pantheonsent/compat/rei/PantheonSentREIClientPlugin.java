@@ -1,4 +1,4 @@
-package net.threetag.pantheonsent.compat.rei.fabric;
+package net.threetag.pantheonsent.compat.rei;
 
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;

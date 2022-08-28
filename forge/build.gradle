@@ -8,8 +8,6 @@ architectury {
     forge()
 }
 
-version = version + "-forge"
-
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
 
@@ -50,12 +48,19 @@ configurations {
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
-    modApi ("net.threetag:Palladium:${rootProject.palladium_version}-forge", {
+    modApi ("net.threetag:Palladium-forge:${rootProject.palladium_version}", {
         exclude group: "com.github.Virtuoel"
     })
 
     // Shutup Experimental Settings
-//    modLocalRuntime "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupexperimentalsettings_version}"
+    modLocalRuntime "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupexperimentalsettings_version}"
+
+    // JEI
+    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-forge-api:${rootProject.jei_version}"
+//    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraft_version}-forge:${rootProject.jei_version}"
+
+    // REI
+    modImplementation "me.shedaniel:RoughlyEnoughItems-forge:${rootProject.rei_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
@@ -76,7 +81,6 @@ sourceSets.main.resources {
 
 shadowJar {
     exclude "fabric.mod.json"
-    exclude "pantheonsent.accessWidener"
     exclude "pantheonsent.common.json"
 
     configurations = [project.configurations.shadowCommon]
@@ -129,5 +133,3 @@ publishing {
         // Add repositories to publish to here.
     }
 }
-
-rootProject.tasks.getByName("curseforgePublish").dependsOn tasks.getByName("curseforge")

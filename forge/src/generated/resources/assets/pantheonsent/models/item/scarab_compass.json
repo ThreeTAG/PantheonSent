@@ -1,70 +1,70 @@
 {
   "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "pantheonsent:item/scarab_compass_0"
-  },
   "overrides": [
     {
+      "model": "pantheonsent:item/scarab_compass_inactive",
       "predicate": {
         "pantheonsent:active": 0.0
-      },
-      "model": "pantheonsent:item/scarab_compass_inactive"
+      }
     },
     {
+      "model": "pantheonsent:item/scarab_compass_0",
       "predicate": {
-        "pantheonsent:angle": 0.0,
-        "pantheonsent:active": 1.0
-      },
-      "model": "pantheonsent:item/scarab_compass_0"
+        "pantheonsent:active": 1.0,
+        "pantheonsent:angle": 0.0
+      }
     },
     {
+      "model": "pantheonsent:item/scarab_compass_1",
       "predicate": {
-        "pantheonsent:angle": 0.125,
-        "pantheonsent:active": 1.0
-      },
-      "model": "pantheonsent:item/scarab_compass_1"
+        "pantheonsent:active": 1.0,
+        "pantheonsent:angle": 0.125
+      }
     },
     {
+      "model": "pantheonsent:item/scarab_compass_2",
       "predicate": {
-        "pantheonsent:angle": 0.25,
-        "pantheonsent:active": 1.0
-      },
-      "model": "pantheonsent:item/scarab_compass_2"
+        "pantheonsent:active": 1.0,
+        "pantheonsent:angle": 0.25
+      }
     },
     {
+      "model": "pantheonsent:item/scarab_compass_3",
       "predicate": {
-        "pantheonsent:angle": 0.375,
-        "pantheonsent:active": 1.0
-      },
-      "model": "pantheonsent:item/scarab_compass_3"
+        "pantheonsent:active": 1.0,
+        "pantheonsent:angle": 0.375
+      }
     },
     {
+      "model": "pantheonsent:item/scarab_compass_4",
       "predicate": {
-        "pantheonsent:angle": 0.5,
-        "pantheonsent:active": 1.0
-      },
-      "model": "pantheonsent:item/scarab_compass_4"
+        "pantheonsent:active": 1.0,
+        "pantheonsent:angle": 0.5
+      }
     },
     {
+      "model": "pantheonsent:item/scarab_compass_5",
       "predicate": {
-        "pantheonsent:angle": 0.625,
-        "pantheonsent:active": 1.0
-      },
-      "model": "pantheonsent:item/scarab_compass_5"
+        "pantheonsent:active": 1.0,
+        "pantheonsent:angle": 0.625
+      }
     },
     {
+      "model": "pantheonsent:item/scarab_compass_6",
       "predicate": {
-        "pantheonsent:angle": 0.75,
-        "pantheonsent:active": 1.0
-      },
-      "model": "pantheonsent:item/scarab_compass_6"
+        "pantheonsent:active": 1.0,
+        "pantheonsent:angle": 0.75
+      }
     },
     {
+      "model": "pantheonsent:item/scarab_compass_7",
       "predicate": {
-        "pantheonsent:angle": 0.875,
-        "pantheonsent:active": 1.0
-      },
-      "model": "pantheonsent:item/scarab_compass_7"
+        "pantheonsent:active": 1.0,
+        "pantheonsent:angle": 0.875
+      }
     }
-  ]
+  ],
+  "textures": {
+    "layer0": "pantheonsent:item/scarab_compass_0"
+  }
 }

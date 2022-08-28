@@ -13,7 +13,6 @@ import net.threetag.pantheonsent.inventory.PSMenuTypes;
 import net.threetag.pantheonsent.item.PSItems;
 import net.threetag.pantheonsent.item.crafting.PSRecipeSerializers;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
-import net.threetag.pantheonsent.world.PSStructureFeatures;
 import net.threetag.pantheonsent.world.PSStructureProcessorTypes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +29,6 @@ public class PantheonSent {
         PSEntityTypes.ENTITIES.register();
         PSVillagerProfessions.PROFESSIONS.register();
         PSPoiTypes.POI_TYPES.register();
-        PSStructureFeatures.STRUCTURES.register();
         PSStructureProcessorTypes.PROCESSOR_TYPES.register();
         PSRecipeSerializers.RECIPE_SERIALIZERS.register();
         PSRecipeSerializers.RECIPE_TYPES.register();
@@ -40,10 +38,7 @@ public class PantheonSent {
         PSEntityTypes.init();
         PantheonSentProperties.init();
 
-        LifecycleEvent.SETUP.register(() -> {
-            PSStructureFeatures.registerStructureFeatures();
-            PSVillagerProfessions.init();
-        });
+        LifecycleEvent.SETUP.register(PSVillagerProfessions::init);
 
         if (Platform.isDevelopmentEnvironment()) {
             PantheonSentDebug.init();

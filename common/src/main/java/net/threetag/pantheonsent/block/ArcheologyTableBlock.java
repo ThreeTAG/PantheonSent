@@ -1,7 +1,7 @@
 package net.threetag.pantheonsent.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -16,7 +16,7 @@ import net.threetag.pantheonsent.inventory.RestorationMenu;
 
 public class ArcheologyTableBlock extends Block {
 
-    public static final TranslatableComponent CONTAINER_TITLE = new TranslatableComponent("container.pantheonsent.restoration");
+    public static final Component CONTAINER_TITLE = Component.translatable("container.pantheonsent.restoration");
 
     public ArcheologyTableBlock(Properties properties) {
         super(properties);

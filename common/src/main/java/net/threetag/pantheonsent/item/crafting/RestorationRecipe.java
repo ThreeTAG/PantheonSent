@@ -1,7 +1,6 @@
 package net.threetag.pantheonsent.item.crafting;
 
 import com.google.gson.JsonObject;
-import dev.architectury.core.AbstractRecipeSerializer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -83,7 +82,7 @@ public class RestorationRecipe implements Recipe<Container> {
         return Stream.of(this.base, this.addition).anyMatch((ingredient) -> ingredient.getItems().length == 0);
     }
 
-    public static class Serializer extends AbstractRecipeSerializer<RestorationRecipe> {
+    public static class Serializer implements RecipeSerializer<RestorationRecipe> {
 
         @Override
         public RestorationRecipe fromJson(ResourceLocation recipeId, JsonObject json) {

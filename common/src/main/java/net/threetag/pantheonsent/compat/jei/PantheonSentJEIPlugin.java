@@ -1,15 +1,16 @@
-package net.threetag.pantheonsent.compat.jei.forge;
+package net.threetag.pantheonsent.compat.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.*;
-import mezz.jei.util.ErrorUtil;
+import mezz.jei.common.util.ErrorUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.client.screen.RestorationScreen;
+import net.threetag.pantheonsent.inventory.PSMenuTypes;
 import net.threetag.pantheonsent.inventory.RestorationMenu;
 import net.threetag.pantheonsent.item.crafting.RestorationRecipe;
 
@@ -45,7 +46,7 @@ public class PantheonSentJEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
-        registration.addRecipeTransferHandler(RestorationMenu.class, RESTORATION, 0, 2, 3, 36);
+        registration.addRecipeTransferHandler(RestorationMenu.class, PSMenuTypes.RESTORATION.get(), RESTORATION, 0, 2, 3, 36);
     }
 
     @Override

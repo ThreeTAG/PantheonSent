@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.item.PSItems;
 import org.jetbrains.annotations.NotNull;
@@ -59,15 +60,15 @@ public class PSItemModelProvider extends ItemModelProvider {
     }
 
     public void defaultItem(Supplier<Item> item, String parent) {
-        this.singleTexture(item.get().getRegistryName().getPath(), new ResourceLocation(parent), "layer0", new ResourceLocation(PantheonSent.MOD_ID, "item/" + item.get().getRegistryName().getPath()));
+        this.singleTexture(ForgeRegistries.ITEMS.getKey(item.get()).getPath(), new ResourceLocation(parent), "layer0", new ResourceLocation(PantheonSent.MOD_ID, "item/" + ForgeRegistries.ITEMS.getKey(item.get()).getPath()));
     }
 
     public void defaultBlockItem(Supplier<Item> item) {
-        this.withExistingParent(item.get().getRegistryName().getPath(), new ResourceLocation(item.get().getRegistryName().getNamespace(), "block/" + item.get().getRegistryName().getPath()));
+        this.withExistingParent(ForgeRegistries.ITEMS.getKey(item.get()).getPath(), new ResourceLocation(ForgeRegistries.ITEMS.getKey(item.get()).getNamespace(), "block/" + ForgeRegistries.ITEMS.getKey(item.get()).getPath()));
     }
 
     public void defaultBlockItem(Supplier<Item> item, ResourceLocation parent) {
-        this.withExistingParent(item.get().getRegistryName().getPath(), parent);
+        this.withExistingParent(ForgeRegistries.ITEMS.getKey(item.get()).getPath(), parent);
     }
 
     @NotNull

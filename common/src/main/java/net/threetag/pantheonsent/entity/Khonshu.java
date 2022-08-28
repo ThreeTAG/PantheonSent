@@ -4,7 +4,7 @@ import dev.architectury.extensions.network.EntitySpawnExtension;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -187,7 +187,7 @@ public class Khonshu extends Mob implements EntitySpawnExtension {
             }
 
             if (line > 0) {
-                avatar.displayClientMessage(new TranslatableComponent("entity.pantheonsent.khonshu.recruitment_line_" + line), true);
+                avatar.displayClientMessage(Component.translatable("entity.pantheonsent.khonshu.recruitment_line_" + line), true);
             }
 
             Khonshu.this.recruitingTimer++;

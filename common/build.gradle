@@ -1,16 +1,22 @@
+architectury {
+    common(rootProject.enabled_platforms.split(","))
+}
+
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "dev.architectury:architectury:${rootProject.architectury_version}"
     modApi "net.threetag:Palladium:${rootProject.palladium_version}"
+
+    // JEI
+    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-common:${rootProject.jei_version}"
+    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-common-api:${rootProject.jei_version}"
+
+    // REI
+    modCompileOnlyApi "me.shedaniel:RoughlyEnoughItems-api:${rootProject.rei_version}"
 }
 
 loom {
     accessWidenerPath = file("src/main/resources/pantheonsent.accessWidener")
-    enableTransitiveAccessWideners = true
-}
-
-architectury {
-    common()
 }
 
 publishing {

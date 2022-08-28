@@ -2,7 +2,6 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -17,10 +16,10 @@
           "type": "minecraft:item",
           "name": "minecraft:clock"
         }
-      ]
+      ],
+      "rolls": 1.0
     },
     {
-      "rolls": 4.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -31,7 +30,8 @@
           "type": "minecraft:item",
           "name": "minecraft:dead_bush"
         }
-      ]
+      ],
+      "rolls": 4.0
     }
   ]
 }

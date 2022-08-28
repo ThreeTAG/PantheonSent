@@ -17,9 +17,9 @@ public class PSClientEventHandler implements ClientRawInputEvent.MouseClicked {
 
     @Override
     public EventResult mouseClicked(Minecraft client, int button, int action, int mods) {
-        if (!Ability.getEnabledEntries(client.player, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
+//        if (!Ability.getEnabledEntries(client.player, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
 //            return EventResult.interruptFalse();
-        }
+//        }
         return EventResult.pass();
     }
 }

@@ -49,7 +49,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocking");
 
             // Container
-            this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restoration");
+            this.add("container.pantheonsent.restoration", "Restoration");
 
             // Entities
             this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");
@@ -96,7 +96,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocken");
 
             // Container
-            this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restauration");
+            this.add("container.pantheonsent.restoration", "Restauration");
 
             // Entities
             this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");
@@ -143,7 +143,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocken");
 
             // Container
-            this.add(ArcheologyTableBlock.CONTAINER_TITLE.getKey(), "Restauration");
+            this.add("container.pantheonsent.restoration", "Restauration");
 
             // Entities
             this.addEntityType(PSEntityTypes.KHONSHU, "Khonshu");

@@ -20,11 +20,14 @@
     "client": [
       "net.threetag.pantheonsent.fabric.PantheonSentFabricClient"
     ],
+    "jei_mod_plugin": [
+      "net.threetag.pantheonsent.compat.jei.PantheonSentJEIPlugin"
+    ],
     "rei_client": [
-      "net.threetag.pantheonsent.compat.rei.fabric.PantheonSentREIClientPlugin"
+      "net.threetag.pantheonsent.compat.rei.PantheonSentREIClientPlugin"
     ],
     "rei_server": [
-      "net.threetag.pantheonsent.compat.rei.fabric.PantheonSentREIServerPlugin"
+      "net.threetag.pantheonsent.compat.rei.PantheonSentREIServerPlugin"
     ]
   },
   "mixins": [

@@ -1,4 +1,4 @@
-package net.threetag.pantheonsent.compat.rei.fabric;
+package net.threetag.pantheonsent.compat.rei;
 
 import com.google.common.collect.Lists;
 import me.shedaniel.math.Point;
@@ -18,7 +18,7 @@ import java.util.List;
 public class RestorationCategory implements DisplayCategory<RestorationDisplay> {
 
     @Override
-    public CategoryIdentifier getCategoryIdentifier() {
+    public CategoryIdentifier<RestorationDisplay> getCategoryIdentifier() {
         return PantheonSentREIServerPlugin.RESTORATION;
     }
 

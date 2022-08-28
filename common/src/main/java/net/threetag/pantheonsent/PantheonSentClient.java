@@ -9,9 +9,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.dynamictexture.DynamicTexture;
-import net.threetag.palladium.client.model.animation.HumanoidAnimationsManager;
 import net.threetag.palladium.client.renderer.renderlayer.ModelLookup;
 import net.threetag.palladium.client.renderer.renderlayer.RenderLayerRegistry;
+import net.threetag.palladium.event.PalladiumClientEvents;
 import net.threetag.palladium.item.CurioTrinketRegistry;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.client.PSClientEventHandler;
@@ -47,9 +47,11 @@ public class PantheonSentClient {
         CurioTrinketRegistry.registerRenderer(PSItems.EYE_OF_HORUS.get(), new EyeOfHorusRenderer(null));
         RenderLayerRegistry.addLayer(entityType -> true, renderLayerParent -> new EyeOfHorusRenderer((RenderLayerParent<LivingEntity, EntityModel<LivingEntity>>) renderLayerParent));
 
-        HumanoidAnimationsManager.registerAnimation(new KhonshuRecruitmentAnimation());
-        HumanoidAnimationsManager.registerAnimation(GlidingAnimation.INSTANCE);
-        HumanoidAnimationsManager.registerAnimation(BlockingAnimation.INSTANCE);
+        PalladiumClientEvents.REGISTER_ANIMATIONS.register(registry -> {
+            registry.accept(PantheonSent.id("khonshu_recruitment"), new KhonshuRecruitmentAnimation());
+            registry.accept(PantheonSent.id("gliding"), GlidingAnimation.INSTANCE);
+            registry.accept(PantheonSent.id("blocking"), BlockingAnimation.INSTANCE);
+        });
     }
 
 }

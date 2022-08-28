@@ -1,8 +1,8 @@
-package net.threetag.pantheonsent.compat.jei.forge;
+package net.threetag.pantheonsent.compat.jei;
 
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.plugins.vanilla.crafting.CategoryRecipeValidator;
-import mezz.jei.util.ErrorUtil;
+import mezz.jei.common.plugins.vanilla.crafting.CategoryRecipeValidator;
+import mezz.jei.common.util.ErrorUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.world.Container;

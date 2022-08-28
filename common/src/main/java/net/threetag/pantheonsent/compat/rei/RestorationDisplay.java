@@ -1,4 +1,4 @@
-package net.threetag.pantheonsent.compat.rei.fabric;
+package net.threetag.pantheonsent.compat.rei;
 
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.basic.BasicDisplay;

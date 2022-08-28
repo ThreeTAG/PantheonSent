@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "side": "pantheonsent:block/gilded_sandstone_pillar",
-    "end": "pantheonsent:block/gilded_sandstone_pillar_top"
+    "end": "pantheonsent:block/gilded_sandstone_pillar_top",
+    "side": "pantheonsent:block/gilded_sandstone_pillar"
   }
 }

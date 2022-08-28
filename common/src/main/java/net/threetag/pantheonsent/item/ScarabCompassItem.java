@@ -17,6 +17,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.phys.Vec3;
 import net.threetag.palladium.item.CreativeModeTabFiller;
 import net.threetag.palladium.item.SortedItem;
@@ -36,10 +37,11 @@ public class ScarabCompassItem extends SortedItem {
         ItemStack stack = player.getItemInHand(usedHand);
 
         if (!stack.getOrCreateTag().contains("TargetPos") && level instanceof ServerLevel serverLevel) {
-            var structure = level.registryAccess().registry(Registry.CONFIGURED_STRUCTURE_FEATURE_REGISTRY).get().get(PantheonSent.id("khonshu_temple"));
+            Registry<Structure> registry = serverLevel.registryAccess().registryOrThrow(Registry.STRUCTURE_REGISTRY);
+            var structure = registry.get(PantheonSent.id("khonshu_temple"));
 
             if (structure != null) {
-                var pos = serverLevel.getChunkSource().getGenerator().findNearestMapFeature(serverLevel, HolderSet.direct(Holder.direct(structure)), player.blockPosition(), 100, false);
+                var pos = serverLevel.getChunkSource().getGenerator().findNearestMapStructure(serverLevel, HolderSet.direct(Holder.direct(structure)), player.blockPosition(), 100, false);
                 stack.getOrCreateTag().put("TargetPos", NbtUtils.writeBlockPos(Objects.requireNonNull(pos).getFirst()));
             }
 

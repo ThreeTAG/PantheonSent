@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.mojang.serialization.Codec;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -35,7 +36,7 @@ public class MysteriousBlocksProcessor extends StructureProcessor {
         if(relativeBlockInfo.state.is(Blocks.SPONGE)) {
             BlockState origBlock = level.getBlockState(relativeBlockInfo.pos);
             Block block = REPLACEMENTS.get(origBlock.getBlock());
-            Random random = settings.getRandom(relativeBlockInfo.pos);
+            RandomSource random = settings.getRandom(relativeBlockInfo.pos);
 
             if (block == null || random.nextInt(3) != 0) {
                 return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos, origBlock, null);

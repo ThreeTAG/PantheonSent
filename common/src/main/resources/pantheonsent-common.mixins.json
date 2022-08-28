@@ -6,7 +6,6 @@
     "ItemInHandRendererMixin"
   ],
   "mixins": [
-    "StructureFeatureAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

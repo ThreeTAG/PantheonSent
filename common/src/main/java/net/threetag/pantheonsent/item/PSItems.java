@@ -21,7 +21,7 @@ public class PSItems {
     public static final CreativeModeTabFiller FILLER_AFTER_CHISELED_SANDSTONE = new CreativeModeTabFiller(() -> Items.CHISELED_SANDSTONE);
     public static final CreativeModeTabFiller FILLER_AFTER_CUT_SANDSTONE = new CreativeModeTabFiller(() -> Items.CUT_SANDSTONE);
     public static final CreativeModeTabFiller FILLER_AFTER_DAYLIGHT_DETECTOR = new CreativeModeTabFiller(() -> Items.DAYLIGHT_DETECTOR);
-    public static final CreativeModeTabFiller FILLER_AFTER_COMPASS = new CreativeModeTabFiller(() -> Items.COMPASS);
+    public static final CreativeModeTabFiller FILLER_AFTER_COMPASS = new CreativeModeTabFiller(() -> Items.RECOVERY_COMPASS);
     public static final CreativeModeTabFiller FILLER_AFTER_STONECUTTER = new CreativeModeTabFiller(() -> Blocks.STONECUTTER);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(PantheonSent.MOD_ID, Registry.ITEM_REGISTRY);
 
