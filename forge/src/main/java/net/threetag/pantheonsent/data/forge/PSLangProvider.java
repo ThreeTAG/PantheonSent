@@ -1,11 +1,9 @@
 package net.threetag.pantheonsent.data.forge;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.common.data.LanguageProvider;
 import net.threetag.palladium.data.forge.ExtendedLangProvider;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.ability.PSAbilities;
-import net.threetag.pantheonsent.block.ArcheologyTableBlock;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.item.PSItems;
@@ -60,6 +58,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_5", "...as my...");
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Crescent Dart");
+            this.add("minecraft.villager.pantheonsent.archeologist", "Archeologist");
         }
     }
 
@@ -107,6 +106,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_5", "Du bist...");
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
+            this.add("minecraft.villager.pantheonsent.archeologist", "Arch\u00E4ologe");
         }
     }
 
@@ -154,6 +154,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_5", "Du bischd...");
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
+            this.add("minecraft.villager.pantheonsent.archeologist", "Arsch\u00E4oloje");
         }
     }
 

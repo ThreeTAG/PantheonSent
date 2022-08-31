@@ -13,6 +13,6 @@ public class PSPoiTypes {
     public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(PantheonSent.MOD_ID, Registry.POINT_OF_INTEREST_TYPE_REGISTRY);
 
     public static final RegistrySupplier<PoiType> ARCHEOLOGIST = POI_TYPES.register("archeologist",
-            () -> PoiTypeUtil.fromBlock("archeologist", PSBlocks.ARCHEOLOGY_TABLE.get()));
+            () -> PoiTypeUtil.fromBlock(PSBlocks.ARCHEOLOGY_TABLE.get()));
 
 }

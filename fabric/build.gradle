@@ -48,6 +48,9 @@ dependencies {
     // REI
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rootProject.rei_version}"
 
+    // WorldEdit
+    modLocalRuntime "curse.maven:worldedit-225608:${rootProject.worldedit_version}"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }

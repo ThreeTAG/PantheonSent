@@ -42,17 +42,19 @@ public class PantheonSentForge {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent e) {
-        BlockTagsProvider blockTags = new PSBlockTagsProvider(e.getGenerator(), e.getExistingFileHelper());
-        e.getGenerator().addProvider(e.includeServer(), new PSRecipeProvider(e.getGenerator()));
         e.getGenerator().addProvider(e.includeClient(), new PSLangProvider.English(e.getGenerator()));
         e.getGenerator().addProvider(e.includeClient(), new PSLangProvider.German(e.getGenerator()));
         e.getGenerator().addProvider(e.includeClient(), new PSLangProvider.Saxon(e.getGenerator()));
         e.getGenerator().addProvider(e.includeClient(), new PSBlockStateProvider(e.getGenerator(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeClient(), new PSItemModelProvider(e.getGenerator(), e.getExistingFileHelper()));
+
+        BlockTagsProvider blockTags = new PSBlockTagsProvider(e.getGenerator(), e.getExistingFileHelper());
         e.getGenerator().addProvider(e.includeServer(), blockTags);
+        e.getGenerator().addProvider(e.includeServer(), new PSRecipeProvider(e.getGenerator()));
         e.getGenerator().addProvider(e.includeServer(), new PSItemTagsProvider(e.getGenerator(), blockTags, e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeServer(), new PSPoiTypeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeServer(), new PSBlockLootTableProvider(e.getGenerator()));
-//        e.getGenerator().addProvider(new PSBiomeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeServer(), new PSBiomeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
     }
 
 }

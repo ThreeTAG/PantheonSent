@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 public class PSBiomeTagsProvider extends BiomeTagsProvider {
 
     public static final TagKey<Biome> HAS_KHONSHU_TEMPLE = create("has_structure/khonshu_temple");
+    public static final TagKey<Biome> HAS_DIG_SITE_DESERT = create("has_structure/dig_site_desert");
 
     public PSBiomeTagsProvider(DataGenerator arg, @Nullable ExistingFileHelper existingFileHelper) {
         super(arg, PantheonSent.MOD_ID, existingFileHelper);
@@ -21,6 +22,7 @@ public class PSBiomeTagsProvider extends BiomeTagsProvider {
     @Override
     protected void addTags() {
         this.tag(HAS_KHONSHU_TEMPLE).addTag(BiomeTags.HAS_DESERT_PYRAMID);
+        this.tag(HAS_DIG_SITE_DESERT).addTag(BiomeTags.HAS_DESERT_PYRAMID);
     }
 
     private static TagKey<Biome> create(String name) {
