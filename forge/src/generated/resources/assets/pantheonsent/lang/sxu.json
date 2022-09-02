@@ -11,6 +11,7 @@
   "block.pantheonsent.mysterious_sand": "Mysteriöser Sand",
   "block.pantheonsent.sandstone_totem_holder": "Sandschdeentotemhalderr",
   "container.pantheonsent.restoration": "Restauration",
+  "entity.minecraft.villager.pantheonsent.archeologist": "Arschäoloje",
   "entity.pantheonsent.crescent_dart": "Halbmondpfeil",
   "entity.pantheonsent.khonshu": "Khonshu",
   "entity.pantheonsent.khonshu.recruitment_line_1": "Du bischd ehn würd'ger Kandidat mir in dieser Zeit zu dienen.",
@@ -23,6 +24,5 @@
   "item.pantheonsent.eye_of_horus": "Horusooche",
   "item.pantheonsent.lunar_totem": "Lunartotem",
   "item.pantheonsent.scarab_compass": "Schgarabäusgombass",
-  "minecraft.villager.pantheonsent.archeologist": "Arschäoloje",
   "power.pantheonsent.moon_knight": "Moon Knight"
 }
