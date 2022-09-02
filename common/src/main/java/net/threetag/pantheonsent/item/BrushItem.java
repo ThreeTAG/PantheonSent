@@ -48,8 +48,13 @@ public class BrushItem extends Item {
             var state = level.getBlockState(pos);
 
             if (livingEntity.tickCount % 20 == 0) {
-                if (level.getBlockEntity(pos) instanceof BrushableBlockEntity blockEntity) {
+                if (level.getBlockEntity(pos) instanceof BrushableBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof BrushableBlock brushableBlock) {
                     int stage = state.getValue(BrushableBlock.STAGE);
+
+                    if(blockEntity.lootTable == null) {
+                        blockEntity.lootTable = brushableBlock.lootTable;
+                    }
+
                     blockEntity.unpackLootTable(livingEntity instanceof Player player ? player : null);
                     blockEntity.setLootTable(null, 0);
 
