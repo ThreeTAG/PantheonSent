@@ -4,8 +4,8 @@ architectury {
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    modApi "dev.architectury:architectury:${rootProject.architectury_version}"
     modApi "net.threetag:Palladium:${rootProject.palladium_version}"
+    modApi "net.threetag:PalladiumCore:${rootProject.palladiumcore_version}"
 
     // JEI
     modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-common:${rootProject.jei_version}"
@@ -16,7 +16,7 @@ dependencies {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/pantheonsent.accessWidener")
+    accessWidenerPath = file("src/main/resources/pantheonsent.accesswidener")
 }
 
 publishing {

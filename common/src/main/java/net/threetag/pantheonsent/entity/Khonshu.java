@@ -1,7 +1,5 @@
 package net.threetag.pantheonsent.entity;
 
-import dev.architectury.extensions.network.EntitySpawnExtension;
-import dev.architectury.networking.NetworkManager;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -17,12 +15,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
 import net.threetag.palladium.util.property.PalladiumProperties;
+import net.threetag.palladiumcore.network.ExtendedEntitySpawnData;
+import net.threetag.palladiumcore.network.NetworkManager;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
 
 import java.util.UUID;
 
-public class Khonshu extends Mob implements EntitySpawnExtension {
+public class Khonshu extends Mob implements ExtendedEntitySpawnData {
 
     public UUID avatarId;
     public Player avatar;

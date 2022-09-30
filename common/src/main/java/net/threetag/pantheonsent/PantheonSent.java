@@ -1,8 +1,8 @@
 package net.threetag.pantheonsent;
 
-import dev.architectury.event.events.common.LifecycleEvent;
-import dev.architectury.platform.Platform;
 import net.minecraft.resources.ResourceLocation;
+import net.threetag.palladiumcore.event.LifecycleEvents;
+import net.threetag.palladiumcore.util.Platform;
 import net.threetag.pantheonsent.ability.PSAbilities;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
@@ -38,9 +38,9 @@ public class PantheonSent {
         PSEntityTypes.init();
         PantheonSentProperties.init();
 
-        LifecycleEvent.SETUP.register(PSVillagerProfessions::init);
+        LifecycleEvents.SETUP.register(PSVillagerProfessions::init);
 
-        if (Platform.isDevelopmentEnvironment()) {
+        if (!Platform.isProduction()) {
             PantheonSentDebug.init();
         }
     }

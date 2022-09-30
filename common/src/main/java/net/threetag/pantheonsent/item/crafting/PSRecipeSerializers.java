@@ -1,10 +1,10 @@
 package net.threetag.pantheonsent.item.crafting;
 
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.threetag.palladiumcore.registry.DeferredRegister;
+import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.pantheonsent.PantheonSent;
 
 public class PSRecipeSerializers {

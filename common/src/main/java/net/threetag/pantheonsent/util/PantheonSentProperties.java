@@ -3,12 +3,13 @@ package net.threetag.pantheonsent.util;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.world.entity.Entity;
-import net.threetag.palladium.event.PalladiumClientEvents;
 import net.threetag.palladium.event.PalladiumEvents;
 import net.threetag.palladium.power.ability.Ability;
 import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
 import net.threetag.palladium.util.property.SyncType;
+import net.threetag.palladiumcore.event.InputEvents;
+import net.threetag.palladiumcore.event.LivingEntityEvents;
 import net.threetag.pantheonsent.ability.PSAbilities;
 import net.threetag.pantheonsent.entity.Khonshu;
 
@@ -21,7 +22,7 @@ public class PantheonSentProperties {
             handler.register(KHONSHU_RECRUITING_TIMER, 0);
         });
 
-        PalladiumEvents.LIVING_UPDATE.register(entity -> {
+        LivingEntityEvents.TICK.register(entity -> {
             if (KHONSHU_RECRUITING_TIMER.isRegistered(entity) && KHONSHU_RECRUITING_TIMER.get(entity) > 0) {
                 for (Entity en : entity.level.getEntities(entity, entity.getBoundingBox().inflate(30), entity1 -> entity1 instanceof Khonshu)) {
                     if (en instanceof Khonshu khonshu && khonshu.avatarId != null && khonshu.avatarId.equals(entity.getUUID())) {
@@ -35,7 +36,7 @@ public class PantheonSentProperties {
 
     @Environment(EnvType.CLIENT)
     public static void initClient() {
-        PalladiumClientEvents.MOVEMENT_INPUT_UPDATE.register((player, input) -> {
+        InputEvents.MOVEMENT_INPUT_UPDATE.register((player, input) -> {
             if (
                     (KHONSHU_RECRUITING_TIMER.isRegistered(player) && KHONSHU_RECRUITING_TIMER.get(player) > 0)
                             || !Ability.getEnabledEntries(player, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()

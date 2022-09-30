@@ -47,10 +47,10 @@ configurations {
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
-    modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
     modApi ("net.threetag:Palladium-forge:${rootProject.palladium_version}", {
         exclude group: "com.github.Virtuoel"
     })
+    modApi "net.threetag:PalladiumCore-forge:${rootProject.palladiumcore_version}"
 
     // Shutup Experimental Settings
     modLocalRuntime "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupexperimentalsettings_version}"
@@ -84,7 +84,7 @@ sourceSets.main.resources {
 
 shadowJar {
     exclude "fabric.mod.json"
-    exclude "pantheonsent.common.json"
+    exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
@@ -94,6 +94,7 @@ remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
     classifier null
+    archiveClassifier = 'forge'
 }
 
 jar {
