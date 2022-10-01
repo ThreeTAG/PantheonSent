@@ -12,13 +12,11 @@
       "hidden": false,
       "icon": "pantheonsent:textures/icon/moon_knight.png",
       "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:toggle",
-            "ticks": 3600,
-            "cooldown": 12000
-          }
-        ]
+        "enabling": {
+          "type": "palladium:toggle",
+          "ticks": 3600,
+          "cooldown": 12000
+        }
       }
     },
     "render_layer": {
@@ -46,30 +44,24 @@
             ]
           }
         ],
-        "enabling": [
-          {
-            "type": "palladium:action",
-            "cooldown": 60,
-            "key_type": "left_click"
-          }
-        ]
+        "enabling": {
+          "type": "palladium:action",
+          "cooldown": 60,
+          "key_type": "left_click"
+        }
       }
     },
     "gliding": {
       "type": "pantheonsent:moon_knight_gliding",
       "hidden": true,
       "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "activate"
-          }
-        ],
-        "enabling": [
-          {
-            "type": "palladium:crouching"
-          }
-        ]
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "activate"
+        },
+        "enabling": {
+          "type": "palladium:crouching"
+        }
       }
     },
     "blocking": {
@@ -77,18 +69,14 @@
       "icon": "pantheonsent:textures/icon/moon_knight_blocking.png",
       "list_index": 2,
       "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "activate"
-          }
-        ],
-        "enabling": [
-          {
-            "type": "palladium:held",
-            "key_type": "right_click"
-          }
-        ]
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "activate"
+        },
+        "enabling": {
+          "type": "palladium:held",
+          "key_type": "right_click"
+        }
       }
     },
     "healing": {
@@ -101,12 +89,10 @@
       "last_tick_commands": "null",
       "commands": "null",
       "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "activate"
-          }
-        ]
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "activate"
+        }
       }
     },
     "resistance": {
@@ -117,12 +103,10 @@
       "operation": 0,
       "uuid": "d28fbccf-96c1-4443-85ae-933fef7a6554",
       "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "activate"
-          }
-        ]
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "activate"
+        }
       }
     },
     "strength": {
@@ -133,12 +117,10 @@
       "operation": 0,
       "uuid": "d28fbccf-96c1-4443-85ae-933fef7a6554",
       "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "activate"
-          }
-        ]
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "activate"
+        }
       }
     },
     "speed": {
@@ -149,12 +131,10 @@
       "operation": 2,
       "uuid": "d28fbccf-96c1-4443-85ae-933fef7a6554",
       "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "activate"
-          }
-        ]
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "activate"
+        }
       }
     }
   }
