@@ -26,6 +26,7 @@
     {
       "model_layer": "pantheonsent:humanoid#moon_knight_cape",
       "model": "pantheonsent:moon_knight_cape",
+      "hidden_body_parts": "cape",
       "texture": {
         "base": "pantheonsent:textures/models/moon_knight_cape/#STAGE.png",
         "transformers": [
