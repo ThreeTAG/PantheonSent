@@ -44,6 +44,7 @@ public class PantheonSentForge {
         e.getGenerator().addProvider(e.includeServer(), new PSPoiTypeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeServer(), new PSBlockLootTableProvider(e.getGenerator()));
         e.getGenerator().addProvider(e.includeServer(), new PSBiomeTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeServer(), new PSBannerPatternTagsProvider(e.getGenerator(), e.getExistingFileHelper()));
     }
 
 }

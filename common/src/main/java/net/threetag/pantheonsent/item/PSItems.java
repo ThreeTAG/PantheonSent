@@ -7,11 +7,13 @@ import net.minecraft.core.Registry;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
 import net.threetag.palladium.item.CreativeModeTabFiller;
+import net.threetag.palladium.item.SortedBannerPatternItem;
 import net.threetag.palladium.item.SortedBlockItem;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.block.PSBlocks;
+import net.threetag.pantheonsent.tags.PSBannerPatternTags;
 
 public class PSItems {
 
@@ -39,6 +41,8 @@ public class PSItems {
     public static final RegistrySupplier<Item> LUNAR_TOTEM = ITEMS.register("lunar_totem", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.UNCOMMON).stacksTo(1)));
     public static final RegistrySupplier<Item> SCARAB_COMPASS = ITEMS.register("scarab_compass", () -> new ScarabCompassItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1), FILLER_AFTER_COMPASS));
     public static final RegistrySupplier<Item> EYE_OF_HORUS = ITEMS.register("eye_of_horus", () -> new EyeOfHorusItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(3)));
+
+    public static final RegistrySupplier<Item> CRESCENT_BANNER_PATTERN = ITEMS.register("crescent_banner_pattern", () -> new SortedBannerPatternItem(PSBannerPatternTags.PATTERN_CRESCENT, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
     @Environment(EnvType.CLIENT)
     public static void initProperties() {

@@ -25,6 +25,8 @@ public class PSItemModelProvider extends ItemModelProvider {
         this.defaultTool(PSItems.BRUSH);
         this.defaultItem(PSItems.LUNAR_TOTEM);
         this.defaultItem(PSItems.EYE_OF_HORUS);
+        this.withExistingParent(PSItems.CRESCENT_BANNER_PATTERN.getId().getPath(), "item/creeper_banner_pattern");
+
         this.defaultBlockItem(PSItems.GILDED_SANDSTONE);
         this.defaultBlockItem(PSItems.GILDED_SANDSTONE_PILLAR);
         this.defaultBlockItem(PSItems.ARCHEOLOGY_TABLE);

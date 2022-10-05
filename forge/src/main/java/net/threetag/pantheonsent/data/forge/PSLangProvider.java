@@ -1,9 +1,11 @@
 package net.threetag.pantheonsent.data.forge;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.item.DyeColor;
 import net.threetag.palladium.data.forge.ExtendedLangProvider;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.ability.PSAbilities;
+import net.threetag.pantheonsent.block.PSBannerPatterns;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.item.PSItems;
@@ -38,6 +40,26 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.LUNAR_TOTEM, "Lunar Totem");
             this.addItem(PSItems.SCARAB_COMPASS, "Scarab Compass");
             this.addItem(PSItems.EYE_OF_HORUS, "Eye of Horus");
+            this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Banner Pattern");
+            this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Crescent");
+
+            // Banner Pattern
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.WHITE, "White Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.ORANGE, "Orange Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.MAGENTA, "Magenta Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIGHT_BLUE, "Light Blue Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.YELLOW, "Yellow Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIME, "Lime Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.PINK, "Pink Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.GRAY, "Gray Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIGHT_GRAY, "Light Gray Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.CYAN, "Cyan Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.PURPLE, "Purple Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BLUE, "Blue Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BROWN, "Brown Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.GREEN, "Green Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.RED, "Red Crescent");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BLACK, "Black Crescent");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
@@ -86,6 +108,26 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
             this.addItem(PSItems.SCARAB_COMPASS, "Skarab\u00E4uskompass");
             this.addItem(PSItems.EYE_OF_HORUS, "Horusauge");
+            this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannervorlage");
+            this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
+
+            // Banner Pattern
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.WHITE, "Wei\u00DFer Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.ORANGE, "Oranger Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.MAGENTA, "Magenta Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIGHT_BLUE, "Hellblauer Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.YELLOW, "Gelber Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIME, "Hellgr\u00FCner Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.PINK, "Rosa Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.GRAY, "Grauer Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIGHT_GRAY, "Hellgrauer Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.CYAN, "T\u00FCrkiser Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.PURPLE, "Violetter Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BLUE, "Blauer Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BROWN, "Brauner Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.GREEN, "Gr\u00FCner Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.RED, "Roter Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BLACK, "Schwarzer Halbmond");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");
@@ -134,6 +176,26 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
             this.addItem(PSItems.SCARAB_COMPASS, "Schgarab\u00E4usgombass");
             this.addItem(PSItems.EYE_OF_HORUS, "Horusooche");
+            this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannorrvorlaache");
+            this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
+
+            // Banner Pattern
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.WHITE, "Weeßorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.ORANGE, "Orangschorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.MAGENTA, "Magenda Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIGHT_BLUE, "Hellblauorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.YELLOW, "Gelborr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIME, "Hellgrienorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.PINK, "Pingorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.GRAY, "Grauorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.LIGHT_GRAY, "Hellgrauorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.CYAN, "D\u00FCrgisorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.PURPLE, "Lila Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BLUE, "Blauorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BROWN, "Braunorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.GREEN, "Grienorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.RED, "Rodorr Halbmond");
+            this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.BLACK, "Schworzorr Halbmond");
 
             // Powers
             this.add("power.pantheonsent.moon_knight", "Moon Knight");

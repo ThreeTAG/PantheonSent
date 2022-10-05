@@ -4,6 +4,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.threetag.palladiumcore.event.LifecycleEvents;
 import net.threetag.palladiumcore.util.Platform;
 import net.threetag.pantheonsent.ability.PSAbilities;
+import net.threetag.pantheonsent.block.PSBannerPatterns;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
@@ -34,6 +35,7 @@ public class PantheonSent {
         PSRecipeSerializers.RECIPE_TYPES.register();
         PSMenuTypes.MENU_TYPES.register();
         PSAbilities.ABILITIES.register();
+        PSBannerPatterns.BANNER_PATTERNS.register();
 
         PSEntityTypes.init();
         PantheonSentProperties.init();

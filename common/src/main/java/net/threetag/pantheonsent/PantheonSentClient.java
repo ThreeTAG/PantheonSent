@@ -9,6 +9,7 @@ import net.threetag.palladium.client.dynamictexture.DynamicTexture;
 import net.threetag.palladium.client.renderer.renderlayer.ModelLookup;
 import net.threetag.palladium.event.PalladiumClientEvents;
 import net.threetag.palladium.item.CurioTrinketRegistry;
+import net.threetag.palladiumcore.event.LifecycleEvents;
 import net.threetag.palladiumcore.registry.client.EntityRendererRegistry;
 import net.threetag.palladiumcore.registry.client.RenderTypeRegistry;
 import net.threetag.pantheonsent.block.PSBlocks;
@@ -31,8 +32,6 @@ public class PantheonSentClient {
 
     @SuppressWarnings("unchecked")
     public static void init() {
-        PSItems.initProperties();
-        PSMenuTypes.initScreens();
         PantheonSentProperties.initClient();
         PSClientEventHandler.init();
 
@@ -48,15 +47,21 @@ public class PantheonSentClient {
         // Dynamic Texture Variables
         DynamicTexture.registerVariable(PantheonSent.id("moon_knight_cape"), MoonKnightCapeTextureVariable::new);
 
-        // Render Types
-        RenderTypeRegistry.registerBlock(RenderType.cutout(), PSBlocks.KHONSHU_USHABTI.get());
-        CurioTrinketRegistry.registerRenderer(PSItems.EYE_OF_HORUS.get(), new EyeOfHorusRenderer(null));
-
         // Animations
         PalladiumClientEvents.REGISTER_ANIMATIONS.register(registry -> {
             registry.accept(PantheonSent.id("khonshu_recruitment"), new KhonshuRecruitmentAnimation());
             registry.accept(PantheonSent.id("gliding"), GlidingAnimation.INSTANCE);
             registry.accept(PantheonSent.id("blocking"), BlockingAnimation.INSTANCE);
+        });
+
+        // During Setup
+        LifecycleEvents.CLIENT_SETUP.register(() -> {
+            PSItems.initProperties();
+            PSMenuTypes.initScreens();
+
+            // Render Types
+            RenderTypeRegistry.registerBlock(RenderType.cutout(), PSBlocks.KHONSHU_USHABTI.get());
+            CurioTrinketRegistry.registerRenderer(PSItems.EYE_OF_HORUS.get(), new EyeOfHorusRenderer(null));
         });
     }
 
