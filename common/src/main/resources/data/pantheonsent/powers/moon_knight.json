@@ -136,6 +136,9 @@
           "ability": "activate"
         }
       }
+    },
+    "god_stalked": {
+      "type": "pantheonsent:god_stalked"
     }
   }
 }

@@ -4,6 +4,9 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -24,10 +27,12 @@ import java.util.UUID;
 
 public class Khonshu extends Mob implements ExtendedEntitySpawnData {
 
+    public Mode mode;
     public UUID avatarId;
     public Player avatar;
-    public boolean recruiting;
     public int recruitingTimer;
+    private static final EntityDataAccessor<Integer> DESPAWN_TIMER = SynchedEntityData.defineId(Khonshu.class, EntityDataSerializers.INT);
+    public int prevDespawnTimer = -1;
 
     public Khonshu(EntityType<? extends Mob> entityType, Level level) {
         super(entityType, level);
@@ -40,10 +45,16 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
         this.setPos(avatar.position());
     }
 
-    public Khonshu(Level level, Player avatar, boolean recruiting) {
+    public Khonshu(Level level, Player avatar, Mode mode) {
         this(level, avatar);
-        this.recruiting = recruiting;
+        this.mode = mode;
         this.recruitingTimer = 0;
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(DESPAWN_TIMER, -1);
     }
 
     @Override
@@ -70,36 +81,84 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+
+        // Despawn Timer Logic
+        int despawnTimer = this.getDespawnTimer();
+        this.prevDespawnTimer = despawnTimer;
+
+        if (despawnTimer > 0 && !this.level.isClientSide) {
+            despawnTimer--;
+
+            if (despawnTimer <= 0) {
+                this.discard();
+                despawnTimer = -1;
+            }
+
+            this.setDespawnTimer(despawnTimer);
+        }
+
+
+        // Stalking
+        if (this.mode == Mode.STALKING && !this.level.isClientSide && !this.isDespawning()) {
+            var avatar = this.getAvatar();
+
+            if (avatar == null || this.distanceTo(avatar) <= 15 || this.tickCount >= 20 * 60) {
+                this.setDespawnTimer(60);
+            }
+        }
+    }
+
+    @Override
     public boolean isInvisibleTo(Player player) {
         return this.avatarId == null || !this.avatarId.equals(player.getUUID());
+    }
+
+    public int getDespawnTimer() {
+        return this.entityData.get(DESPAWN_TIMER);
+    }
+
+    public float getDespawnTimer(float partialTicks) {
+        return Mth.lerp(partialTicks, this.prevDespawnTimer, this.getDespawnTimer());
+    }
+
+    public void setDespawnTimer(int timer) {
+        this.entityData.set(DESPAWN_TIMER, timer);
+    }
+
+    public boolean isDespawning() {
+        return this.getDespawnTimer() >= 0;
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putUUID("AvatarUUID", this.avatarId);
-        compound.putBoolean("Recruiting", this.recruiting);
+        compound.putInt("Mode", this.mode.ordinal());
         compound.putInt("RecruitingTimer", this.recruitingTimer);
+        compound.putInt("DespawnTimer", this.getDespawnTimer());
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         this.avatarId = compound.getUUID("AvatarUUID");
-        this.recruiting = compound.getBoolean("Recruiting");
+        this.mode = Mode.values()[compound.getInt("Mode")];
         this.recruitingTimer = compound.getInt("RecruitingTimer");
+        this.setDespawnTimer(compound.getInt("DespawnTimer"));
     }
 
     @Override
     public void saveAdditionalSpawnData(FriendlyByteBuf buf) {
         buf.writeUUID(this.avatarId);
-        buf.writeBoolean(this.recruiting);
+        buf.writeInt(this.mode.ordinal());
     }
 
     @Override
     public void loadAdditionalSpawnData(FriendlyByteBuf buf) {
         this.avatarId = buf.readUUID();
-        this.recruiting = buf.readBoolean();
+        this.mode = Mode.values()[buf.readInt()];
     }
 
     @Override
@@ -138,7 +197,7 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
 
         @Override
         public boolean canUse() {
-            return Khonshu.this.recruiting && Khonshu.this.getAvatar() != null;
+            return Khonshu.this.mode == Mode.RECRUITING && Khonshu.this.getAvatar() != null;
         }
 
         @Override
@@ -165,7 +224,7 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
                 double j = avatar.getZ() + (avatar.getRandom().nextDouble() - 0.5) * 3;
                 Khonshu.this.randomTeleport(g, h, j, false);
             } else if (timer == MAX_TIME) {
-                Khonshu.this.recruiting = false;
+                Khonshu.this.setDespawnTimer(60);
             }
 
             int line = 0;
@@ -194,4 +253,12 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
             PantheonSentProperties.KHONSHU_RECRUITING_TIMER.set(avatar, MAX_TIME - timer);
         }
     }
+
+    public enum Mode {
+
+        RECRUITING,
+        STALKING;
+
+    }
+
 }

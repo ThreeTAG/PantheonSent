@@ -11,5 +11,6 @@ public class PSAbilities {
 
     public static final RegistrySupplier<Ability> MOON_KNIGHT_GLIDING = ABILITIES.register("moon_knight_gliding", MoonKnightGlidingAbility::new);
     public static final RegistrySupplier<Ability> MOON_KNIGHT_BLOCKING = ABILITIES.register("moon_knight_blocking", MoonKnightBlockingAbility::new);
+    public static final RegistrySupplier<Ability> GOD_STALKED = ABILITIES.register("god_stalked", GodStalkedAbility::new);
 
 }
