@@ -16,6 +16,8 @@ import net.threetag.palladium.util.property.PropertyManager;
 import net.threetag.palladium.util.property.SyncType;
 import net.threetag.pantheonsent.entity.Khonshu;
 
+import java.util.Random;
+
 public class GodStalkedAbility extends Ability {
 
     public static final PalladiumProperty<Integer> TIMER = new IntegerProperty("timer").sync(SyncType.NONE);
@@ -53,8 +55,8 @@ public class GodStalkedAbility extends Ability {
     }
 
     public int getRandomMinutes() {
-        return 20 * 30;
-//        return (10 + new Random().nextInt(15)) * 60 * 20;
+        // TODO config/ability option?
+        return (10 + new Random().nextInt(15)) * 60 * 20;
     }
 
     public BlockPos getRandomPos(BlockPos center, Khonshu khonshu, Player player, Level level, int minRange, int maxRange, int attempt) {

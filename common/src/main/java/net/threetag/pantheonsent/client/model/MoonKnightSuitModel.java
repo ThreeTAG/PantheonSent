@@ -26,5 +26,6 @@ public class MoonKnightSuitModel<T extends LivingEntity> extends HumanoidModel<T
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
         this.loinCloth.xRot = -Math.max(0.1F, Math.max(this.leftLeg.xRot, this.rightLeg.xRot) * 1.5F);
+
     }
 }

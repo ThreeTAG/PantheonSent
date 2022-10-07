@@ -19,6 +19,20 @@
         }
       }
     },
+    "shrink_overlay": {
+      "type": "palladium:shrink_body_overlay",
+      "max_value": 5,
+      "conditions": {
+        "enabling": {
+          "type": "palladium:ability_integer_property",
+          "power": "pantheonsent:moon_knight",
+          "ability": "activate",
+          "property": "value",
+          "min": 1,
+          "max": 20
+        }
+      }
+    },
     "render_layer": {
       "type": "palladium:render_layer",
       "render_layer": "pantheonsent:moon_knight"

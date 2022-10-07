@@ -1,5 +1,13 @@
 {
   "type": "palladium:compound",
+  "conditions": {
+    "type": "palladium:ability_integer_property",
+    "power": "pantheonsent:moon_knight",
+    "ability": "activate",
+    "property": "value",
+    "min": 1,
+    "max": 20
+  },
   "layers": [
     {
       "model_layer": "pantheonsent:humanoid#moon_knight_suit",
