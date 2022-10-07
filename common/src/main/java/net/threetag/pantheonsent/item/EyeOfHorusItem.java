@@ -1,5 +1,6 @@
 package net.threetag.pantheonsent.item;
 
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -11,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.threetag.palladium.item.CurioTrinketItem;
 import net.threetag.palladium.util.PlayerUtil;
 import net.threetag.palladiumcore.item.IPalladiumItem;
+import net.threetag.pantheonsent.network.EyeOfHorusEffectMessage;
 
 public class EyeOfHorusItem extends CurioTrinketItem implements IPalladiumItem {
 
@@ -30,9 +32,10 @@ public class EyeOfHorusItem extends CurioTrinketItem implements IPalladiumItem {
 
     @Override
     public void tick(LivingEntity entity, ItemStack stack) {
-        if (entity instanceof Player player && !player.getCooldowns().isOnCooldown(this) && entity.getHealth() <= 6F) {
+        if (entity instanceof ServerPlayer player && !player.getCooldowns().isOnCooldown(this) && entity.getHealth() <= 6F) {
             entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 2));
             player.getCooldowns().addCooldown(this, 20 * 30);
+            new EyeOfHorusEffectMessage().send(player);
             // TODO sound
             stack.hurtAndBreak(1, player, player1 -> {
                 if (!player1.isSilent()) {

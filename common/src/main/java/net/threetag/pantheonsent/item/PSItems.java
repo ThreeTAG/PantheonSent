@@ -2,7 +2,6 @@ package net.threetag.pantheonsent.item;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
@@ -11,6 +10,7 @@ import net.threetag.palladium.item.SortedBannerPatternItem;
 import net.threetag.palladium.item.SortedBlockItem;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
+import net.threetag.palladiumcore.registry.client.ItemPropertyRegistry;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.tags.PSBannerPatternTags;
@@ -46,8 +46,8 @@ public class PSItems {
 
     @Environment(EnvType.CLIENT)
     public static void initProperties() {
-        ItemProperties.register(SCARAB_COMPASS.get(), PantheonSent.id("angle"), new ScarabCompassItem.PropertyFunction());
-        ItemProperties.register(SCARAB_COMPASS.get(), PantheonSent.id("active"), (itemStack, clientLevel, livingEntity, i) -> itemStack.getOrCreateTag().contains("TargetPos") ? 1F : 0F);
+        ItemPropertyRegistry.register(SCARAB_COMPASS.get(), PantheonSent.id("angle"), new ScarabCompassItem.PropertyFunction());
+        ItemPropertyRegistry.register(SCARAB_COMPASS.get(), PantheonSent.id("active"), (itemStack, clientLevel, livingEntity, i) -> itemStack.getOrCreateTag().contains("TargetPos") ? 1F : 0F);
     }
 
 }

@@ -11,6 +11,7 @@ import net.threetag.palladium.event.PalladiumClientEvents;
 import net.threetag.palladium.item.CurioTrinketRegistry;
 import net.threetag.palladiumcore.event.LifecycleEvents;
 import net.threetag.palladiumcore.registry.client.EntityRendererRegistry;
+import net.threetag.palladiumcore.registry.client.OverlayRegistry;
 import net.threetag.palladiumcore.registry.client.RenderTypeRegistry;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.client.PSClientEventHandler;
@@ -22,6 +23,7 @@ import net.threetag.pantheonsent.client.model.animation.GlidingAnimation;
 import net.threetag.pantheonsent.client.model.animation.KhonshuRecruitmentAnimation;
 import net.threetag.pantheonsent.client.renderer.entity.KhonshuRenderer;
 import net.threetag.pantheonsent.client.renderer.item.EyeOfHorusRenderer;
+import net.threetag.pantheonsent.client.screen.EyeOfHorusOverlay;
 import net.threetag.pantheonsent.client.variable.MoonKnightCapeTextureVariable;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.inventory.PSMenuTypes;
@@ -53,6 +55,9 @@ public class PantheonSentClient {
             registry.accept(PantheonSent.id("gliding"), GlidingAnimation.INSTANCE);
             registry.accept(PantheonSent.id("blocking"), BlockingAnimation.INSTANCE);
         });
+
+        // Overlay
+        OverlayRegistry.registerOverlay("pantheonsent/eye_of_horus", new EyeOfHorusOverlay());
 
         // During Setup
         LifecycleEvents.CLIENT_SETUP.register(() -> {
