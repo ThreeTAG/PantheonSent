@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_eye_of_horus": {
+    "has_scarab_compass": {
       "conditions": {
         "items": [
           {
             "items": [
-              "pantheonsent:broken_eye_of_horus"
+              "pantheonsent:broken_scarab_compass"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "pantheonsent:eye_of_horus_restoration"
+        "recipe": "pantheonsent:scarab_compass_restoration"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_eye_of_horus",
+      "has_scarab_compass",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "pantheonsent:eye_of_horus_restoration"
+      "pantheonsent:scarab_compass_restoration"
     ]
   }
 }

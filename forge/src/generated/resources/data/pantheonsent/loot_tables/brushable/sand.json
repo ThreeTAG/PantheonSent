@@ -14,6 +14,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "pantheonsent:broken_khonshu_ushabti"
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:clock"
         }
       ],

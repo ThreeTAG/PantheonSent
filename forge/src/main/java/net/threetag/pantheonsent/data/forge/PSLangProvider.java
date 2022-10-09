@@ -28,6 +28,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.GILDED_SANDSTONE, "Gilded Sandstone");
             this.addBlock(PSBlocks.GILDED_SANDSTONE_PILLAR, "Gilded Sandstone Pillar");
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Archeology Table");
+            this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Broken Khonshu Ushabti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Ushabti");
             this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysterious Dirt");
             this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysterious Gravel");
@@ -39,8 +40,12 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.BRUSH, "Brush");
             this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Ancient Clay Shard");
             this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Ancient Gold Shard");
+            this.addItem(PSItems.LUNAR_SHARD, "Lunar Shard");
+            this.addItem(PSItems.BROKEN_LUNAR_TOTEM, "Broken Lunar Totem");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunar Totem");
+            this.addItem(PSItems.BROKEN_SCARAB_COMPASS, "Broken Scarab Compass");
             this.addItem(PSItems.SCARAB_COMPASS, "Scarab Compass");
+            this.addItem(PSItems.BROKEN_EYE_OF_HORUS, "Broken Eye of Horus");
             this.addItem(PSItems.EYE_OF_HORUS, "Eye of Horus");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Banner Pattern");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Crescent");
@@ -99,6 +104,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.GILDED_SANDSTONE, "Golddurchzogener Sandstein");
             this.addBlock(PSBlocks.GILDED_SANDSTONE_PILLAR, "Golddurchzogene Sandsteins\u00E4ule");
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Archeologietisch");
+            this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Kaputtes Khonshu Uschebti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Uschebti");
             this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysteri\u00F6se Erde");
             this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysteri\u00F6ser Kies");
@@ -110,8 +116,12 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.BRUSH, "B\u00FCrste");
             this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Antike Tonscherbe");
             this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Antike Goldscherbe");
+            this.addItem(PSItems.LUNAR_SHARD, "Lunarscherbe");
+            this.addItem(PSItems.BROKEN_LUNAR_TOTEM, "Kaputtes Lunartotem");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
+            this.addItem(PSItems.BROKEN_SCARAB_COMPASS, "Kaputter Skarab\u00E4uskompass");
             this.addItem(PSItems.SCARAB_COMPASS, "Skarab\u00E4uskompass");
+            this.addItem(PSItems.BROKEN_EYE_OF_HORUS, "Kaputtes Horusauge");
             this.addItem(PSItems.EYE_OF_HORUS, "Horusauge");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannervorlage");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
@@ -170,6 +180,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.GILDED_SANDSTONE, "Golddurschzochnorr Sandstein");
             this.addBlock(PSBlocks.GILDED_SANDSTONE_PILLAR, "Golddurschzochne Sandschdeens\u00E4ule");
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Arscheolojiedisch");
+            this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Gabuttes Khonshu Uschebti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Uschebti");
             this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysteri\u00F6se Erde");
             this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysteri\u00F6ser Gies");
@@ -181,8 +192,12 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.BRUSH, "B\u00FCrschde");
             this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Antige Donscherbe");
             this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Antige Goldscherbe");
+            this.addItem(PSItems.LUNAR_SHARD, "Lunarscherbe");
+            this.addItem(PSItems.BROKEN_LUNAR_TOTEM, "Gabuttes Lunartotem");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
+            this.addItem(PSItems.BROKEN_SCARAB_COMPASS, "Gabutter Schgarab\u00E4usgombass");
             this.addItem(PSItems.SCARAB_COMPASS, "Schgarab\u00E4usgombass");
+            this.addItem(PSItems.BROKEN_EYE_OF_HORUS, "Gabuttes Horusooche");
             this.addItem(PSItems.EYE_OF_HORUS, "Horusooche");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannorrvorlaache");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");

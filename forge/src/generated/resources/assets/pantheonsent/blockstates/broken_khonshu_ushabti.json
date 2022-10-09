@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "pantheonsent:block/broken_khonshu_ushabti",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "pantheonsent:block/broken_khonshu_ushabti",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "pantheonsent:block/broken_khonshu_ushabti"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "pantheonsent:block/broken_khonshu_ushabti"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "pantheonsent:block/broken_khonshu_ushabti",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "pantheonsent:block/broken_khonshu_ushabti",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "pantheonsent:block/broken_khonshu_ushabti",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "pantheonsent:block/broken_khonshu_ushabti",
+      "y": 270
+    }
+  }
+}

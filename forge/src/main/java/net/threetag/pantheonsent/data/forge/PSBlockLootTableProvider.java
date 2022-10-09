@@ -23,6 +23,7 @@ public class PSBlockLootTableProvider extends BlockLootTableProvider {
         this.dropSelf(PSBlocks.GILDED_SANDSTONE.get());
         this.dropSelf(PSBlocks.GILDED_SANDSTONE_PILLAR.get());
         this.dropSelf(PSBlocks.ARCHEOLOGY_TABLE.get());
+        this.dropSelf(PSBlocks.BROKEN_KHONSHU_USHABTI.get());
         this.dropSelf(PSBlocks.KHONSHU_USHABTI.get());
         this.dropWhenSilkTouch(PSBlocks.LUNAR_STONE.get());
         this.add(PSBlocks.MYSTERIOUS_DIRT.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.DIRT));
@@ -41,6 +42,12 @@ public class PSBlockLootTableProvider extends BlockLootTableProvider {
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(PSItems.SCARAB_COMPASS.get()))
                         .add(LootItem.lootTableItem(Items.RAW_GOLD))
+                        .add(LootItem.lootTableItem(PSItems.BROKEN_KHONSHU_USHABTI.get()))
+                        .add(LootItem.lootTableItem(PSItems.BROKEN_LUNAR_TOTEM.get()))
+                        .add(LootItem.lootTableItem(PSItems.BROKEN_EYE_OF_HORUS.get()))
+                        .add(LootItem.lootTableItem(PSItems.BROKEN_SCARAB_COMPASS.get()))
+                        .add(LootItem.lootTableItem(PSItems.CRESCENT_BANNER_PATTERN.get()))
+                        .add(LootItem.lootTableItem(PSItems.LUNAR_SHARD.get()))
                         .add(LootItem.lootTableItem(Items.CLOCK)))
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F))
                         .add(LootItem.lootTableItem(Items.GOLD_NUGGET))

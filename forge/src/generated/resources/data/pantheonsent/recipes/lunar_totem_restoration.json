@@ -4,9 +4,9 @@
     "item": "pantheonsent:ancient_gold_shard"
   },
   "base": {
-    "item": "pantheonsent:broken_eye_of_horus"
+    "item": "pantheonsent:broken_lunar_totem"
   },
   "result": {
-    "item": "pantheonsent:eye_of_horus"
+    "item": "pantheonsent:lunar_totem"
   }
 }

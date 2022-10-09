@@ -71,7 +71,6 @@ public class RestorationMenu extends ItemCombinerMenu {
             this.resultSlots.setRecipeUsed(this.selectedRecipe);
             this.resultSlots.setItem(0, itemStack);
         }
-
     }
 
     @Override

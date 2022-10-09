@@ -24,14 +24,19 @@ public class PSItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         this.defaultTool(PSItems.ANCIENT_CLAY_SHARD);
         this.defaultTool(PSItems.ANCIENT_GOLD_SHARD);
+        this.defaultTool(PSItems.LUNAR_SHARD);
         this.defaultTool(PSItems.BRUSH);
+        this.defaultItem(PSItems.BROKEN_LUNAR_TOTEM);
         this.defaultItem(PSItems.LUNAR_TOTEM);
+        this.defaultItem(PSItems.BROKEN_EYE_OF_HORUS);
         this.defaultItem(PSItems.EYE_OF_HORUS);
+        this.defaultItem(PSItems.BROKEN_SCARAB_COMPASS);
         this.withExistingParent(PSItems.CRESCENT_BANNER_PATTERN.getId().getPath(), "item/creeper_banner_pattern");
 
         this.defaultBlockItem(PSItems.GILDED_SANDSTONE);
         this.defaultBlockItem(PSItems.GILDED_SANDSTONE_PILLAR);
         this.defaultBlockItem(PSItems.ARCHEOLOGY_TABLE);
+        this.defaultBlockItem(PSItems.BROKEN_KHONSHU_USHABTI);
         this.defaultBlockItem(PSItems.KHONSHU_USHABTI);
         this.defaultBlockItem(PSItems.MYSTERIOUS_DIRT, PantheonSent.id("block/mysterious_dirt_0"));
         this.defaultBlockItem(PSItems.MYSTERIOUS_GRAVEL, PantheonSent.id("block/mysterious_gravel_0"));

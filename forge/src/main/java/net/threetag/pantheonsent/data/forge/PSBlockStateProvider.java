@@ -33,6 +33,7 @@ public class PSBlockStateProvider extends BlockStateProvider {
                         .texture("up", PantheonSent.id("block/archeology_table_top"))
                         .texture("down", new ResourceLocation("block/jungle_planks"))
                 ).addModel();
+        this.horizontalBlock(PSBlocks.BROKEN_KHONSHU_USHABTI.get(), models().getExistingFile(PantheonSent.id("block/broken_khonshu_ushabti")));
         this.horizontalBlock(PSBlocks.KHONSHU_USHABTI.get(), models().getExistingFile(PantheonSent.id("block/khonshu_ushabti")));
         this.getVariantBuilder(PSBlocks.SANDSTONE_TOTEM_HOLDER.get())
                 .partialState().with(TotemHolderBlock.ACTIVE, false).modelForState().modelFile(models().withExistingParent("sandstone_totem_holder", "chiseled_sandstone").texture("side", PantheonSent.id("block/sandstone_totem_holder"))).addModel()

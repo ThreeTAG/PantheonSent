@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.threetag.palladium.item.CreativeModeTabFiller;
 import net.threetag.palladium.item.SortedBannerPatternItem;
 import net.threetag.palladium.item.SortedBlockItem;
+import net.threetag.palladium.item.SortedItem;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.palladiumcore.registry.client.ItemPropertyRegistry;
@@ -30,6 +31,7 @@ public class PSItems {
     public static final RegistrySupplier<Item> GILDED_SANDSTONE = ITEMS.register("gilded_sandstone", () -> new SortedBlockItem(PSBlocks.GILDED_SANDSTONE.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS), FILLER_AFTER_CUT_SANDSTONE));
     public static final RegistrySupplier<Item> GILDED_SANDSTONE_PILLAR = ITEMS.register("gilded_sandstone_pillar", () -> new SortedBlockItem(PSBlocks.GILDED_SANDSTONE_PILLAR.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS), FILLER_AFTER_CUT_SANDSTONE));
     public static final RegistrySupplier<Item> ARCHEOLOGY_TABLE = ITEMS.register("archeology_table", () -> new SortedBlockItem(PSBlocks.ARCHEOLOGY_TABLE.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS), FILLER_AFTER_STONECUTTER));
+    public static final RegistrySupplier<Item> BROKEN_KHONSHU_USHABTI = ITEMS.register("broken_khonshu_ushabti", () -> new BlockItem(PSBlocks.BROKEN_KHONSHU_USHABTI.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final RegistrySupplier<Item> KHONSHU_USHABTI = ITEMS.register("khonshu_ushabti", () -> new BlockItem(PSBlocks.KHONSHU_USHABTI.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final RegistrySupplier<Item> MYSTERIOUS_DIRT = ITEMS.register("mysterious_dirt", () -> new SortedBlockItem(PSBlocks.MYSTERIOUS_DIRT.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS), FILLER_AFTER_DIRT));
     public static final RegistrySupplier<Item> MYSTERIOUS_GRAVEL = ITEMS.register("mysterious_gravel", () -> new SortedBlockItem(PSBlocks.MYSTERIOUS_GRAVEL.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS), FILLER_AFTER_GRAVEL));
@@ -40,11 +42,15 @@ public class PSItems {
     public static final RegistrySupplier<Item> BRUSH = ITEMS.register("brush", () -> new BrushItem(new Item.Properties().durability(512).tab(CreativeModeTab.TAB_TOOLS)));
     public static final RegistrySupplier<Item> ANCIENT_CLAY_SHARD = ITEMS.register("ancient_clay_shard", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistrySupplier<Item> ANCIENT_GOLD_SHARD = ITEMS.register("ancient_gold_shard", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistrySupplier<Item> LUNAR_SHARD = ITEMS.register("lunar_shard", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistrySupplier<Item> BROKEN_LUNAR_TOTEM = ITEMS.register("broken_lunar_totem", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.UNCOMMON).stacksTo(1)));
     public static final RegistrySupplier<Item> LUNAR_TOTEM = ITEMS.register("lunar_totem", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.UNCOMMON).stacksTo(1)));
-    public static final RegistrySupplier<Item> SCARAB_COMPASS = ITEMS.register("scarab_compass", () -> new ScarabCompassItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1), FILLER_AFTER_COMPASS));
-    public static final RegistrySupplier<Item> EYE_OF_HORUS = ITEMS.register("eye_of_horus", () -> new EyeOfHorusItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(3)));
+    public static final RegistrySupplier<Item> BROKEN_SCARAB_COMPASS = ITEMS.register("broken_scarab_compass", () -> new SortedItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1), FILLER_AFTER_COMPASS));
+    public static final RegistrySupplier<Item> SCARAB_COMPASS = ITEMS.register("scarab_compass", () -> new ScarabCompassItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).rarity(Rarity.RARE).stacksTo(1), FILLER_AFTER_COMPASS));
+    public static final RegistrySupplier<Item> BROKEN_EYE_OF_HORUS = ITEMS.register("broken_eye_of_horus", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1)));
+    public static final RegistrySupplier<Item> EYE_OF_HORUS = ITEMS.register("eye_of_horus", () -> new EyeOfHorusItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).rarity(Rarity.RARE).durability(3)));
 
-    public static final RegistrySupplier<Item> CRESCENT_BANNER_PATTERN = ITEMS.register("crescent_banner_pattern", () -> new SortedBannerPatternItem(PSBannerPatternTags.PATTERN_CRESCENT, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistrySupplier<Item> CRESCENT_BANNER_PATTERN = ITEMS.register("crescent_banner_pattern", () -> new SortedBannerPatternItem(PSBannerPatternTags.PATTERN_CRESCENT, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE)));
 
     @Environment(EnvType.CLIENT)
     public static void initProperties() {

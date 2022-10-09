@@ -1,0 +1,12 @@
+{
+  "type": "pantheonsent:restoration",
+  "addition": {
+    "item": "pantheonsent:ancient_clay_shard"
+  },
+  "base": {
+    "item": "pantheonsent:broken_khonshu_ushabti"
+  },
+  "result": {
+    "item": "pantheonsent:khonshu_ushabti"
+  }
+}
