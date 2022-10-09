@@ -1,3 +1,7 @@
-// 1.19.2	2022-08-28T18:47:49.6718273	PantheonSent Recipes
+// 1.19.2	2022-10-08T01:23:06.7140659	PantheonSent Recipes
+cf350a2e0fee83943e55828f9299fa4e098fe04d data/pantheonsent/advancements/recipes/misc/blast_ancient_clay_shard.json
+666a37d9f0d2fbda29f82c0e7107a7ac27278a71 data/pantheonsent/advancements/recipes/misc/blast_ancient_gold_shard.json
 e23c35a70ee1878e772428f41b804b7accf69cae data/pantheonsent/advancements/recipes/tools/eye_of_horus_restoration.json
+6090e7d75b7fcd85fa7986fffeec4e6d2b8b9b02 data/pantheonsent/recipes/blast_ancient_clay_shard.json
+16a7ff0b2baf62af7c3162ad00b0bb527bb19b1b data/pantheonsent/recipes/blast_ancient_gold_shard.json
 61b8d26b0853f0ab7ebf17b71a62072ed18e7cb0 data/pantheonsent/recipes/eye_of_horus_restoration.json

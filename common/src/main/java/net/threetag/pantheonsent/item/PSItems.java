@@ -38,6 +38,8 @@ public class PSItems {
     public static final RegistrySupplier<Item> LUNAR_STONE = ITEMS.register("lunar_stone", () -> new SortedBlockItem(PSBlocks.LUNAR_STONE.get(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE), FILLER_AFTER_DAYLIGHT_DETECTOR));
 
     public static final RegistrySupplier<Item> BRUSH = ITEMS.register("brush", () -> new BrushItem(new Item.Properties().durability(512).tab(CreativeModeTab.TAB_TOOLS)));
+    public static final RegistrySupplier<Item> ANCIENT_CLAY_SHARD = ITEMS.register("ancient_clay_shard", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistrySupplier<Item> ANCIENT_GOLD_SHARD = ITEMS.register("ancient_gold_shard", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistrySupplier<Item> LUNAR_TOTEM = ITEMS.register("lunar_totem", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.UNCOMMON).stacksTo(1)));
     public static final RegistrySupplier<Item> SCARAB_COMPASS = ITEMS.register("scarab_compass", () -> new ScarabCompassItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1), FILLER_AFTER_COMPASS));
     public static final RegistrySupplier<Item> EYE_OF_HORUS = ITEMS.register("eye_of_horus", () -> new EyeOfHorusItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(3)));

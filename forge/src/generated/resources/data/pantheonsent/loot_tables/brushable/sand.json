@@ -28,6 +28,16 @@
         },
         {
           "type": "minecraft:item",
+          "name": "pantheonsent:ancient_clay_shard",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:ancient_gold_shard",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:dead_bush"
         }
       ],

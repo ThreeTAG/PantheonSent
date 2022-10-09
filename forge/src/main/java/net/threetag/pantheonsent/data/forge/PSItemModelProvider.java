@@ -22,6 +22,8 @@ public class PSItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        this.defaultTool(PSItems.ANCIENT_CLAY_SHARD);
+        this.defaultTool(PSItems.ANCIENT_GOLD_SHARD);
         this.defaultTool(PSItems.BRUSH);
         this.defaultItem(PSItems.LUNAR_TOTEM);
         this.defaultItem(PSItems.EYE_OF_HORUS);

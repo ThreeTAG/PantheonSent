@@ -30,10 +30,13 @@ public class PSBlockLootTableProvider extends BlockLootTableProvider {
         this.add(PSBlocks.MYSTERIOUS_SAND.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.SAND));
 
         this.lootTables.put(PSLootTables.BRUSHABLE_DIRT, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                .add(LootItem.lootTableItem(Items.BONE))
-                .add(LootItem.lootTableItem(Items.DIAMOND_BLOCK))));
+                .add(LootItem.lootTableItem(Items.BONE).setWeight(2))
+                .add(LootItem.lootTableItem(PSItems.ANCIENT_CLAY_SHARD.get()).setWeight(10))
+                .add(LootItem.lootTableItem(PSItems.ANCIENT_GOLD_SHARD.get()).setWeight(1))));
         this.lootTables.put(PSLootTables.BRUSHABLE_GRAVEL, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                .add(LootItem.lootTableItem(Items.IRON_NUGGET))));
+                .add(LootItem.lootTableItem(Items.IRON_NUGGET))
+                .add(LootItem.lootTableItem(PSItems.ANCIENT_CLAY_SHARD.get()).setWeight(10))
+                .add(LootItem.lootTableItem(PSItems.ANCIENT_GOLD_SHARD.get()).setWeight(1))));
         this.lootTables.put(PSLootTables.BRUSHABLE_SAND, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(PSItems.SCARAB_COMPASS.get()))
@@ -41,6 +44,8 @@ public class PSBlockLootTableProvider extends BlockLootTableProvider {
                         .add(LootItem.lootTableItem(Items.CLOCK)))
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F))
                         .add(LootItem.lootTableItem(Items.GOLD_NUGGET))
+                        .add(LootItem.lootTableItem(PSItems.ANCIENT_CLAY_SHARD.get()).setWeight(2))
+                        .add(LootItem.lootTableItem(PSItems.ANCIENT_GOLD_SHARD.get()).setWeight(10))
                         .add(LootItem.lootTableItem(Items.DEAD_BUSH))));
     }
 

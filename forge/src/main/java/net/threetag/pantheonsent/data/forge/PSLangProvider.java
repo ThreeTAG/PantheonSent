@@ -37,6 +37,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
 
             // Items
             this.addItem(PSItems.BRUSH, "Brush");
+            this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Ancient Clay Shard");
+            this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Ancient Gold Shard");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunar Totem");
             this.addItem(PSItems.SCARAB_COMPASS, "Scarab Compass");
             this.addItem(PSItems.EYE_OF_HORUS, "Eye of Horus");
@@ -106,6 +108,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
 
             // Items
             this.addItem(PSItems.BRUSH, "B\u00FCrste");
+            this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Antike Tonscherbe");
+            this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Antike Goldscherbe");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
             this.addItem(PSItems.SCARAB_COMPASS, "Skarab\u00E4uskompass");
             this.addItem(PSItems.EYE_OF_HORUS, "Horusauge");
@@ -175,6 +179,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
 
             // Items
             this.addItem(PSItems.BRUSH, "B\u00FCrschde");
+            this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Antige Donscherbe");
+            this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Antige Goldscherbe");
             this.addItem(PSItems.LUNAR_TOTEM, "Lunartotem");
             this.addItem(PSItems.SCARAB_COMPASS, "Schgarab\u00E4usgombass");
             this.addItem(PSItems.EYE_OF_HORUS, "Horusooche");

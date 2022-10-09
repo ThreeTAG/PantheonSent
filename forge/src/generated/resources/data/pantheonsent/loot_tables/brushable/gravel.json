@@ -7,6 +7,15 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_nugget"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:ancient_clay_shard",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:ancient_gold_shard"
         }
       ],
       "rolls": 1.0

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "pantheonsent:ancient_clay_shard"
+  },
+  "result": "minecraft:brick"
+}

@@ -6,11 +6,17 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bone"
+          "name": "minecraft:bone",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond_block"
+          "name": "pantheonsent:ancient_clay_shard",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:ancient_gold_shard"
         }
       ],
       "rolls": 1.0
