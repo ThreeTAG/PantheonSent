@@ -23,6 +23,20 @@
         ]
       }
     },
+    "shrink_overlay": {
+      "type": "palladium:shrink_body_overlay",
+      "max_value": 20,
+      "conditions": {
+        "enabling": {
+          "type": "palladium:ability_integer_property",
+          "power": "pantheonsent:moon_knight_transformation",
+          "ability": "activate",
+          "property": "value",
+          "min": 1,
+          "max": 60
+        }
+      }
+    },
     "switch_power": {
       "type": "palladium:command",
       "commands": "superpower set pantheonsent:moon_knight",

@@ -39,7 +39,7 @@ public class GodStalkedAbility extends Ability {
 
             if (timer == 0) {
                 Khonshu khonshu = new Khonshu(entity.level, player, Khonshu.Mode.STALKING);
-                var pos = getRandomPos(entity.getOnPos(), khonshu, player, entity.level, 20, 35, 10);
+                var pos = teleportRandom(entity.getOnPos(), khonshu, player, entity.level, 20, 35, 20, 10);
 
                 if (pos != null) {
                     khonshu.setPos(new Vec3(pos.getX(), pos.getY(), pos.getZ()));
@@ -59,19 +59,19 @@ public class GodStalkedAbility extends Ability {
         return (10 + new Random().nextInt(15)) * 60 * 20;
     }
 
-    public BlockPos getRandomPos(BlockPos center, Khonshu khonshu, Player player, Level level, int minRange, int maxRange, int attempt) {
+    public static BlockPos teleportRandom(BlockPos center, Khonshu khonshu, Player player, Level level, int minRange, int maxRange, int maxYOffset, int attempt) {
         if (attempt == 0) {
             return null;
         } else {
             RandomSource rand = RandomSource.create();
             int x = (int) (center.getX() + (minRange + (maxRange - minRange) * rand.nextFloat()) * (rand.nextBoolean() ? 1F : -1F));
-            int y = center.getY() + 20;
+            int y = center.getY() + maxYOffset;
             int z = (int) (center.getZ() + (minRange + (maxRange - minRange) * rand.nextFloat()) * (rand.nextBoolean() ? 1F : -1F));
 
             for (int i = y; i > center.getY() - 20; i--) {
                 BlockPos pos = new BlockPos(x, i, z);
                 if (!level.isEmptyBlock(pos.below()) && level.isEmptyBlock(pos) && level.isEmptyBlock(pos.above())) {
-                    khonshu.setPos(new Vec3(pos.getX(), pos.getY(), pos.getZ()));
+                    khonshu.teleportTo(pos.getX(), pos.getY(), pos.getZ());
 
                     if(khonshu.hasLineOfSight(player)) {
                         return pos;
@@ -79,7 +79,7 @@ public class GodStalkedAbility extends Ability {
                 }
             }
 
-            return getRandomPos(center, khonshu, player, level, minRange, maxRange, attempt - 1);
+            return teleportRandom(center, khonshu, player, level, minRange, maxRange, maxYOffset, attempt - 1);
         }
     }
 

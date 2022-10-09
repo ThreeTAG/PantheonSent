@@ -1,6 +1,8 @@
 package net.threetag.pantheonsent.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -11,6 +13,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.threetag.pantheonsent.ability.GodStalkedAbility;
+import net.threetag.pantheonsent.entity.Khonshu;
 import net.threetag.pantheonsent.item.PSItems;
 
 public class TotemHolderBlock extends Block {
@@ -29,14 +33,23 @@ public class TotemHolderBlock extends Block {
         if (!state.getValue(ACTIVE) && stack.getItem() == PSItems.LUNAR_TOTEM.get()) {
             level.setBlock(pos, state.setValue(ACTIVE, true), 2);
             stack.shrink(1);
-            return InteractionResult.sidedSuccess(level.isClientSide);
-        } else if (state.getValue(ACTIVE)) {
-            level.setBlock(pos, state.setValue(ACTIVE, false), 2);
-            player.getInventory().add(new ItemStack(PSItems.LUNAR_TOTEM.get()));
+
+            if (!level.isClientSide) {
+                Khonshu khonshu = new Khonshu(level, player, Khonshu.Mode.RECRUITING);
+                GodStalkedAbility.teleportRandom(player.getOnPos(), khonshu, player, level, 5, 20, 7, 10);
+                level.addFreshEntity(khonshu);
+                level.scheduleTick(pos, this, 60);
+            }
+
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
 
         return super.use(state, level, pos, player, hand, hit);
+    }
+
+    @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        level.setBlock(pos, state.setValue(ACTIVE, false), 2);
     }
 
     @Override

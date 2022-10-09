@@ -7,10 +7,11 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -21,6 +22,7 @@ import net.threetag.palladium.util.property.PalladiumProperties;
 import net.threetag.palladiumcore.network.ExtendedEntitySpawnData;
 import net.threetag.palladiumcore.network.NetworkManager;
 import net.threetag.pantheonsent.PantheonSent;
+import net.threetag.pantheonsent.ability.GodStalkedAbility;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
 
 import java.util.UUID;
@@ -134,7 +136,9 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putUUID("AvatarUUID", this.avatarId);
+        if (this.avatarId != null) {
+            compound.putUUID("AvatarUUID", this.avatarId);
+        }
         compound.putInt("Mode", this.mode.ordinal());
         compound.putInt("RecruitingTimer", this.recruitingTimer);
         compound.putInt("DespawnTimer", this.getDespawnTimer());
@@ -143,7 +147,9 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        this.avatarId = compound.getUUID("AvatarUUID");
+        if (compound.contains("AvatarUUID")) {
+            this.avatarId = compound.getUUID("AvatarUUID");
+        }
         this.mode = Mode.values()[compound.getInt("Mode")];
         this.recruitingTimer = compound.getInt("RecruitingTimer");
         this.setDespawnTimer(compound.getInt("DespawnTimer"));
@@ -169,6 +175,21 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
     @Override
     public boolean isInvulnerable() {
         return true;
+    }
+
+    @Override
+    public boolean isInvulnerableTo(DamageSource source) {
+        return true;
+    }
+
+    @Override
+    public boolean canBeCollidedWith() {
+        return false;
+    }
+
+    @Override
+    public boolean canCollideWith(Entity entity) {
+        return false;
     }
 
     @Override
@@ -214,14 +235,13 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
             if (timer == 0 || timer == 6 * 20 || timer == 12 * 20 || timer == 18 * 20) {
                 avatar.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120), null);
             } else if (timer == 20 || timer == 7 * 20 || timer == 13 * 20) {
-                double g = avatar.getX() + (avatar.getRandom().nextDouble() - 0.5) * 16.0;
-                double h = Mth.clamp(avatar.getY() + (double) (avatar.getRandom().nextInt(16) - 8), level.getMinBuildHeight(), level.getMinBuildHeight() + ((ServerLevel) level).getLogicalHeight() - 1);
-                double j = avatar.getZ() + (avatar.getRandom().nextDouble() - 0.5) * 16.0;
-                Khonshu.this.randomTeleport(g, h, j, false);
+                int i = timer == 20 ? 3 : (timer == 7 * 20 ? 2 : 1);
+                GodStalkedAbility.teleportRandom(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, i * 3, i * 3 + 3, 7, 10);
             } else if (timer == 19 * 20) {
                 double g = avatar.getX() + (avatar.getRandom().nextDouble() - 0.5) * 3.0;
                 double h = avatar.getY();
-                double j = avatar.getZ() + (avatar.getRandom().nextDouble() - 0.5) * 3;
+                double j = avatar.getZ() + (avatar.getRandom().nextDouble() - 0.5) * 3.0;
+                var pos = GodStalkedAbility.teleportRandom(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, 5, 20, 7, 10);
                 Khonshu.this.randomTeleport(g, h, j, false);
             } else if (timer == MAX_TIME) {
                 Khonshu.this.setDespawnTimer(60);
