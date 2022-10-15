@@ -18,6 +18,26 @@
         },
         {
           "type": "minecraft:item",
+          "name": "pantheonsent:broken_lunar_totem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:broken_eye_of_horus"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:broken_scarab_compass"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:crescent_banner_pattern"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:lunar_shard"
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:clock"
         }
       ],

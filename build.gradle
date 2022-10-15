@@ -1,6 +1,7 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
     id "dev.architectury.loom" version "0.12.0-SNAPSHOT" apply false
+    id 'io.github.juuxel.loom-quiltflower' version '1.7.1' apply false
 }
 
 architectury {
@@ -9,6 +10,7 @@ architectury {
 
 subprojects {
     apply plugin: "dev.architectury.loom"
+    apply plugin: "io.github.juuxel.loom-quiltflower"
 
     loom {
         silentMojangMappingsLicense()
@@ -38,6 +40,7 @@ allprojects {
     }
 
     repositories {
+        // Parchment
         maven {
             url = "https://maven.parchmentmc.net/"
             content {
@@ -45,6 +48,12 @@ allprojects {
             }
         }
 
+        // ThreeTAG stuff
+        maven {
+            url 'https://repo.repsy.io/mvn/lucraft/threetag'
+        }
+
+        // CurseMaven
         maven {
             url "https://www.cursemaven.com"
             content {
@@ -52,35 +61,30 @@ allprojects {
             }
         }
 
+        // Trinkets
         maven {
             url "https://maven.terraformersmc.com/releases/"
         }
 
+        // REI
         maven {
             url "https://maven.shedaniel.me"
         }
 
+        // JEI
         maven {
             url "https://dvs1.progwml6.com/files/maven/"
         }
 
+        // Cardinal Components
         maven {
             name = 'Ladysnake Mods'
             url = 'https://ladysnake.jfrog.io/artifactory/mods'
         }
 
+        // Curios
         maven {
             url = "https://maven.theillusivec4.top/"
-        }
-
-        maven {
-            name = "TerraformersMC"
-            url = "https://maven.terraformersmc.com/"
-        }
-
-        maven {
-            name = "Ladysnake Libs"
-            url = "https://ladysnake.jfrog.io/artifactory/mods"
         }
 
         // KubeJS / Rhino
@@ -89,11 +93,6 @@ allprojects {
             content {
                 includeGroup 'dev.latvian.mods'
             }
-        }
-
-        // ThreeTAG stuff
-        maven {
-            url 'https://repo.repsy.io/mvn/lucraft/threetag'
         }
 
         // Forge Config API Port

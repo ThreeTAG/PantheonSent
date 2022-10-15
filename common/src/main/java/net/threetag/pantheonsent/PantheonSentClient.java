@@ -65,7 +65,7 @@ public class PantheonSentClient {
             PSMenuTypes.initScreens();
 
             // Render Types
-            RenderTypeRegistry.registerBlock(RenderType.cutout(), PSBlocks.KHONSHU_USHABTI.get());
+            RenderTypeRegistry.registerBlock(RenderType.cutout(), PSBlocks.KHONSHU_USHABTI.get(), PSBlocks.BROKEN_KHONSHU_USHABTI.get());
             CurioTrinketRegistry.registerRenderer(PSItems.EYE_OF_HORUS.get(), new EyeOfHorusRenderer(null));
         });
     }

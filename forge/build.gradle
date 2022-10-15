@@ -66,6 +66,10 @@ dependencies {
     // REI
     modImplementation "me.shedaniel:RoughlyEnoughItems-forge:${rootProject.rei_version}"
 
+    // Curios
+    modLocalRuntime "top.theillusivec4.curios:curios-forge:${rootProject.curios_version}"
+    modCompileOnly "top.theillusivec4.curios:curios-forge:${rootProject.curios_version}:api"
+
     // WorldEdit
     modLocalRuntime "curse.maven:worldedit-225608:${rootProject.worldedit_version}"
 

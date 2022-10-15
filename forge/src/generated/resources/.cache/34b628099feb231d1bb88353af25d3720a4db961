@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-09T22:12:21.8909531	PantheonSent LootTables
+// 1.19.2	2022-10-16T00:46:32.9917692	PantheonSent LootTables
 b9d5211ffa70752d6896860841e5b614391dc906 data/pantheonsent/loot_tables/blocks/archeology_table.json
 d45741104a6c8d91d0c408623a7b77f82d1efb66 data/pantheonsent/loot_tables/blocks/broken_khonshu_ushabti.json
 d5446482de43ac109a73080c6bf350a476fe65a0 data/pantheonsent/loot_tables/blocks/gilded_sandstone.json
@@ -10,4 +10,4 @@ ab845d2be179c6121809b2c70b2691fa64db9a53 data/pantheonsent/loot_tables/blocks/my
 290318b0299d03567dae064f833f246e87568992 data/pantheonsent/loot_tables/blocks/mysterious_sand.json
 2611273cd171dc9a508f087c830e372365f34508 data/pantheonsent/loot_tables/brushable/dirt.json
 923af98107a4ae16aa9aaccd765dc868caa21548 data/pantheonsent/loot_tables/brushable/gravel.json
-16be885652a599bbef04233db3a703c4053a241c data/pantheonsent/loot_tables/brushable/sand.json
+b207532debda3f7a66a23b5bffe1aadf4141a61a data/pantheonsent/loot_tables/brushable/sand.json

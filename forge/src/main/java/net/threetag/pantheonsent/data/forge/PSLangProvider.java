@@ -89,6 +89,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Crescent Dart");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Archeologist");
+            this.add("entity.minecraft.villager.archeologist", "Archeologist");
         }
     }
 
@@ -165,6 +166,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Arch\u00E4ologe");
+            this.add("entity.minecraft.villager.archeologist", "Arch\u00E4ologe");
         }
     }
 
@@ -241,6 +243,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Arsch\u00E4oloje");
+            this.add("entity.minecraft.villager.archeologist", "Arsch\u00E4oloje");
         }
     }
 
