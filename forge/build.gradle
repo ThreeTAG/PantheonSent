@@ -54,7 +54,6 @@ dependencies {
     modApi ("net.threetag:Palladium-forge:${rootProject.palladium_version}", {
         exclude group: "com.github.Virtuoel"
     })
-    modApi "net.threetag:PalladiumCore-forge:${rootProject.palladiumcore_version}"
 
     // Shutup Experimental Settings
     modLocalRuntime "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupexperimentalsettings_version}"
