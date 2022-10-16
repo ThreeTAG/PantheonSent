@@ -9,6 +9,7 @@ import net.threetag.pantheonsent.block.PSBannerPatterns;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.item.PSItems;
+import net.threetag.pantheonsent.item.enchantment.PSEnchantments;
 
 public abstract class PSLangProvider extends ExtendedLangProvider {
 
@@ -49,6 +50,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.EYE_OF_HORUS, "Eye of Horus");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Banner Pattern");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Crescent");
+
+            // Enchantments
+            this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Fortunate Find");
+            this.addEnchantment(PSEnchantments.GODLY_ENCAPSULATING, "Godly Encapsulating");
 
             // Banner Pattern
             this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.WHITE, "White Crescent");
@@ -127,6 +132,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannervorlage");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
 
+            // Enchantments
+            this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Gl\u00FCcksfund");
+            this.addEnchantment(PSEnchantments.GODLY_ENCAPSULATING, "G\u00F6ttliche Einkapselung");
+
             // Banner Pattern
             this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.WHITE, "Wei\u00DFer Halbmond");
             this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.ORANGE, "Oranger Halbmond");
@@ -203,6 +212,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.EYE_OF_HORUS, "Horusooche");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannorrvorlaache");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
+
+            // Enchantments
+            this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Gl\u00FCggsfund");
+            this.addEnchantment(PSEnchantments.GODLY_ENCAPSULATING, "J\u00F6ttlische Ehngapselung");
 
             // Banner Pattern
             this.addBannerPatternDesc(PSBannerPatterns.CRESCENT, DyeColor.WHITE, "Weeßorr Halbmond");

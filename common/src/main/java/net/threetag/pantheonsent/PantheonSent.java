@@ -13,6 +13,7 @@ import net.threetag.pantheonsent.entity.PSVillagerProfessions;
 import net.threetag.pantheonsent.inventory.PSMenuTypes;
 import net.threetag.pantheonsent.item.PSItems;
 import net.threetag.pantheonsent.item.crafting.PSRecipeSerializers;
+import net.threetag.pantheonsent.item.enchantment.PSEnchantments;
 import net.threetag.pantheonsent.network.PSNetwork;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
 import net.threetag.pantheonsent.world.PSStructureProcessorTypes;
@@ -37,6 +38,7 @@ public class PantheonSent {
         PSMenuTypes.MENU_TYPES.register();
         PSAbilities.ABILITIES.register();
         PSBannerPatterns.BANNER_PATTERNS.register();
+        PSEnchantments.ENCHANTMENTS.register();
 
         PSNetwork.init();
         PSEntityTypes.init();

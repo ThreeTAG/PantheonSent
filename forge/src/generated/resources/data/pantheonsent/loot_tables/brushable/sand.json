@@ -6,35 +6,37 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:scarab_compass"
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:raw_gold"
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:broken_khonshu_ushabti"
+          "name": "pantheonsent:broken_khonshu_ushabti",
+          "quality": 2
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:broken_lunar_totem"
+          "name": "pantheonsent:broken_lunar_totem",
+          "quality": 1
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:broken_eye_of_horus"
+          "name": "pantheonsent:broken_eye_of_horus",
+          "quality": 2
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:broken_scarab_compass"
+          "name": "pantheonsent:broken_scarab_compass",
+          "quality": 1
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:crescent_banner_pattern"
+          "name": "pantheonsent:crescent_banner_pattern",
+          "quality": 3
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:lunar_shard"
+          "name": "pantheonsent:lunar_shard",
+          "quality": 2
         },
         {
           "type": "minecraft:item",

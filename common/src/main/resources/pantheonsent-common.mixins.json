@@ -6,6 +6,7 @@
     "ItemInHandRendererMixin"
   ],
   "mixins": [
+    "EnchantmentHelperMixin"
   ],
   "injectors": {
     "defaultRequire": 1

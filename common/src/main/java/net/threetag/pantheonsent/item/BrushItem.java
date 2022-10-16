@@ -51,7 +51,7 @@ public class BrushItem extends Item {
                 if (level.getBlockEntity(pos) instanceof BrushableBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof BrushableBlock brushableBlock) {
                     int stage = state.getValue(BrushableBlock.STAGE);
 
-                    if(blockEntity.lootTable == null) {
+                    if (blockEntity.lootTable == null && stage == 0) {
                         blockEntity.lootTable = brushableBlock.lootTable;
                     }
 
@@ -74,4 +74,13 @@ public class BrushItem extends Item {
         }
     }
 
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public int getEnchantmentValue() {
+        return 1;
+    }
 }

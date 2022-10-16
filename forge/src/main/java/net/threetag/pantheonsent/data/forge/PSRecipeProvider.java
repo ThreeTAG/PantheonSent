@@ -18,6 +18,8 @@ public class PSRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(PSItems.BRUSH.get()).define('C', Items.COPPER_INGOT).define('S', Items.STRING).define('F', Items.FEATHER).pattern(" FF").pattern("CSF").pattern("CC ").unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(consumer);
+
         // Restoration Recipes
         new UpgradeRecipeBuilder(PSRecipeSerializers.RESTORATION.get(), Ingredient.of(PSItems.BROKEN_KHONSHU_USHABTI.get()), Ingredient.of(PSItems.ANCIENT_CLAY_SHARD.get()), PSItems.KHONSHU_USHABTI.get()).unlocks("has_ushabti", has(PSItems.BROKEN_KHONSHU_USHABTI.get())).save(consumer, PantheonSent.id("khonshu_ushabti_restoration"));
         new UpgradeRecipeBuilder(PSRecipeSerializers.RESTORATION.get(), Ingredient.of(PSItems.BROKEN_LUNAR_TOTEM.get()), Ingredient.of(PSItems.ANCIENT_GOLD_SHARD.get()), PSItems.LUNAR_TOTEM.get()).unlocks("has_totem", has(PSItems.LUNAR_TOTEM.get())).save(consumer, PantheonSent.id("lunar_totem_restoration"));
