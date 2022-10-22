@@ -80,6 +80,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addAbility(PSAbilities.MOON_KNIGHT_GLIDING, "Gliding");
             this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocking");
             this.addAbility(PSAbilities.GOD_STALKED, "God Stalked");
+            this.add("ability.pantheonsent.moon_knight_summon_suit", "Summon Suit");
+            this.add("ability.pantheonsent.moon_knight_summon_stealth", "Stealth");
 
             // Container
             this.add("container.pantheonsent.restoration", "Restoration");
@@ -161,6 +163,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addAbility(PSAbilities.MOON_KNIGHT_GLIDING, "Gleiten");
             this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocken");
             this.addAbility(PSAbilities.GOD_STALKED, "Vom Gott verfolgt");
+            this.add("ability.pantheonsent.moon_knight_summon_suit", "Anzug beschw\u00F6ren");
+            this.add("ability.pantheonsent.moon_knight_summon_stealth", "List");
 
             // Container
             this.add("container.pantheonsent.restoration", "Restauration");
@@ -242,6 +246,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addAbility(PSAbilities.MOON_KNIGHT_GLIDING, "Gleiten");
             this.addAbility(PSAbilities.MOON_KNIGHT_BLOCKING, "Blocken");
             this.addAbility(PSAbilities.GOD_STALKED, "Vom Jott verfolchd");
+            this.add("ability.pantheonsent.moon_knight_summon_suit", "Anzuch beschw\u00F6rn");
+            this.add("ability.pantheonsent.moon_knight_summon_stealth", "List");
 
             // Container
             this.add("container.pantheonsent.restoration", "Restauration");

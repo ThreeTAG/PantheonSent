@@ -6,7 +6,9 @@
   "abilities": {
     "activate": {
       "type": "palladium:interpolated_integer",
-      "title": "Summon Suit",
+      "title": {
+        "translate": "ability.pantheonsent.moon_knight_summon_suit"
+      },
       "list_index": 0,
       "max_value": 19,
       "hidden": false,
@@ -90,6 +92,33 @@
         "enabling": {
           "type": "palladium:held",
           "key_type": "right_click"
+        }
+      }
+    },
+    "stealth": {
+      "type": "palladium:invisibility",
+      "title": {
+        "translate": "ability.pantheonsent.moon_knight_summon_stealth"
+      },
+      "icon": "pantheonsent:textures/icon/stealth.png",
+      "list_index": 3,
+      "hidden": false,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          },
+          {
+            "type": "palladium:brightness_at_position",
+            "min_brightness": 0,
+            "max_brightness": 5
+          }
+        ],
+        "enabling": {
+          "type": "palladium:activation",
+          "ticks": 100,
+          "cooldown": 600
         }
       }
     },
