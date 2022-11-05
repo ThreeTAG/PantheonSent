@@ -200,6 +200,9 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
 
     @Override
     public boolean isInvulnerableTo(DamageSource source) {
+        if (source.getEntity() instanceof Player player) {
+            return !player.isCreative();
+        }
         return source != DamageSource.OUT_OF_WORLD;
     }
 
