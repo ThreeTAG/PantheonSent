@@ -48,6 +48,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.SCARAB_COMPASS, "Scarab Compass");
             this.addItem(PSItems.BROKEN_EYE_OF_HORUS, "Broken Eye of Horus");
             this.addItem(PSItems.EYE_OF_HORUS, "Eye of Horus");
+            this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu Spawn Egg");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Banner Pattern");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Crescent");
 
@@ -131,6 +132,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.SCARAB_COMPASS, "Skarab\u00E4uskompass");
             this.addItem(PSItems.BROKEN_EYE_OF_HORUS, "Kaputtes Horusauge");
             this.addItem(PSItems.EYE_OF_HORUS, "Horusauge");
+            this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu-Spawn-Ei");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannervorlage");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
 
@@ -214,6 +216,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.SCARAB_COMPASS, "Schgarab\u00E4usgombass");
             this.addItem(PSItems.BROKEN_EYE_OF_HORUS, "Gabuttes Horusooche");
             this.addItem(PSItems.EYE_OF_HORUS, "Horusooche");
+            this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu-Schborn-Ei");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannorrvorlaache");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
 

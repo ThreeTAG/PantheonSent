@@ -5,15 +5,14 @@ import net.fabricmc.api.Environment;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
-import net.threetag.palladium.item.CreativeModeTabFiller;
-import net.threetag.palladium.item.SortedBannerPatternItem;
-import net.threetag.palladium.item.SortedBlockItem;
-import net.threetag.palladium.item.SortedItem;
+import net.threetag.palladium.item.*;
+import net.threetag.palladiumcore.item.PalladiumSpawnEggItem;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.palladiumcore.registry.client.ItemPropertyRegistry;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.block.PSBlocks;
+import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.tags.PSBannerPatternTags;
 
 public class PSItems {
@@ -50,6 +49,7 @@ public class PSItems {
     public static final RegistrySupplier<Item> BROKEN_EYE_OF_HORUS = ITEMS.register("broken_eye_of_horus", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).stacksTo(1)));
     public static final RegistrySupplier<Item> EYE_OF_HORUS = ITEMS.register("eye_of_horus", () -> new EyeOfHorusItem(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).rarity(Rarity.RARE).durability(3)));
 
+    public static final RegistrySupplier<Item> KHONSHU_SPAWN_EGG = ITEMS.register("khonshu_spawn_egg", () -> new SortedSpawnEggItem(PSEntityTypes.KHONSHU, 0xd9d7d8, 0xd7c283, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistrySupplier<Item> CRESCENT_BANNER_PATTERN = ITEMS.register("crescent_banner_pattern", () -> new SortedBannerPatternItem(PSBannerPatternTags.PATTERN_CRESCENT, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE)));
 
     @Environment(EnvType.CLIENT)

@@ -14,7 +14,12 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
@@ -27,16 +32,16 @@ import net.threetag.pantheonsent.util.PantheonSentProperties;
 
 import java.util.UUID;
 
-public class Khonshu extends Mob implements ExtendedEntitySpawnData {
+public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
 
-    public Mode mode;
+    public Mode mode = Mode.WANDER;
     public UUID avatarId;
     public Player avatar;
     public int recruitingTimer;
     private static final EntityDataAccessor<Integer> DESPAWN_TIMER = SynchedEntityData.defineId(Khonshu.class, EntityDataSerializers.INT);
     public int prevDespawnTimer = -1;
 
-    public Khonshu(EntityType<? extends Mob> entityType, Level level) {
+    public Khonshu(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -62,8 +67,17 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(2, new RecruitAvatarGoal());
+        this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 0.6));
+        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(4, new RecruitAvatarGoal());
         this.goalSelector.addGoal(7, new LookAtAvatarGoal());
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 100.0)
+                .add(Attributes.MOVEMENT_SPEED, 0.25)
+                .add(Attributes.ATTACK_DAMAGE, 15.0);
     }
 
     public Player getAvatar() {
@@ -80,6 +94,10 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
         } else {
             return null;
         }
+    }
+
+    public boolean boundToAvatar() {
+        return this.avatarId != null;
     }
 
     @Override
@@ -299,6 +317,7 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
 
     public enum Mode {
 
+        WANDER,
         RECRUITING,
         STALKING;
 

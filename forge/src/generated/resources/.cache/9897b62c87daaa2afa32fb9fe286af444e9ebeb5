@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-09T22:46:48.6950634	PantheonSent Item Models: pantheonsent
+// 1.19.2	2022-11-05T22:00:38.9927272	PantheonSent Item Models: pantheonsent
 c805ed74628acefcc7bf58a0b9b15e41968593d9 assets/pantheonsent/models/item/ancient_clay_shard.json
 d1060bcef68ec211e72d773a0abf94aaa8dadc6c assets/pantheonsent/models/item/ancient_gold_shard.json
 1087925da51b37ba71de5d9a78d6de5d242f1594 assets/pantheonsent/models/item/archeology_table.json
@@ -11,6 +11,7 @@ a6634c88d1a8b22682ebcf400fe460e22bb6a862 assets/pantheonsent/models/item/brush.j
 67c04a8b4775488882db14462a7cc6081c2efbb2 assets/pantheonsent/models/item/eye_of_horus.json
 8c2eb6a4e000abbb1a5758a97dd41ac0f18bd3a8 assets/pantheonsent/models/item/gilded_sandstone.json
 7950f60ea3d46970e174c5357776efc602967e4a assets/pantheonsent/models/item/gilded_sandstone_pillar.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/pantheonsent/models/item/khonshu_spawn_egg.json
 b92bf8cfaa33df57a87dc3566ec3672c68e10b73 assets/pantheonsent/models/item/khonshu_ushabti.json
 40d2a16ecc7a48e54203522e64bdfc9c9a644704 assets/pantheonsent/models/item/lunar_shard.json
 607bdb8aa1864456589a90be113320ecf8a836d0 assets/pantheonsent/models/item/lunar_stone.json

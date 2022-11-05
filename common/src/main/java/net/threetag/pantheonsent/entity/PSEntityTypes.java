@@ -1,10 +1,7 @@
 package net.threetag.pantheonsent.entity;
 
 import net.minecraft.core.Registry;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.*;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.EntityAttributeRegistry;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
@@ -24,7 +21,7 @@ public class PSEntityTypes {
     }
 
     public static void init() {
-        EntityAttributeRegistry.register(KHONSHU, Mob::createMobAttributes);
+        EntityAttributeRegistry.register(KHONSHU, Khonshu::createAttributes);
     }
 
 }

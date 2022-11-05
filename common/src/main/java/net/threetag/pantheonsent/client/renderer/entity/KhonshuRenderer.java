@@ -1,6 +1,6 @@
 package net.threetag.pantheonsent.client.renderer.entity;
 
-import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -18,14 +18,8 @@ public class KhonshuRenderer extends MobRenderer<Khonshu, KhonshuModel<Khonshu>>
     }
 
     @Override
-    protected void scale(Khonshu livingEntity, PoseStack matrixStack, float partialTickTime) {
-
-    }
-
-    @Override
-    public boolean shouldRender(Khonshu livingEntity, Frustum camera, double camX, double camY, double camZ) {
-        return true;
-//        return livingEntity.avatarId != null && livingEntity.avatarId.equals(Minecraft.getInstance().player.getUUID()) && super.shouldRender(livingEntity, camera, camX, camY, camZ);
+    public boolean shouldRender(Khonshu khonshu, Frustum camera, double camX, double camY, double camZ) {
+        return (!khonshu.boundToAvatar() || khonshu.avatarId.equals(Minecraft.getInstance().player.getUUID())) && super.shouldRender(khonshu, camera, camX, camY, camZ);
     }
 
     @Override
