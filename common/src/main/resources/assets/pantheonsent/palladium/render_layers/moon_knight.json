@@ -11,7 +11,7 @@
   "layers": [
     {
       "model_layer": "pantheonsent:humanoid#moon_knight_suit",
-      "model": "pantheonsent:moon_knight_suit",
+      "model_type": "pantheonsent:moon_knight_suit",
       "texture": {
         "base": "pantheonsent:textures/models/moon_knight.png",
         "transformers": [
@@ -33,7 +33,7 @@
     },
     {
       "model_layer": "pantheonsent:humanoid#moon_knight_cape",
-      "model": "pantheonsent:moon_knight_cape",
+      "model_type": "pantheonsent:moon_knight_cape",
       "hidden_body_parts": "cape",
       "texture": {
         "base": "pantheonsent:textures/models/moon_knight_cape/#STAGE.png",
@@ -66,7 +66,7 @@
     },
     {
       "model_layer": "pantheonsent:humanoid#moon_knight_suit",
-      "model": "pantheonsent:moon_knight_suit",
+      "model_type": "pantheonsent:moon_knight_suit",
       "texture": "pantheonsent:textures/models/moon_knight_lights.png",
       "render_type": "glow",
       "conditions": [

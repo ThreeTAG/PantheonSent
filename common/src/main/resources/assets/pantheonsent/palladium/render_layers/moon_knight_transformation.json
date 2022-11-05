@@ -3,7 +3,7 @@
   "layers": [
     {
       "model_layer": "pantheonsent:humanoid#moon_knight_suit",
-      "model": "pantheonsent:moon_knight_suit",
+      "model_type": "pantheonsent:moon_knight_suit",
       "texture": {
         "base": "pantheonsent:textures/models/moon_knight.png",
         "transformers": [
@@ -26,7 +26,7 @@
     },
     {
       "model_layer": "pantheonsent:humanoid#moon_knight_suit",
-      "model": "pantheonsent:moon_knight_suit",
+      "model_type": "pantheonsent:moon_knight_suit",
       "hidden_body_parts": "cape",
       "texture": "pantheonsent:textures/models/moon_knight_lights.png",
       "render_type": "glow",
