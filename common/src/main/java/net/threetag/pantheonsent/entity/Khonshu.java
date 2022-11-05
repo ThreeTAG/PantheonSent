@@ -157,13 +157,16 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
 
     @Override
     public void saveAdditionalSpawnData(FriendlyByteBuf buf) {
-        buf.writeUUID(this.avatarId);
+        buf.writeBoolean(this.avatarId != null);
+        if (this.avatarId != null)
+            buf.writeUUID(this.avatarId);
         buf.writeInt(this.mode.ordinal());
     }
 
     @Override
     public void loadAdditionalSpawnData(FriendlyByteBuf buf) {
-        this.avatarId = buf.readUUID();
+        if (buf.readBoolean())
+            this.avatarId = buf.readUUID();
         this.mode = Mode.values()[buf.readInt()];
     }
 
@@ -174,12 +177,12 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
 
     @Override
     public boolean isInvulnerable() {
-        return true;
+        return super.isInvulnerable();
     }
 
     @Override
     public boolean isInvulnerableTo(DamageSource source) {
-        return true;
+        return source != DamageSource.OUT_OF_WORLD;
     }
 
     @Override
@@ -189,6 +192,26 @@ public class Khonshu extends Mob implements ExtendedEntitySpawnData {
 
     @Override
     public boolean canCollideWith(Entity entity) {
+        return false;
+    }
+
+    @Override
+    public boolean isPushable() {
+        return false;
+    }
+
+    @Override
+    protected void doPush(Entity entity) {
+
+    }
+
+    @Override
+    protected void pushEntities() {
+
+    }
+
+    @Override
+    public boolean isPushedByFluid() {
         return false;
     }
 

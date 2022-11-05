@@ -16,6 +16,7 @@ import net.threetag.palladiumcore.registry.client.RenderTypeRegistry;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.client.PSClientEventHandler;
 import net.threetag.pantheonsent.client.model.CrescentDartModel;
+import net.threetag.pantheonsent.client.model.KhonshuModel;
 import net.threetag.pantheonsent.client.model.MoonKnightCapeModel;
 import net.threetag.pantheonsent.client.model.MoonKnightSuitModel;
 import net.threetag.pantheonsent.client.model.animation.BlockingAnimation;
@@ -39,6 +40,7 @@ public class PantheonSentClient {
 
         // Entity Renderers
         EntityRendererRegistry.registerModelLayer(CrescentDartModel.MODEL_LAYER, CrescentDartModel::createLayer);
+        EntityRendererRegistry.registerModelLayer(KhonshuModel.MODEL_LAYER, KhonshuModel::createBodyLayer);
         EntityRendererRegistry.register(PSEntityTypes.KHONSHU, KhonshuRenderer::new);
         EntityRendererRegistry.addRenderLayerToAll(renderLayerParent -> new EyeOfHorusRenderer((RenderLayerParent<LivingEntity, EntityModel<LivingEntity>>) renderLayerParent));
 
