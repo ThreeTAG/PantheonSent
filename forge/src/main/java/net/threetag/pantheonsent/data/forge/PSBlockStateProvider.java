@@ -8,10 +8,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.pantheonsent.PantheonSent;
-import net.threetag.pantheonsent.block.BrushableBlock;
-import net.threetag.pantheonsent.block.LunarStoneBlock;
-import net.threetag.pantheonsent.block.PSBlocks;
-import net.threetag.pantheonsent.block.TotemHolderBlock;
+import net.threetag.pantheonsent.block.*;
 
 public class PSBlockStateProvider extends BlockStateProvider {
 
@@ -34,7 +31,13 @@ public class PSBlockStateProvider extends BlockStateProvider {
                         .texture("down", new ResourceLocation("block/jungle_planks"))
                 ).addModel();
         this.horizontalBlock(PSBlocks.BROKEN_KHONSHU_USHABTI.get(), models().getExistingFile(PantheonSent.id("block/broken_khonshu_ushabti")));
-        this.horizontalBlock(PSBlocks.KHONSHU_USHABTI.get(), models().getExistingFile(PantheonSent.id("block/khonshu_ushabti")));
+        this.horizontalBlock(PSBlocks.KHONSHU_USHABTI.get(), blockState -> {
+            if(blockState.getValue(UshabtiBlock.USED)) {
+                return models().withExistingParent("used_khonshu_ushabti", PantheonSent.id("block/khonshu_ushabti")).texture("0", PantheonSent.id("block/used_khonshu_ushabti"));
+            } else {
+                return models().getExistingFile(PantheonSent.id("block/khonshu_ushabti"));
+            }
+        });
         this.getVariantBuilder(PSBlocks.SANDSTONE_TOTEM_HOLDER.get())
                 .partialState().with(TotemHolderBlock.ACTIVE, false).modelForState().modelFile(models().withExistingParent("sandstone_totem_holder", "chiseled_sandstone").texture("side", PantheonSent.id("block/sandstone_totem_holder"))).addModel()
                 .partialState().with(TotemHolderBlock.ACTIVE, true).modelForState().modelFile(models().withExistingParent("sandstone_totem_holder_active", "chiseled_sandstone").texture("side", PantheonSent.id("block/sandstone_totem_holder_active"))).addModel();

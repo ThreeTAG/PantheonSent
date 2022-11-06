@@ -9,6 +9,7 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,6 +30,7 @@ public class KhonshuModel<T extends LivingEntity> extends HierarchicalModel<T> i
     public float alpha = 1F;
 
     public KhonshuModel(ModelPart root) {
+        super(RenderType::entityTranslucent);
         this.root = root;
         this.body = root.getChild("body");
         this.leftArm = root.getChild("left_arm");

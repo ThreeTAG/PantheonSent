@@ -1,33 +1,63 @@
 {
   "variants": {
-    "facing=east,waterlogged=false": {
+    "facing=east,used=false,waterlogged=false": {
       "model": "pantheonsent:block/khonshu_ushabti",
       "y": 90
     },
-    "facing=east,waterlogged=true": {
+    "facing=east,used=false,waterlogged=true": {
       "model": "pantheonsent:block/khonshu_ushabti",
       "y": 90
     },
-    "facing=north,waterlogged=false": {
+    "facing=east,used=true,waterlogged=false": {
+      "model": "pantheonsent:block/used_khonshu_ushabti",
+      "y": 90
+    },
+    "facing=east,used=true,waterlogged=true": {
+      "model": "pantheonsent:block/used_khonshu_ushabti",
+      "y": 90
+    },
+    "facing=north,used=false,waterlogged=false": {
       "model": "pantheonsent:block/khonshu_ushabti"
     },
-    "facing=north,waterlogged=true": {
+    "facing=north,used=false,waterlogged=true": {
       "model": "pantheonsent:block/khonshu_ushabti"
     },
-    "facing=south,waterlogged=false": {
+    "facing=north,used=true,waterlogged=false": {
+      "model": "pantheonsent:block/used_khonshu_ushabti"
+    },
+    "facing=north,used=true,waterlogged=true": {
+      "model": "pantheonsent:block/used_khonshu_ushabti"
+    },
+    "facing=south,used=false,waterlogged=false": {
       "model": "pantheonsent:block/khonshu_ushabti",
       "y": 180
     },
-    "facing=south,waterlogged=true": {
+    "facing=south,used=false,waterlogged=true": {
       "model": "pantheonsent:block/khonshu_ushabti",
       "y": 180
     },
-    "facing=west,waterlogged=false": {
+    "facing=south,used=true,waterlogged=false": {
+      "model": "pantheonsent:block/used_khonshu_ushabti",
+      "y": 180
+    },
+    "facing=south,used=true,waterlogged=true": {
+      "model": "pantheonsent:block/used_khonshu_ushabti",
+      "y": 180
+    },
+    "facing=west,used=false,waterlogged=false": {
       "model": "pantheonsent:block/khonshu_ushabti",
       "y": 270
     },
-    "facing=west,waterlogged=true": {
+    "facing=west,used=false,waterlogged=true": {
       "model": "pantheonsent:block/khonshu_ushabti",
+      "y": 270
+    },
+    "facing=west,used=true,waterlogged=false": {
+      "model": "pantheonsent:block/used_khonshu_ushabti",
+      "y": 270
+    },
+    "facing=west,used=true,waterlogged=true": {
+      "model": "pantheonsent:block/used_khonshu_ushabti",
       "y": 270
     }
   }

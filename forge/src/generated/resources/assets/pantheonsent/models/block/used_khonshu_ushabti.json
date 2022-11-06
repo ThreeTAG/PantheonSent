@@ -1,0 +1,6 @@
+{
+  "parent": "pantheonsent:block/khonshu_ushabti",
+  "textures": {
+    "0": "pantheonsent:block/used_khonshu_ushabti"
+  }
+}

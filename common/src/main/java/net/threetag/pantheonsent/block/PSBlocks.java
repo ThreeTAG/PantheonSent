@@ -17,7 +17,7 @@ public class PSBlocks {
     public static final RegistrySupplier<Block> GILDED_SANDSTONE = BLOCKS.register("gilded_sandstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK).strength(1.9F, 3.4F)));
     public static final RegistrySupplier<Block> GILDED_SANDSTONE_PILLAR = BLOCKS.register("gilded_sandstone_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK).strength(1.9F, 3.4F)));
     public static final RegistrySupplier<Block> ARCHEOLOGY_TABLE = BLOCKS.register("archeology_table", () -> new ArcheologyTableBlock(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
-    public static final RegistrySupplier<Block> BROKEN_KHONSHU_USHABTI = BLOCKS.register("broken_khonshu_ushabti", () -> new UshabtiBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BROKEN_KHONSHU_USHABTI = BLOCKS.register("broken_khonshu_ushabti", () -> new BrokenUshabtiBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> KHONSHU_USHABTI = BLOCKS.register("khonshu_ushabti", () -> new UshabtiBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> MYSTERIOUS_DIRT = BLOCKS.register("mysterious_dirt", () -> new BrushableBlock(Blocks.DIRT.defaultBlockState(), PSLootTables.BRUSHABLE_DIRT, BlockBehaviour.Properties.copy(Blocks.DIRT)));
     public static final RegistrySupplier<Block> MYSTERIOUS_GRAVEL = BLOCKS.register("mysterious_gravel", () -> new BrushableBlock(Blocks.GRAVEL.defaultBlockState(), PSLootTables.BRUSHABLE_GRAVEL, BlockBehaviour.Properties.copy(Blocks.GRAVEL)));

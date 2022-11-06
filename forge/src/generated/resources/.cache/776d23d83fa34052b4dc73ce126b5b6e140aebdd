@@ -1,9 +1,9 @@
-// 1.19.2	2022-10-09T22:15:04.108965	PantheonSent Block States: pantheonsent
+// 1.19.2	2022-11-06T21:22:39.1608866	PantheonSent Block States: pantheonsent
 dc3552b3523723e729e606abfe27d4fe4357765e assets/pantheonsent/blockstates/archeology_table.json
 a21bac84eb6603c59cf2315bbae90c5758a48804 assets/pantheonsent/blockstates/broken_khonshu_ushabti.json
 b1961fbcd2adf9c5c30ddc43ebfc8c1451963f78 assets/pantheonsent/blockstates/gilded_sandstone.json
 d3da0021195d96367f7d09d28c64ac0157b8904f assets/pantheonsent/blockstates/gilded_sandstone_pillar.json
-ff7b320066e41334b5804d5e0f1e6ea7f702b220 assets/pantheonsent/blockstates/khonshu_ushabti.json
+2d3061bd217d20cfb86c97e948d3431bceee202c assets/pantheonsent/blockstates/khonshu_ushabti.json
 8d4a012c964d79057f819975c2527e9aaf7f6e01 assets/pantheonsent/blockstates/lunar_stone.json
 c7dc78a38d4c4e0649c115028c22c4280be4fd0d assets/pantheonsent/blockstates/mysterious_dirt.json
 f063e65d26f2c8cb92fd3ce11697078ddb6f3bbf assets/pantheonsent/blockstates/mysterious_gravel.json
@@ -39,3 +39,4 @@ f1d1a35b25be8a911cd51b1f55c4357a6c4dd021 assets/pantheonsent/models/block/myster
 64d36565a01b852129e952c958b10016a49991d3 assets/pantheonsent/models/block/mysterious_sand_3.json
 6c1e83eac60f89c5c36b4bd69f5196dc95b93628 assets/pantheonsent/models/block/sandstone_totem_holder.json
 86e59f3a220199d44f6e910be58ece20e715964a assets/pantheonsent/models/block/sandstone_totem_holder_active.json
+2b473f71725013513d9fcc396cc3f6223748030c assets/pantheonsent/models/block/used_khonshu_ushabti.json
