@@ -17,8 +17,7 @@ import net.threetag.pantheonsent.item.crafting.RestorationRecipe;
 @JeiPlugin
 public class PantheonSentJEIPlugin implements IModPlugin {
 
-    public static final RecipeType<RestorationRecipe> RESTORATION =
-            RecipeType.create(PantheonSent.MOD_ID, "restoration", RestorationRecipe.class);
+    public static final RecipeType<RestorationRecipe> RESTORATION = RecipeType.create(PantheonSent.MOD_ID, "restoration", RestorationRecipe.class);
 
     private RestorationRecipeCategory restorationCategory;
 
@@ -35,7 +34,7 @@ public class PantheonSentJEIPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         ErrorUtil.checkNotNull(this.restorationCategory, "restorationCategory");
-        PantheonSentRecipes recipes = new PantheonSentRecipes();
+        PantheonSentRecipes recipes = new PantheonSentRecipes(registration.getIngredientManager());
         registration.addRecipes(RESTORATION, recipes.getRestorationRecipes(this.restorationCategory));
     }
 

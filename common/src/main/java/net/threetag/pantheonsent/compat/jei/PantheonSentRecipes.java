@@ -1,7 +1,8 @@
 package net.threetag.pantheonsent.compat.jei;
 
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.common.plugins.vanilla.crafting.CategoryRecipeValidator;
+import mezz.jei.api.runtime.IIngredientManager;
+import mezz.jei.library.plugins.vanilla.crafting.CategoryRecipeValidator;
 import mezz.jei.common.util.ErrorUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -17,17 +18,19 @@ import java.util.List;
 public class PantheonSentRecipes {
 
     private final RecipeManager recipeManager;
+    private final IIngredientManager ingredientManager;
 
-    public PantheonSentRecipes() {
+    public PantheonSentRecipes(IIngredientManager ingredientManager) {
         Minecraft minecraft = Minecraft.getInstance();
         ErrorUtil.checkNotNull(minecraft, "minecraft");
         ClientLevel world = minecraft.level;
         ErrorUtil.checkNotNull(world, "minecraft world");
         this.recipeManager = world.getRecipeManager();
+        this.ingredientManager = ingredientManager;
     }
 
     public List<RestorationRecipe> getRestorationRecipes(IRecipeCategory<RestorationRecipe> category) {
-        CategoryRecipeValidator<RestorationRecipe> validator = new CategoryRecipeValidator<>(category, 0);
+        CategoryRecipeValidator<RestorationRecipe> validator = new CategoryRecipeValidator<>(category, this.ingredientManager, 0);
         return getValidHandledRecipes(this.recipeManager, PSRecipeSerializers.RESTORATION_RECIPE_TYPE.get(), validator);
     }
 

@@ -23,7 +23,7 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
-import net.threetag.palladium.util.property.PalladiumProperties;
+import net.threetag.palladium.power.SuperpowerUtil;
 import net.threetag.palladiumcore.network.ExtendedEntitySpawnData;
 import net.threetag.palladiumcore.network.NetworkManager;
 import net.threetag.pantheonsent.PantheonSent;
@@ -306,7 +306,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
                 line = 6;
 
             if (timer == 24 * 20) {
-                PalladiumProperties.SUPERPOWER_ID.set(avatar, PantheonSent.id("moon_knight_transformation"));
+                SuperpowerUtil.addSuperpower(avatar, PantheonSent.id("moon_knight_transformation"));
             }
 
             if (line > 0) {

@@ -6,6 +6,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.threetag.palladiumcore.forge.PalladiumCoreForge;
 import net.threetag.palladiumcore.util.Platform;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.PantheonSentClient;
@@ -17,9 +19,10 @@ import top.theillusivec4.curios.api.SlotTypeMessage;
 public class PantheonSentForge {
 
     public PantheonSentForge() {
+        PalladiumCoreForge.registerModEventBus(PantheonSent.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
         PantheonSent.init();
 
-        if(Platform.isClient()) {
+        if (Platform.isClient()) {
             PantheonSentClient.init();
         }
     }
