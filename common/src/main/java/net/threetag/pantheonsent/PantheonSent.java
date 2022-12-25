@@ -15,6 +15,7 @@ import net.threetag.pantheonsent.item.PSItems;
 import net.threetag.pantheonsent.item.crafting.PSRecipeSerializers;
 import net.threetag.pantheonsent.item.enchantment.PSEnchantments;
 import net.threetag.pantheonsent.network.PSNetwork;
+import net.threetag.pantheonsent.sound.PSSoundEvents;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
 import net.threetag.pantheonsent.world.PSStructureProcessorTypes;
 import org.apache.logging.log4j.LogManager;
@@ -39,6 +40,7 @@ public class PantheonSent {
         PSAbilities.ABILITIES.register();
         PSBannerPatterns.BANNER_PATTERNS.register();
         PSEnchantments.ENCHANTMENTS.register();
+        PSSoundEvents.SOUNDS.register();
 
         PSNetwork.init();
         PSEntityTypes.init();

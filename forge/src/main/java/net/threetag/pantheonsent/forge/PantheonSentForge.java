@@ -39,6 +39,7 @@ public class PantheonSentForge {
         e.getGenerator().addProvider(e.includeClient(), new PSLangProvider.Saxon(e.getGenerator()));
         e.getGenerator().addProvider(e.includeClient(), new PSBlockStateProvider(e.getGenerator(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeClient(), new PSItemModelProvider(e.getGenerator(), e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeClient(), new PSSoundDefinitionsProvider(e.getGenerator(), e.getExistingFileHelper()));
 
         BlockTagsProvider blockTags = new PSBlockTagsProvider(e.getGenerator(), e.getExistingFileHelper());
         e.getGenerator().addProvider(e.includeServer(), blockTags);

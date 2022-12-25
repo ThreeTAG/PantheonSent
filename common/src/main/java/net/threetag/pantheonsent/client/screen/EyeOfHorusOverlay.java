@@ -6,11 +6,17 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.threetag.palladium.client.model.animation.AnimationUtil;
 import net.threetag.palladiumcore.event.ClientTickEvents;
 import net.threetag.palladiumcore.registry.client.OverlayRegistry;
 import net.threetag.pantheonsent.PantheonSent;
+import net.threetag.pantheonsent.sound.PSSoundEvents;
+
+import java.util.Objects;
 
 public class EyeOfHorusOverlay implements OverlayRegistry.IIngameOverlay, ClientTickEvents.ClientTick {
 
@@ -55,6 +61,8 @@ public class EyeOfHorusOverlay implements OverlayRegistry.IIngameOverlay, Client
     }
 
     public static void start() {
+        var pos = Objects.requireNonNull(Minecraft.getInstance().player).getEyePosition();
+        Minecraft.getInstance().getSoundManager().play(new SimpleSoundInstance(PSSoundEvents.EYE_OF_HORUS.get(), SoundSource.PLAYERS, 1F, 1F, RandomSource.create(), pos.x, pos.y, pos.z));
         TIMER = 0;
     }
 }

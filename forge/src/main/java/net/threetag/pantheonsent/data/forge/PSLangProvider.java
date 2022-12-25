@@ -10,6 +10,7 @@ import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.item.PSItems;
 import net.threetag.pantheonsent.item.enchantment.PSEnchantments;
+import net.threetag.pantheonsent.sound.PSSoundEvents;
 
 public abstract class PSLangProvider extends ExtendedLangProvider {
 
@@ -98,6 +99,9 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Crescent Dart");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Archeologist");
             this.add("entity.minecraft.villager.archeologist", "Archeologist");
+
+            // Subtitles
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Eye of Horus");
         }
     }
 
@@ -182,6 +186,9 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Arch\u00E4ologe");
             this.add("entity.minecraft.villager.archeologist", "Arch\u00E4ologe");
+
+            // Subtitles
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusauge");
         }
     }
 
@@ -266,6 +273,9 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Arsch\u00E4oloje");
             this.add("entity.minecraft.villager.archeologist", "Arsch\u00E4oloje");
+
+            // Subtitles
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusooche");
         }
     }
 

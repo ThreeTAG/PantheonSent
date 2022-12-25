@@ -1,0 +1,8 @@
+{
+  "item.eye_of_horus.use": {
+    "sounds": [
+      "pantheonsent:eye_of_horus"
+    ],
+    "subtitle": "subtitles.pantheonsent.item.eye_of_horus.use"
+  }
+}
