@@ -1,6 +1,7 @@
 package net.threetag.pantheonsent.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -30,18 +31,31 @@ public class TotemHolderBlock extends Block {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack stack = player.getItemInHand(hand);
 
-        if (!state.getValue(ACTIVE) && stack.getItem() == PSItems.LUNAR_TOTEM.get()) {
-            level.setBlock(pos, state.setValue(ACTIVE, true), 2);
-            stack.shrink(1);
+        if (!state.getValue(ACTIVE) && stack.getItem() == PSItems.LUNAR_TOTEM.get() && level.isNight()) {
+            boolean foundSky = false;
 
-            if (!level.isClientSide) {
-                Khonshu khonshu = new Khonshu(level, player, Khonshu.Mode.RECRUITING);
-                GodStalkedAbility.teleportRandom(player.getOnPos(), khonshu, player, level, 5, 20, 7, 10);
-                level.addFreshEntity(khonshu);
-                level.scheduleTick(pos, this, 60);
+            for (Direction direction : Direction.values()) {
+                if (direction.getAxis().isHorizontal()) {
+                    if (level.canSeeSky(pos.relative(direction))) {
+                        foundSky = true;
+                        break;
+                    }
+                }
             }
 
-            return InteractionResult.sidedSuccess(level.isClientSide);
+            if(foundSky) {
+                level.setBlock(pos, state.setValue(ACTIVE, true), 2);
+                stack.shrink(1);
+
+                if (!level.isClientSide) {
+                    Khonshu khonshu = new Khonshu(level, player, Khonshu.Mode.RECRUITING);
+                    GodStalkedAbility.teleportRandom(player.getOnPos(), khonshu, player, level, 5, 20, 7, 10);
+                    level.addFreshEntity(khonshu);
+                    level.scheduleTick(pos, this, 60);
+                }
+
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
         }
 
         return super.use(state, level, pos, player, hand, hit);
