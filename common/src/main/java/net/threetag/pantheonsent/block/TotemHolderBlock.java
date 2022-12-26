@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.threetag.pantheonsent.ability.GodStalkedAbility;
+import net.minecraft.world.phys.Vec3;
 import net.threetag.pantheonsent.entity.Khonshu;
 import net.threetag.pantheonsent.item.PSItems;
 
@@ -35,21 +35,20 @@ public class TotemHolderBlock extends Block {
             boolean foundSky = false;
 
             for (Direction direction : Direction.values()) {
-                if (direction.getAxis().isHorizontal()) {
-                    if (level.canSeeSky(pos.relative(direction))) {
-                        foundSky = true;
-                        break;
-                    }
+                if (level.canSeeSky(pos.relative(direction))) {
+                    foundSky = true;
+                    break;
                 }
             }
 
-            if(foundSky) {
+            if (foundSky) {
                 level.setBlock(pos, state.setValue(ACTIVE, true), 2);
                 stack.shrink(1);
 
                 if (!level.isClientSide) {
                     Khonshu khonshu = new Khonshu(level, player, Khonshu.Mode.RECRUITING);
-                    GodStalkedAbility.teleportRandom(player.getOnPos(), khonshu, player, level, 5, 20, 7, 10);
+                    var kPos = Khonshu.findRandomPos(player.getOnPos(), khonshu, player, level, 3, 7, 7);
+                    khonshu.setPos(new Vec3(kPos.x(), kPos.y(), kPos.z()));
                     level.addFreshEntity(khonshu);
                     level.scheduleTick(pos, this, 60);
                 }

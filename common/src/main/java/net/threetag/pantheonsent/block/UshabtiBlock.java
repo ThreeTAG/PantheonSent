@@ -22,7 +22,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.threetag.pantheonsent.ability.GodStalkedAbility;
 import net.threetag.pantheonsent.ability.PSAbilities;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
 import net.threetag.pantheonsent.block.entity.UshabtiBlockEntity;
@@ -96,9 +95,10 @@ public class UshabtiBlock extends BaseEntityBlock implements SimpleWaterloggedBl
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
         super.playerDestroy(level, player, pos, state, blockEntity, tool);
 
-        if(state.getValue(USED) && blockEntity instanceof UshabtiBlockEntity ushabti && ushabti.owner != null && ushabti.owner.equals(player.getUUID())) {
+        if (state.getValue(USED) && blockEntity instanceof UshabtiBlockEntity ushabti && ushabti.owner != null && ushabti.owner.equals(player.getUUID())) {
             Khonshu khonshu = new Khonshu(level, player, Khonshu.Mode.RECRUITING);
-            GodStalkedAbility.teleportRandom(player.getOnPos(), khonshu, player, level, 5, 20, 7, 10);
+            var entityPos = Khonshu.findRandomPos(player.getOnPos(), khonshu, player, level, 3, 7, 7);
+            khonshu.setPos(entityPos.x, entityPos.y, entityPos.z);
             level.addFreshEntity(khonshu);
         }
     }

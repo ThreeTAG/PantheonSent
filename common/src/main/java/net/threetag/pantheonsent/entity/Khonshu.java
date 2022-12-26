@@ -1,5 +1,6 @@
 package net.threetag.pantheonsent.entity;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -7,10 +8,10 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -21,13 +22,18 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.threetag.palladium.power.SuperpowerUtil;
 import net.threetag.palladiumcore.network.ExtendedEntitySpawnData;
 import net.threetag.palladiumcore.network.NetworkManager;
 import net.threetag.pantheonsent.PantheonSent;
-import net.threetag.pantheonsent.ability.GodStalkedAbility;
+import net.threetag.pantheonsent.network.DarknessMessage;
+import net.threetag.pantheonsent.network.ForceThirdPersonMessage;
+import net.threetag.pantheonsent.network.KhonshuTeleportMessage;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
 
 import java.util.UUID;
@@ -39,7 +45,10 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
     public Player avatar;
     public int recruitingTimer;
     private static final EntityDataAccessor<Integer> DESPAWN_TIMER = SynchedEntityData.defineId(Khonshu.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> WIGGLE_ARM = SynchedEntityData.defineId(Khonshu.class, EntityDataSerializers.BOOLEAN);
     public int prevDespawnTimer = -1;
+    public int prevWiggleArmsAnimation = 0;
+    public int wiggleArmsAnimation = 0;
 
     public Khonshu(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
@@ -62,13 +71,14 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DESPAWN_TIMER, -1);
+        this.entityData.define(WIGGLE_ARM, false);
     }
 
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 0.6));
-        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1, new RandomStroll(this, 0.6));
+        this.goalSelector.addGoal(2, new RandomLookAround(this));
         this.goalSelector.addGoal(4, new RecruitAvatarGoal());
         this.goalSelector.addGoal(7, new LookAtAvatarGoal());
     }
@@ -120,6 +130,15 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         }
 
 
+        // Arms Animation
+        this.prevWiggleArmsAnimation = this.wiggleArmsAnimation;
+        if (this.isWigglingArms() && this.wiggleArmsAnimation < 20) {
+            this.wiggleArmsAnimation++;
+        } else if (!this.isWigglingArms() && this.wiggleArmsAnimation > 0) {
+            this.wiggleArmsAnimation--;
+        }
+
+
         // Stalking
         if (this.mode == Mode.STALKING && !this.level.isClientSide && !this.isDespawning()) {
             var avatar = this.getAvatar();
@@ -151,6 +170,18 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         return this.getDespawnTimer() >= 0;
     }
 
+    public boolean isWigglingArms() {
+        return this.entityData.get(WIGGLE_ARM);
+    }
+
+    public void setWiggleArms(boolean wiggle) {
+        this.entityData.set(WIGGLE_ARM, wiggle);
+    }
+
+    public float getWiggleArmsProgress(float partialTicks) {
+        return Mth.lerp(partialTicks, this.prevWiggleArmsAnimation, this.wiggleArmsAnimation) / 20F;
+    }
+
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
@@ -160,6 +191,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         compound.putInt("Mode", this.mode.ordinal());
         compound.putInt("RecruitingTimer", this.recruitingTimer);
         compound.putInt("DespawnTimer", this.getDespawnTimer());
+        compound.putBoolean("WiggleArms", this.isWigglingArms());
     }
 
     @Override
@@ -171,6 +203,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         this.mode = Mode.values()[compound.getInt("Mode")];
         this.recruitingTimer = compound.getInt("RecruitingTimer");
         this.setDespawnTimer(compound.getInt("DespawnTimer"));
+        this.setWiggleArms(compound.getBoolean("WiggleArms"));
     }
 
     @Override
@@ -241,6 +274,43 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         return NetworkManager.createAddEntityPacket(this);
     }
 
+    public static Vec3 findRandomPos(BlockPos center, Khonshu khonshu, Player player, Level level, int minRange, int maxRange, int maxYOffset) {
+        return findRandomPos(center, khonshu, player, level, minRange, maxRange, maxYOffset, 50);
+    }
+
+    public static Vec3 findRandomPos(BlockPos center, Khonshu khonshu, Player player, Level level, int minRange, int maxRange, int maxYOffset, int attempts) {
+        if (attempts == 0) {
+            return new Vec3(center.getX() + 0.5F, center.getY(), center.getZ() + 0.5F);
+        }
+
+        RandomSource rand = RandomSource.create();
+        int x = (int) (center.getX() + (minRange + (maxRange - minRange) * rand.nextFloat()) * (rand.nextBoolean() ? 1F : -1F));
+        int y = center.getY() + maxYOffset;
+        int z = (int) (center.getZ() + (minRange + (maxRange - minRange) * rand.nextFloat()) * (rand.nextBoolean() ? 1F : -1F));
+
+        for (int i = y; i > center.getY() - 20; i--) {
+            BlockPos pos = new BlockPos(x, i, z);
+            if (!level.isEmptyBlock(pos.below()) && level.isEmptyBlock(pos) && level.isEmptyBlock(pos.above())) {
+                Vec3 position = new Vec3(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F);
+
+                if (hasLineOfSight(khonshu, position.add(0, khonshu.getEyeHeight(), 0), player)) {
+                    return position;
+                }
+            }
+        }
+
+        return findRandomPos(center, khonshu, player, level, minRange, maxRange, maxYOffset, attempts - 1);
+    }
+
+    public static boolean hasLineOfSight(Khonshu khonshu, Vec3 eyePos, Entity entity) {
+        Vec3 target = entity.getEyePosition();
+        if (target.distanceTo(eyePos) > 128.0) {
+            return false;
+        } else {
+            return entity.level.clip(new ClipContext(eyePos, target, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, khonshu)).getType() == HitResult.Type.MISS;
+        }
+    }
+
     class LookAtAvatarGoal extends Goal {
 
         @Override
@@ -277,18 +347,21 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
             int timer = Khonshu.this.recruitingTimer;
 
             if (timer == 0 || timer == 6 * 20 || timer == 12 * 20 || timer == 18 * 20) {
-                avatar.forceAddEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120), null);
+                if (avatar instanceof ServerPlayer serverPlayer) {
+                    new DarknessMessage(120).send(serverPlayer);
+                }
             } else if (timer == 20 || timer == 7 * 20 || timer == 13 * 20) {
                 int i = timer == 20 ? 3 : (timer == 7 * 20 ? 2 : 1);
-                GodStalkedAbility.teleportRandom(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, i * 3, i * 3 + 3, 7, 10);
+                var pos = findRandomPos(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, 3, i * 2 + 1, 15);
+                new KhonshuTeleportMessage(Khonshu.this, pos).sendToTracking(Khonshu.this);
+                Khonshu.this.teleportTo(pos.x(), pos.y(), pos.z());
             } else if (timer == 19 * 20) {
-                double g = avatar.getX() + (avatar.getRandom().nextDouble() - 0.5) * 3.0;
-                double h = avatar.getY();
-                double j = avatar.getZ() + (avatar.getRandom().nextDouble() - 0.5) * 3.0;
-                var pos = GodStalkedAbility.teleportRandom(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, 5, 20, 7, 10);
-                Khonshu.this.randomTeleport(g, h, j, false);
+                var pos = findRandomPos(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, 2, 5, 7);
+                new KhonshuTeleportMessage(Khonshu.this, pos).sendToTracking(Khonshu.this);
+                Khonshu.this.teleportTo(pos.x(), pos.y(), pos.z());
             } else if (timer == MAX_TIME) {
                 Khonshu.this.setDespawnTimer(60);
+                Khonshu.this.setWiggleArms(false);
             }
 
             int line = 0;
@@ -305,6 +378,11 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
             else if (timer == 27 * 20)
                 line = 6;
 
+            if (line == 4 && avatar instanceof ServerPlayer serverPlayer) {
+                Khonshu.this.setWiggleArms(true);
+                new ForceThirdPersonMessage(MAX_TIME - timer).send(serverPlayer);
+            }
+
             if (timer == 24 * 20) {
                 SuperpowerUtil.addSuperpower(avatar, PantheonSent.id("moon_knight_transformation"));
             }
@@ -315,6 +393,36 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
 
             Khonshu.this.recruitingTimer++;
             PantheonSentProperties.KHONSHU_RECRUITING_TIMER.set(avatar, MAX_TIME - timer);
+        }
+
+        @Override
+        public void stop() {
+            super.stop();
+            Khonshu.this.setWiggleArms(false);
+        }
+    }
+
+    public class RandomStroll extends WaterAvoidingRandomStrollGoal {
+
+        public RandomStroll(PathfinderMob pathfinderMob, double d) {
+            super(pathfinderMob, d);
+        }
+
+        @Override
+        public boolean canUse() {
+            return Khonshu.this.mode == Mode.WANDER && super.canUse();
+        }
+    }
+
+    public class RandomLookAround extends RandomLookAroundGoal {
+
+        public RandomLookAround(Mob mob) {
+            super(mob);
+        }
+
+        @Override
+        public boolean canUse() {
+            return Khonshu.this.mode == Mode.WANDER && super.canUse();
         }
     }
 

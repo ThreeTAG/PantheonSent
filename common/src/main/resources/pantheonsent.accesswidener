@@ -1,5 +1,7 @@
 accessWidener v2 named
 
+accessible class net/minecraft/client/renderer/FogRenderer$FogData
+
 accessible method net/minecraft/client/gui/screens/MenuScreens register (Lnet/minecraft/world/inventory/MenuType;Lnet/minecraft/client/gui/screens/MenuScreens$ScreenConstructor;)V
 accessible class net/minecraft/client/gui/screens/MenuScreens$ScreenConstructor
 
