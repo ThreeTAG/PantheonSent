@@ -4,5 +4,13 @@
       "pantheonsent:eye_of_horus"
     ],
     "subtitle": "subtitles.pantheonsent.item.eye_of_horus.use"
+  },
+  "music_disc.chons": {
+    "sounds": [
+      {
+        "name": "pantheonsent:music_disc_chons",
+        "stream": true
+      }
+    ]
   }
 }

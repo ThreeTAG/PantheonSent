@@ -12,6 +12,7 @@ public class PSSoundEvents {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(PantheonSent.MOD_ID, Registry.SOUND_EVENT_REGISTRY);
 
     public static final RegistrySupplier<SoundEvent> EYE_OF_HORUS = make("item.eye_of_horus.use");
+    public static final RegistrySupplier<SoundEvent> MUSIC_DISC_CHONS = make("music_disc.chons");
 
     public static RegistrySupplier<SoundEvent> make(String name) {
         return SOUNDS.register(name, () -> new SoundEvent(new ResourceLocation(PantheonSent.MOD_ID, name)));

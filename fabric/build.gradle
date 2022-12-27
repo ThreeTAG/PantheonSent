@@ -37,6 +37,7 @@ dependencies {
     modApi ("net.threetag:Palladium-fabric:${rootProject.palladium_version}", {
         exclude group: "com.github.Virtuoel"
     })
+    modApi "net.threetag:PalladiumCore-fabric:${rootProject.palladiumcore_version}"
 
     // Disable Custom Worlds Advice
     modLocalRuntime "curse.maven:disablecustomworldsadvice-401978:${rootProject.disablecustomworldsadvice_version}"

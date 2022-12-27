@@ -21,6 +21,7 @@ public class PSItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.PIGLIN_LOVED).add(PSItems.GILDED_SANDSTONE.get(), PSItems.GILDED_SANDSTONE_PILLAR.get(), PSItems.ANCIENT_GOLD_SHARD.get());
         this.tag(CurioTrinketRegistry.NECKLACE.getFabric()).add(PSItems.EYE_OF_HORUS.get());
         this.tag(CurioTrinketRegistry.NECKLACE.getForge()).add(PSItems.EYE_OF_HORUS.get());
+        this.tag(ItemTags.MUSIC_DISCS).add(PSItems.MUSIC_DISK_CHONS.get());
     }
 
     @Override

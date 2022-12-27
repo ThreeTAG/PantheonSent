@@ -17,6 +17,7 @@ public class PSSoundDefinitionsProvider extends SoundDefinitionsProvider {
     @Override
     public void registerSounds() {
         this.add(PSSoundEvents.EYE_OF_HORUS, definition().with(sound(PantheonSent.id("eye_of_horus"))).subtitle(subtitle(PSSoundEvents.EYE_OF_HORUS)));
+        this.add(PSSoundEvents.MUSIC_DISC_CHONS, definition().with(sound(PantheonSent.id("music_disc_chons")).stream()));
     }
 
     @Override

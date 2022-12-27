@@ -6,13 +6,14 @@ import net.minecraft.core.Registry;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
 import net.threetag.palladium.item.*;
-import net.threetag.palladiumcore.item.PalladiumSpawnEggItem;
+import net.threetag.palladiumcore.item.PalladiumRecordItem;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.palladiumcore.registry.client.ItemPropertyRegistry;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
+import net.threetag.pantheonsent.sound.PSSoundEvents;
 import net.threetag.pantheonsent.tags.PSBannerPatternTags;
 
 public class PSItems {
@@ -51,6 +52,7 @@ public class PSItems {
 
     public static final RegistrySupplier<Item> KHONSHU_SPAWN_EGG = ITEMS.register("khonshu_spawn_egg", () -> new SortedSpawnEggItem(PSEntityTypes.KHONSHU, 0xd9d7d8, 0xd7c283, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistrySupplier<Item> CRESCENT_BANNER_PATTERN = ITEMS.register("crescent_banner_pattern", () -> new SortedBannerPatternItem(PSBannerPatternTags.PATTERN_CRESCENT, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE)));
+    public static final RegistrySupplier<Item> MUSIC_DISK_CHONS = ITEMS.register("music_disc_chons", () -> PalladiumRecordItem.create(1, PSSoundEvents.MUSIC_DISC_CHONS, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC).rarity(Rarity.RARE), 69));
 
     @Environment(EnvType.CLIENT)
     public static void initProperties() {

@@ -31,6 +31,7 @@ public class PSItemModelProvider extends ItemModelProvider {
         this.defaultItem(PSItems.BROKEN_EYE_OF_HORUS);
         this.defaultItem(PSItems.EYE_OF_HORUS);
         this.defaultItem(PSItems.BROKEN_SCARAB_COMPASS);
+        this.defaultItem(PSItems.MUSIC_DISK_CHONS);
         this.withExistingParent(PSItems.KHONSHU_SPAWN_EGG.getId().getPath(), "item/template_spawn_egg");
         this.withExistingParent(PSItems.CRESCENT_BANNER_PATTERN.getId().getPath(), "item/creeper_banner_pattern");
 
