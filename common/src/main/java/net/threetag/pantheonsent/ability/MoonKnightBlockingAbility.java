@@ -5,6 +5,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.power.IPowerHolder;
 import net.threetag.palladium.power.ability.Ability;
 import net.threetag.palladium.power.ability.AbilityEntry;
+import net.threetag.palladium.power.ability.AbilityUtil;
 import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
 import net.threetag.palladium.util.property.PropertyManager;
@@ -31,24 +32,24 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
     public void tick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
         if (entity.level.isClientSide) {
             int timer = entry.getProperty(TIMER);
-            entry.setOwnProperty(PREV_TIMER, timer);
+            entry.setUniqueProperty(PREV_TIMER, timer);
 
             if (enabled && timer < 10) {
-                entry.setOwnProperty(TIMER, timer + 1);
+                entry.setUniqueProperty(TIMER, timer + 1);
             } else if (!enabled && timer > 0) {
-                entry.setOwnProperty(TIMER, timer - 1);
+                entry.setUniqueProperty(TIMER, timer - 1);
             }
         }
     }
 
     @Override
     public EventResult livingEntityHurt(LivingEntity entity, DamageSource damageSource, float amount) {
-        if (!Ability.getEnabledEntries(entity, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
+        if (!AbilityUtil.getEnabledEntries(entity, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
             return EventResult.cancel();
         }
 
         if (damageSource.getDirectEntity() instanceof LivingEntity livingEntity) {
-            if (!Ability.getEnabledEntries(livingEntity, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
+            if (!AbilityUtil.getEnabledEntries(livingEntity, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
                 return EventResult.cancel();
             }
         }

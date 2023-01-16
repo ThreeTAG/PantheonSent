@@ -1,6 +1,5 @@
 package net.threetag.pantheonsent.ability;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -29,12 +28,12 @@ public class MoonKnightGlidingAbility extends Ability {
     public void tick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
         if (entity.level.isClientSide) {
             int timer = entry.getProperty(TIME_IN_AIR);
-            entry.setOwnProperty(PREV_TIME_IN_AIR, timer);
+            entry.setUniqueProperty(PREV_TIME_IN_AIR, timer);
 
             if ((entity.isOnGround() || entity.isColliding(entity.blockPosition(), entity.level.getBlockState(entity.blockPosition().below(2)))) && timer > 0) {
-                entry.setOwnProperty(TIME_IN_AIR, timer - 1);
+                entry.setUniqueProperty(TIME_IN_AIR, timer - 1);
             } else if (enabled && !entity.isOnGround() && timer < 10) {
-                entry.setOwnProperty(TIME_IN_AIR, timer + 1);
+                entry.setUniqueProperty(TIME_IN_AIR, timer + 1);
             }
         }
         if (enabled && !entity.isOnGround()) {

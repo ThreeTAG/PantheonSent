@@ -28,7 +28,7 @@ public class EyeOfHorusOverlay implements OverlayRegistry.IIngameOverlay, Client
     }
 
     @Override
-    public void render(Gui gui, PoseStack poseStack, float partialTicks, int width, int height) {
+    public void render(Minecraft minecraft, Gui gui, PoseStack poseStack, float partialTicks, int width, int height) {
         if (TIMER < 0) {
             return;
         }

@@ -1,6 +1,7 @@
 package net.threetag.pantheonsent;
 
 import net.minecraft.resources.ResourceLocation;
+import net.threetag.palladium.util.SupporterHandler;
 import net.threetag.palladiumcore.event.LifecycleEvents;
 import net.threetag.palladiumcore.util.Platform;
 import net.threetag.pantheonsent.ability.PSAbilities;
@@ -27,6 +28,8 @@ public class PantheonSent {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public static void init() {
+        SupporterHandler.enableSupporterCheck();
+
         PSBlocks.BLOCKS.register();
         PSBlockEntityTypes.BLOCK_ENTITIES.register();
         PSItems.ITEMS.register();

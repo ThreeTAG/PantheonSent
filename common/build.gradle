@@ -5,7 +5,7 @@ architectury {
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.threetag:Palladium:${rootProject.palladium_version}"
-    modApi "net.threetag:PalladiumCore:${rootProject.palladiumcore_version}"
+//    modApi "net.threetag:PalladiumCore:${rootProject.palladiumcore_version}"
 
     // JEI
     modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-common:${rootProject.jei_version}"
@@ -22,13 +22,19 @@ loom {
 
 publishing {
     publications {
-        mavenCommon(MavenPublication) {
+        mavenFabric(MavenPublication) {
             artifactId = rootProject.archives_base_name
             from components.java
         }
     }
 
     repositories {
-        // Add repositories to publish to here.
+        maven {
+            url 'https://repo.repsy.io/mvn/lucraft/threetag'
+            credentials {
+                username System.getenv('REPSY_USERNAME')
+                password System.getenv('REPSY_PASSWORD')
+            }
+        }
     }
 }

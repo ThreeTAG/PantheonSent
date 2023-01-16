@@ -4,7 +4,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.world.entity.Entity;
 import net.threetag.palladium.event.PalladiumEvents;
-import net.threetag.palladium.power.ability.Ability;
+import net.threetag.palladium.power.ability.AbilityUtil;
 import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
 import net.threetag.palladium.util.property.SyncType;
@@ -39,7 +39,7 @@ public class PantheonSentProperties {
         InputEvents.MOVEMENT_INPUT_UPDATE.register((player, input) -> {
             if (
                     (KHONSHU_RECRUITING_TIMER.isRegistered(player) && KHONSHU_RECRUITING_TIMER.get(player) > 0)
-                            || !Ability.getEnabledEntries(player, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()
+                            || !AbilityUtil.getEnabledEntries(player, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()
             ) {
                 input.up = input.down = input.left = input.right = input.jumping = input.shiftKeyDown = false;
                 input.forwardImpulse = input.leftImpulse = 0F;

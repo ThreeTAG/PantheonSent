@@ -10,8 +10,8 @@ import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.animation.Animation;
 import net.threetag.palladium.client.model.animation.AnimationUtil;
-import net.threetag.palladium.power.ability.Ability;
 import net.threetag.palladium.power.ability.AbilityEntry;
+import net.threetag.palladium.power.ability.AbilityUtil;
 import net.threetag.pantheonsent.ability.MoonKnightGlidingAbility;
 import net.threetag.pantheonsent.ability.PSAbilities;
 
@@ -31,7 +31,7 @@ public class GlidingAnimation extends Animation {
 
     public float getProgress(LivingEntity entity, float partialTicks) {
         float max = 0;
-        var entries = Ability.getEntries(entity, PSAbilities.MOON_KNIGHT_GLIDING.get());
+        var entries = AbilityUtil.getEntries(entity, PSAbilities.MOON_KNIGHT_GLIDING.get());
 
         if (entries.isEmpty()) {
             return 0F;

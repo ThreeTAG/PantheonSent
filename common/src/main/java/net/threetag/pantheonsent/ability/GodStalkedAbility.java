@@ -40,9 +40,9 @@ public class GodStalkedAbility extends Ability {
                 khonshu.setPos(new Vec3(pos.x(), pos.y(), pos.z()));
                 entity.level.addFreshEntity(khonshu);
                 player.playSound(SoundEvents.AMBIENT_CAVE, 1F, 1F);
-                entry.setOwnProperty(TIMER, getRandomMinutes());
+                entry.setUniqueProperty(TIMER, getRandomMinutes());
             } else {
-                entry.setOwnProperty(TIMER, timer - 1);
+                entry.setUniqueProperty(TIMER, timer - 1);
             }
         }
     }

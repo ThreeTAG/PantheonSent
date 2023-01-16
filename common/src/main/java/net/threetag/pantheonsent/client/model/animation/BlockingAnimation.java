@@ -2,14 +2,12 @@ package net.threetag.pantheonsent.client.model.animation;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.animation.Animation;
 import net.threetag.palladium.client.model.animation.AnimationUtil;
-import net.threetag.palladium.power.ability.Ability;
 import net.threetag.palladium.power.ability.AbilityEntry;
+import net.threetag.palladium.power.ability.AbilityUtil;
 import net.threetag.pantheonsent.ability.MoonKnightBlockingAbility;
-import net.threetag.pantheonsent.ability.MoonKnightGlidingAbility;
 import net.threetag.pantheonsent.ability.PSAbilities;
 
 public class BlockingAnimation extends Animation {
@@ -28,7 +26,7 @@ public class BlockingAnimation extends Animation {
 
     public float getProgress(LivingEntity entity, float partialTicks) {
         float max = 0;
-        var entries = Ability.getEntries(entity, PSAbilities.MOON_KNIGHT_BLOCKING.get());
+        var entries = AbilityUtil.getEntries(entity, PSAbilities.MOON_KNIGHT_BLOCKING.get());
 
         if (entries.isEmpty()) {
             return 0F;
