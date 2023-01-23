@@ -2,6 +2,7 @@ package net.threetag.pantheonsent.client.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import dev.kosmx.playerAnim.core.util.Ease;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HeadedModel;
 import net.minecraft.client.model.HierarchicalModel;
@@ -112,14 +113,26 @@ public class KhonshuModel<T extends LivingEntity> extends HierarchicalModel<T> i
             var progress = khonshu.getWiggleArmsProgress(ageInTicks - entity.tickCount);
 
             if (progress > 0F) {
-                progress = AnimationUtil.smooth(progress);
+                progress = AnimationUtil.ease(Ease.INOUTSINE, progress);
                 var wiggle = Mth.sin(ageInTicks / 10F) * 10F;
-                AnimationUtil.interpolateXRotTo(this.rightArm, (float) Math.toRadians(-60 - wiggle), progress);
-                AnimationUtil.interpolateYRotTo(this.rightArm, (float) Math.toRadians(-60), progress);
-                AnimationUtil.interpolateXRotTo(this.leftArm, (float) Math.toRadians(-60 - wiggle), progress);
-                AnimationUtil.interpolateYRotTo(this.leftArm, (float) Math.toRadians(60), progress);
+                interpolateXRotTo(this.rightArm, (float) Math.toRadians(-60 - wiggle), progress);
+                interpolateYRotTo(this.rightArm, (float) Math.toRadians(-60), progress);
+                interpolateXRotTo(this.leftArm, (float) Math.toRadians(-60 - wiggle), progress);
+                interpolateYRotTo(this.leftArm, (float) Math.toRadians(60), progress);
             }
         }
+    }
+
+    public static void interpolateXRotTo(ModelPart modelPart, float destination, float progress) {
+        modelPart.xRot += (destination - modelPart.xRot) * progress;
+    }
+
+    public static void interpolateYRotTo(ModelPart modelPart, float destination, float progress) {
+        modelPart.yRot += (destination - modelPart.yRot) * progress;
+    }
+
+    public static void interpolateZRotTo(ModelPart modelPart, float destination, float progress) {
+        modelPart.zRot += (destination - modelPart.zRot) * progress;
     }
 
     @Override

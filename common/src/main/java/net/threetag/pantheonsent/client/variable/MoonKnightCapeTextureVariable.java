@@ -14,7 +14,7 @@ public class MoonKnightCapeTextureVariable extends CapeTextureVariable {
     @Override
     public float getNumber(LivingEntity entity) {
         float val = super.getNumber(entity);
-        float blocking = BlockingAnimation.INSTANCE.active(entity) ? BlockingAnimation.INSTANCE.getProgress(entity, 1F) * 80F : 0F;
+        float blocking = BlockingAnimation.INSTANCE.getProgress(entity, 1F) > 0F ? BlockingAnimation.INSTANCE.getProgress(entity, 1F) * 80F : 0F;
         return Math.max(val, blocking);
     }
 }

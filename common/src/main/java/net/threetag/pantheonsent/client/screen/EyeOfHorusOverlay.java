@@ -2,6 +2,7 @@ package net.threetag.pantheonsent.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.kosmx.playerAnim.core.util.Ease;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiComponent;
@@ -38,7 +39,7 @@ public class EyeOfHorusOverlay implements OverlayRegistry.IIngameOverlay, Client
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
         float f = ((TIMER + partialTicks) / 2F) % 32;
-        float transparency = AnimationUtil.smooth(f < 16 ? f / 7F : 1F - (f - 24F) / 7F);
+        float transparency = AnimationUtil.ease(Ease.INOUTSINE, f < 16 ? f / 7F : 1F - (f - 24F) / 7F);
         poseStack.pushPose();
         poseStack.translate(width / 2F - 32, height / 2F - 32, 0);
         poseStack.scale(4F, 4F, 1F);

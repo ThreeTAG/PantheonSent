@@ -5,16 +5,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.CapedHumanoidModel;
-import net.threetag.palladium.client.model.animation.AnimationUtil;
 import net.threetag.pantheonsent.client.model.animation.BlockingAnimation;
 import net.threetag.pantheonsent.client.model.animation.GlidingAnimation;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.Objects;
 import java.util.function.Function;
 
 public class MoonKnightCapeModel<T extends LivingEntity> extends CapedHumanoidModel<T> {
@@ -54,7 +47,7 @@ public class MoonKnightCapeModel<T extends LivingEntity> extends CapedHumanoidMo
         this.right3.yRot = 0;
         float fold = 0F;
 
-        if (GlidingAnimation.INSTANCE.active(entity)) {
+        if (GlidingAnimation.INSTANCE.getProgress(entity, partialTicks) > 0F) {
             float progress = GlidingAnimation.INSTANCE.getProgress(entity, partialTicks);
             this.cape.xRot += (Math.toRadians(GlidingAnimation.INSTANCE.getCapeRotation()) - this.cape.xRot) * progress;
             fold = (float) (Math.toRadians(5F) * progress);
@@ -67,15 +60,15 @@ public class MoonKnightCapeModel<T extends LivingEntity> extends CapedHumanoidMo
         this.right2.yRot = fold;
         this.right3.yRot = fold;
 
-        if (BlockingAnimation.INSTANCE.active(entity)) {
+        if (BlockingAnimation.INSTANCE.getProgress(entity, partialTicks) > 0F) {
             float progress = BlockingAnimation.INSTANCE.getProgress(entity, partialTicks);
-            AnimationUtil.interpolateXRotTo(this.cape, 0, progress);
-            AnimationUtil.interpolateYRotTo(this.left1, (float) Math.toRadians(-25F), progress);
-            AnimationUtil.interpolateYRotTo(this.left2, (float) Math.toRadians(-90F), progress);
-            AnimationUtil.interpolateYRotTo(this.left3, (float) Math.toRadians(-45F), progress);
-            AnimationUtil.interpolateYRotTo(this.right1, (float) Math.toRadians(25F), progress);
-            AnimationUtil.interpolateYRotTo(this.right2, (float) Math.toRadians(90F), progress);
-            AnimationUtil.interpolateYRotTo(this.right3, (float) Math.toRadians(45F), progress);
+            KhonshuModel.interpolateXRotTo(this.cape, 0, progress);
+            KhonshuModel.interpolateYRotTo(this.left1, (float) Math.toRadians(-25F), progress);
+            KhonshuModel.interpolateYRotTo(this.left2, (float) Math.toRadians(-90F), progress);
+            KhonshuModel.interpolateYRotTo(this.left3, (float) Math.toRadians(-45F), progress);
+            KhonshuModel.interpolateYRotTo(this.right1, (float) Math.toRadians(25F), progress);
+            KhonshuModel.interpolateYRotTo(this.right2, (float) Math.toRadians(90F), progress);
+            KhonshuModel.interpolateYRotTo(this.right3, (float) Math.toRadians(45F), progress);
         }
     }
 

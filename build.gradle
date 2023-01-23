@@ -106,6 +106,12 @@ allprojects {
             url = 'https://maven.blamejared.com'
         }
 
+        // Player Animator
+        maven {
+            name "KosmX's maven"
+            url 'https://maven.kosmx.dev/'
+        }
+
         maven { url 'https://jitpack.io' }
     }
 

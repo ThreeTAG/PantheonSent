@@ -30,7 +30,7 @@ public class MoonKnightGlidingAbility extends Ability {
             int timer = entry.getProperty(TIME_IN_AIR);
             entry.setUniqueProperty(PREV_TIME_IN_AIR, timer);
 
-            if ((entity.isOnGround() || entity.isColliding(entity.blockPosition(), entity.level.getBlockState(entity.blockPosition().below(2)))) && timer > 0) {
+            if ((entity.isOnGround() || entity.isInWater() || entity.isColliding(entity.blockPosition(), entity.level.getBlockState(entity.blockPosition().below(2)))) && timer > 0) {
                 entry.setUniqueProperty(TIME_IN_AIR, timer - 1);
             } else if (enabled && !entity.isOnGround() && timer < 10) {
                 entry.setUniqueProperty(TIME_IN_AIR, timer + 1);

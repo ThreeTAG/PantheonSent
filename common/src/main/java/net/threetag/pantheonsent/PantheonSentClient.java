@@ -10,10 +10,12 @@ import net.threetag.palladium.client.renderer.renderlayer.ModelLookup;
 import net.threetag.palladium.event.PalladiumClientEvents;
 import net.threetag.palladium.item.CurioTrinketRegistry;
 import net.threetag.palladiumcore.event.LifecycleEvents;
+import net.threetag.palladiumcore.registry.client.BlockEntityRendererRegistry;
 import net.threetag.palladiumcore.registry.client.EntityRendererRegistry;
 import net.threetag.palladiumcore.registry.client.OverlayRegistry;
 import net.threetag.palladiumcore.registry.client.RenderTypeRegistry;
 import net.threetag.pantheonsent.block.PSBlocks;
+import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
 import net.threetag.pantheonsent.client.PSClientEventHandler;
 import net.threetag.pantheonsent.client.model.CrescentDartModel;
 import net.threetag.pantheonsent.client.model.KhonshuModel;
@@ -22,6 +24,8 @@ import net.threetag.pantheonsent.client.model.MoonKnightSuitModel;
 import net.threetag.pantheonsent.client.model.animation.BlockingAnimation;
 import net.threetag.pantheonsent.client.model.animation.GlidingAnimation;
 import net.threetag.pantheonsent.client.model.animation.KhonshuRecruitmentAnimation;
+import net.threetag.pantheonsent.client.renderer.blockentity.BrushableBlockEntityRenderer;
+import net.threetag.pantheonsent.client.renderer.entity.CrescentDartRenderer;
 import net.threetag.pantheonsent.client.renderer.entity.KhonshuRenderer;
 import net.threetag.pantheonsent.client.renderer.item.EyeOfHorusRenderer;
 import net.threetag.pantheonsent.client.screen.EyeOfHorusOverlay;
@@ -42,7 +46,9 @@ public class PantheonSentClient {
         EntityRendererRegistry.registerModelLayer(CrescentDartModel.MODEL_LAYER, CrescentDartModel::createLayer);
         EntityRendererRegistry.registerModelLayer(KhonshuModel.MODEL_LAYER, KhonshuModel::createBodyLayer);
         EntityRendererRegistry.register(PSEntityTypes.KHONSHU, KhonshuRenderer::new);
+        EntityRendererRegistry.register(PSEntityTypes.CRESCENT_DART, CrescentDartRenderer::new);
         EntityRendererRegistry.addRenderLayerToAll(renderLayerParent -> new EyeOfHorusRenderer((RenderLayerParent<LivingEntity, EntityModel<LivingEntity>>) renderLayerParent));
+        BlockEntityRendererRegistry.register(PSBlockEntityTypes.BRUSHABLE, BrushableBlockEntityRenderer::new);
 
         // Model Types
         ModelLookup.register(PantheonSent.id("moon_knight_suit"), new ModelLookup.Model(MoonKnightSuitModel::new, (en, model) -> model instanceof HumanoidModel));
