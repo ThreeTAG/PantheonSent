@@ -9,7 +9,7 @@
       "render_layer": "pantheonsent:moon_knight_transformation"
     },
     "activate": {
-      "type": "palladium:interpolated_integer",
+      "type": "palladium:animation_timer",
       "max_value": 57,
       "hidden": true,
       "conditions": {
@@ -50,6 +50,19 @@
             "max": 217
           }
         ]
+      }
+    },
+    "restrict_slots": {
+      "type": "palladium:restrict_slots",
+      "hidden": true,
+      "slots": [
+        "head", "chest", "legs", "feet"
+      ],
+      "conditions": {
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "activate"
+        }
       }
     }
   }

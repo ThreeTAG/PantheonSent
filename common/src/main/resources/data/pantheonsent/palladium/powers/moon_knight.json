@@ -5,7 +5,7 @@
   "icon": "pantheonsent:textures/icon/moon_knight.png",
   "abilities": {
     "activate": {
-      "type": "palladium:interpolated_integer",
+      "type": "palladium:animation_timer",
       "title": {
         "translate": "ability.pantheonsent.moon_knight_summon_suit"
       },
@@ -39,11 +39,10 @@
       "type": "palladium:render_layer",
       "render_layer": "pantheonsent:moon_knight"
     },
-    "throw_dart": {
-      "type": "palladium:projectile",
-      "entity_type": "pantheonsent:crescent_dart",
-      "icon": "pantheonsent:textures/icon/crescent_dart.png",
+    "throw_dart_toggle": {
+      "type": "palladium:dummy",
       "list_index": 1,
+      "icon": "pantheonsent:textures/icon/crescent_dart.png",
       "conditions": {
         "unlocking": [
           {
@@ -60,6 +59,20 @@
             ]
           }
         ],
+        "enabling": {
+          "type": "palladium:toggle"
+        }
+      }
+    },
+    "throw_dart": {
+      "type": "palladium:projectile",
+      "hidden": true,
+      "entity_type": "pantheonsent:crescent_dart",
+      "conditions": {
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "throw_dart_toggle"
+        },
         "enabling": {
           "type": "palladium:action",
           "cooldown": 60,
@@ -182,6 +195,22 @@
     },
     "god_stalked": {
       "type": "pantheonsent:god_stalked"
+    },
+    "restrict_slots": {
+      "type": "palladium:restrict_slots",
+      "hidden": true,
+      "slots": [
+        "head",
+        "chest",
+        "legs",
+        "feet"
+      ],
+      "conditions": {
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "activate"
+        }
+      }
     }
   }
 }

@@ -13,13 +13,13 @@ import net.threetag.palladium.util.property.SyncType;
 import net.threetag.palladiumcore.event.EventResult;
 import net.threetag.palladiumcore.event.LivingEntityEvents;
 
-public class MoonKnightBlockingAbility extends Ability implements LivingEntityEvents.Hurt {
+public class MoonKnightBlockingAbility extends Ability implements LivingEntityEvents.Attack {
 
     public static final PalladiumProperty<Integer> TIMER = new IntegerProperty("timer").sync(SyncType.NONE);
     public static final PalladiumProperty<Integer> PREV_TIMER = new IntegerProperty("prev_timer").sync(SyncType.NONE);
 
     public MoonKnightBlockingAbility() {
-        LivingEntityEvents.HURT.register(this);
+        LivingEntityEvents.ATTACK.register(this);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
     }
 
     @Override
-    public EventResult livingEntityHurt(LivingEntity entity, DamageSource damageSource, float amount) {
+    public EventResult livingEntityAttack(LivingEntity entity, DamageSource damageSource, float amount) {
         if (!AbilityUtil.getEnabledEntries(entity, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
             return EventResult.cancel();
         }

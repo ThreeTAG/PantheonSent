@@ -7,8 +7,8 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.dynamictexture.DynamicTexture;
 import net.threetag.palladium.client.renderer.renderlayer.ModelLookup;
+import net.threetag.palladium.compat.curiostinkets.CuriosTrinketsUtil;
 import net.threetag.palladium.event.PalladiumClientEvents;
-import net.threetag.palladium.item.CurioTrinketRegistry;
 import net.threetag.palladiumcore.event.LifecycleEvents;
 import net.threetag.palladiumcore.registry.client.BlockEntityRendererRegistry;
 import net.threetag.palladiumcore.registry.client.EntityRendererRegistry;
@@ -74,7 +74,7 @@ public class PantheonSentClient {
 
             // Render Types
             RenderTypeRegistry.registerBlock(RenderType.cutout(), PSBlocks.KHONSHU_USHABTI.get(), PSBlocks.BROKEN_KHONSHU_USHABTI.get());
-            CurioTrinketRegistry.registerRenderer(PSItems.EYE_OF_HORUS.get(), new EyeOfHorusRenderer(null));
+            CuriosTrinketsUtil.getInstance().registerRenderer(PSItems.EYE_OF_HORUS.get(), new EyeOfHorusRenderer(null));
         });
     }
 
