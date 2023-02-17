@@ -40,9 +40,7 @@ public class PSItemModelProvider extends ItemModelProvider {
         this.defaultBlockItem(PSItems.ARCHEOLOGY_TABLE);
         this.defaultBlockItem(PSItems.BROKEN_KHONSHU_USHABTI);
         this.defaultBlockItem(PSItems.KHONSHU_USHABTI);
-        this.defaultBlockItem(PSItems.MYSTERIOUS_DIRT, PantheonSent.id("block/mysterious_dirt_0"));
-        this.defaultBlockItem(PSItems.MYSTERIOUS_GRAVEL, PantheonSent.id("block/mysterious_gravel_0"));
-        this.defaultBlockItem(PSItems.MYSTERIOUS_SAND, PantheonSent.id("block/mysterious_sand_0"));
+        this.defaultBlockItem(PSItems.SUSPICIOUS_SAND, PantheonSent.id("block/suspicious_sand_0"));
         this.defaultBlockItem(PSItems.SANDSTONE_TOTEM_HOLDER);
         this.defaultBlockItem(PSItems.LUNAR_STONE, PantheonSent.id("block/lunar_stone_0"));
 

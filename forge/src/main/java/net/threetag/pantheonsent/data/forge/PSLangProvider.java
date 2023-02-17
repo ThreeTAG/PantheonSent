@@ -32,9 +32,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Archeology Table");
             this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Broken Khonshu Ushabti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Ushabti");
-            this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysterious Dirt");
-            this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysterious Gravel");
-            this.addBlock(PSBlocks.MYSTERIOUS_SAND, "Mysterious Sand");
+            this.addBlock(PSBlocks.SUSPICIOUS_SAND, "Suspicious Sand");
             this.addBlock(PSBlocks.SANDSTONE_TOTEM_HOLDER, "Sandstone Totem Holder");
             this.addBlock(PSBlocks.LUNAR_STONE, "Lunar Stone");
 
@@ -121,9 +119,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Archeologietisch");
             this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Kaputtes Khonshu Uschebti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Uschebti");
-            this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysteri\u00F6se Erde");
-            this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysteri\u00F6ser Kies");
-            this.addBlock(PSBlocks.MYSTERIOUS_SAND, "Mysteri\u00F6ser Sand");
+            this.addBlock(PSBlocks.SUSPICIOUS_SAND, "Verdächtiger Sand");
             this.addBlock(PSBlocks.SANDSTONE_TOTEM_HOLDER, "Sandsteintotemhalter");
             this.addBlock(PSBlocks.LUNAR_STONE, "Lunarstein");
 
@@ -210,9 +206,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Arscheolojiedisch");
             this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Gabuttes Khonshu Uschebti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Uschebti");
-            this.addBlock(PSBlocks.MYSTERIOUS_DIRT, "Mysteri\u00F6se Erde");
-            this.addBlock(PSBlocks.MYSTERIOUS_GRAVEL, "Mysteri\u00F6ser Gies");
-            this.addBlock(PSBlocks.MYSTERIOUS_SAND, "Mysteri\u00F6ser Sand");
+            this.addBlock(PSBlocks.SUSPICIOUS_SAND, "Verdächticherer Sand");
             this.addBlock(PSBlocks.SANDSTONE_TOTEM_HOLDER, "Sandschdeentotemhalderr");
             this.addBlock(PSBlocks.LUNAR_STONE, "Lunarschdeen");
 

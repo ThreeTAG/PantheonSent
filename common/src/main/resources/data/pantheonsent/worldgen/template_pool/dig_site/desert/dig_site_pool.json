@@ -6,7 +6,7 @@
       "weight": 1,
       "element": {
         "location": "pantheonsent:dig_site/desert/dig_site",
-        "processors": "pantheonsent:mysterious_blocks",
+        "processors": "pantheonsent:suspicious_blocks",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }

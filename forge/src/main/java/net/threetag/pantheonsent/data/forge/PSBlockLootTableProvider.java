@@ -2,7 +2,6 @@ package net.threetag.pantheonsent.data.forge;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -26,19 +25,11 @@ public class PSBlockLootTableProvider extends BlockLootTableProvider {
         this.dropSelf(PSBlocks.BROKEN_KHONSHU_USHABTI.get());
         this.dropSelf(PSBlocks.KHONSHU_USHABTI.get());
         this.dropWhenSilkTouch(PSBlocks.LUNAR_STONE.get());
-        this.add(PSBlocks.MYSTERIOUS_DIRT.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.DIRT));
-        this.add(PSBlocks.MYSTERIOUS_GRAVEL.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.GRAVEL));
-        this.add(PSBlocks.MYSTERIOUS_SAND.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.SAND));
+//        this.add(PSBlocks.MYSTERIOUS_DIRT.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.DIRT));
+//        this.add(PSBlocks.MYSTERIOUS_GRAVEL.get(), (arg) -> createSingleItemTableWithSilkTouch(arg, Blocks.GRAVEL));
+        this.lootTables.put(PSBlocks.SUSPICIOUS_SAND.get().getLootTable(), LootTable.lootTable());
 
-        this.lootTables.put(PSLootTables.BRUSHABLE_DIRT, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                .add(LootItem.lootTableItem(Items.BONE).setWeight(2))
-                .add(LootItem.lootTableItem(PSItems.ANCIENT_CLAY_SHARD.get()).setWeight(10))
-                .add(LootItem.lootTableItem(PSItems.ANCIENT_GOLD_SHARD.get()).setWeight(1))));
-        this.lootTables.put(PSLootTables.BRUSHABLE_GRAVEL, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                .add(LootItem.lootTableItem(Items.IRON_NUGGET))
-                .add(LootItem.lootTableItem(PSItems.ANCIENT_CLAY_SHARD.get()).setWeight(10))
-                .add(LootItem.lootTableItem(PSItems.ANCIENT_GOLD_SHARD.get()).setWeight(1))));
-        this.lootTables.put(PSLootTables.BRUSHABLE_SAND, LootTable.lootTable()
+        this.lootTables.put(PSLootTables.SUSPICIOUS_SAND, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(Items.RAW_GOLD))
                         .add(LootItem.lootTableItem(PSItems.BROKEN_KHONSHU_USHABTI.get()).setQuality(2))

@@ -2,11 +2,9 @@ package net.threetag.pantheonsent.data.forge;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.block.*;
 
@@ -32,7 +30,7 @@ public class PSBlockStateProvider extends BlockStateProvider {
                 ).addModel();
         this.horizontalBlock(PSBlocks.BROKEN_KHONSHU_USHABTI.get(), models().getExistingFile(PantheonSent.id("block/broken_khonshu_ushabti")));
         this.horizontalBlock(PSBlocks.KHONSHU_USHABTI.get(), blockState -> {
-            if(blockState.getValue(UshabtiBlock.USED)) {
+            if (blockState.getValue(UshabtiBlock.USED)) {
                 return models().withExistingParent("used_khonshu_ushabti", PantheonSent.id("block/khonshu_ushabti")).texture("0", PantheonSent.id("block/used_khonshu_ushabti"));
             } else {
                 return models().getExistingFile(PantheonSent.id("block/khonshu_ushabti"));
@@ -51,22 +49,11 @@ public class PSBlockStateProvider extends BlockStateProvider {
                 .partialState().with(LunarStoneBlock.PHASE, 6).modelForState().modelFile(models().withExistingParent("lunar_stone_6", "block/cube_all").texture("all", PantheonSent.id("block/lunar_stone_6"))).addModel()
                 .partialState().with(LunarStoneBlock.PHASE, 7).modelForState().modelFile(models().withExistingParent("lunar_stone_7", "block/cube_all").texture("all", PantheonSent.id("block/lunar_stone_7"))).addModel();
 
-        // Brushable Blocks
-        for (int i = 0; i <= 3; i++) {
-            models().withExistingParent("brushable_" + i, "block/cube_all").element().from(0, 0, 0).to(16, BrushableBlock.getHeightPerStage(i), 16).textureAll("#all").end();
-        }
-        brushableBlock(PSBlocks.MYSTERIOUS_DIRT);
-        brushableBlock(PSBlocks.MYSTERIOUS_GRAVEL);
-        brushableBlock(PSBlocks.MYSTERIOUS_SAND);
-    }
-
-    public void brushableBlock(RegistrySupplier<Block> block) {
-        var builder = this.getVariantBuilder(block.get());
-
-        for (int i = 0; i <= 3; i++) {
-            var model = models().withExistingParent(block.getId().getPath() + "_" + i, PantheonSent.id("block/brushable_" + i)).texture("all", PantheonSent.id("block/" + block.getId().getPath()));
-            builder.partialState().with(BrushableBlock.STAGE, i).modelForState().modelFile(model).addModel();
-        }
+        this.getVariantBuilder(PSBlocks.SUSPICIOUS_SAND.get())
+                .partialState().with(SuspiciousSandBlock.DUSTED, 0).modelForState().modelFile(models().withExistingParent("suspicious_sand_0", "block/cube_all").texture("all", PantheonSent.id("block/suspicious_sand_0"))).addModel()
+                .partialState().with(SuspiciousSandBlock.DUSTED, 1).modelForState().modelFile(models().withExistingParent("suspicious_sand_1", "block/cube_all").texture("all", PantheonSent.id("block/suspicious_sand_1"))).addModel()
+                .partialState().with(SuspiciousSandBlock.DUSTED, 2).modelForState().modelFile(models().withExistingParent("suspicious_sand_2", "block/cube_all").texture("all", PantheonSent.id("block/suspicious_sand_2"))).addModel()
+                .partialState().with(SuspiciousSandBlock.DUSTED, 3).modelForState().modelFile(models().withExistingParent("suspicious_sand_3", "block/cube_all").texture("all", PantheonSent.id("block/suspicious_sand_3"))).addModel();
     }
 
     @Override

@@ -1,6 +1,0 @@
-{
-  "parent": "pantheonsent:block/brushable_0",
-  "textures": {
-    "all": "pantheonsent:block/mysterious_dirt"
-  }
-}

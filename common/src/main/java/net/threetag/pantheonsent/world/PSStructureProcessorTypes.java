@@ -10,6 +10,6 @@ public class PSStructureProcessorTypes {
 
     public static final DeferredRegister<StructureProcessorType<?>> PROCESSOR_TYPES = DeferredRegister.create(PantheonSent.MOD_ID, Registry.STRUCTURE_PROCESSOR_REGISTRY);
 
-    public static final RegistrySupplier<StructureProcessorType<?>> MYSTERIOUS_BLOCKS = PROCESSOR_TYPES.register("mysterious_blocks", () -> () -> MysteriousBlocksProcessor.CODEC);
+    public static final RegistrySupplier<StructureProcessorType<?>> SUSPICIOUS_BLOCKS = PROCESSOR_TYPES.register("suspicious_blocks", () -> () -> SuspiciousBlocksProcessor.CODEC);
 
 }

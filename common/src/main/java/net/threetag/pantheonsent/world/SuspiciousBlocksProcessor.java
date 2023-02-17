@@ -17,17 +17,14 @@ import net.threetag.pantheonsent.block.PSBlocks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
-import java.util.Random;
 
-public class MysteriousBlocksProcessor extends StructureProcessor {
+public class SuspiciousBlocksProcessor extends StructureProcessor {
 
-    public static final MysteriousBlocksProcessor INSTANCE = new MysteriousBlocksProcessor();
+    public static final SuspiciousBlocksProcessor INSTANCE = new SuspiciousBlocksProcessor();
     public static final Codec<StructureProcessor> CODEC = Codec.unit(() -> INSTANCE);
 
     public static final Map<Block, Block> REPLACEMENTS = Util.make(Maps.newHashMap(), (hashMap) -> {
-        hashMap.put(Blocks.DIRT, PSBlocks.MYSTERIOUS_DIRT.get());
-        hashMap.put(Blocks.GRAVEL, PSBlocks.MYSTERIOUS_GRAVEL.get());
-        hashMap.put(Blocks.SAND, PSBlocks.MYSTERIOUS_SAND.get());
+        hashMap.put(Blocks.SAND, PSBlocks.SUSPICIOUS_SAND.get());
     });
 
     @Nullable
@@ -52,6 +49,6 @@ public class MysteriousBlocksProcessor extends StructureProcessor {
 
     @Override
     protected StructureProcessorType<?> getType() {
-        return PSStructureProcessorTypes.MYSTERIOUS_BLOCKS.get();
+        return PSStructureProcessorTypes.SUSPICIOUS_BLOCKS.get();
     }
 }

@@ -1,7 +1,7 @@
-// 1.19.2	2022-10-09T22:09:33.6867885	PantheonSent Tags for minecraft:block
+// 1.19.2	2023-02-17T21:59:56.3848366	PantheonSent Tags for minecraft:block
 423332481b22c634d40eb0b9e286298c6ed2a9cc data/minecraft/tags/blocks/guarded_by_piglins.json
 dd317ff700dde9e0cbb1c1558dd9c41378b9a7f4 data/minecraft/tags/blocks/mineable/axe.json
 ffa48ce4e03d2e00b90e8ed48d90d01be5332f28 data/minecraft/tags/blocks/mineable/pickaxe.json
-7a1b607bc370f11b9a39270b26e236aa68664317 data/minecraft/tags/blocks/mineable/shovel.json
+7c6b769f1f64f439f66d99f2ff784e26ee6ce04f data/minecraft/tags/blocks/mineable/shovel.json
 54a72327e3434e11e5ed00f98d049e2e2697cc4b data/minecraft/tags/blocks/needs_iron_tool.json
 05b4078414a1c7c37fd6cd7e4e361f152a7036c5 data/minecraft/tags/blocks/needs_stone_tool.json

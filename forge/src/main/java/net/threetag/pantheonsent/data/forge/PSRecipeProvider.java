@@ -18,7 +18,7 @@ public class PSRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(PSItems.BRUSH.get()).define('C', Items.COPPER_INGOT).define('S', Items.STRING).define('F', Items.FEATHER).pattern(" FF").pattern("CSF").pattern("CC ").unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(consumer);
+        ShapedRecipeBuilder.shaped(PSItems.BRUSH.get()).define('X', Items.STICK).define('S', Items.STRING).pattern("SSS").pattern(" X ").pattern(" X ").unlockedBy(getHasName(Items.STRING), has(Items.STRING)).save(consumer);
 
         // Restoration Recipes
         new UpgradeRecipeBuilder(PSRecipeSerializers.RESTORATION.get(), Ingredient.of(PSItems.BROKEN_KHONSHU_USHABTI.get()), Ingredient.of(PSItems.ANCIENT_CLAY_SHARD.get()), PSItems.KHONSHU_USHABTI.get()).unlocks("has_ushabti", has(PSItems.BROKEN_KHONSHU_USHABTI.get())).save(consumer, PantheonSent.id("khonshu_ushabti_restoration"));

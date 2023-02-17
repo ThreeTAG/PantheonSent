@@ -8,3 +8,5 @@ accessible class net/minecraft/client/gui/screens/MenuScreens$ScreenConstructor
 accessible field net/minecraft/world/level/block/entity/RandomizableContainerBlockEntity lootTable Lnet/minecraft/resources/ResourceLocation;
 
 accessible method net/minecraft/world/item/enchantment/LootBonusEnchantment <init> (Lnet/minecraft/world/item/enchantment/Enchantment$Rarity;Lnet/minecraft/world/item/enchantment/EnchantmentCategory;[Lnet/minecraft/world/entity/EquipmentSlot;)V
+
+accessible field net/minecraft/world/entity/item/FallingBlockEntity cancelDrop Z

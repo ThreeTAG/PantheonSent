@@ -1,4 +1,4 @@
-// 1.19.2	2022-12-27T23:59:58.0518712	PantheonSent Item Models: pantheonsent
+// 1.19.2	2023-02-17T21:59:56.3889764	PantheonSent Item Models: pantheonsent
 c805ed74628acefcc7bf58a0b9b15e41968593d9 assets/pantheonsent/models/item/ancient_clay_shard.json
 d1060bcef68ec211e72d773a0abf94aaa8dadc6c assets/pantheonsent/models/item/ancient_gold_shard.json
 1087925da51b37ba71de5d9a78d6de5d242f1594 assets/pantheonsent/models/item/archeology_table.json
@@ -17,9 +17,6 @@ b92bf8cfaa33df57a87dc3566ec3672c68e10b73 assets/pantheonsent/models/item/khonshu
 607bdb8aa1864456589a90be113320ecf8a836d0 assets/pantheonsent/models/item/lunar_stone.json
 431f8f3544deb4978e7c5bf7e5d66a28940b0342 assets/pantheonsent/models/item/lunar_totem.json
 a1b5ea2c87216f4039c1371df33e5d8304c98feb assets/pantheonsent/models/item/music_disc_chons.json
-8348d10b4c9d4b9627ece0bd9a9d3f52f7d00f19 assets/pantheonsent/models/item/mysterious_dirt.json
-03eeab3887ac5420b1e413a70cbb07e3565d8481 assets/pantheonsent/models/item/mysterious_gravel.json
-64201094cbb63e7a199af5ec6101d2bfd34da07a assets/pantheonsent/models/item/mysterious_sand.json
 75c7ae6d2429f911ac070b08490ed1b73b667e09 assets/pantheonsent/models/item/sandstone_totem_holder.json
 9b55f7145a3885564b73399c0b3bd5b4653dad49 assets/pantheonsent/models/item/scarab_compass.json
 d9b052762c6cd378897d3df02c8809660faa32f0 assets/pantheonsent/models/item/scarab_compass_0.json
@@ -32,3 +29,4 @@ d9b052762c6cd378897d3df02c8809660faa32f0 assets/pantheonsent/models/item/scarab_
 ffead49cd684d2231cd5f92381cd3f07b04b0617 assets/pantheonsent/models/item/scarab_compass_7.json
 fb3f9e24ab4e5398a74645bb6dafaa59617293cd assets/pantheonsent/models/item/scarab_compass_held.json
 521778b707a71b3d8fbfa91e79edf1956d2a34ac assets/pantheonsent/models/item/scarab_compass_inactive.json
+8de827f1eeedc791869144e967a5d2b7899ae38f assets/pantheonsent/models/item/suspicious_sand.json
