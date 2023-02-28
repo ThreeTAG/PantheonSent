@@ -1,0 +1,112 @@
+{
+    "texture_width": 16,
+    "texture_height": 16,
+    "mesh": {
+        "right_arm": {
+            "part_pose": {
+                "offset": [
+                    -5,
+                    2,
+                    0
+                ]
+            },
+            "cubes": [],
+            "children": {
+                "dart": {
+                    "part_pose": {
+                        "offset": [
+                            -0.5,
+                            10.5,
+                            0
+                        ],
+                        "rotation": [
+                            -90,
+                            0,
+                            90
+                        ]
+                    },
+                    "cubes": [
+                        {
+                            "origin": [
+                                -2.5,
+                                -2.5,
+                                0
+                            ],
+                            "dimensions": [
+                                3,
+                                5,
+                                1
+                            ],
+                            "texture_offset": [
+                                0,
+                                0
+                            ]
+                        },
+                        {
+                            "origin": [
+                                -2.5,
+                                -3.5,
+                                0.5
+                            ],
+                            "dimensions": [
+                                7,
+                                7,
+                                0
+                            ],
+                            "texture_offset": [
+                                0,
+                                6
+                            ]
+                        }
+                    ],
+                    "children": {}
+                }
+            }
+        },
+        "left_leg": {
+            "part_pose": {
+                "offset": [
+                    1.9,
+                    12,
+                    0
+                ]
+            },
+            "cubes": [],
+            "children": {}
+        },
+        "body": {
+            "cubes": [],
+            "children": {}
+        },
+        "head": {
+            "cubes": [],
+            "children": {}
+        },
+        "left_arm": {
+            "part_pose": {
+                "offset": [
+                    5,
+                    2,
+                    0
+                ]
+            },
+            "cubes": [],
+            "children": {}
+        },
+        "right_leg": {
+            "part_pose": {
+                "offset": [
+                    -1.9,
+                    12,
+                    0
+                ]
+            },
+            "cubes": [],
+            "children": {}
+        },
+        "hat": {
+            "cubes": [],
+            "children": {}
+        }
+    }
+}

@@ -44,13 +44,13 @@ public class BlockingAnimation extends PalladiumAnimation {
 
         if (progress > 0F) {
             builder.get(PlayerModelPart.RIGHT_ARM)
-                    .translateX(model.rightArm.x + 2)
+                    .setX(model.rightArm.x + 2)
                     .rotateXDegrees(-15)
                     .rotateYDegrees(-25)
                     .rotateZDegrees(-20)
                     .animate(Ease.INOUTSINE, progress);
             builder.get(PlayerModelPart.LEFT_ARM)
-                    .translateX(model.leftArm.x - 2)
+                    .setX(model.leftArm.x - 2)
                     .rotateXDegrees(-15)
                     .rotateYDegrees(25)
                     .rotateZDegrees(20)

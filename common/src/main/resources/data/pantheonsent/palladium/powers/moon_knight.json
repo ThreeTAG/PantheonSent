@@ -7,7 +7,7 @@
     "activate": {
       "type": "palladium:animation_timer",
       "title": {
-        "translate": "ability.pantheonsent.moon_knight_summon_suit"
+        "translate": "ability.pantheonsent.moon_knight.summon_suit"
       },
       "list_index": 0,
       "max_value": 19,
@@ -41,6 +41,9 @@
     },
     "throw_dart_toggle": {
       "type": "palladium:dummy",
+      "title": {
+        "translate": "ability.pantheonsent.moon_knight.crescent_dart"
+      },
       "list_index": 1,
       "icon": "pantheonsent:textures/icon/crescent_dart.png",
       "conditions": {
@@ -76,7 +79,8 @@
         "enabling": {
           "type": "palladium:action",
           "cooldown": 60,
-          "key_type": "left_click"
+          "key_type": "left_click",
+          "needs_empty_hand": true
         }
       }
     },
@@ -111,7 +115,7 @@
     "stealth": {
       "type": "palladium:invisibility",
       "title": {
-        "translate": "ability.pantheonsent.moon_knight_summon_stealth"
+        "translate": "ability.pantheonsent.moon_knight.summon_stealth"
       },
       "icon": "pantheonsent:textures/icon/stealth.png",
       "list_index": 3,

@@ -112,6 +112,12 @@ allprojects {
             url 'https://maven.kosmx.dev/'
         }
 
+        // Gecko Lib
+        maven {
+            name = 'Gecko Lib'
+            url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        }
+
         maven { url 'https://jitpack.io' }
     }
 

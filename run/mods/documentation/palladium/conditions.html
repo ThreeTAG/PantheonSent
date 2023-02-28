@@ -67,6 +67,10 @@ command_result</a>
 crouching</a>
 </li>
 <li>
+<a href="#palladium:dimension">
+dimension</a>
+</li>
+<li>
 <a href="#palladium:entity_type">
 entity_type</a>
 </li>
@@ -505,12 +509,24 @@ false</td>
 <td>
 KEY_BIND</td>
 </tr>
+<tr>
+<td>
+needs_empty_hand</td>
+<td>
+Boolean</td>
+<td>
+Whether or not the player needs to have an empty hand</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+false</td>
+</tr>
 </tbody>
 </table>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:action","cooldown":0,"key_type":"key_bind"}</pre>
+{"type":"palladium:action","cooldown":0,"key_type":"key_bind","needs_empty_hand":false}</pre>
 </div>
 <hr>
 
@@ -573,12 +589,24 @@ false</td>
 <td>
 KEY_BIND</td>
 </tr>
+<tr>
+<td>
+needs_empty_hand</td>
+<td>
+Boolean</td>
+<td>
+Whether or not the player needs to have an empty hand</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+false</td>
+</tr>
 </tbody>
 </table>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:activation","cooldown":0,"ticks":60,"key_type":"key_bind"}</pre>
+{"type":"palladium:activation","cooldown":0,"ticks":60,"key_type":"key_bind","needs_empty_hand":false}</pre>
 </div>
 <hr>
 
@@ -727,6 +755,50 @@ Applicable for: all</p>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:crouching"}</pre>
+</div>
+<hr>
+
+<div id="palladium:dimension">
+<h2>
+dimension</h2>
+<p>
+Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+dimension</td>
+<td>
+ResourceLocation</td>
+<td>
+ID of the dimension the player must be in. Example values: minecraft:overworld, minecraft:nether, minecraft:the_end</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+minecraft:overworld</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:dimension","dimension":"minecraft:overworld"}</pre>
 </div>
 <hr>
 
@@ -1121,12 +1193,24 @@ false</td>
 <td>
 KEY_BIND</td>
 </tr>
+<tr>
+<td>
+needs_empty_hand</td>
+<td>
+Boolean</td>
+<td>
+Whether or not the player needs to have an empty hand</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+false</td>
+</tr>
 </tbody>
 </table>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:held","cooldown":0,"key_type":"key_bind"}</pre>
+{"type":"palladium:held","cooldown":0,"key_type":"key_bind","needs_empty_hand":false}</pre>
 </div>
 <hr>
 
@@ -1841,12 +1925,24 @@ false</td>
 <td>
 KEY_BIND</td>
 </tr>
+<tr>
+<td>
+needs_empty_hand</td>
+<td>
+Boolean</td>
+<td>
+Whether or not the player needs to have an empty hand</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+false</td>
+</tr>
 </tbody>
 </table>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:toggle","cooldown":0,"key_type":"key_bind"}</pre>
+{"type":"palladium:toggle","cooldown":0,"key_type":"key_bind","needs_empty_hand":false}</pre>
 </div>
 <hr>
 

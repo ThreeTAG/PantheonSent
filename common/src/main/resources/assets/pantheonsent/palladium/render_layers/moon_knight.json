@@ -79,6 +79,15 @@
           "max": 19
         }
       ]
+    },
+    {
+      "conditions": {
+        "type": "palladium:ability_enabled",
+        "power": "pantheonsent:moon_knight",
+        "ability": "throw_dart_toggle"
+      },
+      "model_layer": "pantheonsent:humanoid#dart_in_hand",
+      "texture": "pantheonsent:textures/entity/projectiles/crescent_dart.png"
     }
   ]
 }
