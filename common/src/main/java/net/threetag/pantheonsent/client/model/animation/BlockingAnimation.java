@@ -1,6 +1,5 @@
 package net.threetag.pantheonsent.client.model.animation;
 
-import dev.kosmx.playerAnim.core.util.Ease;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.util.Mth;
@@ -8,6 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.animation.PalladiumAnimation;
 import net.threetag.palladium.power.ability.AbilityEntry;
 import net.threetag.palladium.power.ability.AbilityUtil;
+import net.threetag.palladium.util.Easing;
 import net.threetag.pantheonsent.ability.MoonKnightBlockingAbility;
 import net.threetag.pantheonsent.ability.PSAbilities;
 
@@ -48,15 +48,15 @@ public class BlockingAnimation extends PalladiumAnimation {
                     .rotateXDegrees(-15)
                     .rotateYDegrees(-25)
                     .rotateZDegrees(-20)
-                    .animate(Ease.INOUTSINE, progress);
+                    .animate(Easing.INOUTSINE, progress);
             builder.get(PlayerModelPart.LEFT_ARM)
                     .setX(model.leftArm.x - 2)
                     .rotateXDegrees(-15)
                     .rotateYDegrees(25)
                     .rotateZDegrees(20)
-                    .animate(Ease.INOUTSINE, progress);
-            builder.get(PlayerModelPart.HEAD).rotateX(0).animate(Ease.INOUTSINE, progress);
-            builder.get(PlayerModelPart.HEAD).rotateY(0).animate(Ease.INOUTSINE, progress);
+                    .animate(Easing.INOUTSINE, progress);
+            builder.get(PlayerModelPart.HEAD).rotateX(0).animate(Easing.INOUTSINE, progress);
+            builder.get(PlayerModelPart.HEAD).rotateY(0).animate(Easing.INOUTSINE, progress);
         }
     }
 }

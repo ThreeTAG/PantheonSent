@@ -71,7 +71,6 @@ sourceSets.main.resources {
 }
 
 shadowJar {
-    exclude "pantheonsent.accesswidener"
     exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]

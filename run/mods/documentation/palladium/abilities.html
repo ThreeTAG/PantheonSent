@@ -83,20 +83,24 @@ gui_overlay</a>
 healing</a>
 </li>
 <li>
-<a href="#palladium:hide_body_parts">
-hide_body_parts</a>
+<a href="#palladium:hide_body_part">
+hide_body_part</a>
 </li>
 <li>
 <a href="#palladium:invisibility">
 invisibility</a>
 </li>
 <li>
-<a href="#palladium:player_animation">
-player_animation</a>
+<a href="#palladium:play_sound">
+play_sound</a>
 </li>
 <li>
 <a href="#palladium:projectile">
 projectile</a>
+</li>
+<li>
+<a href="#palladium:remove_body_part">
+remove_body_part</a>
 </li>
 <li>
 <a href="#palladium:render_layer">
@@ -133,6 +137,18 @@ slowfall</a>
 <li>
 <a href="#palladium:water_walk">
 water_walk</a>
+</li>
+</ul>
+<h3>
+GeckoLib</h3>
+<ul>
+<li>
+<a href="#geckolib3:armor_animation">
+armor_animation</a>
+</li>
+<li>
+<a href="#geckolib3:render_layer_animation">
+render_layer_animation</a>
 </li>
 </ul>
 </p>
@@ -483,6 +499,8 @@ Example:</h3>
 <div id="palladium:aim">
 <h2>
 aim</h2>
+<p>
+Allows the player to aim their arms.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -621,6 +639,8 @@ Example:</h3>
 <div id="palladium:animation_timer">
 <h2>
 animation_timer</h2>
+<p>
+This ability is used to create a timer that can be used for animations. It is not meant to be used directly.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -759,6 +779,8 @@ Example:</h3>
 <div id="palladium:attribute_modifier">
 <h2>
 attribute_modifier</h2>
+<p>
+Adds an attribute modifier to the entity while the ability is enabled.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -867,7 +889,7 @@ attribute</td>
 <td>
 Attribute</td>
 <td>
-Determines which attribute should be modified. Possible attribute:"minecraft:generic.max_health", "minecraft:generic.follow_range", "minecraft:generic.knockback_resistance", "minecraft:generic.movement_speed", "minecraft:generic.flying_speed", "minecraft:generic.attack_damage", "minecraft:generic.attack_knockback", "minecraft:generic.attack_speed", "minecraft:generic.armor", "minecraft:generic.armor_toughness", "minecraft:generic.luck", "minecraft:zombie.spawn_reinforcements", "minecraft:horse.jump_strength", "forge:swim_speed", "forge:nametag_distance", "forge:entity_gravity", "forge:reach_distance", "forge:attack_range", "forge:step_height_addition", "palladium:flight_speed", "palladium:flight_flexibility", "palladium:levitation_speed", "palladium:hovering", "palladium:punch_damage", "palladium:jump_power", "palladium:destroy_speed", "palladium:fall_resistance"</td>
+Determines which attribute should be modified. Possible attribute:"minecraft:generic.max_health", "minecraft:generic.follow_range", "minecraft:generic.knockback_resistance", "minecraft:generic.movement_speed", "minecraft:generic.flying_speed", "minecraft:generic.attack_damage", "minecraft:generic.attack_knockback", "minecraft:generic.attack_speed", "minecraft:generic.armor", "minecraft:generic.armor_toughness", "minecraft:generic.luck", "minecraft:zombie.spawn_reinforcements", "minecraft:horse.jump_strength", "forge:swim_speed", "forge:nametag_distance", "forge:entity_gravity", "forge:reach_distance", "forge:attack_range", "forge:step_height_addition", "palladium:flight_speed", "palladium:flight_flexibility", "palladium:levitation_speed", "palladium:heroic_flight_type", "palladium:punch_damage", "palladium:jump_power", "palladium:destroy_speed", "palladium:fall_resistance"</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
@@ -921,6 +943,8 @@ Example:</h3>
 <div id="palladium:command">
 <h2>
 command</h2>
+<p>
+Executes commands.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1071,6 +1095,8 @@ Example:</h3>
 <div id="palladium:damage_immunity">
 <h2>
 damage_immunity</h2>
+<p>
+Makes the entity immune against certain damage sources.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1197,6 +1223,8 @@ Example:</h3>
 <div id="palladium:dummy">
 <h2>
 dummy</h2>
+<p>
+Does nothing.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1311,6 +1339,8 @@ Example:</h3>
 <div id="palladium:energy_blast">
 <h2>
 energy_blast</h2>
+<p>
+Shoots a laser from your eyes or chest that can set entities on fire and smelt blocks.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1461,30 +1491,20 @@ false</td>
 <td>
 30.0</td>
 </tr>
-<tr>
-<td>
-sound_event</td>
-<td>
-SoundEvent</td>
-<td>
-The sound you want to have played. Can be null</td>
-<td style="background-color: lightcoral">
-false</td>
-<td>
-/</td>
-</tr>
 </tbody>
 </table>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:energy_blast","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":false,"list_index":-1,"gui_position":"null","description":"null","origin":"eyes","color":"#FF0000","damage":1.0,"max_distance":30.0,"sound_event":"null"}</pre>
+{"type":"palladium:energy_blast","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":false,"list_index":-1,"gui_position":"null","description":"null","origin":"eyes","color":"#FF0000","damage":1.0,"max_distance":30.0}</pre>
 </div>
 <hr>
 
 <div id="palladium:gui_overlay">
 <h2>
 gui_overlay</h2>
+<p>
+Displays a gui overlay on the screen.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1625,6 +1645,42 @@ false</td>
 </tr>
 <tr>
 <td>
+translate</td>
+<td>
+Vec3</td>
+<td>
+Translation of the rendered object</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+[0.0 / 0.0 / 0.0]</td>
+</tr>
+<tr>
+<td>
+rotate</td>
+<td>
+Vec3</td>
+<td>
+Rotation of the rendered object</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+[0.0 / 0.0 / 0.0]</td>
+</tr>
+<tr>
+<td>
+scale</td>
+<td>
+Vec3</td>
+<td>
+Scale of the rendered object</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+[1.0 / 1.0 / 1.0]</td>
+</tr>
+<tr>
+<td>
 alignment</td>
 <td>
 TextureAlignment</td>
@@ -1640,13 +1696,15 @@ STRETCH</td>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:gui_overlay","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":true,"list_index":-1,"gui_position":"null","description":"null","texture":"minecraft:textures/gui/presets/isles.png","texture_width":256,"texture_height":256,"alignment":"stretch"}</pre>
+{"type":"palladium:gui_overlay","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":true,"list_index":-1,"gui_position":"null","description":"null","texture":"minecraft:textures/gui/presets/isles.png","texture_width":256,"texture_height":256,"translate":[0.0,0.0,0.0],"rotate":[0.0,0.0,0.0],"scale":[1.0,1.0,1.0],"alignment":"stretch"}</pre>
 </div>
 <hr>
 
 <div id="palladium:healing">
 <h2>
 healing</h2>
+<p>
+Heals the entity.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1782,9 +1840,11 @@ Example:</h3>
 </div>
 <hr>
 
-<div id="palladium:hide_body_parts">
+<div id="palladium:hide_body_part">
 <h2>
-hide_body_parts</h2>
+hide_body_part</h2>
+<p>
+Allows you to hide an entity's body parts.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1893,7 +1953,7 @@ body_parts</td>
 <td>
 List</td>
 <td>
-Determines which body parts should vanish. Available parts: [head, head_overlay, chest, chest_overlay, right_arm, right_arm_overlay, left_arm, left_arm_overlay, right_leg, right_leg_overlay, left_leg, left_leg_overlay, cape]</td>
+Determines which body parts should be invisible. Overlaying parts will be still visible. Available parts: [head, head_overlay, chest, chest_overlay, right_arm, right_arm_overlay, left_arm, left_arm_overlay, right_leg, right_leg_overlay, left_leg, left_leg_overlay, cape]</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
@@ -1916,13 +1976,15 @@ true</td>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:hide_body_parts","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":true,"list_index":-1,"gui_position":"null","description":"null","body_parts":["right_arm","left_arm"],"affects_first_person":true}</pre>
+{"type":"palladium:hide_body_part","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":true,"list_index":-1,"gui_position":"null","description":"null","body_parts":["right_arm","left_arm"],"affects_first_person":true}</pre>
 </div>
 <hr>
 
 <div id="palladium:invisibility">
 <h2>
 invisibility</h2>
+<p>
+Makes the player invisible. Also makes mobs not see the player anymore.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2034,9 +2096,11 @@ Example:</h3>
 </div>
 <hr>
 
-<div id="palladium:player_animation">
+<div id="palladium:play_sound">
 <h2>
-player_animation</h2>
+play_sound</h2>
+<p>
+Plays a sound when being enabled.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2101,7 +2165,7 @@ Determines if the ability is visible in the ability bar and powers screen</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
-false</td>
+true</td>
 </tr>
 <tr>
 <td>
@@ -2141,28 +2205,78 @@ false</td>
 </tr>
 <tr>
 <td>
-animation</td>
+sound</td>
 <td>
 ResourceLocation</td>
 <td>
-ID of the animation</td>
+Sound ID that is being played</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
-example:animation</td>
+minecraft:item.elytra.flying</td>
+</tr>
+<tr>
+<td>
+volume</td>
+<td>
+Float</td>
+<td>
+Volume for the played sound</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+1.0</td>
+</tr>
+<tr>
+<td>
+pitch</td>
+<td>
+Float</td>
+<td>
+Pitch for the played sound</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+1.0</td>
+</tr>
+<tr>
+<td>
+looping</td>
+<td>
+Boolean</td>
+<td>
+Whether or not the sound should loop during the time the ability is enabled</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+false</td>
+</tr>
+<tr>
+<td>
+play_self</td>
+<td>
+Boolean</td>
+<td>
+Whether or not the sound should be played to just the player executing the ability, or to all players</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+false</td>
 </tr>
 </tbody>
 </table>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:player_animation","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":false,"list_index":-1,"gui_position":"null","description":"null","animation":"example:animation"}</pre>
+{"type":"palladium:play_sound","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":true,"list_index":-1,"gui_position":"null","description":"null","sound":"minecraft:item.elytra.flying","volume":1.0,"pitch":1.0,"looping":false,"play_self":false}</pre>
 </div>
 <hr>
 
 <div id="palladium:projectile">
 <h2>
 projectile</h2>
+<p>
+Allows you to shoot a projectile.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2315,18 +2429,6 @@ false</td>
 </tr>
 <tr>
 <td>
-throw_sound_event</td>
-<td>
-SoundEvent</td>
-<td>
-Sound event that plays when shooting the projectile (nullable)</td>
-<td style="background-color: lightcoral">
-false</td>
-<td>
-minecraft:entity.snowball.throw</td>
-</tr>
-<tr>
-<td>
 swinging_arm</td>
 <td>
 ArmType</td>
@@ -2354,13 +2456,155 @@ false</td>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:projectile","icon":"minecraft:snowball","title":"null","bar_color":"light_gray","hidden":false,"list_index":-1,"gui_position":"null","description":"null","entity_type":"minecraft:snowball","entity_data":"null","inaccuracy":0.0,"velocity":1.5,"throw_sound_event":"minecraft:entity.snowball.throw","swinging_arm":"main_arm","damage_from_player":false}</pre>
+{"type":"palladium:projectile","icon":"minecraft:snowball","title":"null","bar_color":"light_gray","hidden":false,"list_index":-1,"gui_position":"null","description":"null","entity_type":"minecraft:snowball","entity_data":"null","inaccuracy":0.0,"velocity":1.5,"swinging_arm":"main_arm","damage_from_player":false}</pre>
+</div>
+<hr>
+
+<div id="palladium:remove_body_part">
+<h2>
+remove_body_part</h2>
+<p>
+Allows you to remove an entity's body parts.</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+icon</td>
+<td>
+IIcon</td>
+<td>
+Icon for the ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+ItemIcon{stack=1 blaze_rod}</td>
+</tr>
+<tr>
+<td>
+title</td>
+<td>
+Component</td>
+<td>
+Allows you to set a custom title for this ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+bar_color</td>
+<td>
+AbilityColor</td>
+<td>
+Changes the color of the ability in the ability bar. Possible values: [white, orange, magenta, light_blue, yellow, lime, pink, gray, light_gray, cyan, purple, blue, brown, green, red, black]</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+LIGHT_GRAY</td>
+</tr>
+<tr>
+<td>
+hidden</td>
+<td>
+Boolean</td>
+<td>
+Determines if the ability is visible in the ability bar and powers screen</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+true</td>
+</tr>
+<tr>
+<td>
+list_index</td>
+<td>
+Integer</td>
+<td>
+Determines the list index for custom ability lists. Starts at 0. Going beyond 4 (which is the 5th place in the ability) will start a new list. Keeping it at -1 will automatically arrange the abilities.</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+-1</td>
+</tr>
+<tr>
+<td>
+gui_position</td>
+<td>
+Vec2</td>
+<td>
+Position of the ability in the ability menu. Leave null for automatic positioning. 0/0 is center</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+description</td>
+<td>
+Component</td>
+<td>
+Description of the ability. Visible in ability menu</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+body_parts</td>
+<td>
+List</td>
+<td>
+Determines which body parts should be completely removed. Available parts: [head, head_overlay, chest, chest_overlay, right_arm, right_arm_overlay, left_arm, left_arm_overlay, right_leg, right_leg_overlay, left_leg, left_leg_overlay, cape]</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+[right_arm, left_arm]</td>
+</tr>
+<tr>
+<td>
+affects_first_person</td>
+<td>
+Boolean</td>
+<td>
+Determines if your first person arm should disappear aswell (if it's disabled)</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+true</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:remove_body_part","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":true,"list_index":-1,"gui_position":"null","description":"null","body_parts":["right_arm","left_arm"],"affects_first_person":true}</pre>
 </div>
 <hr>
 
 <div id="palladium:render_layer">
 <h2>
 render_layer</h2>
+<p>
+Allows you to add a render layer to the entity.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2487,6 +2731,8 @@ Example:</h3>
 <div id="palladium:restrict_slots">
 <h2>
 restrict_slots</h2>
+<p>
+Let's you restrict the slots that can be used by the player. It will drop the items if disabled while the player has items in the restricted slots.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2613,6 +2859,8 @@ Example:</h3>
 <div id="palladium:shader_effect">
 <h2>
 shader_effect</h2>
+<p>
+Allows you to apply a custom shader effect.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2739,6 +2987,8 @@ Example:</h3>
 <div id="palladium:show_both_arms">
 <h2>
 show_both_arms</h2>
+<p>
+Enables the rendering of your off-hand.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2853,6 +3103,8 @@ Example:</h3>
 <div id="palladium:shrink_body_overlay">
 <h2>
 shrink_body_overlay</h2>
+<p>
+Allows you to shrink the body overlay.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2991,6 +3243,8 @@ Example:</h3>
 <div id="palladium:size">
 <h2>
 size</h2>
+<p>
+This ability allows an entity to change it's size using Pehkui.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -3117,6 +3371,8 @@ Example:</h3>
 <div id="palladium:skin_change">
 <h2>
 skin_change</h2>
+<p>
+Allows you to change a player's skin.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -3255,6 +3511,8 @@ Example:</h3>
 <div id="palladium:slowfall">
 <h2>
 slowfall</h2>
+<p>
+Makes the entity fall slower.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -3369,6 +3627,8 @@ Example:</h3>
 <div id="palladium:water_walk">
 <h2>
 water_walk</h2>
+<p>
+Allows the player to walk on water.</p>
 <h3>
 Settings:</h3>
 <table>
@@ -3477,6 +3737,306 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:water_walk","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":false,"list_index":-1,"gui_position":"null","description":"null"}</pre>
+</div>
+<hr>
+
+<div id="geckolib3:armor_animation">
+<h2>
+armor_animation</h2>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+icon</td>
+<td>
+IIcon</td>
+<td>
+Icon for the ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+ItemIcon{stack=1 blaze_rod}</td>
+</tr>
+<tr>
+<td>
+title</td>
+<td>
+Component</td>
+<td>
+Allows you to set a custom title for this ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+bar_color</td>
+<td>
+AbilityColor</td>
+<td>
+Changes the color of the ability in the ability bar. Possible values: [white, orange, magenta, light_blue, yellow, lime, pink, gray, light_gray, cyan, purple, blue, brown, green, red, black]</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+LIGHT_GRAY</td>
+</tr>
+<tr>
+<td>
+hidden</td>
+<td>
+Boolean</td>
+<td>
+Determines if the ability is visible in the ability bar and powers screen</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+true</td>
+</tr>
+<tr>
+<td>
+list_index</td>
+<td>
+Integer</td>
+<td>
+Determines the list index for custom ability lists. Starts at 0. Going beyond 4 (which is the 5th place in the ability) will start a new list. Keeping it at -1 will automatically arrange the abilities.</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+-1</td>
+</tr>
+<tr>
+<td>
+gui_position</td>
+<td>
+Vec2</td>
+<td>
+Position of the ability in the ability menu. Leave null for automatic positioning. 0/0 is center</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+description</td>
+<td>
+Component</td>
+<td>
+Description of the ability. Visible in ability menu</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+item</td>
+<td>
+ResourceLocation</td>
+<td>
+ID of the gecko armor item that must be worn currently.</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+test:example_item</td>
+</tr>
+<tr>
+<td>
+controller</td>
+<td>
+String</td>
+<td>
+Name of the animation controller the animation is played on. Leave it as 'main' if you didnt specify one.</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+main</td>
+</tr>
+<tr>
+<td>
+animation</td>
+<td>
+String</td>
+<td>
+Animation name that is supposed to be played</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+animation_name</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"geckolib3:armor_animation","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":true,"list_index":-1,"gui_position":"null","description":"null","item":"test:example_item","controller":"main","animation":"animation_name"}</pre>
+</div>
+<hr>
+
+<div id="geckolib3:render_layer_animation">
+<h2>
+render_layer_animation</h2>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+icon</td>
+<td>
+IIcon</td>
+<td>
+Icon for the ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+ItemIcon{stack=1 blaze_rod}</td>
+</tr>
+<tr>
+<td>
+title</td>
+<td>
+Component</td>
+<td>
+Allows you to set a custom title for this ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+bar_color</td>
+<td>
+AbilityColor</td>
+<td>
+Changes the color of the ability in the ability bar. Possible values: [white, orange, magenta, light_blue, yellow, lime, pink, gray, light_gray, cyan, purple, blue, brown, green, red, black]</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+LIGHT_GRAY</td>
+</tr>
+<tr>
+<td>
+hidden</td>
+<td>
+Boolean</td>
+<td>
+Determines if the ability is visible in the ability bar and powers screen</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+true</td>
+</tr>
+<tr>
+<td>
+list_index</td>
+<td>
+Integer</td>
+<td>
+Determines the list index for custom ability lists. Starts at 0. Going beyond 4 (which is the 5th place in the ability) will start a new list. Keeping it at -1 will automatically arrange the abilities.</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+-1</td>
+</tr>
+<tr>
+<td>
+gui_position</td>
+<td>
+Vec2</td>
+<td>
+Position of the ability in the ability menu. Leave null for automatic positioning. 0/0 is center</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+description</td>
+<td>
+Component</td>
+<td>
+Description of the ability. Visible in ability menu</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+render_layer</td>
+<td>
+ResourceLocation</td>
+<td>
+Determines the ID of the render layer receiving the animation. Must be a gecko render layer!</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+test:example_layer</td>
+</tr>
+<tr>
+<td>
+controller</td>
+<td>
+String</td>
+<td>
+Name of the animation controller the animation is played on. Leave it as 'main' if you didnt specify one.</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+main</td>
+</tr>
+<tr>
+<td>
+animation</td>
+<td>
+String</td>
+<td>
+Animation name that is supposed to be played</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+animation_name</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"geckolib3:render_layer_animation","icon":"minecraft:blaze_rod","title":"null","bar_color":"light_gray","hidden":true,"list_index":-1,"gui_position":"null","description":"null","render_layer":"test:example_layer","controller":"main","animation":"animation_name"}</pre>
 </div>
 <script>
 function syntaxHighlight(json) {

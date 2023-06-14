@@ -2,7 +2,6 @@ package net.threetag.pantheonsent.client.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import dev.kosmx.playerAnim.core.util.Ease;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HeadedModel;
 import net.minecraft.client.model.HierarchicalModel;
@@ -15,6 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.animation.AnimationUtil;
+import net.threetag.palladium.util.Easing;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.entity.Khonshu;
 
@@ -113,7 +113,7 @@ public class KhonshuModel<T extends LivingEntity> extends HierarchicalModel<T> i
             var progress = khonshu.getWiggleArmsProgress(ageInTicks - entity.tickCount);
 
             if (progress > 0F) {
-                progress = AnimationUtil.ease(Ease.INOUTSINE, progress);
+                progress = AnimationUtil.ease(Easing.INOUTSINE, progress);
                 var wiggle = Mth.sin(ageInTicks / 10F) * 10F;
                 interpolateXRotTo(this.rightArm, (float) Math.toRadians(-60 - wiggle), progress);
                 interpolateYRotTo(this.rightArm, (float) Math.toRadians(-60), progress);

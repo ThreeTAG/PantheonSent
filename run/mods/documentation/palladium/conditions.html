@@ -43,6 +43,14 @@ ability_integer_property</a>
 ability_ticks</a>
 </li>
 <li>
+<a href="#palladium:ability_type_enabled">
+ability_type_enabled</a>
+</li>
+<li>
+<a href="#palladium:ability_type_unlocked">
+ability_type_unlocked</a>
+</li>
+<li>
 <a href="#palladium:ability_unlocked">
 ability_unlocked</a>
 </li>
@@ -53,6 +61,10 @@ action</a>
 <li>
 <a href="#palladium:activation">
 activation</a>
+</li>
+<li>
+<a href="#palladium:and">
+and</a>
 </li>
 <li>
 <a href="#palladium:brightness_at_position">
@@ -103,6 +115,10 @@ health</a>
 held</a>
 </li>
 <li>
+<a href="#palladium:in_lava">
+in_lava</a>
+</li>
+<li>
 <a href="#palladium:in_water">
 in_water</a>
 </li>
@@ -115,8 +131,64 @@ integer_property</a>
 interval</a>
 </li>
 <li>
+<a href="#palladium:is_elytra_flying">
+is_elytra_flying</a>
+</li>
+<li>
+<a href="#palladium:is_fast_flying">
+is_fast_flying</a>
+</li>
+<li>
+<a href="#palladium:is_flying">
+is_flying</a>
+</li>
+<li>
+<a href="#palladium:is_hovering">
+is_hovering</a>
+</li>
+<li>
+<a href="#palladium:is_hovering_or_flying">
+is_hovering_or_flying</a>
+</li>
+<li>
+<a href="#palladium:is_hovering_or_levitating">
+is_hovering_or_levitating</a>
+</li>
+<li>
+<a href="#palladium:is_in_rain">
+is_in_rain</a>
+</li>
+<li>
+<a href="#palladium:is_in_water_or_bubble">
+is_in_water_or_bubble</a>
+</li>
+<li>
+<a href="#palladium:is_in_water_or_rain">
+is_in_water_or_rain</a>
+</li>
+<li>
+<a href="#palladium:is_in_water_rain_or_bubble">
+is_in_water_rain_or_bubble</a>
+</li>
+<li>
+<a href="#palladium:is_levitating">
+is_levitating</a>
+</li>
+<li>
 <a href="#palladium:is_moving">
 is_moving</a>
+</li>
+<li>
+<a href="#palladium:is_on_fire">
+is_on_fire</a>
+</li>
+<li>
+<a href="#palladium:is_swimming">
+is_swimming</a>
+</li>
+<li>
+<a href="#palladium:is_under_water">
+is_under_water</a>
 </li>
 <li>
 <a href="#palladium:item_buyable">
@@ -182,7 +254,7 @@ wears_suit_set</a>
 <h2>
 ability_enabled</h2>
 <p>
-Applicable for: all</p>
+Checks if the ability is enabled. If the power is not null, it will look for the ability in the specified power. If the power is null, it will look for the ability in the current power.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -238,7 +310,7 @@ Example:</h3>
 <h2>
 ability_integer_property</h2>
 <p>
-Applicable for: all</p>
+Checks if the given ability has a certain integer property value.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -330,7 +402,7 @@ Example:</h3>
 <h2>
 ability_ticks</h2>
 <p>
-Applicable for: all</p>
+Checks if the ability has been enabled for a certain amount of ticks.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -406,11 +478,99 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:ability_type_enabled">
+<h2>
+ability_type_enabled</h2>
+<p>
+Checks if an ability of a certain type is enabled.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+ability_type</td>
+<td>
+ResourceLocation</td>
+<td>
+ID of the ability type to look for. If one ability can be found which is enabled, the condition will be true</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+palladium:dummy</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:ability_type_enabled","ability_type":"palladium:dummy"}</pre>
+</div>
+<hr>
+
+<div id="palladium:ability_type_unlocked">
+<h2>
+ability_type_unlocked</h2>
+<p>
+Checks if an ability of a certain type is unlocked.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+ability_type</td>
+<td>
+ResourceLocation</td>
+<td>
+ID of the ability type to look for. If one ability can be found which is unlocked, the condition will be true</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+palladium:dummy</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:ability_type_unlocked","ability_type":"palladium:dummy"}</pre>
+</div>
+<hr>
+
 <div id="palladium:ability_unlocked">
 <h2>
 ability_unlocked</h2>
 <p>
-Applicable for: all</p>
+Checks if the ability is unlocked.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -466,7 +626,7 @@ Example:</h3>
 <h2>
 action</h2>
 <p>
-Applicable for: abilities</p>
+This condition is used to activate the power when a key is pressed or a mouse button is clicked.<br><br>Applicable for: abilities</p>
 <h3>
 Settings:</h3>
 <table>
@@ -534,7 +694,7 @@ Example:</h3>
 <h2>
 activation</h2>
 <p>
-Applicable for: abilities</p>
+This condition is used to activate the power when a key is pressed or a mouse button is clicked for a certain amount of ticks.<br><br>Applicable for: abilities</p>
 <h3>
 Settings:</h3>
 <table>
@@ -610,11 +770,55 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:and">
+<h2>
+and</h2>
+<p>
+A condition that is active if all of the conditions in the array are active.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+conditions</td>
+<td>
+Condition[]</td>
+<td>
+Array of conditions, all of which must be active</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+0 conditions</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:and","conditions":[]}</pre>
+</div>
+<hr>
+
 <div id="palladium:brightness_at_position">
 <h2>
 brightness_at_position</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity's brightness at it's position is within the given range.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -670,7 +874,7 @@ Example:</h3>
 <h2>
 command_result</h2>
 <p>
-Applicable for: all</p>
+Executes a command and compares the output to a number.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -750,7 +954,7 @@ Example:</h3>
 <h2>
 crouching</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is crouching.<br><br>Applicable for: all</p>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
@@ -762,7 +966,7 @@ Example:</h3>
 <h2>
 dimension</h2>
 <p>
-Applicable for: all</p>
+Checks if the player is in a specific dimension.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -806,7 +1010,7 @@ Example:</h3>
 <h2>
 entity_type</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is of a specific entity type.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -850,7 +1054,7 @@ Example:</h3>
 <h2>
 entity_type_tag</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is of a certain tag.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -894,7 +1098,7 @@ Example:</h3>
 <h2>
 experience_level_buyable</h2>
 <p>
-Applicable for: abilities</p>
+A condition that makes the ability buyable for a certain amount of xp levels.<br><br>Applicable for: abilities</p>
 <h3>
 Settings:</h3>
 <table>
@@ -938,7 +1142,7 @@ Example:</h3>
 <h2>
 float_property</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity has a float property with a value between the given minimum and maximum.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1006,7 +1210,7 @@ Example:</h3>
 <h2>
 has_power</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity has a power with the given ID.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1050,7 +1254,7 @@ Example:</h3>
 <h2>
 has_tag</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity has a specific tag. These tags are added to entities via /tag command.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1075,7 +1279,7 @@ tag</td>
 <td>
 String</td>
 <td>
-The tag the entity must have. These tags are added to entities via /tag command</td>
+The tag the entity must have.</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
@@ -1094,7 +1298,7 @@ Example:</h3>
 <h2>
 health</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity has a certain amount of health.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1150,7 +1354,7 @@ Example:</h3>
 <h2>
 held</h2>
 <p>
-Applicable for: abilities</p>
+Allows the ability to be used while holding a key bind.<br><br>Applicable for: abilities</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1214,11 +1418,23 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:in_lava">
+<h2>
+in_lava</h2>
+<p>
+Checks if the entity is in lava.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:in_lava"}</pre>
+</div>
+<hr>
+
 <div id="palladium:in_water">
 <h2>
 in_water</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is in water.<br><br>Applicable for: all</p>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
@@ -1230,7 +1446,7 @@ Example:</h3>
 <h2>
 integer_property</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity has a certain amount of a certain integer property.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1298,7 +1514,7 @@ Example:</h3>
 <h2>
 interval</h2>
 <p>
-Applicable for: abilities</p>
+Allows you to set an amount of ticks the ability will be active and an amount of ticks the ability will be disabled. The ability will be active for the first amount of ticks and then disabled for the second amount of ticks and so on.<br><br>Applicable for: abilities</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1350,11 +1566,143 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:is_elytra_flying">
+<h2>
+is_elytra_flying</h2>
+<p>
+Checks if the entity is currently flying with an elytra.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_elytra_flying"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_fast_flying">
+<h2>
+is_fast_flying</h2>
+<p>
+Checks if the entity is currently flying fast.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_fast_flying"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_flying">
+<h2>
+is_flying</h2>
+<p>
+Checks if the entity is flying.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_flying"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_hovering">
+<h2>
+is_hovering</h2>
+<p>
+Checks if the entity is hovering mid-air.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_hovering"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_hovering_or_flying">
+<h2>
+is_hovering_or_flying</h2>
+<p>
+Checks if the entity is hovering mid-air or flying.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_hovering_or_flying"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_hovering_or_levitating">
+<h2>
+is_hovering_or_levitating</h2>
+<p>
+Checks if the entity is hovering mid-air or levitating.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_hovering_or_levitating"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_in_rain">
+<h2>
+is_in_rain</h2>
+<p>
+Checks if the entity is in rain.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_in_rain"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_in_water_or_bubble">
+<h2>
+is_in_water_or_bubble</h2>
+<p>
+Checks if the entity is in water or a bubble column.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_in_water_or_bubble"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_in_water_or_rain">
+<h2>
+is_in_water_or_rain</h2>
+<p>
+Checks if the entity is in water or rain.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_in_water_or_rain"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_in_water_rain_or_bubble">
+<h2>
+is_in_water_rain_or_bubble</h2>
+<p>
+Checks if the entity is in water, rain or a bubble column.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_in_water_rain_or_bubble"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_levitating">
+<h2>
+is_levitating</h2>
+<p>
+Checks if the entity is levitating.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_levitating"}</pre>
+</div>
+<hr>
+
 <div id="palladium:is_moving">
 <h2>
 is_moving</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is moving.<br><br>Applicable for: all</p>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
@@ -1362,11 +1710,47 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:is_on_fire">
+<h2>
+is_on_fire</h2>
+<p>
+Checks if the entity is on fire.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_on_fire"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_swimming">
+<h2>
+is_swimming</h2>
+<p>
+Checks if the entity is swimming.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_swimming"}</pre>
+</div>
+<hr>
+
+<div id="palladium:is_under_water">
+<h2>
+is_under_water</h2>
+<p>
+Checks if the entity is under water.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:is_under_water"}</pre>
+</div>
+<hr>
+
 <div id="palladium:item_buyable">
 <h2>
 item_buyable</h2>
 <p>
-Applicable for: abilities</p>
+The player needs to spend a certain amount of items to unlock the ability.<br><br>Applicable for: abilities</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1422,7 +1806,7 @@ Example:</h3>
 <h2>
 item_in_slot</h2>
 <p>
-Applicable for: all</p>
+Checks if the given item is in the given slot.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1478,7 +1862,7 @@ Example:</h3>
 <h2>
 mod_loaded</h2>
 <p>
-Applicable for: all</p>
+Checks if a mod is loaded.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1522,7 +1906,7 @@ Example:</h3>
 <h2>
 moon_phase</h2>
 <p>
-Applicable for: all</p>
+Checks if the moon phase is between the given values.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1578,7 +1962,7 @@ Example:</h3>
 <h2>
 not</h2>
 <p>
-Applicable for: all</p>
+Returns true if all conditions are disabled.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1622,7 +2006,7 @@ Example:</h3>
 <h2>
 objective_score</h2>
 <p>
-Applicable for: all</p>
+Checks if the player has a score in a specific objective.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1690,7 +2074,7 @@ Example:</h3>
 <h2>
 on_ground</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is on the ground.<br><br>Applicable for: all</p>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
@@ -1702,7 +2086,7 @@ Example:</h3>
 <h2>
 or</h2>
 <p>
-Applicable for: all</p>
+Returns true if at least one of the conditions is active.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1727,7 +2111,7 @@ conditions</td>
 <td>
 Condition[]</td>
 <td>
-Array of conditions that must be disabled</td>
+Array of conditions, at least one of which must be active</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
@@ -1746,7 +2130,7 @@ Example:</h3>
 <h2>
 pose</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is in a specific pose.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1790,7 +2174,7 @@ Example:</h3>
 <h2>
 scoreboard_score_buyable</h2>
 <p>
-Applicable for: abilities</p>
+A buyable condition that requires a certain score for a scoreboard objective.<br><br>Applicable for: abilities</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1870,7 +2254,7 @@ Example:</h3>
 <h2>
 sprinting</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is sprinting.<br><br>Applicable for: all</p>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
@@ -1882,7 +2266,7 @@ Example:</h3>
 <h2>
 toggle</h2>
 <p>
-Applicable for: abilities</p>
+Toggles the ability on and off after a key press or mouse click.<br><br>Applicable for: abilities</p>
 <h3>
 Settings:</h3>
 <table>
@@ -1950,7 +2334,7 @@ Example:</h3>
 <h2>
 under_water</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is underwater.<br><br>Applicable for: all</p>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
@@ -1962,7 +2346,7 @@ Example:</h3>
 <h2>
 wears_suit_set</h2>
 <p>
-Applicable for: all</p>
+Checks if the entity is wearing a specific suit set.<br><br>Applicable for: all</p>
 <h3>
 Settings:</h3>
 <table>
