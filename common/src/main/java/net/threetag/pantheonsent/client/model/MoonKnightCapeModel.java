@@ -5,12 +5,13 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.CapedHumanoidModel;
+import net.threetag.palladium.client.model.ExtraAnimatedModel;
 import net.threetag.pantheonsent.client.model.animation.BlockingAnimation;
 import net.threetag.pantheonsent.client.model.animation.GlidingAnimation;
 
 import java.util.function.Function;
 
-public class MoonKnightCapeModel<T extends LivingEntity> extends CapedHumanoidModel<T> {
+public class MoonKnightCapeModel<T extends LivingEntity> extends CapedHumanoidModel<T> implements ExtraAnimatedModel<T> {
 
     public final ModelPart left1, left2, left3;
     public final ModelPart right1, right2, right3;
@@ -38,7 +39,12 @@ public class MoonKnightCapeModel<T extends LivingEntity> extends CapedHumanoidMo
     @Override
     public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float partialTicks) {
         super.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+        this.extraAnimations(entity, limbSwing, limbSwingAmount, 0, 0, 0, partialTicks);
+    }
 
+    @Override
+    public void extraAnimations(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float partialTicks) {
+        super.extraAnimations(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTicks);
         this.left1.yRot = 0;
         this.left2.yRot = 0;
         this.left3.yRot = 0;
