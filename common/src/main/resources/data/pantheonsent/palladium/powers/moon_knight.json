@@ -144,8 +144,7 @@
       "type": "palladium:command",
       "hidden": true,
       "first_tick_commands": [
-        "effect give @s minecraft:regeneration 5 2 true",
-        "say Summoned suit!"
+        "effect give @s minecraft:regeneration 5 2 true"
       ],
       "last_tick_commands": "null",
       "commands": "null",
