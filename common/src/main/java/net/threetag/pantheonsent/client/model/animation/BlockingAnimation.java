@@ -35,7 +35,7 @@ public class BlockingAnimation extends PalladiumAnimation {
             }
         }
 
-        return Mth.clamp(max / 10F, 0F, 1F);
+        return Mth.clamp(max / 5F, 0F, 1F);
     }
 
     @Override
@@ -48,15 +48,15 @@ public class BlockingAnimation extends PalladiumAnimation {
                     .rotateXDegrees(-15)
                     .rotateYDegrees(-25)
                     .rotateZDegrees(-20)
-                    .animate(Easing.INOUTSINE, progress);
+                    .animate(Easing.INQUINT, progress);
             builder.get(PlayerModelPart.LEFT_ARM)
                     .setX(model.leftArm.x - 2)
                     .rotateXDegrees(-15)
                     .rotateYDegrees(25)
                     .rotateZDegrees(20)
-                    .animate(Easing.INOUTSINE, progress);
-            builder.get(PlayerModelPart.HEAD).rotateX(0).animate(Easing.INOUTSINE, progress);
-            builder.get(PlayerModelPart.HEAD).rotateY(0).animate(Easing.INOUTSINE, progress);
+                    .animate(Easing.INQUINT, progress);
+            builder.get(PlayerModelPart.HEAD).rotateX(0).animate(Easing.INQUINT, progress);
+            builder.get(PlayerModelPart.HEAD).rotateY(0).animate(Easing.INQUINT, progress);
         }
     }
 }

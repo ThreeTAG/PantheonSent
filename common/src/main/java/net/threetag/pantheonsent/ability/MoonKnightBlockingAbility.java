@@ -1,5 +1,6 @@
 package net.threetag.pantheonsent.ability;
 
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.power.IPowerHolder;
@@ -12,6 +13,7 @@ import net.threetag.palladium.util.property.PropertyManager;
 import net.threetag.palladium.util.property.SyncType;
 import net.threetag.palladiumcore.event.EventResult;
 import net.threetag.palladiumcore.event.LivingEntityEvents;
+import net.threetag.pantheonsent.sound.PSSoundEvents;
 
 public class MoonKnightBlockingAbility extends Ability implements LivingEntityEvents.Attack {
 
@@ -34,11 +36,25 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
             int timer = entry.getProperty(TIMER);
             entry.setUniqueProperty(PREV_TIMER, timer);
 
-            if (enabled && timer < 10) {
+            if (enabled && timer < 5) {
                 entry.setUniqueProperty(TIMER, timer + 1);
             } else if (!enabled && timer > 0) {
                 entry.setUniqueProperty(TIMER, timer - 1);
             }
+        }
+    }
+
+    @Override
+    public void firstTick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
+        if (enabled) {
+            entity.level.playLocalSound(entity.getX(), entity.getEyeY(), entity.getZ(), PSSoundEvents.CAPE.get(), SoundSource.PLAYERS, 1F, 1F, false);
+        }
+    }
+
+    @Override
+    public void lastTick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
+        if (enabled) {
+            entity.level.playLocalSound(entity.getX(), entity.getEyeY(), entity.getZ(), PSSoundEvents.CAPE.get(), SoundSource.PLAYERS, 1F, 1F, false);
         }
     }
 
