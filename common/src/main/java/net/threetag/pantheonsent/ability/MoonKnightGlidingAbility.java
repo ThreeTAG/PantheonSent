@@ -12,6 +12,7 @@ import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
 import net.threetag.palladium.util.property.PropertyManager;
 import net.threetag.palladium.util.property.SyncType;
+import net.threetag.pantheonsent.sound.PSSoundEvents;
 
 public class MoonKnightGlidingAbility extends Ability {
 
@@ -31,9 +32,13 @@ public class MoonKnightGlidingAbility extends Ability {
             entry.setUniqueProperty(PREV_TIME_IN_AIR, timer);
 
             if ((entity.isOnGround() || entity.isInWater() || entity.isColliding(entity.blockPosition(), entity.level.getBlockState(entity.blockPosition().below(2)))) && timer > 0) {
-                entry.setUniqueProperty(TIME_IN_AIR, timer - 1);
+                entry.setUniqueProperty(TIME_IN_AIR, timer = timer - 1);
             } else if (enabled && !entity.isOnGround() && timer < 10) {
-                entry.setUniqueProperty(TIME_IN_AIR, timer + 1);
+                entry.setUniqueProperty(TIME_IN_AIR, timer = timer + 1);
+            }
+
+            if (timer == 1) {
+                entity.playSound(PSSoundEvents.CAPE.get());
             }
         }
         if (enabled && !entity.isOnGround()) {

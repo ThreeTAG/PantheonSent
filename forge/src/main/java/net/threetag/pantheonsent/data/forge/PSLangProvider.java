@@ -102,6 +102,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.minecraft.villager.archeologist", "Archeologist");
 
             // Subtitles
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Eye of Horus");
         }
     }
@@ -190,6 +191,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.minecraft.villager.archeologist", "Arch\u00E4ologe");
 
             // Subtitles
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusauge");
         }
     }
@@ -278,6 +280,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.minecraft.villager.archeologist", "Arsch\u00E4oloje");
 
             // Subtitles
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusooche");
         }
     }

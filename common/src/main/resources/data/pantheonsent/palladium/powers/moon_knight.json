@@ -108,7 +108,8 @@
         },
         "enabling": {
           "type": "palladium:held",
-          "key_type": "right_click"
+          "key_type": "right_click",
+          "needs_empty_hand": true
         }
       }
     },

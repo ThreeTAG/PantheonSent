@@ -1,4 +1,17 @@
 {
+  "entity.cape": {
+    "sounds": [
+      "pantheonsent:cape_1",
+      "pantheonsent:cape_2",
+      "pantheonsent:cape_3",
+      "pantheonsent:cape_4",
+      "pantheonsent:cape_5",
+      "pantheonsent:cape_6",
+      "pantheonsent:cape_7",
+      "pantheonsent:cape_8"
+    ],
+    "subtitle": "subtitles.pantheonsent.entity.cape"
+  },
   "item.eye_of_horus.use": {
     "sounds": [
       "pantheonsent:eye_of_horus"
