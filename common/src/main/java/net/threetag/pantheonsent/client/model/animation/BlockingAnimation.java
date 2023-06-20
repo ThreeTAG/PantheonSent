@@ -43,20 +43,39 @@ public class BlockingAnimation extends PalladiumAnimation {
         var progress = this.getProgress(player, partialTicks);
 
         if (progress > 0F) {
-            builder.get(PlayerModelPart.RIGHT_ARM)
-                    .setX(model.rightArm.x + 2)
-                    .rotateXDegrees(-15)
-                    .rotateYDegrees(-25)
-                    .rotateZDegrees(-20)
-                    .animate(Easing.INQUINT, progress);
-            builder.get(PlayerModelPart.LEFT_ARM)
-                    .setX(model.leftArm.x - 2)
-                    .rotateXDegrees(-15)
-                    .rotateYDegrees(25)
-                    .rotateZDegrees(20)
-                    .animate(Easing.INQUINT, progress);
-            builder.get(PlayerModelPart.HEAD).rotateX(0).animate(Easing.INQUINT, progress);
-            builder.get(PlayerModelPart.HEAD).rotateY(0).animate(Easing.INQUINT, progress);
+
+            if(firstPersonContext.firstPerson()) {
+                builder.get(PlayerModelPart.RIGHT_ARM)
+                        .setZ(5)
+                        .setX(-2)
+                        .setY(2)
+                        .rotateXDegrees(-50F)
+                        .rotateZDegrees(-40F)
+                        .animate(Easing.INQUINT, progress);
+
+                builder.get(PlayerModelPart.LEFT_ARM)
+                        .setZ(5)
+                        .setX(2)
+                        .setY(2)
+                        .rotateXDegrees(-50F)
+                        .rotateZDegrees(40F)
+                        .animate(Easing.INQUINT, progress);
+            } else {
+                builder.get(PlayerModelPart.RIGHT_ARM)
+                        .setX(model.rightArm.x + 2)
+                        .rotateXDegrees(-15)
+                        .rotateYDegrees(-25)
+                        .rotateZDegrees(-20)
+                        .animate(Easing.INQUINT, progress);
+                builder.get(PlayerModelPart.LEFT_ARM)
+                        .setX(model.leftArm.x - 2)
+                        .rotateXDegrees(-15)
+                        .rotateYDegrees(25)
+                        .rotateZDegrees(20)
+                        .animate(Easing.INQUINT, progress);
+                builder.get(PlayerModelPart.HEAD).rotateX(0).animate(Easing.INQUINT, progress);
+                builder.get(PlayerModelPart.HEAD).rotateY(0).animate(Easing.INQUINT, progress);
+            }
         }
     }
 }

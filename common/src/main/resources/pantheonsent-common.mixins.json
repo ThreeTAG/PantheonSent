@@ -3,7 +3,8 @@
   "package": "net.threetag.pantheonsent.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "ItemInHandRendererMixin"
+    "ItemInHandRendererMixin",
+    "MinecraftMixin"
   ],
   "mixins": [
     "EnchantmentHelperMixin"
