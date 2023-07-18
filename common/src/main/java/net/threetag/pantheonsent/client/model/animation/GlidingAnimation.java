@@ -71,14 +71,14 @@ public class GlidingAnimation extends PalladiumAnimation {
         }
 
         for (AbilityEntry entry : entries) {
-            float timeInAir = Mth.lerp(partialTicks, entry.getProperty(MoonKnightGlidingAbility.PREV_TIME_IN_AIR), entry.getProperty(MoonKnightGlidingAbility.TIME_IN_AIR));
+            float timeInAir = ((MoonKnightGlidingAbility) PSAbilities.MOON_KNIGHT_GLIDING.get()).getAnimationValue(entry, partialTicks);
 
             if (timeInAir > max) {
                 max = timeInAir;
             }
         }
 
-        return Mth.clamp(max / 10F, 0F, 1F);
+        return Mth.clamp(max, 0F, 1F);
     }
 
     public float getCapeRotation() {

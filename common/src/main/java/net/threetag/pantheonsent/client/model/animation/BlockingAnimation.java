@@ -28,14 +28,14 @@ public class BlockingAnimation extends PalladiumAnimation {
         }
 
         for (AbilityEntry entry : entries) {
-            float timer = Mth.lerp(partialTicks, entry.getProperty(MoonKnightBlockingAbility.PREV_TIMER), entry.getProperty(MoonKnightBlockingAbility.TIMER));
+            float timer = ((MoonKnightBlockingAbility) PSAbilities.MOON_KNIGHT_BLOCKING.get()).getAnimationValue(entry, partialTicks);
 
             if (timer > max) {
                 max = timer;
             }
         }
 
-        return Mth.clamp(max / 5F, 0F, 1F);
+        return Mth.clamp(max, 0F, 1F);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class BlockingAnimation extends PalladiumAnimation {
 
         if (progress > 0F) {
 
-            if(firstPersonContext.firstPerson()) {
+            if (firstPersonContext.firstPerson()) {
                 builder.get(PlayerModelPart.RIGHT_ARM)
                         .setZ(5)
                         .setX(-2)

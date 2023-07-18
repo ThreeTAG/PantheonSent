@@ -8,13 +8,14 @@ import net.minecraft.world.entity.player.Player;
 import net.threetag.palladium.power.IPowerHolder;
 import net.threetag.palladium.power.ability.Ability;
 import net.threetag.palladium.power.ability.AbilityEntry;
+import net.threetag.palladium.power.ability.AnimationTimer;
 import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
 import net.threetag.palladium.util.property.PropertyManager;
 import net.threetag.palladium.util.property.SyncType;
 import net.threetag.pantheonsent.sound.PSSoundEvents;
 
-public class MoonKnightGlidingAbility extends Ability {
+public class MoonKnightGlidingAbility extends Ability implements AnimationTimer {
 
     public static final PalladiumProperty<Integer> TIME_IN_AIR = new IntegerProperty("time_in_air").sync(SyncType.NONE);
     public static final PalladiumProperty<Integer> PREV_TIME_IN_AIR = new IntegerProperty("prev_time_in_air").sync(SyncType.NONE);
@@ -56,4 +57,8 @@ public class MoonKnightGlidingAbility extends Ability {
         }
     }
 
+    @Override
+    public float getAnimationValue(AbilityEntry entry, float partialTick) {
+        return Mth.lerp(entry.getProperty(PREV_TIME_IN_AIR), entry.getProperty(TIME_IN_AIR), partialTick) / 10F;
+    }
 }
