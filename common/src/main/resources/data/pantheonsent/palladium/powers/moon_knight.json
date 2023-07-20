@@ -11,7 +11,7 @@
       },
       "list_index": 0,
       "max_value": 19,
-      "hidden": false,
+      "hidden_in_bar": false,
       "icon": "pantheonsent:textures/icon/moon_knight.png",
       "conditions": {
         "enabling": {
@@ -69,6 +69,7 @@
     },
     "throw_dart": {
       "type": "palladium:projectile",
+      "hidden_in_bar": true,
       "hidden": true,
       "entity_type": "pantheonsent:crescent_dart",
       "conditions": {
@@ -86,6 +87,7 @@
     },
     "gliding": {
       "type": "pantheonsent:moon_knight_gliding",
+      "hidden_in_bar": true,
       "hidden": true,
       "conditions": {
         "unlocking": {
@@ -121,6 +123,7 @@
       "icon": "pantheonsent:textures/icon/stealth.png",
       "list_index": 3,
       "hidden": false,
+      "hidden_in_bar": false,
       "conditions": {
         "unlocking": [
           {
@@ -143,6 +146,7 @@
     "healing": {
       "type": "palladium:command",
       "hidden": true,
+      "hidden_in_bar": true,
       "first_tick_commands": [
         "effect give @s minecraft:regeneration 5 2 true"
       ],
@@ -158,6 +162,7 @@
     "resistance": {
       "type": "palladium:attribute_modifier",
       "hidden": true,
+      "hidden_in_bar": true,
       "attribute": "minecraft:generic.armor",
       "amount": 6,
       "operation": 0,
@@ -172,6 +177,7 @@
     "strength": {
       "type": "palladium:attribute_modifier",
       "hidden": true,
+      "hidden_in_bar": true,
       "attribute": "minecraft:generic.attack_damage",
       "amount": 6,
       "operation": 0,
@@ -186,6 +192,7 @@
     "speed": {
       "type": "palladium:attribute_modifier",
       "hidden": true,
+      "hidden_in_bar": true,
       "attribute": "minecraft:generic.movement_speed",
       "amount": 0.2,
       "operation": 2,
@@ -203,6 +210,7 @@
     "restrict_slots": {
       "type": "palladium:restrict_slots",
       "hidden": true,
+      "hidden_in_bar": true,
       "slots": [
         "head",
         "chest",

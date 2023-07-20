@@ -59,6 +59,6 @@ public class MoonKnightGlidingAbility extends Ability implements AnimationTimer 
 
     @Override
     public float getAnimationValue(AbilityEntry entry, float partialTick) {
-        return Mth.lerp(entry.getProperty(PREV_TIME_IN_AIR), entry.getProperty(TIME_IN_AIR), partialTick) / 10F;
+        return Mth.lerp(partialTick, entry.getProperty(PREV_TIME_IN_AIR), entry.getProperty(TIME_IN_AIR)) / 10F;
     }
 }
