@@ -81,11 +81,36 @@
       ]
     },
     {
-      "conditions": {
-        "type": "palladium:ability_enabled",
-        "power": "pantheonsent:moon_knight",
-        "ability": "throw_dart_toggle"
-      },
+      "conditions": [
+        {
+          "type": "palladium:ability_integer_property",
+          "power": "pantheonsent:moon_knight",
+          "ability": "activate",
+          "property": "value",
+          "min": 19,
+          "max": 20
+        },
+        {
+          "type": "palladium:empty_slot",
+          "slot": "mainhand"
+        },
+        {
+          "type": "palladium:not",
+          "conditions": {
+            "type": "palladium:ability_enabled",
+            "power": "pantheonsent:moon_knight",
+            "ability": "blocking"
+          }
+        },
+        {
+          "type": "palladium:not",
+          "conditions": {
+            "type": "palladium:ability_on_cooldown",
+            "power": "pantheonsent:moon_knight",
+            "ability": "throw_dart"
+          }
+        }
+      ],
       "model_layer": "pantheonsent:humanoid#dart_in_hand",
       "texture": "pantheonsent:textures/entity/projectiles/crescent_dart.png"
     }

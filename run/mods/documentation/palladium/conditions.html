@@ -39,6 +39,10 @@ ability_enabled</a>
 ability_integer_property</a>
 </li>
 <li>
+<a href="#palladium:ability_on_cooldown">
+ability_on_cooldown</a>
+</li>
+<li>
 <a href="#palladium:ability_ticks">
 ability_ticks</a>
 </li>
@@ -79,8 +83,16 @@ command_result</a>
 crouching</a>
 </li>
 <li>
+<a href="#palladium:day">
+day</a>
+</li>
+<li>
 <a href="#palladium:dimension">
 dimension</a>
+</li>
+<li>
+<a href="#palladium:empty_slot">
+empty_slot</a>
 </li>
 <li>
 <a href="#palladium:entity_type">
@@ -207,6 +219,10 @@ mod_loaded</a>
 moon_phase</a>
 </li>
 <li>
+<a href="#palladium:night">
+night</a>
+</li>
+<li>
 <a href="#palladium:not">
 not</a>
 </li>
@@ -237,10 +253,6 @@ sprinting</a>
 <li>
 <a href="#palladium:toggle">
 toggle</a>
-</li>
-<li>
-<a href="#palladium:under_water">
-under_water</a>
 </li>
 <li>
 <a href="#palladium:wears_suit_set">
@@ -395,6 +407,62 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:ability_integer_property","power":"null","ability":"ability_id","property":"value","min":0,"max":0}</pre>
+</div>
+<hr>
+
+<div id="palladium:ability_on_cooldown">
+<h2>
+ability_on_cooldown</h2>
+<p>
+Checks if the ability is currently on cooldown. If the power is not null, it will look for the ability in the specified power. If the power is null, it will look for the ability in the current power.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+power</td>
+<td>
+ResourceLocation</td>
+<td>
+ID of the power where is the desired ability is located. Can be null IF used for abilities, then it will look into the current power</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+ability</td>
+<td>
+String</td>
+<td>
+ID of the desired ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+ability_id</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:ability_on_cooldown","power":"null","ability":"ability_id"}</pre>
 </div>
 <hr>
 
@@ -663,7 +731,7 @@ key_type</td>
 <td>
 KeyType</td>
 <td>
-The type of key that needs to be pressed. Possible values: [key_bind, left_click, right_click, space_bar]</td>
+The type of key that needs to be pressed. Possible values: [key_bind, left_click, right_click, space_bar, scroll_up, scroll_down, scroll_either]</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
@@ -743,7 +811,7 @@ key_type</td>
 <td>
 KeyType</td>
 <td>
-The type of key that needs to be pressed. Possible values: [key_bind, left_click, right_click, space_bar]</td>
+The type of key that needs to be pressed. Possible values: [key_bind, left_click, right_click, space_bar, scroll_up, scroll_down, scroll_either]</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
@@ -962,6 +1030,18 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:day">
+<h2>
+day</h2>
+<p>
+Checks if it's currently daytime<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:day"}</pre>
+</div>
+<hr>
+
 <div id="palladium:dimension">
 <h2>
 dimension</h2>
@@ -1003,6 +1083,50 @@ minecraft:overworld</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:dimension","dimension":"minecraft:overworld"}</pre>
+</div>
+<hr>
+
+<div id="palladium:empty_slot">
+<h2>
+empty_slot</h2>
+<p>
+Checks if the given slot is empty.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+slot</td>
+<td>
+PlayerSlot</td>
+<td>
+Slot that must be empty. Example values: [mainhand, offhand, feet, legs, chest, head, curios:back, curios:necklace, trinkets:chest/back, trinkets:chest/necklace]</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+chest</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:empty_slot","slot":"chest"}</pre>
 </div>
 <hr>
 
@@ -1958,6 +2082,18 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:night">
+<h2>
+night</h2>
+<p>
+Checks if it's currently nighttime<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:night"}</pre>
+</div>
+<hr>
+
 <div id="palladium:not">
 <h2>
 not</h2>
@@ -2303,7 +2439,7 @@ key_type</td>
 <td>
 KeyType</td>
 <td>
-The type of key that needs to be pressed. Possible values: [key_bind, left_click, right_click, space_bar]</td>
+The type of key that needs to be pressed. Possible values: [key_bind, left_click, right_click, space_bar, scroll_up, scroll_down, scroll_either]</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
@@ -2327,18 +2463,6 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:toggle","cooldown":0,"key_type":"key_bind","needs_empty_hand":false}</pre>
-</div>
-<hr>
-
-<div id="palladium:under_water">
-<h2>
-under_water</h2>
-<p>
-Checks if the entity is underwater.<br><br>Applicable for: all</p>
-<h3>
-Example:</h3>
-<pre class="json-snippet">
-{"type":"palladium:under_water"}</pre>
 </div>
 <hr>
 
