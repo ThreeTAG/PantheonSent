@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.CapedHumanoidModel;
 import net.threetag.palladium.client.model.ExtraAnimatedModel;
+import net.threetag.pantheonsent.ability.MoonKnightGlidingAbility;
 import net.threetag.pantheonsent.client.model.animation.BlockingAnimation;
 import net.threetag.pantheonsent.client.model.animation.GlidingAnimation;
 
@@ -53,10 +54,10 @@ public class MoonKnightCapeModel<T extends LivingEntity> extends CapedHumanoidMo
         this.right3.yRot = 0;
         float fold = 0F;
 
-        if (GlidingAnimation.INSTANCE.getProgress(entity, partialTicks) > 0F) {
-            float progress = GlidingAnimation.INSTANCE.getProgress(entity, partialTicks);
-            this.cape.xRot += (Math.toRadians(GlidingAnimation.INSTANCE.getCapeRotation()) - this.cape.xRot) * progress;
-            fold = (float) (Math.toRadians(5F) * progress);
+        float gliding = MoonKnightGlidingAbility.getProgress(entity, partialTicks);
+        if (gliding > 0F) {
+            this.cape.xRot += (Math.toRadians(GlidingAnimation.INSTANCE.getCapeRotation()) - this.cape.xRot) * gliding;
+            fold = (float) (Math.toRadians(5F) * gliding);
         }
 
         this.left1.yRot = -fold;

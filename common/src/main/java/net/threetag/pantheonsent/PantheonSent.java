@@ -8,6 +8,7 @@ import net.threetag.pantheonsent.ability.PSAbilities;
 import net.threetag.pantheonsent.block.PSBannerPatterns;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
+import net.threetag.pantheonsent.condition.PSConditionSerializers;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.entity.PSPoiTypes;
 import net.threetag.pantheonsent.entity.PSVillagerProfessions;
@@ -41,6 +42,7 @@ public class PantheonSent {
         PSRecipeSerializers.RECIPE_TYPES.register();
         PSMenuTypes.MENU_TYPES.register();
         PSAbilities.ABILITIES.register();
+        PSConditionSerializers.CONDITION_SERIALIZERS.register();
         PSBannerPatterns.BANNER_PATTERNS.register();
         PSEnchantments.ENCHANTMENTS.register();
         PSSoundEvents.SOUNDS.register();

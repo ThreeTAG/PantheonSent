@@ -2,15 +2,10 @@ package net.threetag.pantheonsent.client.model.animation;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.player.AbstractClientPlayer;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
-import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.animation.PalladiumAnimation;
-import net.threetag.palladium.power.ability.AbilityEntry;
-import net.threetag.palladium.power.ability.AbilityUtil;
 import net.threetag.palladium.util.Easing;
 import net.threetag.pantheonsent.ability.MoonKnightGlidingAbility;
-import net.threetag.pantheonsent.ability.PSAbilities;
 
 public class GlidingAnimation extends PalladiumAnimation {
 
@@ -22,7 +17,7 @@ public class GlidingAnimation extends PalladiumAnimation {
 
     @Override
     public void animate(Builder builder, AbstractClientPlayer player, HumanoidModel<?> model, FirstPersonContext firstPersonContext, float partialTicks) {
-        var progress = getProgress(player, partialTicks);
+        var progress = MoonKnightGlidingAbility.getProgress(player, partialTicks);
 
         if (progress > 0F && !firstPersonContext.firstPerson()) {
             builder.get(PlayerModelPart.BODY).setXRotDegrees(-20F).animate(Easing.INOUTSINE, progress);
@@ -60,25 +55,6 @@ public class GlidingAnimation extends PalladiumAnimation {
                         .animate(Easing.INOUTSINE, progress);
             }
         }
-    }
-
-    public float getProgress(LivingEntity entity, float partialTicks) {
-        float max = 0;
-        var entries = AbilityUtil.getEntries(entity, PSAbilities.MOON_KNIGHT_GLIDING.get());
-
-        if (entries.isEmpty()) {
-            return 0F;
-        }
-
-        for (AbilityEntry entry : entries) {
-            float timeInAir = ((MoonKnightGlidingAbility) PSAbilities.MOON_KNIGHT_GLIDING.get()).getAnimationValue(entry, partialTicks);
-
-            if (timeInAir > max) {
-                max = timeInAir;
-            }
-        }
-
-        return Mth.clamp(max, 0F, 1F);
     }
 
     public float getCapeRotation() {

@@ -8,6 +8,7 @@ import net.minecraft.world.entity.player.Player;
 import net.threetag.palladium.power.IPowerHolder;
 import net.threetag.palladium.power.ability.Ability;
 import net.threetag.palladium.power.ability.AbilityEntry;
+import net.threetag.palladium.power.ability.AbilityUtil;
 import net.threetag.palladium.power.ability.AnimationTimer;
 import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
@@ -60,5 +61,24 @@ public class MoonKnightGlidingAbility extends Ability implements AnimationTimer 
     @Override
     public float getAnimationValue(AbilityEntry entry, float partialTick) {
         return Mth.lerp(partialTick, entry.getProperty(PREV_TIME_IN_AIR), entry.getProperty(TIME_IN_AIR)) / 10F;
+    }
+
+    public static float getProgress(LivingEntity entity, float partialTicks) {
+        float max = 0;
+        var entries = AbilityUtil.getEntries(entity, PSAbilities.MOON_KNIGHT_GLIDING.get());
+
+        if (entries.isEmpty()) {
+            return 0F;
+        }
+
+        for (AbilityEntry entry : entries) {
+            float timeInAir = ((MoonKnightGlidingAbility) PSAbilities.MOON_KNIGHT_GLIDING.get()).getAnimationValue(entry, partialTicks);
+
+            if (timeInAir > max) {
+                max = timeInAir;
+            }
+        }
+
+        return Mth.clamp(max, 0F, 1F);
     }
 }

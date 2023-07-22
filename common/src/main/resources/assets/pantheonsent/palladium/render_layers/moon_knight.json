@@ -96,19 +96,21 @@
         },
         {
           "type": "palladium:not",
-          "conditions": {
-            "type": "palladium:ability_enabled",
-            "power": "pantheonsent:moon_knight",
-            "ability": "blocking"
-          }
-        },
-        {
-          "type": "palladium:not",
-          "conditions": {
-            "type": "palladium:ability_on_cooldown",
-            "power": "pantheonsent:moon_knight",
-            "ability": "throw_dart"
-          }
+          "conditions": [
+            {
+              "type": "palladium:ability_enabled",
+              "power": "pantheonsent:moon_knight",
+              "ability": "blocking"
+            },
+            {
+              "type": "palladium:ability_on_cooldown",
+              "power": "pantheonsent:moon_knight",
+              "ability": "throw_dart"
+            },
+            {
+              "type": "pantheonsent:is_moon_knight_gliding"
+            }
+          ]
         }
       ],
       "model_layer": "pantheonsent:humanoid#dart_in_hand",
