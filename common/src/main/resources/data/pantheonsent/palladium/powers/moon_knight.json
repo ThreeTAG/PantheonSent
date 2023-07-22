@@ -38,6 +38,23 @@
         }
       }
     },
+    "hide_arm_layers": {
+      "type": "palladium:hide_body_part",
+      "body_parts": [
+        "right_arm_overlay",
+        "left_arm_overlay"
+      ],
+      "conditions": {
+        "enabling": {
+          "type": "palladium:ability_integer_property",
+          "power": "pantheonsent:moon_knight",
+          "ability": "activate",
+          "property": "value",
+          "min": 10,
+          "max": 20
+        }
+      }
+    },
     "render_layer": {
       "type": "palladium:render_layer",
       "render_layer": "pantheonsent:moon_knight"
