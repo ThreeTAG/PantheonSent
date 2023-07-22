@@ -28,6 +28,7 @@ public class PSSoundDefinitionsProvider extends SoundDefinitionsProvider {
         ).subtitle(subtitle(PSSoundEvents.CAPE)));
         this.add(PSSoundEvents.EYE_OF_HORUS, definition().with(sound(PantheonSent.id("eye_of_horus"))).subtitle(subtitle(PSSoundEvents.EYE_OF_HORUS)));
         this.add(PSSoundEvents.MUSIC_DISC_CHONS, definition().with(sound(PantheonSent.id("music_disc_chons")).stream()));
+        this.add(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION, definition().with(sound(PantheonSent.id("moon_knight_transformation"))).subtitle(subtitle(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION)));
     }
 
     @Override

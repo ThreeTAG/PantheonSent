@@ -12,6 +12,12 @@
     ],
     "subtitle": "subtitles.pantheonsent.entity.cape"
   },
+  "entity.moon_knight_transformation": {
+    "sounds": [
+      "pantheonsent:moon_knight_transformation"
+    ],
+    "subtitle": "subtitles.pantheonsent.entity.moon_knight_transformation"
+  },
   "item.eye_of_horus.use": {
     "sounds": [
       "pantheonsent:eye_of_horus"

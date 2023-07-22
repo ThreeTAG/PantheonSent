@@ -23,7 +23,7 @@ public class KhonshuRecruitmentAnimation extends PalladiumAnimation {
                 builder.get(PlayerModelPart.LEFT_ARM).rotateXDegrees(20).rotateZDegrees(-37.5F);
                 builder.get(PlayerModelPart.RIGHT_LEG).rotateXDegrees(90).rotateYDegrees(-22.5F);
                 builder.get(PlayerModelPart.LEFT_LEG).rotateXDegrees(90).rotateYDegrees(22.5F);
-                builder.get(PlayerModelPart.BODY).setY(-9.5F / 16F);
+                builder.get(PlayerModelPart.BODY).moveY(-9.5F);
             }
         }
     }

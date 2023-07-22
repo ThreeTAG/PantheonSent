@@ -9,6 +9,8 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -28,12 +30,14 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.threetag.palladium.power.SuperpowerUtil;
+import net.threetag.palladium.util.PlayerUtil;
 import net.threetag.palladiumcore.network.ExtendedEntitySpawnData;
 import net.threetag.palladiumcore.network.NetworkManager;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.network.DarknessMessage;
 import net.threetag.pantheonsent.network.ForceThirdPersonMessage;
 import net.threetag.pantheonsent.network.KhonshuTeleportMessage;
+import net.threetag.pantheonsent.sound.PSSoundEvents;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
 
 import java.util.UUID;
@@ -355,10 +359,12 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
                 var pos = findRandomPos(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, 3, i * 2 + 1, 15);
                 new KhonshuTeleportMessage(Khonshu.this, pos).sendToTracking(Khonshu.this);
                 Khonshu.this.teleportTo(pos.x(), pos.y(), pos.z());
+                PlayerUtil.playSound(avatar, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE, SoundSource.AMBIENT);
             } else if (timer == 19 * 20) {
                 var pos = findRandomPos(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, 2, 5, 7);
                 new KhonshuTeleportMessage(Khonshu.this, pos).sendToTracking(Khonshu.this);
                 Khonshu.this.teleportTo(pos.x(), pos.y(), pos.z());
+                PlayerUtil.playSound(avatar, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE, SoundSource.AMBIENT);
             } else if (timer == MAX_TIME) {
                 Khonshu.this.setDespawnTimer(60);
                 Khonshu.this.setWiggleArms(false);
@@ -385,6 +391,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
 
             if (timer == 24 * 20) {
                 SuperpowerUtil.addSuperpower(avatar, PantheonSent.id("moon_knight_transformation"));
+                PlayerUtil.playSound(avatar, avatar.getX(), avatar.getEyeY(), avatar.getZ(), PSSoundEvents.MOON_KNIGHT_TRANSFORMATION.get(), SoundSource.PLAYERS);
             }
 
             if (line > 0) {

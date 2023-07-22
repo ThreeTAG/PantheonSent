@@ -104,6 +104,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Eye of Horus");
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION), "Moon Knight Transformation");
         }
     }
 
@@ -193,6 +194,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusauge");
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION), "Moon Knight Transformation");
         }
     }
 
@@ -282,6 +284,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusooche");
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION), "Moon Knight Transformation");
         }
     }
 
