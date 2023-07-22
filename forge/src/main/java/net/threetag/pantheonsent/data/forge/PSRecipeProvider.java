@@ -2,6 +2,7 @@ package net.threetag.pantheonsent.data.forge;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.threetag.pantheonsent.PantheonSent;
@@ -18,7 +19,13 @@ public class PSRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(PSItems.BRUSH.get()).define('X', Items.STICK).define('S', Items.STRING).pattern("SSS").pattern(" X ").pattern(" X ").unlockedBy(getHasName(Items.STRING), has(Items.STRING)).save(consumer);
+        // Tools
+        ShapedRecipeBuilder.shaped(PSItems.BRUSH.get()).define('S', Items.STICK).define('C', Items.COPPER_INGOT).define('F', Items.FEATHER).pattern("F").pattern("C").pattern("S").unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(consumer);
+
+        // Blocks
+        ShapedRecipeBuilder.shaped(PSItems.ARCHEOLOGY_TABLE.get()).pattern("BX").pattern("PP").define('B', PSItems.BRUSH.get()).define('X', Items.BOOK).define('P', ItemTags.PLANKS).unlockedBy(getHasName(PSItems.BRUSH.get()), has(PSItems.BRUSH.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(PSItems.GILDED_SANDSTONE.get()).requires(Items.SANDSTONE).requires(Items.SANDSTONE).requires(Items.SANDSTONE).requires(Items.GOLD_NUGGET).unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT)).save(consumer);
+        ShapedRecipeBuilder.shaped(PSItems.GILDED_SANDSTONE_PILLAR.get(), 2).pattern("S").pattern("S").define('S', PSItems.GILDED_SANDSTONE.get()).unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT)).save(consumer);
 
         // Restoration Recipes
         new UpgradeRecipeBuilder(PSRecipeSerializers.RESTORATION.get(), Ingredient.of(PSItems.BROKEN_KHONSHU_USHABTI.get()), Ingredient.of(PSItems.ANCIENT_CLAY_SHARD.get()), PSItems.KHONSHU_USHABTI.get()).unlocks("has_ushabti", has(PSItems.BROKEN_KHONSHU_USHABTI.get())).save(consumer, PantheonSent.id("khonshu_ushabti_restoration"));
