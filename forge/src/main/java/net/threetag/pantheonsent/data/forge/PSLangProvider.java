@@ -105,6 +105,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Eye of Horus");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION), "Moon Knight Transformation");
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.KHONSHU_CAPTURED), "Khonshu captured");
         }
     }
 
@@ -195,6 +196,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusauge");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION), "Moon Knight Transformation");
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.KHONSHU_CAPTURED), "Khonshu eingefangen");
         }
     }
 
@@ -285,6 +287,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusooche");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION), "Moon Knight Transformation");
+            this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.KHONSHU_CAPTURED), "Khonshu einjefang'n");
         }
     }
 

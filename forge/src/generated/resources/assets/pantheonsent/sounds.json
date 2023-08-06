@@ -1,4 +1,10 @@
 {
+  "block.khonshu_captured": {
+    "sounds": [
+      "block/beacon/activate"
+    ],
+    "subtitle": "subtitles.pantheonsent.block.khonshu_captured"
+  },
   "entity.cape": {
     "sounds": [
       "pantheonsent:cape_1",

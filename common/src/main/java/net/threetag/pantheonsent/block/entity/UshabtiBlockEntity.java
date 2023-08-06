@@ -1,8 +1,10 @@
 package net.threetag.pantheonsent.block.entity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -11,6 +13,8 @@ import net.minecraft.world.phys.Vec3;
 import net.threetag.palladium.power.SuperpowerUtil;
 import net.threetag.palladium.util.PlayerUtil;
 import net.threetag.pantheonsent.ability.PSAbilities;
+import net.threetag.pantheonsent.block.UshabtiBlock;
+import net.threetag.pantheonsent.client.particle.PSParticleTypes;
 
 import java.util.UUID;
 
@@ -30,6 +34,8 @@ public class UshabtiBlockEntity extends BlockEntity {
         if (this.owner != null) {
             tag.putUUID("OwnerUUID", this.owner);
         }
+
+        tag.putInt("Progress", this.progress);
     }
 
     @Override
@@ -39,24 +45,61 @@ public class UshabtiBlockEntity extends BlockEntity {
         if (tag.contains("OwnerUUID")) {
             this.owner = tag.getUUID("OwnerUUID");
         }
+
+        if (tag.contains("Progress")) {
+            this.progress = tag.getInt("Progress");
+        }
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag compoundTag = super.getUpdateTag();
+        compoundTag.putInt("Progress", this.progress);
+        if (this.owner != null) {
+            compoundTag.putUUID("OwnerUUID", this.owner);
+        }
+        return compoundTag;
+    }
+
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, UshabtiBlockEntity blockEntity) {
         if (blockEntity.progress > 0) {
             var owner = level.getPlayerByUUID(blockEntity.owner);
 
-            if (owner != null) {
+            if (blockEntity.progress == 1 & owner != null) {
                 if (PSAbilities.hasMoonKnightPower(owner)) {
                     SuperpowerUtil.removeSuperpower(owner, PSAbilities.getMoonKnightPower(level));
+                    level.setBlock(pos, state.setValue(UshabtiBlock.USED, true), 3);
+                    PlayerUtil.playSoundToAll(level, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, 50, SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS);
                 }
+            }
 
+            blockEntity.progress--;
+        }
+    }
+
+    public static void clientTick(Level level, BlockPos pos, BlockState state, UshabtiBlockEntity blockEntity) {
+        if (blockEntity.progress > 0) {
+            var owner = level.getPlayerByUUID(blockEntity.owner);
+
+            if (owner != null) {
                 RandomSource random = RandomSource.create();
-                for (int i = 0; i < blockEntity.progress / 10; i++) {
-                    Vec3 startPos = owner.position().subtract(owner.getBbWidth() / 2D, 0, owner.getBbWidth() / 2).add(random.nextFloat() * owner.getBbWidth(), random.nextFloat() * owner.getBbHeight(), random.nextFloat() * owner.getBbWidth());
-                    float xSpeed = (float) ((pos.getX() + 0.5F - startPos.x) / 10F);
-                    float ySpeed = (float) ((pos.getY() + 0.5F - startPos.y) / 10F);
-                    float zSpeed = (float) ((pos.getZ() + 0.5F - startPos.z) / 10F);
-                    PlayerUtil.spawnParticleForAll(level, 50, ParticleTypes.SMOKE, false, startPos.x, startPos.y, startPos.z, xSpeed, ySpeed, zSpeed, 1F, 0);
+                var playerPos = owner.position().add(0, owner.getBbHeight() / 2D, 0);
+                var offset = playerPos.subtract(new Vec3(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5));
+                for (int i = 0; i < blockEntity.progress / 20; i++) {
+                    level.addParticle(
+                            PSParticleTypes.HIEROGLYPH.get(),
+                            (double) pos.getX() + 0.5,
+                            (double) pos.getY() + 1.5,
+                            (double) pos.getZ() + 0.5,
+                            (float) offset.x() + random.nextFloat() - 0.5,
+                            (float) offset.y() + random.nextFloat() - 0.5,
+                            (float) offset.z() + random.nextFloat() - 0.5
+                    );
                 }
             }
 

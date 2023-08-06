@@ -1,6 +1,7 @@
 package net.threetag.pantheonsent.data.forge;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.SoundDefinitionsProvider;
@@ -29,6 +30,7 @@ public class PSSoundDefinitionsProvider extends SoundDefinitionsProvider {
         this.add(PSSoundEvents.EYE_OF_HORUS, definition().with(sound(PantheonSent.id("eye_of_horus"))).subtitle(subtitle(PSSoundEvents.EYE_OF_HORUS)));
         this.add(PSSoundEvents.MUSIC_DISC_CHONS, definition().with(sound(PantheonSent.id("music_disc_chons")).stream()));
         this.add(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION, definition().with(sound(PantheonSent.id("moon_knight_transformation"))).subtitle(subtitle(PSSoundEvents.MOON_KNIGHT_TRANSFORMATION)));
+        this.add(PSSoundEvents.KHONSHU_CAPTURED, definition().with(sound(new ResourceLocation("block/beacon/activate"))).subtitle(subtitle(PSSoundEvents.KHONSHU_CAPTURED)));
     }
 
     @Override

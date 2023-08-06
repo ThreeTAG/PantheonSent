@@ -82,8 +82,6 @@ public class UshabtiBlock extends BaseEntityBlock implements SimpleWaterloggedBl
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         if (!level.isClientSide && EnchantmentHelper.getItemEnchantmentLevel(PSEnchantments.GODLY_ENCAPSULATING.get(), stack) > 0 && placer instanceof Player player && PSAbilities.hasMoonKnightPower(player)) {
-            level.setBlock(pos, state.setValue(USED, true), 3);
-
             if (level.getBlockEntity(pos) instanceof UshabtiBlockEntity ushabti) {
                 ushabti.owner = player.getUUID();
                 ushabti.progress = 100;
@@ -111,6 +109,8 @@ public class UshabtiBlock extends BaseEntityBlock implements SimpleWaterloggedBl
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? null : createTickerHelper(blockEntityType, PSBlockEntityTypes.USHABTI.get(), UshabtiBlockEntity::serverTick);
+        return level.isClientSide ?
+                createTickerHelper(blockEntityType, PSBlockEntityTypes.USHABTI.get(), UshabtiBlockEntity::clientTick) :
+                createTickerHelper(blockEntityType, PSBlockEntityTypes.USHABTI.get(), UshabtiBlockEntity::serverTick);
     }
 }

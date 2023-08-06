@@ -8,6 +8,7 @@ import net.threetag.pantheonsent.ability.PSAbilities;
 import net.threetag.pantheonsent.block.PSBannerPatterns;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
+import net.threetag.pantheonsent.client.particle.PSParticleTypes;
 import net.threetag.pantheonsent.condition.PSConditionSerializers;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
 import net.threetag.pantheonsent.entity.PSPoiTypes;
@@ -46,6 +47,7 @@ public class PantheonSent {
         PSBannerPatterns.BANNER_PATTERNS.register();
         PSEnchantments.ENCHANTMENTS.register();
         PSSoundEvents.SOUNDS.register();
+        PSParticleTypes.PARTICLE_TYPES.register();
 
         PSNetwork.init();
         PSEntityTypes.init();

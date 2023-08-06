@@ -24,6 +24,7 @@ import net.threetag.pantheonsent.client.model.MoonKnightSuitModel;
 import net.threetag.pantheonsent.client.model.animation.BlockingAnimation;
 import net.threetag.pantheonsent.client.model.animation.GlidingAnimation;
 import net.threetag.pantheonsent.client.model.animation.KhonshuRecruitmentAnimation;
+import net.threetag.pantheonsent.client.particle.PSParticleTypes;
 import net.threetag.pantheonsent.client.renderer.blockentity.SuspiciousSandRenderer;
 import net.threetag.pantheonsent.client.renderer.entity.CrescentDartRenderer;
 import net.threetag.pantheonsent.client.renderer.entity.KhonshuRenderer;
@@ -41,6 +42,7 @@ public class PantheonSentClient {
     public static void init() {
         PantheonSentProperties.initClient();
         PSClientEventHandler.init();
+        PSParticleTypes.initProviders();
 
         // Entity Renderers
         EntityRendererRegistry.registerModelLayer(CrescentDartModel.MODEL_LAYER, CrescentDartModel::createLayer);
