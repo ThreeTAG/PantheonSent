@@ -63,6 +63,14 @@ public class MoonKnightGlidingAbility extends Ability implements AnimationTimer 
         return Mth.lerp(partialTick, entry.getProperty(PREV_TIME_IN_AIR), entry.getProperty(TIME_IN_AIR)) / 10F;
     }
 
+    @Override
+    public float getAnimationTimer(AbilityEntry entry, float partialTick, boolean maxedOut) {
+        if (maxedOut) {
+            return 10;
+        }
+        return entry.getProperty(TIME_IN_AIR);
+    }
+
     public static float getProgress(LivingEntity entity, float partialTicks) {
         float max = 0;
         var entries = AbilityUtil.getEntries(entity, PSAbilities.MOON_KNIGHT_GLIDING.get());

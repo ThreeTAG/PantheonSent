@@ -1,10 +1,9 @@
 {
   "type": "palladium:compound",
   "conditions": {
-    "type": "palladium:ability_integer_property",
+    "type": "palladium:animation_timer_ability",
     "power": "pantheonsent:moon_knight",
     "ability": "activate",
-    "property": "value",
     "min": 1,
     "max": 20
   },
@@ -22,10 +21,9 @@
         ],
         "variables": {
           "TIMER": {
-            "type": "palladium:ability_integer_property",
+            "type": "palladium:animation_timer_ability",
             "power": "pantheonsent:moon_knight",
-            "ability": "activate",
-            "property": "value"
+            "ability": "activate"
           }
         },
         "output": "pantheonsent:textures/models/moon_knight_#TIMER"
@@ -54,10 +52,9 @@
             "round": "to_int"
           },
           "TIMER": {
-            "type": "palladium:ability_integer_property",
+            "type": "palladium:animation_timer_ability",
             "power": "pantheonsent:moon_knight",
             "ability": "activate",
-            "property": "value",
             "min": 7
           }
         },
@@ -71,10 +68,9 @@
       "render_type": "glow",
       "conditions": [
         {
-          "type": "palladium:ability_integer_property",
+          "type": "palladium:animation_timer_ability",
           "power": "pantheonsent:moon_knight",
           "ability": "activate",
-          "property": "value",
           "min": 19,
           "max": 19
         }
@@ -83,10 +79,9 @@
     {
       "conditions": [
         {
-          "type": "palladium:ability_integer_property",
+          "type": "palladium:animation_timer_ability",
           "power": "pantheonsent:moon_knight",
           "ability": "activate",
-          "property": "value",
           "min": 19,
           "max": 20
         },

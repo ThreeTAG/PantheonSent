@@ -76,4 +76,12 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
     public float getAnimationValue(AbilityEntry entry, float partialTick) {
         return Mth.lerp(partialTick, entry.getProperty(PREV_TIMER), entry.getProperty(TIMER)) / 5F;
     }
+
+    @Override
+    public float getAnimationTimer(AbilityEntry entry, float partialTick, boolean maxedOut) {
+        if (maxedOut) {
+            return 5;
+        }
+        return entry.getProperty(TIMER);
+    }
 }

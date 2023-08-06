@@ -21,7 +21,7 @@ public class EyeOfHorusItem extends CurioTrinketItem implements IPalladiumItem {
     }
 
     @Override
-    public EquipmentSlot getEquipmentSlot(ItemStack stack) {
+    public EquipmentSlot getSlotForItem(ItemStack stack) {
         return EquipmentSlot.CHEST;
     }
 
@@ -36,7 +36,6 @@ public class EyeOfHorusItem extends CurioTrinketItem implements IPalladiumItem {
             entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 2));
             player.getCooldowns().addCooldown(this, 20 * 30);
             new EyeOfHorusEffectMessage().send(player);
-            // TODO sound
             stack.hurtAndBreak(1, player, player1 -> {
                 if (!player1.isSilent()) {
                     PlayerUtil.playSoundToAll(player1.level, player1.getX(), player1.getEyeY(), player1.getZ(), 50, SoundEvents.ITEM_BREAK, player1.getSoundSource(), 0.8F, 0.8F + player1.level.random.nextFloat() * 0.4F);

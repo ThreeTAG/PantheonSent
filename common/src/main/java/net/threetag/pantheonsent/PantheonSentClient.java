@@ -57,7 +57,7 @@ public class PantheonSentClient {
         ModelLookup.register(PantheonSent.id("moon_knight_cape"), new ModelLookup.Model(MoonKnightCapeModel::new, (en, model) -> model instanceof HumanoidModel));
 
         // Dynamic Texture Variables
-        DynamicTexture.registerVariable(PantheonSent.id("moon_knight_cape"), MoonKnightCapeTextureVariable::new);
+        DynamicTexture.registerVariable(new MoonKnightCapeTextureVariable.Serializer());
 
         // Animations
         PalladiumClientEvents.REGISTER_ANIMATIONS.register(registry -> {
