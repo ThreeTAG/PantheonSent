@@ -56,8 +56,9 @@
       }
     },
     "render_layer": {
-      "type": "palladium:render_layer",
-      "render_layer": "pantheonsent:moon_knight"
+      "type": "palladium:render_layer_by_accessory_slot",
+      "default_layer": "pantheonsent:moon_knight",
+      "accessory_slot": "pantheonsent:moon_knight_suit"
     },
     "throw_dart": {
       "type": "palladium:projectile",

@@ -5,6 +5,7 @@ import net.minecraft.world.item.DyeColor;
 import net.threetag.palladium.data.forge.ExtendedLangProvider;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.ability.PSAbilities;
+import net.threetag.pantheonsent.accessory.PSAccessories;
 import net.threetag.pantheonsent.block.PSBannerPatterns;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.entity.PSEntityTypes;
@@ -101,6 +102,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Archeologist");
             this.add("entity.minecraft.villager.archeologist", "Archeologist");
 
+            // Accessories
+            this.add(PSAccessories.SLOT, "Moon Knight Suit");
+            this.addAccessory(PSAccessories.MR_KNIGHT, "Mr. Knight");
+
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Eye of Horus");
@@ -192,6 +197,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Arch\u00E4ologe");
             this.add("entity.minecraft.villager.archeologist", "Arch\u00E4ologe");
 
+            // Accessories
+            this.add(PSAccessories.SLOT, "Moon Knight Anzug");
+            this.addAccessory(PSAccessories.MR_KNIGHT, "Mr. Knight");
+
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.EYE_OF_HORUS), "Horusauge");
@@ -282,6 +291,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Arsch\u00E4oloje");
             this.add("entity.minecraft.villager.archeologist", "Arsch\u00E4oloje");
+
+            // Accessories
+            this.add(PSAccessories.SLOT, "Moon Knight Anzuch");
+            this.addAccessory(PSAccessories.MR_KNIGHT, "Mr. Knight");
 
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");

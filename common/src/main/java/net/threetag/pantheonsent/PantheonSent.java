@@ -5,6 +5,7 @@ import net.threetag.palladium.util.SupporterHandler;
 import net.threetag.palladiumcore.event.LifecycleEvents;
 import net.threetag.palladiumcore.util.Platform;
 import net.threetag.pantheonsent.ability.PSAbilities;
+import net.threetag.pantheonsent.accessory.PSAccessories;
 import net.threetag.pantheonsent.block.PSBannerPatterns;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.block.entity.PSBlockEntityTypes;
@@ -48,6 +49,7 @@ public class PantheonSent {
         PSEnchantments.ENCHANTMENTS.register();
         PSSoundEvents.SOUNDS.register();
         PSParticleTypes.PARTICLE_TYPES.register();
+        PSAccessories.ACCESSORIES.register();
 
         PSNetwork.init();
         PSEntityTypes.init();

@@ -1,0 +1,129 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "type": "palladium:compound",
+      "conditions": {
+        "type": "palladium:animation_timer_ability",
+        "power": "pantheonsent:moon_knight",
+        "ability": "activate",
+        "min": 1,
+        "max": 20
+      },
+      "layers": [
+        {
+          "model_layer": "pantheonsent:humanoid#mr_knight_suit",
+          "hidden_body_parts": "cape",
+          "texture": {
+            "base": "pantheonsent:textures/models/mr_knight.png",
+            "transformers": [
+              {
+                "type": "palladium:alpha_mask",
+                "mask": "pantheonsent:textures/models/alpha_masks/moon_knight_suit_transformation/#TIMER.png"
+              }
+            ],
+            "variables": {
+              "TIMER": {
+                "type": "palladium:animation_timer_ability",
+                "power": "pantheonsent:moon_knight",
+                "ability": "activate"
+              }
+            },
+            "output": "pantheonsent:textures/models/mr_knight_#TIMER"
+          }
+        },
+        {
+          "model_layer": "pantheonsent:humanoid#mr_knight_suit",
+          "texture": "pantheonsent:textures/models/mr_knight_lights.png",
+          "render_type": "glow",
+          "conditions": [
+            {
+              "type": "palladium:animation_timer_ability",
+              "power": "pantheonsent:moon_knight",
+              "ability": "activate",
+              "min": 19,
+              "max": 19
+            }
+          ]
+        },
+        {
+          "model_layer": "pantheonsent:humanoid#moon_knight_cape",
+          "model_type": "pantheonsent:moon_knight_cape",
+          "texture": {
+            "base": "pantheonsent:textures/models/moon_knight_cape/#STAGE.png",
+            "transformers": [
+              {
+                "type": "palladium:alpha_mask",
+                "mask": "pantheonsent:textures/models/alpha_masks/moon_knight_cape_transformation/#TIMER.png"
+              }
+            ],
+            "variables": {
+              "STAGE": {
+                "type": "pantheonsent:moon_knight_cape",
+                "bobbing": false,
+                "subtract": 9,
+                "divide": 10,
+                "max": 8,
+                "min": 0,
+                "round": "to_int"
+              },
+              "TIMER": {
+                "type": "palladium:animation_timer_ability",
+                "power": "pantheonsent:moon_knight",
+                "ability": "activate",
+                "min": 7
+              }
+            },
+            "output": "pantheonsent:textures/models/moon_knight_cape/#STAGE_#TIMER.png"
+          },
+          "conditions": {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "pantheonsent:moon_knight",
+                "ability": "blocking",
+                "min": 1,
+                "max": 20
+              },
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "pantheonsent:moon_knight",
+                "ability": "gliding",
+                "min": 1,
+                "max": 20
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "palladium:compound",
+      "conditions": {
+        "type": "palladium:in_accessory_slot_menu",
+        "accessory_slot": "pantheonsent:moon_knight_suit"
+      },
+      "layers": [
+        {
+          "model_layer": "pantheonsent:humanoid#mr_knight_suit",
+          "texture": "pantheonsent:textures/models/mr_knight.png",
+          "hidden_body_parts": [
+            "head_overlay",
+            "chest_overlay",
+            "right_arm_overlay",
+            "left_arm_overlay",
+            "right_leg_overlay",
+            "left_leg_overlay",
+            "cape"
+          ]
+        },
+        {
+          "model_layer": "pantheonsent:humanoid#mr_knight_suit",
+          "texture": "pantheonsent:textures/models/mr_knight_lights.png",
+          "render_type": "glow"
+        }
+      ]
+    }
+  ]
+}
