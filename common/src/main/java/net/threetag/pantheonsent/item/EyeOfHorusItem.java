@@ -11,10 +11,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.threetag.palladium.item.CurioTrinketItem;
 import net.threetag.palladium.util.PlayerUtil;
-import net.threetag.palladiumcore.item.IPalladiumItem;
+import net.threetag.palladiumcore.item.PalladiumItem;
 import net.threetag.pantheonsent.network.EyeOfHorusEffectMessage;
 
-public class EyeOfHorusItem extends CurioTrinketItem implements IPalladiumItem {
+public class EyeOfHorusItem extends CurioTrinketItem implements PalladiumItem {
 
     public EyeOfHorusItem(Properties properties) {
         super(properties);
@@ -38,7 +38,7 @@ public class EyeOfHorusItem extends CurioTrinketItem implements IPalladiumItem {
             new EyeOfHorusEffectMessage().send(player);
             stack.hurtAndBreak(1, player, player1 -> {
                 if (!player1.isSilent()) {
-                    PlayerUtil.playSoundToAll(player1.level, player1.getX(), player1.getEyeY(), player1.getZ(), 50, SoundEvents.ITEM_BREAK, player1.getSoundSource(), 0.8F, 0.8F + player1.level.random.nextFloat() * 0.4F);
+                    PlayerUtil.playSoundToAll(player1.level(), player1.getX(), player1.getEyeY(), player1.getZ(), 50, SoundEvents.ITEM_BREAK, player1.getSoundSource(), 0.8F, 0.8F + player1.level().random.nextFloat() * 0.4F);
                 }
             });
         }

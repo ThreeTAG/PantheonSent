@@ -1,9 +1,9 @@
 package net.threetag.pantheonsent.client.particle;
 
 import net.minecraft.client.particle.ParticleEngine;
-import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.registries.Registries;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.palladiumcore.registry.client.ParticleProviderRegistry;
@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public class PSParticleTypes {
 
-    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(PantheonSent.MOD_ID, Registry.PARTICLE_TYPE_REGISTRY);
+    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(PantheonSent.MOD_ID, Registries.PARTICLE_TYPE);
 
     public static final RegistrySupplier<SimpleParticleType> HIEROGLYPH = PARTICLE_TYPES.register("hieroglyph", () -> new SimpleParticleType(false));
 

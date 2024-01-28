@@ -5,6 +5,6 @@ import net.threetag.pantheonsent.PantheonSent;
 
 public class PSLootTables {
 
-    public static final ResourceLocation SUSPICIOUS_SAND = PantheonSent.id("archeology/suspicious_sand");
+    public static final ResourceLocation DIG_SITE_SAND = PantheonSent.id("archaeology/dig_site_sand");
 
 }

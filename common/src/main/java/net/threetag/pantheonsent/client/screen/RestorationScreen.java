@@ -1,9 +1,8 @@
 package net.threetag.pantheonsent.client.screen;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.ItemCombinerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -23,8 +22,7 @@ public class RestorationScreen extends ItemCombinerScreen<RestorationMenu> {
     }
 
     @Override
-    protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-        RenderSystem.disableBlend();
-        super.renderLabels(poseStack, mouseX, mouseY);
+    protected void renderErrorIcon(GuiGraphics guiGraphics, int x, int y) {
+
     }
 }

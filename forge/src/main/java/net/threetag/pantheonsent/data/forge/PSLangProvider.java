@@ -1,6 +1,6 @@
 package net.threetag.pantheonsent.data.forge;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.DyeColor;
 import net.threetag.palladium.data.forge.ExtendedLangProvider;
 import net.threetag.pantheonsent.PantheonSent;
@@ -15,14 +15,14 @@ import net.threetag.pantheonsent.sound.PSSoundEvents;
 
 public abstract class PSLangProvider extends ExtendedLangProvider {
 
-    public PSLangProvider(DataGenerator gen, String locale) {
-        super(gen, PantheonSent.MOD_ID, locale);
+    public PSLangProvider(PackOutput packOutput, String locale) {
+        super(packOutput, PantheonSent.MOD_ID, locale);
     }
 
     public static class English extends PSLangProvider {
 
-        public English(DataGenerator gen) {
-            super(gen, "en_us");
+        public English(PackOutput packOutput) {
+            super(packOutput, "en_us");
         }
 
         @Override
@@ -33,12 +33,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Archeology Table");
             this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Broken Khonshu Ushabti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Ushabti");
-            this.addBlock(PSBlocks.SUSPICIOUS_SAND, "Suspicious Sand");
             this.addBlock(PSBlocks.SANDSTONE_TOTEM_HOLDER, "Sandstone Totem Holder");
             this.addBlock(PSBlocks.LUNAR_STONE, "Lunar Stone");
 
             // Items
-            this.addItem(PSItems.BRUSH, "Brush");
             this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Ancient Clay Shard");
             this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Ancient Gold Shard");
             this.addItem(PSItems.LUNAR_SHARD, "Lunar Shard");
@@ -51,8 +49,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu Spawn Egg");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Banner Pattern");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Crescent");
-            this.addItem(PSItems.MUSIC_DISK_CHONS, "Music Disc");
-            this.add(PSItems.MUSIC_DISK_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
+            this.addItem(PSItems.MUSIC_DISC_CHONS, "Music Disc");
+            this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 
             // Enchantments
             this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Fortunate Find");
@@ -116,8 +114,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
 
     public static class German extends PSLangProvider {
 
-        public German(DataGenerator gen) {
-            super(gen, "de_de");
+        public German(PackOutput packOutput) {
+            super(packOutput, "de_de");
         }
 
         @Override
@@ -128,12 +126,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Archeologietisch");
             this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Kaputtes Khonshu Uschebti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Uschebti");
-            this.addBlock(PSBlocks.SUSPICIOUS_SAND, "Verdächtiger Sand");
             this.addBlock(PSBlocks.SANDSTONE_TOTEM_HOLDER, "Sandsteintotemhalter");
             this.addBlock(PSBlocks.LUNAR_STONE, "Lunarstein");
 
             // Items
-            this.addItem(PSItems.BRUSH, "B\u00FCrste");
             this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Antike Tonscherbe");
             this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Antike Goldscherbe");
             this.addItem(PSItems.LUNAR_SHARD, "Lunarscherbe");
@@ -146,8 +142,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu-Spawn-Ei");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannervorlage");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
-            this.addItem(PSItems.MUSIC_DISK_CHONS, "Schallplatte");
-            this.add(PSItems.MUSIC_DISK_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
+            this.addItem(PSItems.MUSIC_DISC_CHONS, "Schallplatte");
+            this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 
             // Enchantments
             this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Gl\u00FCcksfund");
@@ -211,8 +207,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
 
     public static class Saxon extends PSLangProvider {
 
-        public Saxon(DataGenerator gen) {
-            super(gen, "sxu");
+        public Saxon(PackOutput packOutput) {
+            super(packOutput, "sxu");
         }
 
         @Override
@@ -223,12 +219,10 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addBlock(PSBlocks.ARCHEOLOGY_TABLE, "Arscheolojiedisch");
             this.addBlock(PSBlocks.BROKEN_KHONSHU_USHABTI, "Gabuttes Khonshu Uschebti");
             this.addBlock(PSBlocks.KHONSHU_USHABTI, "Khonshu Uschebti");
-            this.addBlock(PSBlocks.SUSPICIOUS_SAND, "Verdächticherer Sand");
             this.addBlock(PSBlocks.SANDSTONE_TOTEM_HOLDER, "Sandschdeentotemhalderr");
             this.addBlock(PSBlocks.LUNAR_STONE, "Lunarschdeen");
 
             // Items
-            this.addItem(PSItems.BRUSH, "B\u00FCrschde");
             this.addItem(PSItems.ANCIENT_CLAY_SHARD, "Antige Donscherbe");
             this.addItem(PSItems.ANCIENT_GOLD_SHARD, "Antige Goldscherbe");
             this.addItem(PSItems.LUNAR_SHARD, "Lunarscherbe");
@@ -241,8 +235,8 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu-Schborn-Ei");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannorrvorlaache");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
-            this.addItem(PSItems.MUSIC_DISK_CHONS, "Schallbladde");
-            this.add(PSItems.MUSIC_DISK_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
+            this.addItem(PSItems.MUSIC_DISC_CHONS, "Schallbladde");
+            this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 
             // Enchantments
             this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Gl\u00FCggsfund");

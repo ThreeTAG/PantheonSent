@@ -1,21 +1,27 @@
 package net.threetag.pantheonsent.data.forge;
 
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.PoiTypeTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.tags.PoiTypeTags;
+import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.entity.PSPoiTypes;
 import org.jetbrains.annotations.Nullable;
 
-public class PSPoiTypeTagsProvider extends PoiTypeTagsProvider {
+import java.util.concurrent.CompletableFuture;
 
-    public PSPoiTypeTagsProvider(DataGenerator arg, @Nullable ExistingFileHelper existingFileHelper) {
-        super(arg, PantheonSent.MOD_ID, existingFileHelper);
+public class PSPoiTypeTagsProvider extends IntrinsicHolderTagsProvider<PoiType> {
+
+    public PSPoiTypeTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
+        super(packOutput, Registries.POINT_OF_INTEREST_TYPE, completableFuture, poiType -> BuiltInRegistries.POINT_OF_INTEREST_TYPE.getResourceKey(poiType).orElse(null), PantheonSent.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         this.tag(PoiTypeTags.ACQUIRABLE_JOB_SITE).add(PSPoiTypes.ARCHEOLOGIST.get());
     }
 

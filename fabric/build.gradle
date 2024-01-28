@@ -15,11 +15,15 @@ loom {
         if (name == "client") {
             runDir = "../run"
 
-            if(System.getenv('MC_USERNAME') && System.getenv('MC_UUID') && System.getenv('MC_ACCESS_TOKEN')) {
+            if (System.getenv('MC_USERNAME') && System.getenv('MC_UUID') && System.getenv('MC_ACCESS_TOKEN')) {
                 programArgs '--username', System.getenv('MC_USERNAME'), '--uuid', System.getenv('MC_UUID'), '--accessToken', System.getenv('MC_ACCESS_TOKEN')
             }
         } else if (name == "server")
             runDir = "../run/server-fabric"
+    }
+
+    mixin {
+        defaultRefmapName = "pantheonsent-fabric-refmap.json"
     }
 }
 
@@ -34,10 +38,10 @@ configurations {
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-    modApi ("net.threetag:Palladium-fabric:${rootProject.palladium_version}", {
-        exclude group: "com.github.Virtuoel"
-    })
-//    modApi "net.threetag:PalladiumCore-fabric:${rootProject.palladiumcore_version}"
+    modApi ("net.threetag:palladium-fabric:${rootProject.palladium_version}") {
+        exclude group: "net.threetag"
+    }
+    modApi "net.threetag:palladiumcore-fabric:1.0.0+1.20.1"
 
     // Disable Custom Worlds Advice
     modLocalRuntime "curse.maven:disablecustomworldsadvice-401978:${rootProject.disablecustomworldsadvice_version}"
@@ -74,19 +78,18 @@ shadowJar {
     exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier = "dev-shadow"
 }
 
 remapJar {
     injectAccessWidener = true
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier null
     archiveClassifier = 'fabric'
 }
 
 jar {
-    classifier "dev"
+    archiveClassifier = "dev"
 }
 
 sourcesJar {
@@ -103,7 +106,7 @@ components.java {
 
 publishing {
     publications {
-        mavenCommon(MavenPublication) {
+        mavenFabric(MavenPublication) {
             artifactId = rootProject.archives_base_name + "-" + project.name
             from components.java
         }
@@ -111,10 +114,10 @@ publishing {
 
     repositories {
         maven {
-            url 'https://repo.repsy.io/mvn/lucraft/threetag'
+            url 'https://maven.threetag.net'
             credentials {
-                username System.getenv('REPSY_USERNAME')
-                password System.getenv('REPSY_PASSWORD')
+                username System.getenv('MAVEN_USERNAME')
+                password System.getenv('MAVEN_PASSWORD')
             }
         }
     }

@@ -1,7 +1,9 @@
 package net.threetag.pantheonsent.entity;
 
-import net.minecraft.core.Registry;
-import net.minecraft.world.entity.*;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.EntityAttributeRegistry;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
@@ -11,7 +13,7 @@ import java.util.function.Supplier;
 
 public class PSEntityTypes {
 
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(PantheonSent.MOD_ID, Registry.ENTITY_TYPE_REGISTRY);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(PantheonSent.MOD_ID, Registries.ENTITY_TYPE);
 
     public static final RegistrySupplier<EntityType<Khonshu>> KHONSHU = register("khonshu", () -> EntityType.Builder.<Khonshu>of(Khonshu::new, MobCategory.MISC).sized(1, 3));
     public static final RegistrySupplier<EntityType<CrescentDart>> CRESCENT_DART = register("crescent_dart", () -> EntityType.Builder.of(CrescentDart::new, MobCategory.MISC).sized(0.1F, 0.1F));

@@ -24,7 +24,7 @@ public class PantheonSentProperties {
 
         LivingEntityEvents.TICK.register(entity -> {
             if (KHONSHU_RECRUITING_TIMER.isRegistered(entity) && KHONSHU_RECRUITING_TIMER.get(entity) > 0) {
-                for (Entity en : entity.level.getEntities(entity, entity.getBoundingBox().inflate(30), entity1 -> entity1 instanceof Khonshu)) {
+                for (Entity en : entity.level().getEntities(entity, entity.getBoundingBox().inflate(30), entity1 -> entity1 instanceof Khonshu)) {
                     if (en instanceof Khonshu khonshu && khonshu.avatarId != null && khonshu.avatarId.equals(entity.getUUID())) {
                         return;
                     }

@@ -30,5 +30,6 @@
     "recipes": [
       "pantheonsent:eye_of_horus_restoration"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

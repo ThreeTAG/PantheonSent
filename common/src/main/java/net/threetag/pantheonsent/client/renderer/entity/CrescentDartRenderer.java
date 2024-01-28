@@ -1,7 +1,7 @@
 package net.threetag.pantheonsent.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -12,6 +12,7 @@ import net.minecraft.util.Mth;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.client.model.CrescentDartModel;
 import net.threetag.pantheonsent.entity.CrescentDart;
+import org.jetbrains.annotations.NotNull;
 
 public class CrescentDartRenderer extends EntityRenderer<CrescentDart> {
 
@@ -28,16 +29,16 @@ public class CrescentDartRenderer extends EntityRenderer<CrescentDart> {
         matrixStack.pushPose();
 
         matrixStack.translate(0, 0.1F, 0);
-        matrixStack.mulPose(Vector3f.YP.rotationDegrees(entity.getViewYRot(partialTicks) - 90.0F));
-        matrixStack.mulPose(Vector3f.ZP.rotationDegrees(entity.getViewXRot(partialTicks) + 90.0F));
+        matrixStack.mulPose(Axis.YP.rotationDegrees(entity.getViewYRot(partialTicks) - 90.0F));
+        matrixStack.mulPose(Axis.ZP.rotationDegrees(entity.getViewXRot(partialTicks) + 90.0F));
 
         float shake = (float) entity.shakeTime - partialTicks;
         if (shake > 0.0F) {
             float f10 = -Mth.sin(shake * 3.0F) * shake;
-            matrixStack.mulPose(Vector3f.ZP.rotationDegrees(f10));
+            matrixStack.mulPose(Axis.ZP.rotationDegrees(f10));
         }
 
-        matrixStack.mulPose(Vector3f.ZP.rotationDegrees(Mth.lerp(partialTicks, entity.prevRotation, entity.rotation) * 100F));
+        matrixStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entity.prevRotation, entity.rotation) * 100F));
         matrixStack.translate(0, -1.5F + 3.5F / 16F, 0);
         this.model.renderToBuffer(matrixStack, buffer.getBuffer(RenderType.entityTranslucent(this.getTextureLocation(entity))), packedLight, OverlayTexture.NO_OVERLAY, 1F, 1F, 1F, 1F);
 
@@ -46,7 +47,7 @@ public class CrescentDartRenderer extends EntityRenderer<CrescentDart> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(CrescentDart entity) {
+    public @NotNull ResourceLocation getTextureLocation(CrescentDart entity) {
         return TEXTURE;
     }
 }

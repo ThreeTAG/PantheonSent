@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "pantheonsent:lunar_shard"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "pantheonsent:lunar_stone"
-  }
+  },
+  "show_notification": true
 }

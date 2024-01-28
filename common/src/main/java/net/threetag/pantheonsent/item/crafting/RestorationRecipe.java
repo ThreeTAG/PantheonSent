@@ -1,6 +1,7 @@
 package net.threetag.pantheonsent.item.crafting;
 
 import com.google.gson.JsonObject;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.threetag.pantheonsent.block.PSBlocks;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.stream.Stream;
 
@@ -33,7 +35,7 @@ public class RestorationRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ItemStack assemble(Container container) {
+    public @NotNull ItemStack assemble(Container container, RegistryAccess registryAccess) {
         ItemStack itemStack = this.result.copy();
         CompoundTag compoundTag = container.getItem(0).getTag();
         if (compoundTag != null) {
@@ -49,7 +51,7 @@ public class RestorationRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ItemStack getResultItem() {
+    public @NotNull ItemStack getResultItem(RegistryAccess registryAccess) {
         return this.result;
     }
 
@@ -58,22 +60,22 @@ public class RestorationRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ItemStack getToastSymbol() {
+    public @NotNull ItemStack getToastSymbol() {
         return new ItemStack(PSBlocks.ARCHEOLOGY_TABLE.get());
     }
 
     @Override
-    public ResourceLocation getId() {
+    public @NotNull ResourceLocation getId() {
         return this.id;
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return PSRecipeSerializers.RESTORATION.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public @NotNull RecipeType<?> getType() {
         return PSRecipeSerializers.RESTORATION_RECIPE_TYPE.get();
     }
 
@@ -85,7 +87,7 @@ public class RestorationRecipe implements Recipe<Container> {
     public static class Serializer implements RecipeSerializer<RestorationRecipe> {
 
         @Override
-        public RestorationRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
+        public @NotNull RestorationRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             Ingredient ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "base"));
             Ingredient ingredient2 = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "addition"));
             ItemStack itemStack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
@@ -93,7 +95,7 @@ public class RestorationRecipe implements Recipe<Container> {
         }
 
         @Override
-        public RestorationRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
+        public @NotNull RestorationRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
             Ingredient ingredient = Ingredient.fromNetwork(buffer);
             Ingredient ingredient2 = Ingredient.fromNetwork(buffer);
             ItemStack itemStack = buffer.readItem();

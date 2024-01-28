@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -14,6 +15,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -39,6 +41,7 @@ import net.threetag.pantheonsent.network.ForceThirdPersonMessage;
 import net.threetag.pantheonsent.network.KhonshuTeleportMessage;
 import net.threetag.pantheonsent.sound.PSSoundEvents;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
@@ -98,7 +101,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         if (this.avatar != null) {
             return this.avatar;
         } else if (this.avatarId != null) {
-            Player player = this.level.getPlayerByUUID(this.avatarId);
+            Player player = this.level().getPlayerByUUID(this.avatarId);
 
             if (player != null) {
                 return this.avatar = player;
@@ -122,7 +125,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         int despawnTimer = this.getDespawnTimer();
         this.prevDespawnTimer = despawnTimer;
 
-        if (despawnTimer > 0 && !this.level.isClientSide) {
+        if (despawnTimer > 0 && !this.level().isClientSide) {
             despawnTimer--;
 
             if (despawnTimer <= 0) {
@@ -144,7 +147,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
 
 
         // Stalking
-        if (this.mode == Mode.STALKING && !this.level.isClientSide && !this.isDespawning()) {
+        if (this.mode == Mode.STALKING && !this.level().isClientSide && !this.isDespawning()) {
             var avatar = this.getAvatar();
 
             if (avatar == null || this.distanceTo(avatar) <= 15 || this.tickCount >= 20 * 60) {
@@ -226,7 +229,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
     }
 
     @Override
-    public PushReaction getPistonPushReaction() {
+    public @NotNull PushReaction getPistonPushReaction() {
         return PushReaction.IGNORE;
     }
 
@@ -240,7 +243,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         if (source.getEntity() instanceof Player player) {
             return !player.isCreative();
         }
-        return source != DamageSource.OUT_OF_WORLD;
+        return !source.is(DamageTypes.FELL_OUT_OF_WORLD);
     }
 
     @Override
@@ -274,7 +277,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
     }
 
     @Override
-    public Packet<?> getAddEntityPacket() {
+    public @NotNull Packet<ClientGamePacketListener> getAddEntityPacket() {
         return NetworkManager.createAddEntityPacket(this);
     }
 
@@ -311,7 +314,7 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
         if (target.distanceTo(eyePos) > 128.0) {
             return false;
         } else {
-            return entity.level.clip(new ClipContext(eyePos, target, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, khonshu)).getType() == HitResult.Type.MISS;
+            return entity.level().clip(new ClipContext(eyePos, target, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, khonshu)).getType() == HitResult.Type.MISS;
         }
     }
 
@@ -356,15 +359,15 @@ public class Khonshu extends PathfinderMob implements ExtendedEntitySpawnData {
                 }
             } else if (timer == 20 || timer == 7 * 20 || timer == 13 * 20) {
                 int i = timer == 20 ? 3 : (timer == 7 * 20 ? 2 : 1);
-                var pos = findRandomPos(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, 3, i * 2 + 1, 15);
+                var pos = findRandomPos(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level(), 3, i * 2 + 1, 15);
                 new KhonshuTeleportMessage(Khonshu.this, pos).sendToTracking(Khonshu.this);
                 Khonshu.this.teleportTo(pos.x(), pos.y(), pos.z());
-                PlayerUtil.playSound(avatar, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE, SoundSource.AMBIENT);
+                PlayerUtil.playSound(avatar, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE.value(), SoundSource.AMBIENT);
             } else if (timer == 19 * 20) {
-                var pos = findRandomPos(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level, 2, 5, 7);
+                var pos = findRandomPos(avatar.getOnPos(), Khonshu.this, avatar, Khonshu.this.level(), 2, 5, 7);
                 new KhonshuTeleportMessage(Khonshu.this, pos).sendToTracking(Khonshu.this);
                 Khonshu.this.teleportTo(pos.x(), pos.y(), pos.z());
-                PlayerUtil.playSound(avatar, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE, SoundSource.AMBIENT);
+                PlayerUtil.playSound(avatar, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE.value(), SoundSource.AMBIENT);
             } else if (timer == MAX_TIME) {
                 Khonshu.this.setDespawnTimer(60);
                 Khonshu.this.setWiggleArms(false);

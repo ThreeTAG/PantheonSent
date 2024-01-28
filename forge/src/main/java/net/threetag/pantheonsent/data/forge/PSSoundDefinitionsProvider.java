@@ -1,6 +1,6 @@
 package net.threetag.pantheonsent.data.forge;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -11,8 +11,8 @@ import net.threetag.pantheonsent.sound.PSSoundEvents;
 
 public class PSSoundDefinitionsProvider extends SoundDefinitionsProvider {
 
-    public PSSoundDefinitionsProvider(DataGenerator generator, ExistingFileHelper helper) {
-        super(generator, PantheonSent.MOD_ID, helper);
+    public PSSoundDefinitionsProvider(PackOutput packOutput, ExistingFileHelper helper) {
+        super(packOutput, PantheonSent.MOD_ID, helper);
     }
 
     @Override

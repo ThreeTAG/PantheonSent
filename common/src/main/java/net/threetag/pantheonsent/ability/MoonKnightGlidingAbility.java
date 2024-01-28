@@ -1,7 +1,6 @@
 package net.threetag.pantheonsent.ability;
 
 import net.minecraft.util.Mth;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -29,13 +28,13 @@ public class MoonKnightGlidingAbility extends Ability implements AnimationTimer 
 
     @Override
     public void tick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
-        if (entity.level.isClientSide) {
+        if (entity.level().isClientSide) {
             int timer = entry.getProperty(TIME_IN_AIR);
             entry.setUniqueProperty(PREV_TIME_IN_AIR, timer);
 
-            if ((entity.isOnGround() || entity.isInWater() || entity.isColliding(entity.blockPosition(), entity.level.getBlockState(entity.blockPosition().below(2)))) && timer > 0) {
+            if ((entity.onGround() || entity.isInWater() || entity.isColliding(entity.blockPosition(), entity.level().getBlockState(entity.blockPosition().below(2)))) && timer > 0) {
                 entry.setUniqueProperty(TIME_IN_AIR, timer = timer - 1);
-            } else if (enabled && !entity.isOnGround() && timer < 10) {
+            } else if (enabled && !entity.onGround() && timer < 10) {
                 entry.setUniqueProperty(TIME_IN_AIR, timer = timer + 1);
             }
 
@@ -43,14 +42,14 @@ public class MoonKnightGlidingAbility extends Ability implements AnimationTimer 
                 entity.playSound(PSSoundEvents.CAPE.get());
             }
         }
-        if (enabled && !entity.isOnGround()) {
+        if (enabled && !entity.onGround()) {
             var lookVec = entity.getLookAngle().scale(0.1D);
             entity.setDeltaMovement(entity.getDeltaMovement().x + lookVec.x, Mth.clamp(lookVec.y, -0.8F, -0.2F), entity.getDeltaMovement().z + lookVec.z);
             entity.fallDistance = 0F;
             var movement = entity.getDeltaMovement();
 
-            for (Entity target : entity.level.getEntities(entity, entity.getBoundingBox())) {
-                target.hurt(entity instanceof Player ? DamageSource.playerAttack((Player) entity) : DamageSource.mobAttack(entity), (float) movement.length());
+            for (Entity target : entity.level().getEntities(entity, entity.getBoundingBox())) {
+                target.hurt(entity instanceof Player ? entity.level().damageSources().playerAttack((Player) entity) : entity.level().damageSources().mobAttack(entity), (float) movement.length());
                 if (target instanceof LivingEntity livingEntity) {
                     livingEntity.knockback(movement.x * 2.5F, movement.y * 2.5F, movement.z * 2.5F);
                 }

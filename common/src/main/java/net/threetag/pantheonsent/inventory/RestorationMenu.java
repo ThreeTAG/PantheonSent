@@ -4,6 +4,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.ItemCombinerMenu;
+import net.minecraft.world.inventory.ItemCombinerMenuSlotDefinition;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -11,8 +12,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.item.crafting.PSRecipeSerializers;
 import net.threetag.pantheonsent.item.crafting.RestorationRecipe;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class RestorationMenu extends ItemCombinerMenu {
@@ -20,7 +23,6 @@ public class RestorationMenu extends ItemCombinerMenu {
     private final Level level;
     @Nullable
     private RestorationRecipe selectedRecipe;
-    private final List<RestorationRecipe> recipes;
 
     public RestorationMenu(int i, Inventory inventory) {
         this(i, inventory, ContainerLevelAccess.NULL);
@@ -28,8 +30,7 @@ public class RestorationMenu extends ItemCombinerMenu {
 
     public RestorationMenu(int i, Inventory inventory, ContainerLevelAccess containerLevelAccess) {
         super(PSMenuTypes.RESTORATION.get(), i, inventory, containerLevelAccess);
-        this.level = inventory.player.level;
-        this.recipes = this.level.getRecipeManager().getAllRecipesFor(PSRecipeSerializers.RESTORATION_RECIPE_TYPE.get());
+        this.level = inventory.player.level();
     }
 
     @Override
@@ -44,8 +45,8 @@ public class RestorationMenu extends ItemCombinerMenu {
 
     @Override
     protected void onTake(Player player, ItemStack itemStack) {
-        itemStack.onCraftedBy(player.level, player, itemStack.getCount());
-        this.resultSlots.awardUsedRecipes(player);
+        itemStack.onCraftedBy(player.level(), player, itemStack.getCount());
+        this.resultSlots.awardUsedRecipes(player, Arrays.asList(this.inputSlots.getItem(0), this.inputSlots.getItem(1)));
         this.shrinkStackInSlot(0);
         this.shrinkStackInSlot(1);
         this.access.execute((level, blockPos) -> {
@@ -67,15 +68,18 @@ public class RestorationMenu extends ItemCombinerMenu {
             this.resultSlots.setItem(0, ItemStack.EMPTY);
         } else {
             this.selectedRecipe = list.get(0);
-            ItemStack itemStack = this.selectedRecipe.assemble(this.inputSlots);
+            ItemStack itemStack = this.selectedRecipe.assemble(this.inputSlots, this.level.registryAccess());
             this.resultSlots.setRecipeUsed(this.selectedRecipe);
             this.resultSlots.setItem(0, itemStack);
         }
     }
 
     @Override
-    protected boolean shouldQuickMoveToAdditionalSlot(ItemStack stack) {
-        return this.recipes.stream().anyMatch((upgradeRecipe) -> upgradeRecipe.isAdditionIngredient(stack));
+    protected @NotNull ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
+        return ItemCombinerMenuSlotDefinition.create()
+                .withSlot(0, 27, 47, (itemStack) -> true)
+                .withSlot(1, 76, 47, (itemStack) -> true)
+                .withResultSlot(2, 134, 47).build();
     }
 
     @Override

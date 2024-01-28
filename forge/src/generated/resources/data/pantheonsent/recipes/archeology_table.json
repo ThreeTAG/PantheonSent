@@ -1,8 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "B": {
-      "item": "pantheonsent:brush"
+      "item": "minecraft:brush"
     },
     "P": {
       "tag": "minecraft:planks"
@@ -17,5 +18,6 @@
   ],
   "result": {
     "item": "pantheonsent:archeology_table"
-  }
+  },
+  "show_notification": true
 }

@@ -13,7 +13,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlac
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
-import net.threetag.pantheonsent.block.PSBlocks;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
@@ -24,23 +24,23 @@ public class SuspiciousBlocksProcessor extends StructureProcessor {
     public static final Codec<StructureProcessor> CODEC = Codec.unit(() -> INSTANCE);
 
     public static final Map<Block, Block> REPLACEMENTS = Util.make(Maps.newHashMap(), (hashMap) -> {
-        hashMap.put(Blocks.SAND, PSBlocks.SUSPICIOUS_SAND.get());
+        hashMap.put(Blocks.SAND, Blocks.SUSPICIOUS_SAND);
     });
 
     @Nullable
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader level, BlockPos blockPos, BlockPos pos, StructureTemplate.StructureBlockInfo blockInfo, StructureTemplate.StructureBlockInfo relativeBlockInfo, StructurePlaceSettings settings) {
-        if(relativeBlockInfo.state.is(Blocks.SPONGE)) {
-            BlockState origBlock = level.getBlockState(relativeBlockInfo.pos);
+        if(relativeBlockInfo.state().is(Blocks.SPONGE)) {
+            BlockState origBlock = level.getBlockState(relativeBlockInfo.pos());
             Block block = REPLACEMENTS.get(origBlock.getBlock());
-            RandomSource random = settings.getRandom(relativeBlockInfo.pos);
+            RandomSource random = settings.getRandom(relativeBlockInfo.pos());
 
             if (block == null || random.nextInt(3) != 0) {
-                return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos, origBlock, null);
+                return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), origBlock, null);
             } else {
                 BlockState blockState2 = block.defaultBlockState();
 
-                return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos, blockState2, relativeBlockInfo.nbt);
+                return new StructureTemplate.StructureBlockInfo(relativeBlockInfo.pos(), blockState2, relativeBlockInfo.nbt());
             }
         } else {
             return relativeBlockInfo;
@@ -48,7 +48,7 @@ public class SuspiciousBlocksProcessor extends StructureProcessor {
     }
 
     @Override
-    protected StructureProcessorType<?> getType() {
+    protected @NotNull StructureProcessorType<?> getType() {
         return PSStructureProcessorTypes.SUSPICIOUS_BLOCKS.get();
     }
 }

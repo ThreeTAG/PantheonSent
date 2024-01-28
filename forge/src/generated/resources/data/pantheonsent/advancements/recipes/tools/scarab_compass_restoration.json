@@ -30,5 +30,6 @@
     "recipes": [
       "pantheonsent:scarab_compass_restoration"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

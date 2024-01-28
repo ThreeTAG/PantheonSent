@@ -2,7 +2,8 @@ package net.threetag.pantheonsent.entity;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
@@ -17,9 +18,9 @@ import java.util.function.Predicate;
 
 public class PSVillagerProfessions {
 
-    public static final DeferredRegister<VillagerProfession> PROFESSIONS = DeferredRegister.create(PantheonSent.MOD_ID, Registry.VILLAGER_PROFESSION_REGISTRY);
+    public static final DeferredRegister<VillagerProfession> PROFESSIONS = DeferredRegister.create(PantheonSent.MOD_ID, Registries.VILLAGER_PROFESSION);
 
-    public static final Predicate<Holder<PoiType>> POI_PREDICATE = holder -> holder.is(Registry.POINT_OF_INTEREST_TYPE.getResourceKey(PSPoiTypes.ARCHEOLOGIST.get()).get());
+    public static final Predicate<Holder<PoiType>> POI_PREDICATE = holder -> holder.is(BuiltInRegistries.POINT_OF_INTEREST_TYPE.getResourceKey(PSPoiTypes.ARCHEOLOGIST.get()).get());
 
     public static final RegistrySupplier<VillagerProfession> ARCHEOLOGIST = PROFESSIONS.register("archeologist",
             () -> new VillagerProfession("archeologist", POI_PREDICATE, POI_PREDICATE, ImmutableSet.of(), ImmutableSet.of(), null));

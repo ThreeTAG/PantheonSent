@@ -1,0 +1,7 @@
+// 1.20.1	2024-01-28T12:47:26.6481869	PantheonSent Tags for minecraft:block mod id pantheonsent
+423332481b22c634d40eb0b9e286298c6ed2a9cc data/minecraft/tags/blocks/guarded_by_piglins.json
+dd317ff700dde9e0cbb1c1558dd9c41378b9a7f4 data/minecraft/tags/blocks/mineable/axe.json
+ffa48ce4e03d2e00b90e8ed48d90d01be5332f28 data/minecraft/tags/blocks/mineable/pickaxe.json
+54a72327e3434e11e5ed00f98d049e2e2697cc4b data/minecraft/tags/blocks/needs_iron_tool.json
+05b4078414a1c7c37fd6cd7e4e361f152a7036c5 data/minecraft/tags/blocks/needs_stone_tool.json
+1064aa2ab367aad9e4d70faa826209f6e0a67965 data/pantheonsent/tags/blocks/crescent_dart_destroyable.json

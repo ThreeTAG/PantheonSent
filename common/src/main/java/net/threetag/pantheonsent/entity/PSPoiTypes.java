@@ -1,6 +1,6 @@
 package net.threetag.pantheonsent.entity;
 
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.ai.village.poi.PoiTypes;
 import net.threetag.palladiumcore.registry.DeferredRegister;
@@ -10,7 +10,7 @@ import net.threetag.pantheonsent.block.PSBlocks;
 
 public class PSPoiTypes {
 
-    public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(PantheonSent.MOD_ID, Registry.POINT_OF_INTEREST_TYPE_REGISTRY);
+    public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(PantheonSent.MOD_ID, Registries.POINT_OF_INTEREST_TYPE);
 
     public static final RegistrySupplier<PoiType> ARCHEOLOGIST = POI_TYPES.register("archeologist", () -> new PoiType(PoiTypes.getBlockStates(PSBlocks.ARCHEOLOGY_TABLE.get()), 1, 1));
 

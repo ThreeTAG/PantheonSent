@@ -5,6 +5,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.core.*;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -15,29 +16,29 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.phys.Vec3;
-import net.threetag.palladium.item.CreativeModeTabFiller;
-import net.threetag.palladium.item.SortedItem;
 import net.threetag.pantheonsent.PantheonSent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
-public class ScarabCompassItem extends SortedItem {
+public class ScarabCompassItem extends Item {
 
-    public ScarabCompassItem(Properties properties, CreativeModeTabFiller filler) {
-        super(properties, filler);
+    public ScarabCompassItem(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
 
         if (!stack.getOrCreateTag().contains("TargetPos") && level instanceof ServerLevel serverLevel) {
-            Registry<Structure> registry = serverLevel.registryAccess().registryOrThrow(Registry.STRUCTURE_REGISTRY);
+            Registry<Structure> registry = serverLevel.registryAccess().registryOrThrow(Registries.STRUCTURE);
             var structure = registry.get(PantheonSent.id("khonshu_temple"));
 
             if (structure != null) {
@@ -63,18 +64,18 @@ public class ScarabCompassItem extends SortedItem {
             if (entity == null) {
                 return 0.0F;
             } else {
-                if (clientLevel == null && entity.level instanceof ClientLevel) {
-                    clientLevel = (ClientLevel) entity.level;
+                if (clientLevel == null && entity.level() instanceof ClientLevel) {
+                    clientLevel = (ClientLevel) entity.level();
                 }
 
                 BlockPos blockPos = itemStack.getOrCreateTag().contains("TargetPos") ? NbtUtils.readBlockPos(itemStack.getOrCreateTag().getCompound("TargetPos")) : null;
 
-                if(blockPos == null) {
+                if (blockPos == null || clientLevel == null) {
                     return -1F;
                 }
 
                 long l = clientLevel.getGameTime();
-                if (blockPos != null && !(entity.position().distanceToSqr((double) blockPos.getX() + 0.5, entity.position().y(), (double) blockPos.getZ() + 0.5) < 9.999999747378752E-6)) {
+                if (!(entity.position().distanceToSqr((double) blockPos.getX() + 0.5, entity.position().y(), (double) blockPos.getZ() + 0.5) < 9.999999747378752E-6)) {
                     boolean bl = livingEntity instanceof Player && ((Player) livingEntity).isLocalPlayer();
                     double e = 0.0;
                     if (bl) {

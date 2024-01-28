@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "pantheonsent:brush"
+              "minecraft:brush"
             ]
           }
         ]
@@ -30,5 +30,6 @@
     "recipes": [
       "pantheonsent:archeology_table"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -31,7 +31,7 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
 
     @Override
     public void tick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
-        if (entity.level.isClientSide) {
+        if (entity.level().isClientSide) {
             int timer = entry.getProperty(TIMER);
             entry.setUniqueProperty(PREV_TIMER, timer);
 
@@ -46,14 +46,14 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
     @Override
     public void firstTick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
         if (enabled) {
-            entity.level.playLocalSound(entity.getX(), entity.getEyeY(), entity.getZ(), PSSoundEvents.CAPE.get(), SoundSource.PLAYERS, 1F, 1F, false);
+            entity.level().playLocalSound(entity.getX(), entity.getEyeY(), entity.getZ(), PSSoundEvents.CAPE.get(), SoundSource.PLAYERS, 1F, 1F, false);
         }
     }
 
     @Override
     public void lastTick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
         if (enabled) {
-            entity.level.playLocalSound(entity.getX(), entity.getEyeY(), entity.getZ(), PSSoundEvents.CAPE.get(), SoundSource.PLAYERS, 1F, 1F, false);
+            entity.level().playLocalSound(entity.getX(), entity.getEyeY(), entity.getZ(), PSSoundEvents.CAPE.get(), SoundSource.PLAYERS, 1F, 1F, false);
         }
     }
 

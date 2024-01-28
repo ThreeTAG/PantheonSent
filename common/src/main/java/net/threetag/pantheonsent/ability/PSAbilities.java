@@ -22,7 +22,7 @@ public class PSAbilities {
     }
 
     public static boolean hasMoonKnightPower(Player player) {
-        var power = getMoonKnightPower(player.level);
+        var power = getMoonKnightPower(player.level());
 
         if (power == null) {
             return false;

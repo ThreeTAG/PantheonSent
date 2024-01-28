@@ -1,6 +1,7 @@
 package net.threetag.pantheonsent.entity;
 
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
@@ -9,9 +10,10 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.threetag.palladiumcore.network.NetworkManager;
+import net.threetag.pantheonsent.tags.PSBlockTags;
+import org.jetbrains.annotations.NotNull;
 
 public class CrescentDart extends AbstractArrow {
 
@@ -34,13 +36,13 @@ public class CrescentDart extends AbstractArrow {
     }
 
     @Override
-    protected SoundEvent getDefaultHitGroundSoundEvent() {
+    protected @NotNull SoundEvent getDefaultHitGroundSoundEvent() {
         // TODO custom sound event
         return SoundEvents.TRIDENT_HIT_GROUND;
     }
 
     @Override
-    protected ItemStack getPickupItem() {
+    protected @NotNull ItemStack getPickupItem() {
         return ItemStack.EMPTY;
     }
 
@@ -53,11 +55,11 @@ public class CrescentDart extends AbstractArrow {
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
 
-        BlockState state = this.level.getBlockState(blockHitResult.getBlockPos());
+        BlockState state = this.level().getBlockState(blockHitResult.getBlockPos());
 
-        if (state.getMaterial() == Material.GLASS && state.getDestroySpeed(this.level, blockHitResult.getBlockPos()) <= 0.3F) {
+        if (state.is(PSBlockTags.CRESCENT_DART_DESTROYABLE) && state.getDestroySpeed(this.level(), blockHitResult.getBlockPos()) <= 0.3F) {
             // TODO check if can break
-            this.level.destroyBlock(blockHitResult.getBlockPos(), true);
+            this.level().destroyBlock(blockHitResult.getBlockPos(), true);
         }
     }
 
@@ -67,7 +69,7 @@ public class CrescentDart extends AbstractArrow {
     }
 
     @Override
-    public Packet<?> getAddEntityPacket() {
+    public @NotNull Packet<ClientGamePacketListener> getAddEntityPacket() {
         return NetworkManager.createAddEntityPacket(this);
     }
 }

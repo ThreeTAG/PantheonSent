@@ -31,15 +31,15 @@ public class GodStalkedAbility extends Ability {
 
     @Override
     public void tick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
-        if (enabled && !entity.level.isClientSide && entity instanceof Player player) {
+        if (enabled && !entity.level().isClientSide && entity instanceof Player player) {
             int timer = entry.getProperty(TIMER);
 
             if (timer == 0) {
-                Khonshu khonshu = new Khonshu(entity.level, player, Khonshu.Mode.STALKING);
-                var pos = Khonshu.findRandomPos(entity.getOnPos(), khonshu, player, entity.level, 20, 35, 20);
+                Khonshu khonshu = new Khonshu(entity.level(), player, Khonshu.Mode.STALKING);
+                var pos = Khonshu.findRandomPos(entity.getOnPos(), khonshu, player, entity.level(), 20, 35, 20);
                 khonshu.setPos(new Vec3(pos.x(), pos.y(), pos.z()));
-                entity.level.addFreshEntity(khonshu);
-                player.playSound(SoundEvents.AMBIENT_CAVE, 1F, 1F);
+                entity.level().addFreshEntity(khonshu);
+                player.playSound(SoundEvents.AMBIENT_CAVE.value(), 1F, 1F);
                 entry.setUniqueProperty(TIMER, getRandomMinutes());
             } else {
                 entry.setUniqueProperty(TIMER, timer - 1);

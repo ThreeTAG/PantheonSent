@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-17T21:59:56.3889764	PantheonSent Item Models: pantheonsent
+// 1.20.1	2024-01-28T12:47:26.6376367	PantheonSent Item Models: pantheonsent
 c805ed74628acefcc7bf58a0b9b15e41968593d9 assets/pantheonsent/models/item/ancient_clay_shard.json
 d1060bcef68ec211e72d773a0abf94aaa8dadc6c assets/pantheonsent/models/item/ancient_gold_shard.json
 1087925da51b37ba71de5d9a78d6de5d242f1594 assets/pantheonsent/models/item/archeology_table.json
@@ -6,7 +6,6 @@ df443b7de91bd8754f84280c67a4354c26e7308b assets/pantheonsent/models/item/broken_
 7991170407d5922644eaddfe245bea1ac86a696d assets/pantheonsent/models/item/broken_khonshu_ushabti.json
 6259c0751a84543a8c7b3f7e2b7ccc69f44e04c2 assets/pantheonsent/models/item/broken_lunar_totem.json
 d573d4d9a4896893a85120d4cfac2a3983a421ee assets/pantheonsent/models/item/broken_scarab_compass.json
-a6634c88d1a8b22682ebcf400fe460e22bb6a862 assets/pantheonsent/models/item/brush.json
 76cc0259870cfb4d2558a0841a90cd670919ed4e assets/pantheonsent/models/item/crescent_banner_pattern.json
 67c04a8b4775488882db14462a7cc6081c2efbb2 assets/pantheonsent/models/item/eye_of_horus.json
 8c2eb6a4e000abbb1a5758a97dd41ac0f18bd3a8 assets/pantheonsent/models/item/gilded_sandstone.json
@@ -29,4 +28,3 @@ d9b052762c6cd378897d3df02c8809660faa32f0 assets/pantheonsent/models/item/scarab_
 ffead49cd684d2231cd5f92381cd3f07b04b0617 assets/pantheonsent/models/item/scarab_compass_7.json
 fb3f9e24ab4e5398a74645bb6dafaa59617293cd assets/pantheonsent/models/item/scarab_compass_held.json
 521778b707a71b3d8fbfa91e79edf1956d2a34ac assets/pantheonsent/models/item/scarab_compass_inactive.json
-8de827f1eeedc791869144e967a5d2b7899ae38f assets/pantheonsent/models/item/suspicious_sand.json

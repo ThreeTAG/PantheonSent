@@ -1,9 +1,9 @@
 package net.threetag.pantheonsent.data.forge;
 
-import net.minecraft.client.renderer.block.model.ItemTransforms;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,8 +16,8 @@ import java.util.function.Supplier;
 @SuppressWarnings("ConstantConditions")
 public class PSItemModelProvider extends ItemModelProvider {
 
-    public PSItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, PantheonSent.MOD_ID, existingFileHelper);
+    public PSItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+        super(packOutput, PantheonSent.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -25,13 +25,12 @@ public class PSItemModelProvider extends ItemModelProvider {
         this.defaultTool(PSItems.ANCIENT_CLAY_SHARD);
         this.defaultTool(PSItems.ANCIENT_GOLD_SHARD);
         this.defaultTool(PSItems.LUNAR_SHARD);
-        this.defaultTool(PSItems.BRUSH);
         this.defaultItem(PSItems.BROKEN_LUNAR_TOTEM);
         this.defaultItem(PSItems.LUNAR_TOTEM);
         this.defaultItem(PSItems.BROKEN_EYE_OF_HORUS);
         this.defaultItem(PSItems.EYE_OF_HORUS);
         this.defaultItem(PSItems.BROKEN_SCARAB_COMPASS);
-        this.defaultItem(PSItems.MUSIC_DISK_CHONS);
+        this.defaultItem(PSItems.MUSIC_DISC_CHONS);
         this.withExistingParent(PSItems.KHONSHU_SPAWN_EGG.getId().getPath(), "item/template_spawn_egg");
         this.withExistingParent(PSItems.CRESCENT_BANNER_PATTERN.getId().getPath(), "item/creeper_banner_pattern");
 
@@ -40,15 +39,14 @@ public class PSItemModelProvider extends ItemModelProvider {
         this.defaultBlockItem(PSItems.ARCHEOLOGY_TABLE);
         this.defaultBlockItem(PSItems.BROKEN_KHONSHU_USHABTI);
         this.defaultBlockItem(PSItems.KHONSHU_USHABTI);
-        this.defaultBlockItem(PSItems.SUSPICIOUS_SAND, PantheonSent.id("block/suspicious_sand_0"));
         this.defaultBlockItem(PSItems.SANDSTONE_TOTEM_HOLDER);
         this.defaultBlockItem(PSItems.LUNAR_STONE, PantheonSent.id("block/lunar_stone_0"));
 
         // Scarab Compass
         var activeModel = this.withExistingParent("scarab_compass", "item/generated").texture("layer0", PantheonSent.id("item/scarab_compass_0"));
         this.withExistingParent("scarab_compass_held", "item/generated").transforms()
-                .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND).rotation(-85F, -11F, -15F).translation(1.13F, 3.2F, 1.13F).scale(0.68F).end()
-                .transform(ItemTransforms.TransformType.FIRST_PERSON_LEFT_HAND).rotation(-85F, -11F, -15F).translation(1.13F, 3.2F, 1.13F).scale(0.68F).end();
+                .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND).rotation(-85F, -11F, -15F).translation(1.13F, 3.2F, 1.13F).scale(0.68F).end()
+                .transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND).rotation(-85F, -11F, -15F).translation(1.13F, 3.2F, 1.13F).scale(0.68F).end();
         for (int i = -1; i < 8; i++) {
             if (i == -1) {
                 var inactiveModel = this.withExistingParent("scarab_compass_inactive", "item/generated").texture("layer0", PantheonSent.id("item/scarab_compass"));

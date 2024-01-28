@@ -9,10 +9,12 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import mezz.jei.common.Constants;
+import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.item.crafting.RestorationRecipe;
+import org.jetbrains.annotations.NotNull;
 
 public class RestorationRecipeCategory implements IRecipeCategory<RestorationRecipe> {
 
@@ -25,22 +27,22 @@ public class RestorationRecipeCategory implements IRecipeCategory<RestorationRec
     }
 
     @Override
-    public RecipeType<RestorationRecipe> getRecipeType() {
+    public @NotNull RecipeType<RestorationRecipe> getRecipeType() {
         return PantheonSentJEIPlugin.RESTORATION;
     }
 
     @Override
-    public Component getTitle() {
+    public @NotNull Component getTitle() {
         return PSBlocks.ARCHEOLOGY_TABLE.get().getName();
     }
 
     @Override
-    public IDrawable getBackground() {
+    public @NotNull IDrawable getBackground() {
         return background;
     }
 
     @Override
-    public IDrawable getIcon() {
+    public @NotNull IDrawable getIcon() {
         return icon;
     }
 
@@ -53,7 +55,7 @@ public class RestorationRecipeCategory implements IRecipeCategory<RestorationRec
                 .addIngredients(recipe.addition);
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 1)
-                .addItemStack(recipe.getResultItem());
+                .addItemStack(RecipeUtil.getResultItem(recipe));
     }
 
     @Override

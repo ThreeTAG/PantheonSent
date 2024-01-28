@@ -1,0 +1,9 @@
+// 1.20.1	2024-01-28T12:47:26.6336364	Loot Tables
+4b14ee383e75fcd024d61caa08971c8381473c4e data/pantheonsent/loot_tables/archaeology/dig_site_sand.json
+40e3bf85368c44dc4c3534bf725dac54e39647ef data/pantheonsent/loot_tables/blocks/archeology_table.json
+45c69de7fdbf9ef7c3dc26fa99c15de95334976b data/pantheonsent/loot_tables/blocks/broken_khonshu_ushabti.json
+c5bcb2e1ff7ee582aa7d177494f013d20c752e1b data/pantheonsent/loot_tables/blocks/gilded_sandstone.json
+66c1e716c1934cb50ef2693003cf6cd11d2ba906 data/pantheonsent/loot_tables/blocks/gilded_sandstone_pillar.json
+72f942fa8831023875a5cee5dc9647d550089802 data/pantheonsent/loot_tables/blocks/khonshu_ushabti.json
+94b25376d4e4f2721059199ceaaeee82ba2039a0 data/pantheonsent/loot_tables/blocks/lunar_stone.json
+55d7c5b037027ad443d68f611725e0818b0b5db8 data/pantheonsent/loot_tables/blocks/sandstone_totem_holder.json

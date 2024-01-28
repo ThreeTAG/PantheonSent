@@ -35,6 +35,10 @@ loom {
             mod "pantheonsent"
         }
     }
+
+    mixin {
+        defaultRefmapName = "pantheonsent-forge-refmap.json"
+    }
 }
 
 configurations {
@@ -46,11 +50,12 @@ configurations {
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.forge_version}"
-    modApi ("net.threetag:Palladium-forge:${rootProject.palladium_version}", {
-        exclude group: "com.github.Virtuoel"
-    })
-//    modApi "net.threetag:PalladiumCore-forge:${rootProject.palladiumcore_version}"
+    forge "net.neoforged:forge:${rootProject.neoforge_version}"
+    modApi ("net.threetag:palladium-forge:${rootProject.palladium_version}")
+
+    // Mixin Extras
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.2.0"))
+    implementation(include("io.github.llamalad7:mixinextras-forge:0.2.0"))
 
     // Shutup Experimental Settings
     modLocalRuntime "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupexperimentalsettings_version}"
@@ -91,13 +96,12 @@ shadowJar {
     exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier = "dev-shadow"
 }
 
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier null
     archiveClassifier = 'forge'
 }
 
@@ -114,7 +118,7 @@ jar {
         ])
     }
 
-    classifier "dev"
+    archiveClassifier = "dev"
 }
 
 sourcesJar {
@@ -139,10 +143,10 @@ publishing {
 
     repositories {
         maven {
-            url 'https://repo.repsy.io/mvn/lucraft/threetag'
+            url 'https://maven.threetag.net'
             credentials {
-                username System.getenv('REPSY_USERNAME')
-                password System.getenv('REPSY_PASSWORD')
+                username System.getenv('MAVEN_USERNAME')
+                password System.getenv('MAVEN_PASSWORD')
             }
         }
     }

@@ -30,5 +30,6 @@
     "recipes": [
       "pantheonsent:blast_ancient_gold_shard"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

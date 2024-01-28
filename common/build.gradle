@@ -2,10 +2,17 @@ architectury {
     common(rootProject.enabled_platforms.split(","))
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/pantheonsent.accesswidener")
+
+    mixin {
+        defaultRefmapName = "pantheonsent-common-refmap.json"
+    }
+}
+
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    modApi "net.threetag:Palladium:${rootProject.palladium_version}"
-//    modApi "net.threetag:PalladiumCore:${rootProject.palladiumcore_version}"
+    modApi "net.threetag:palladium-common:${rootProject.palladium_version}"
 
     // JEI
     modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-common:${rootProject.jei_version}"
@@ -16,24 +23,20 @@ dependencies {
     modCompileOnlyApi "me.shedaniel:RoughlyEnoughItems-api:${rootProject.rei_version}"
 }
 
-loom {
-    accessWidenerPath = file("src/main/resources/pantheonsent.accesswidener")
-}
-
 publishing {
     publications {
-        mavenFabric(MavenPublication) {
-            artifactId = rootProject.archives_base_name
+        mavenCommon(MavenPublication) {
+            artifactId = rootProject.archives_base_name + "-" + project.name
             from components.java
         }
     }
 
     repositories {
         maven {
-            url 'https://repo.repsy.io/mvn/lucraft/threetag'
+            url 'https://maven.threetag.net'
             credentials {
-                username System.getenv('REPSY_USERNAME')
-                password System.getenv('REPSY_PASSWORD')
+                username System.getenv('MAVEN_USERNAME')
+                password System.getenv('MAVEN_PASSWORD')
             }
         }
     }
