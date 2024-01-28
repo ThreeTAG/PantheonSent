@@ -22,7 +22,7 @@ public class RestorationRecipeCategory implements IRecipeCategory<RestorationRec
     private final IDrawable icon;
 
     public RestorationRecipeCategory(IGuiHelper guiHelper) {
-        this.background = guiHelper.createDrawable(Constants.RECIPE_GUI_VANILLA, 0, 168, 125, 18);
+        this.background = guiHelper.createDrawable(Constants.RECIPE_GUI_VANILLA, 18, 168, 90, 18);
         this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(PSBlocks.ARCHEOLOGY_TABLE.get()));
     }
 
@@ -51,10 +51,10 @@ public class RestorationRecipeCategory implements IRecipeCategory<RestorationRec
         builder.addSlot(RecipeIngredientRole.INPUT, 1, 1)
                 .addIngredients(recipe.base);
 
-        builder.addSlot(RecipeIngredientRole.INPUT, 50, 1)
+        builder.addSlot(RecipeIngredientRole.INPUT, 19, 1)
                 .addIngredients(recipe.addition);
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 1)
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 73, 1)
                 .addItemStack(RecipeUtil.getResultItem(recipe));
     }
 
