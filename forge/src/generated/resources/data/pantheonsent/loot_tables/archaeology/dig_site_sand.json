@@ -6,73 +6,103 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:raw_gold"
+          "name": "minecraft:dune_armor_trim_smithing_template"
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:broken_khonshu_ushabti",
-          "quality": 2
+          "name": "pantheonsent:music_disc_chons"
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:broken_lunar_totem",
-          "quality": 1
+          "name": "pantheonsent:broken_khonshu_ushabti"
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:broken_eye_of_horus",
-          "quality": 2
+          "name": "pantheonsent:broken_lunar_totem"
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:broken_scarab_compass",
-          "quality": 1
+          "name": "pantheonsent:broken_eye_of_horus"
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:crescent_banner_pattern",
-          "quality": 3
+          "name": "pantheonsent:broken_scarab_compass"
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:crescent_pottery_sherd",
-          "quality": 2
+          "name": "pantheonsent:crescent_banner_pattern"
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:lunar_shard",
-          "quality": 2
+          "name": "pantheonsent:crescent_pottery_sherd"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:clock"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:gold_nugget"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "pantheonsent:ancient_clay_shard",
+          "name": "minecraft:raw_gold",
           "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "pantheonsent:ancient_gold_shard",
+          "name": "minecraft:golden_sword",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_chestplate",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_helmet",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_leggings",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_boots",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:clock",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:lunar_shard",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
           "weight": 10
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:dead_bush"
+          "name": "minecraft:bone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:ancient_clay_shard",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pantheonsent:ancient_gold_shard",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dead_bush",
+          "weight": 10
         }
       ],
-      "rolls": 4.0
+      "rolls": 1.0
     }
   ],
   "random_sequence": "pantheonsent:archaeology/dig_site_sand"

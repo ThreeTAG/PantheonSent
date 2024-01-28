@@ -20,7 +20,6 @@ import net.threetag.pantheonsent.item.enchantment.PSEnchantments;
 import net.threetag.pantheonsent.network.PSNetwork;
 import net.threetag.pantheonsent.sound.PSSoundEvents;
 import net.threetag.pantheonsent.util.PantheonSentProperties;
-import net.threetag.pantheonsent.world.PSStructureProcessorTypes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,7 +36,6 @@ public class PantheonSent {
         PSEntityTypes.ENTITIES.register();
         PSVillagerProfessions.PROFESSIONS.register();
         PSPoiTypes.POI_TYPES.register();
-        PSStructureProcessorTypes.PROCESSOR_TYPES.register();
         PSRecipeSerializers.RECIPE_SERIALIZERS.register();
         PSRecipeSerializers.RECIPE_TYPES.register();
         PSMenuTypes.MENU_TYPES.register();
