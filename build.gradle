@@ -53,9 +53,6 @@ allprojects {
 
         // ThreeTAG stuff
         maven {
-            url 'https://repo.repsy.io/mvn/lucraft/threetag'
-        }
-        maven {
             url 'https://maven.threetag.net'
         }
 
@@ -131,6 +128,11 @@ allprojects {
 
         // Porting Lib
         maven { url = "https://mvn.devos.one/snapshots/" }
+
+        // Modrinth
+        maven {
+            url "https://api.modrinth.com/maven"
+        }
 
         maven { url 'https://jitpack.io' }
     }

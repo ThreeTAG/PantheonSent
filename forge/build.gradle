@@ -57,6 +57,9 @@ dependencies {
     implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.2.0"))
     implementation(include("io.github.llamalad7:mixinextras-forge:0.2.0"))
 
+    // Sherds API
+    include modImplementation("maven.modrinth:sherdsapi:${rootProject.sherds_api_version}+Forge")
+
     // Shutup Experimental Settings
     modLocalRuntime "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupexperimentalsettings_version}"
 

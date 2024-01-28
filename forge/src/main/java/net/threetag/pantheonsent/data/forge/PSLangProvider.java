@@ -49,6 +49,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu Spawn Egg");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Banner Pattern");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Crescent");
+            this.addItem(PSItems.CRESCENT_POTTERY_SHERD, "Crescent Pottery Sherd");
             this.addItem(PSItems.MUSIC_DISC_CHONS, "Music Disc");
             this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 
@@ -142,6 +143,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu-Spawn-Ei");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannervorlage");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
+            this.addItem(PSItems.CRESCENT_POTTERY_SHERD, "Halbmond-Töpferscherbe");
             this.addItem(PSItems.MUSIC_DISC_CHONS, "Schallplatte");
             this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 
@@ -235,6 +237,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.addItem(PSItems.KHONSHU_SPAWN_EGG, "Khonshu-Schborn-Ei");
             this.addItem(PSItems.CRESCENT_BANNER_PATTERN, "Bannorrvorlaache");
             this.add(PSItems.CRESCENT_BANNER_PATTERN.get().getDescriptionId() + ".desc", "Halbmond");
+            this.addItem(PSItems.CRESCENT_POTTERY_SHERD, "Halbmond-Töpferscherbe");
             this.addItem(PSItems.MUSIC_DISC_CHONS, "Schallbladde");
             this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 

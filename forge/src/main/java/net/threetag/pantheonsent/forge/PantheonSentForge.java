@@ -35,12 +35,13 @@ public class PantheonSentForge {
         e.getGenerator().addProvider(e.includeClient(), new PSSoundDefinitionsProvider(output, e.getExistingFileHelper()));
 
         e.getGenerator().addProvider(e.includeServer(), new PSRecipeProvider(output));
-        e.getGenerator().addProvider(e.includeServer(), new PSBlockLootTableProvider(output));
+        e.getGenerator().addProvider(e.includeServer(), new PSLootTableProvider(output));
         e.getGenerator().addProvider(e.includeServer(), new PSBlockTagsProvider(output, e.getLookupProvider(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeServer(), new PSItemTagsProvider(output, e.getLookupProvider(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeServer(), new PSPoiTypeTagsProvider(output, e.getLookupProvider(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeServer(), new PSBiomeTagsProvider(output, e.getLookupProvider(), e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeServer(), new PSBannerPatternTagsProvider(output, e.getLookupProvider(), e.getExistingFileHelper()));
+        new PSSherdsProvider(e);
     }
 
 }

@@ -40,6 +40,7 @@ public class PSItems {
 
     public static final RegistrySupplier<Item> KHONSHU_SPAWN_EGG = ITEMS.register("khonshu_spawn_egg", () -> new PalladiumSpawnEggItem(PSEntityTypes.KHONSHU, 0xd9d7d8, 0xd7c283, new Item.Properties()));
     public static final RegistrySupplier<Item> CRESCENT_BANNER_PATTERN = ITEMS.register("crescent_banner_pattern", () -> new BannerPatternItem(PSBannerPatternTags.PATTERN_CRESCENT, (new Item.Properties()).stacksTo(1).rarity(Rarity.RARE)));
+    public static final RegistrySupplier<Item> CRESCENT_POTTERY_SHERD = ITEMS.register("crescent_pottery_sherd", () -> new Item(new Item.Properties()));
     public static final RegistrySupplier<Item> MUSIC_DISC_CHONS = ITEMS.register("music_disc_chons", () -> new PalladiumRecordItem(1, PSSoundEvents.MUSIC_DISC_CHONS, (new Item.Properties()).stacksTo(1).rarity(Rarity.RARE), 69));
 
     public static void init() {
@@ -59,6 +60,7 @@ public class PSItems {
         CreativeModeTabRegistry.addToTab(CreativeModeTabs.INGREDIENTS, entries -> {
             entries.addBefore(Items.ANGLER_POTTERY_SHERD, ANCIENT_CLAY_SHARD.get(), ANCIENT_GOLD_SHARD.get(), LUNAR_SHARD.get());
             entries.addAfter(Items.PIGLIN_BANNER_PATTERN, CRESCENT_BANNER_PATTERN.get());
+            entries.addAfter(Items.SNORT_POTTERY_SHERD, CRESCENT_POTTERY_SHERD.get());
         });
 
         CreativeModeTabRegistry.addToTab(CreativeModeTabs.TOOLS_AND_UTILITIES, entries -> {

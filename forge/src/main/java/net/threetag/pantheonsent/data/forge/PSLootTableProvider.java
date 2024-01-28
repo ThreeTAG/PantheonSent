@@ -24,9 +24,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.BiConsumer;
 
-public class PSBlockLootTableProvider extends LootTableProvider {
+public class PSLootTableProvider extends LootTableProvider {
 
-    public PSBlockLootTableProvider(PackOutput output) {
+    public PSLootTableProvider(PackOutput output) {
         super(output, BuiltInLootTables.all(), List.of(
                 new LootTableProvider.SubProviderEntry(BlockLoot::new, LootContextParamSets.BLOCK),
                 new LootTableProvider.SubProviderEntry(ArcheologyLoot::new, LootContextParamSets.ARCHAEOLOGY)
@@ -69,6 +69,7 @@ public class PSBlockLootTableProvider extends LootTableProvider {
                             .add(LootItem.lootTableItem(PSItems.BROKEN_EYE_OF_HORUS.get()).setQuality(2))
                             .add(LootItem.lootTableItem(PSItems.BROKEN_SCARAB_COMPASS.get()).setQuality(1))
                             .add(LootItem.lootTableItem(PSItems.CRESCENT_BANNER_PATTERN.get()).setQuality(3))
+                            .add(LootItem.lootTableItem(PSItems.CRESCENT_POTTERY_SHERD.get()).setQuality(2))
                             .add(LootItem.lootTableItem(PSItems.LUNAR_SHARD.get()).setQuality(2))
                             .add(LootItem.lootTableItem(Items.CLOCK)))
                     .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F))
