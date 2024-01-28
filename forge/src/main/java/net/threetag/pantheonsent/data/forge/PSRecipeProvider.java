@@ -7,6 +7,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.threetag.pantheonsent.PantheonSent;
 import net.threetag.pantheonsent.item.PSItems;
+import net.threetag.pantheonsent.item.crafting.PSRecipeSerializers;
 import net.threetag.pantheonsent.item.crafting.RestorationRecipeBuilder;
 
 import java.util.function.Consumer;
@@ -30,7 +31,9 @@ public class PSRecipeProvider extends RecipeProvider {
         new RestorationRecipeBuilder(PSItems.EYE_OF_HORUS.get(), RecipeCategory.TOOLS, Ingredient.of(PSItems.BROKEN_EYE_OF_HORUS.get()), Ingredient.of(PSItems.ANCIENT_GOLD_SHARD.get())).unlocks("has_eye_of_horus", has(PSItems.BROKEN_EYE_OF_HORUS.get())).save(consumer, PantheonSent.id("eye_of_horus_restoration"));
         new RestorationRecipeBuilder(PSItems.SCARAB_COMPASS.get(), RecipeCategory.TOOLS, Ingredient.of(PSItems.BROKEN_SCARAB_COMPASS.get()), Ingredient.of(PSItems.ANCIENT_GOLD_SHARD.get())).unlocks("has_scarab_compass", has(PSItems.BROKEN_SCARAB_COMPASS.get())).save(consumer, PantheonSent.id("scarab_compass_restoration"));
 
+        // Misc
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PSItems.LUNAR_STONE.get()).define('#', PSItems.LUNAR_SHARD.get()).pattern("###").pattern("###").pattern("###").unlockedBy(getHasName(PSItems.LUNAR_SHARD.get()), has(PSItems.LUNAR_SHARD.get())).save(consumer);
+        SpecialRecipeBuilder.special(PSRecipeSerializers.POTTERY_SHERD_DUPLICATION.get()).save(consumer, "pottery_sherd_duplication");
 
         // Shards burning
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(PSItems.ANCIENT_CLAY_SHARD.get()), RecipeCategory.MISC, Items.BRICK, 0.1F, 100).unlockedBy("has_shard", has(PSItems.ANCIENT_CLAY_SHARD.get())).save(consumer, PantheonSent.id("blast_ancient_clay_shard"));

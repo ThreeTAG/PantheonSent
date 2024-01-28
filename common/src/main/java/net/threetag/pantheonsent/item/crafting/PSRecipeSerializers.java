@@ -3,6 +3,7 @@ package net.threetag.pantheonsent.item.crafting;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.threetag.palladiumcore.registry.DeferredRegister;
 import net.threetag.palladiumcore.registry.RegistrySupplier;
 import net.threetag.pantheonsent.PantheonSent;
@@ -18,4 +19,6 @@ public class PSRecipeSerializers {
             return "pantheonsent:restoration";
         }
     });
+
+    public static final RegistrySupplier<RecipeSerializer<PotterySherdDuplicationRecipe>> POTTERY_SHERD_DUPLICATION = RECIPE_SERIALIZERS.register("pottery_sherd_duplication", () -> new SimpleCraftingRecipeSerializer<>(PotterySherdDuplicationRecipe::new));
 }

@@ -2,6 +2,7 @@ package net.threetag.pantheonsent.compat.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.*;
 import mezz.jei.common.util.ErrorUtil;
@@ -36,6 +37,8 @@ public class PantheonSentJEIPlugin implements IModPlugin {
         ErrorUtil.checkNotNull(this.restorationCategory, "restorationCategory");
         PantheonSentRecipes recipes = new PantheonSentRecipes(registration.getIngredientManager());
         registration.addRecipes(RESTORATION, recipes.getRestorationRecipes(this.restorationCategory));
+
+        registration.addRecipes(RecipeTypes.CRAFTING, PotterySherdDuplicationRecipeMaker.createRecipes());
     }
 
     @Override
