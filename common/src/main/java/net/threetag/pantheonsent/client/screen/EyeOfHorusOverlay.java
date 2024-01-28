@@ -34,8 +34,9 @@ public class EyeOfHorusOverlay implements OverlayRegistry.IngameOverlay, ClientT
 
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
-        float f = ((TIMER + partialTicks) / 2F) % 32;
-        float transparency = AnimationUtil.ease(Easing.INOUTSINE, f < 16 ? f / 7F : 1F - (f - 24F) / 7F);
+        float timer = TIMER + partialTicks;
+        float f = (timer / 2F) % 32;
+        float transparency = AnimationUtil.ease(Easing.INOUTSINE, timer <= 32 ? timer / 32F : 1F - ((timer - 32F) / 32F));
         guiGraphics.pose().pushPose();
         guiGraphics.pose().translate(width / 2F - 32, height / 2F - 32, 0);
         guiGraphics.pose().scale(4F, 4F, 1F);
