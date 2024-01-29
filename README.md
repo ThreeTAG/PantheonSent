@@ -42,7 +42,7 @@ This power grants you strength, agility, and some other neat buffs for fighting 
 **Eye of Horus** - This accessory can be worn (also supports Curios/Trinkets) and in case you are low on health, Horus himself will grant you regeneration.
 
 # Credits
-**[Sydney](https://twitter.com/Sydokiddo)** - Khonshu Model 
+**[Sydney](https://twitter.com/Sydokiddo)** - Khonshu Model  
 **[Biz](https://twitter.com/BizZzlol)** - Moon Knight/Mr Knight Skin  
 **[Neon](https://twitter.com/ThePoopPal)** - Music Disc Song  
 **[Connor Dawn](https://twitter.com/TheConnorDawn)** - Banner Render
