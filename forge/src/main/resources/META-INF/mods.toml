@@ -11,8 +11,12 @@ authors = "Lucraft"
 description = '''
 Channel the power of the gods and serve their will!
 '''
+logoFile = "pantheonsent_banner.png"
 itemIcon = "minecraft:totem_of_undying"
-displayURL = "https://www.curseforge.com/minecraft/mc-mods/pantheonsent"
+displayURL = "https://modrinth.com/project/pantheonsent"
+
+[modproperties.pantheonsent]
+catalogueImageIcon = "pantheonsent_icon.png"
 
 [[dependencies.pantheonsent]]
 modId = "forge"

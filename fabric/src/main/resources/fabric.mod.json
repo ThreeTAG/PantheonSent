@@ -12,6 +12,7 @@
     "sources": "https://github.com/ThreeTAG/PantheonSent"
   },
   "license": "All rights reserved",
+  "icon": "pantheonsent_icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -41,5 +42,10 @@
   },
   "suggests": {
     "flamingo": "*"
+  },
+  "custom": {
+    "catalogue": {
+      "banner": "pantheonsent_banner.png"
+    }
   }
 }

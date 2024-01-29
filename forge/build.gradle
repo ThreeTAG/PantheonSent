@@ -14,7 +14,7 @@ loom {
         if (name == "client") {
             runDir = "../run"
 
-            if(System.getenv('MC_USERNAME') && System.getenv('MC_UUID') && System.getenv('MC_ACCESS_TOKEN')) {
+            if (System.getenv('MC_USERNAME') && System.getenv('MC_UUID') && System.getenv('MC_ACCESS_TOKEN')) {
                 programArgs '--username', System.getenv('MC_USERNAME'), '--uuid', System.getenv('MC_UUID'), '--accessToken', System.getenv('MC_ACCESS_TOKEN')
             }
         } else if (name == "server") {
@@ -51,7 +51,9 @@ configurations {
 
 dependencies {
     forge "net.neoforged:forge:${rootProject.neoforge_version}"
-    modApi ("net.threetag:palladium-forge:${rootProject.palladium_version}")
+    modApi("net.threetag:palladium-forge:${rootProject.palladium_version}") {
+        exclude group: "software.bernie.geckolib"
+    }
 
     // Mixin Extras
     implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.2.0"))
