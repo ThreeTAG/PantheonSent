@@ -1,4 +1,4 @@
-![](https://github.com/ThreeTAG/PantheonSent/blob/main/media/banner.png?raw=true)
+![](https://github.com/ThreeTAG/PantheonSent/blob/1.20/main/media/banner.png?raw=true)
 
 <div style="text-align: center;">
 
@@ -11,22 +11,22 @@ Summon the God of the Moon and turn into his avatar: Moon Knight!
 Inspired by the Marvel hero/Disney+ show.
 
 # Getting Started
-![](https://github.com/ThreeTAG/PantheonSent/blob/main/media/dig_site.png?raw=true)
+![](https://github.com/ThreeTAG/PantheonSent/blob/1.20/main/media/dig_site.png?raw=true)
 The mod delves into Minecraft's new archeology system. Therefore, you need to find a new structure: the dig site!  
 Here you can use the new brush to discover ancient relics. Some more rare than others.  
 There are however 2 in particular which you'll need...
 
-![](https://github.com/ThreeTAG/PantheonSent/blob/main/media/restoration.png?raw=true)
+![](https://github.com/ThreeTAG/PantheonSent/blob/1.20/main/media/restoration.png?raw=true)
 
 The Scarab Compass and Lunar Totem are very valuable artifacts, which have connections to the Egypt God of the Moon, Khonshu.  
 In the new Archeology Table you can repair them using Ancient Gold Shards, which can also be found in the dig sites.  
 Once you repaired the Scarab Compass it seems to guide you into a direction...
 
-![](https://github.com/ThreeTAG/PantheonSent/blob/main/media/temple.png?raw=true)
+![](https://github.com/ThreeTAG/PantheonSent/blob/1.20/main/media/temple.png?raw=true)
 
 This temple seems to be the goal! If you can find a secret entrance in there, you'll be one step closer to Khonshu...
 
-![](https://github.com/ThreeTAG/PantheonSent/blob/main/media/khonshu_statue.png?raw=true)
+![](https://github.com/ThreeTAG/PantheonSent/blob/1.20/main/media/khonshu_statue.png?raw=true)
 
 There he is! Somewhat...Anyway, the block in the front seems to hold the Lunar Totem! But I heard before you can put it in, the **moon light** must shine into this holy room...  
 Maybe there is something here that will open the ceiling for you? Like a special place where a button could fit...
