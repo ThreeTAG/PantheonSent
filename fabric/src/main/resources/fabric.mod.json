@@ -37,8 +37,8 @@
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.19.2",
-    "palladium": ">=4.0.0-Pre105"
+    "minecraft": ">=1.20.1",
+    "palladium": ">=4.0.5"
   },
   "suggests": {
     "flamingo": "*"

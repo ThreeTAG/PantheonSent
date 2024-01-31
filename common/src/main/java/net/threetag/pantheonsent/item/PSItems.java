@@ -4,6 +4,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
+import net.threetag.palladium.item.PalladiumCreativeModeTabs;
+import net.threetag.palladiumcore.event.LifecycleEvents;
 import net.threetag.palladiumcore.item.PalladiumRecordItem;
 import net.threetag.palladiumcore.item.PalladiumSpawnEggItem;
 import net.threetag.palladiumcore.registry.CreativeModeTabRegistry;
@@ -44,6 +46,31 @@ public class PSItems {
     public static final RegistrySupplier<Item> MUSIC_DISC_CHONS = ITEMS.register("music_disc_chons", () -> new PalladiumRecordItem(1, PSSoundEvents.MUSIC_DISC_CHONS, (new Item.Properties()).stacksTo(1).rarity(Rarity.RARE), 69));
 
     public static void init() {
+        LifecycleEvents.SETUP.register(() -> CreativeModeTabRegistry.addToTab(PalladiumCreativeModeTabs.PALLADIUM_MODS, entries -> {
+            entries.add(
+                    GILDED_SANDSTONE.get(),
+                    GILDED_SANDSTONE_PILLAR.get(),
+                    ARCHEOLOGY_TABLE.get(),
+                    BROKEN_KHONSHU_USHABTI.get(),
+                    KHONSHU_USHABTI.get(),
+                    SANDSTONE_TOTEM_HOLDER.get(),
+                    LUNAR_STONE.get(),
+                    ANCIENT_CLAY_SHARD.get(),
+                    ANCIENT_GOLD_SHARD.get(),
+                    LUNAR_SHARD.get(),
+                    BROKEN_LUNAR_TOTEM.get(),
+                    LUNAR_TOTEM.get(),
+                    BROKEN_SCARAB_COMPASS.get(),
+                    SCARAB_COMPASS.get(),
+                    BROKEN_EYE_OF_HORUS.get(),
+                    EYE_OF_HORUS.get(),
+                    KHONSHU_SPAWN_EGG.get(),
+                    CRESCENT_BANNER_PATTERN.get(),
+                    CRESCENT_POTTERY_SHERD.get(),
+                    MUSIC_DISC_CHONS.get()
+            );
+        }));
+
         CreativeModeTabRegistry.addToTab(CreativeModeTabs.BUILDING_BLOCKS, entries -> {
             entries.addAfter(Items.CUT_STANDSTONE_SLAB, GILDED_SANDSTONE.get(), GILDED_SANDSTONE_PILLAR.get(), SANDSTONE_TOTEM_HOLDER.get());
         });
