@@ -59,12 +59,8 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
 
     @Override
     public EventResult livingEntityAttack(LivingEntity entity, DamageSource damageSource, float amount) {
-        if (!AbilityUtil.getEnabledEntries(entity, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
-            return EventResult.cancel();
-        }
-
         if (damageSource.getDirectEntity() instanceof LivingEntity livingEntity) {
-            if (!AbilityUtil.getEnabledEntries(livingEntity, PSAbilities.MOON_KNIGHT_BLOCKING.get()).isEmpty()) {
+            if (AbilityUtil.isTypeEnabled(livingEntity, PSAbilities.MOON_KNIGHT_BLOCKING.get())) {
                 return EventResult.cancel();
             }
         }
