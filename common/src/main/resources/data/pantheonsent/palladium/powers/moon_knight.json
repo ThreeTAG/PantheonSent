@@ -15,6 +15,7 @@
       "list_index": 0,
       "max_value": 19,
       "hidden_in_bar": false,
+      "hidden": false,
       "icon": "pantheonsent:textures/icon/moon_knight.png",
       "conditions": {
         "enabling": {
@@ -58,7 +59,9 @@
     "render_layer": {
       "type": "palladium:render_layer_by_accessory_slot",
       "default_layer": "pantheonsent:moon_knight",
-      "accessory_slot": "pantheonsent:moon_knight_suit"
+      "accessory_slot": "pantheonsent:moon_knight_suit",
+      "hidden_in_bar": true,
+      "hidden": true
     },
     "throw_dart": {
       "type": "palladium:projectile",
@@ -150,6 +153,17 @@
         }
       }
     },
+    "sculk_immunity": {
+      "type": "palladium:sculk_immunity",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "conditions": {
+        "enabling": {
+          "type": "palladium:ability_enabled",
+          "ability": "stealth"
+        }
+      }
+    },
     "healing": {
       "type": "palladium:command",
       "hidden": true,
@@ -224,6 +238,26 @@
           "type": "palladium:ability_enabled",
           "ability": "activate"
         }
+      }
+    },
+    "leaping": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "attribute": "palladium:leaping",
+      "amount": 3,
+      "operation": 0,
+      "uuid": "d28fbccf-96c1-4443-85ae-933fef7a6554",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:sprinting"
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          }
+        ]
       }
     },
     "god_stalked": {
