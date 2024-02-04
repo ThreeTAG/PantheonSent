@@ -1,1 +1,5 @@
-- Release!
+- Added leaping and sculk immunity abilities to Moon Knight power
+- Increased Khonshu Temple rarity
+- Fixed Moon Knight's blocking effecting all types of damage sources
+- "Add" Moon Knight power instead of "set" it in the ritual
+- Added items to Palladium Mods tab
