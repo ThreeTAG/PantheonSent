@@ -39,7 +39,10 @@
     },
     "switch_power": {
       "type": "palladium:command",
-      "commands": "superpower add pantheonsent:moon_knight",
+      "commands": [
+        "superpower add pantheonsent:moon_knight",
+        "superpower remove pantheonsent:moon_knight_transformation"
+      ],
       "hidden": true,
       "conditions": {
         "unlocking": [
