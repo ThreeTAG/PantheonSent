@@ -185,7 +185,7 @@
       "hidden": true,
       "hidden_in_bar": true,
       "attribute": "minecraft:generic.armor",
-      "amount": 6,
+      "amount": 12,
       "operation": 0,
       "uuid": "d28fbccf-96c1-4443-85ae-933fef7a6554",
       "conditions": {
