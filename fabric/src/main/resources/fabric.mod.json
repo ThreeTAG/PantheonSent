@@ -38,7 +38,7 @@
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.20.1",
-    "palladium": ">=4.0.5"
+    "palladium": ">=4.0.6"
   },
   "suggests": {
     "flamingo": "*"
