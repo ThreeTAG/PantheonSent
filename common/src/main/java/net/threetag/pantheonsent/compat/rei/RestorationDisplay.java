@@ -4,7 +4,6 @@ import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
-import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.threetag.pantheonsent.item.crafting.RestorationRecipe;
 
@@ -21,7 +20,7 @@ public class RestorationDisplay extends BasicDisplay {
                         EntryIngredients.ofIngredient(recipe.base),
                         EntryIngredients.ofIngredient(recipe.addition)
                 ),
-                Collections.singletonList(EntryIngredients.of(RecipeUtil.getResultItem(recipe))),
+                Collections.singletonList(EntryIngredients.of(recipe.getResultItem(BasicDisplay.registryAccess()))),
                 Optional.of(recipe.getId())
         );
     }
