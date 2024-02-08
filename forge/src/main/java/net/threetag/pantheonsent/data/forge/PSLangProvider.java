@@ -54,7 +54,6 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 
             // Enchantments
-            this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Fortunate Find");
             this.addEnchantment(PSEnchantments.GODLY_ENCAPSULATING, "Godly Encapsulating");
 
             // Banner Pattern
@@ -148,7 +147,6 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 
             // Enchantments
-            this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Gl\u00FCcksfund");
             this.addEnchantment(PSEnchantments.GODLY_ENCAPSULATING, "G\u00F6ttliche Einkapselung");
 
             // Banner Pattern
@@ -242,7 +240,6 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add(PSItems.MUSIC_DISC_CHONS.get().getDescriptionId() + ".desc", "Neon - Chons");
 
             // Enchantments
-            this.addEnchantment(PSEnchantments.FORTUNATE_FIND, "Gl\u00FCggsfund");
             this.addEnchantment(PSEnchantments.GODLY_ENCAPSULATING, "J\u00F6ttlische Ehngapselung");
 
             // Banner Pattern
