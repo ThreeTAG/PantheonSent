@@ -22,6 +22,7 @@ public class CrescentDart extends AbstractArrow {
 
     public CrescentDart(EntityType<? extends AbstractArrow> entityType, Level level) {
         super(entityType, level);
+        this.setBaseDamage(4);
     }
 
     @Override
