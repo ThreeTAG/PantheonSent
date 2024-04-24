@@ -1,3 +1,2 @@
-- Fixed incompatibility with REI, causing no recipe categories to appear
-- Removed leftover enchantment from in-dev version
-- Increased base damage for crescent darts
+- Updated to Palladium 4.1.0
+- Added chinese translation (Junnaturefox)
