@@ -55,6 +55,10 @@ Ability Integer-Property</a>
 Ability Ticks</a>
 </li>
 <li>
+<a href="#palladium:accessory">
+Accessory</a>
+</li>
+<li>
 <a href="#palladium:animation_timer_ability">
 Animation Timer Ability</a>
 </li>
@@ -105,6 +109,10 @@ Openable Equipment Timer</a>
 <li>
 <a href="#palladium:small_arms">
 Small Arms</a>
+</li>
+<li>
+<a href="#palladium:string_property">
+String Property</a>
 </li>
 </ul>
 </p>
@@ -691,6 +699,86 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:ability_ticks","power":"example:power_id","ability":"ability_key","add":5,"subtract":3,"multiply":10,"divide":10,"min":1,"max":100,"modulo":5}</pre>
+</div>
+<hr>
+
+<div id="palladium:accessory">
+<h2>
+Accessory</h2>
+<p>
+Returns the ID of the selected accessory in the specified slot.</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+accessory_slot</td>
+<td>
+String</td>
+<td>
+The ID of the accessory slot to read from</td>
+<td style="background-color: lightgreen">
+true</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+fallback_value</td>
+<td>
+String</td>
+<td>
+If an accessory isn't chosen for the specified accessory slot, this value will be returned instead</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+split_value</td>
+<td>
+String</td>
+<td>
+If multiple accessories are selected, they'll be returned in a list in alphabetical order separated by this string</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+_</td>
+</tr>
+<tr>
+<td>
+use_path</td>
+<td>
+Boolean</td>
+<td>
+Determines if the namespace or the path will be returned from the accessory ID. Example: the accessory ID is 'test:stone_hat'. If 'use_path' is set to true, you'll get 'stone_hat'. If it's set to false, you'll get 'test'.</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+true</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:accessory","accessory_slot":"palladium:head","fallback_value":"_not_set","split_value":"_","use_path":true}</pre>
 </div>
 <hr>
 
@@ -2127,6 +2215,50 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:small_arms","true_value":"true","false_value":"false"}</pre>
+</div>
+<hr>
+
+<div id="palladium:string_property">
+<h2>
+String Property</h2>
+<p>
+Returns the value of a String property within the player.</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+property</td>
+<td>
+String</td>
+<td>
+Name of the property you want the value from.</td>
+<td style="background-color: lightgreen">
+true</td>
+<td>
+/</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:string_property","property":"example_property"}</pre>
 </div>
 <script>
 function syntaxHighlight(json) {

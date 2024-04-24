@@ -6,7 +6,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import net.threetag.palladium.power.IPowerHolder;
 import net.threetag.palladium.power.ability.Ability;
-import net.threetag.palladium.power.ability.AbilityEntry;
+import net.threetag.palladium.power.ability.AbilityInstance;
 import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
 import net.threetag.palladium.util.property.PropertyManager;
@@ -30,9 +30,9 @@ public class GodStalkedAbility extends Ability {
     }
 
     @Override
-    public void tick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
+    public void tick(LivingEntity entity, AbilityInstance instance, IPowerHolder holder, boolean enabled) {
         if (enabled && !entity.level().isClientSide && entity instanceof Player player) {
-            int timer = entry.getProperty(TIMER);
+            int timer = instance.getProperty(TIMER);
 
             if (timer == 0) {
                 Khonshu khonshu = new Khonshu(entity.level(), player, Khonshu.Mode.STALKING);
@@ -40,9 +40,9 @@ public class GodStalkedAbility extends Ability {
                 khonshu.setPos(new Vec3(pos.x(), pos.y(), pos.z()));
                 entity.level().addFreshEntity(khonshu);
                 player.playSound(SoundEvents.AMBIENT_CAVE.value(), 1F, 1F);
-                entry.setUniqueProperty(TIMER, getRandomMinutes());
+                instance.setUniqueProperty(TIMER, getRandomMinutes());
             } else {
-                entry.setUniqueProperty(TIMER, timer - 1);
+                instance.setUniqueProperty(TIMER, timer - 1);
             }
         }
     }

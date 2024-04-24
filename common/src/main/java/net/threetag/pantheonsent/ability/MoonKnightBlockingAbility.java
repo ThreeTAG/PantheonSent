@@ -30,28 +30,28 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
     }
 
     @Override
-    public void tick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
+    public void tick(LivingEntity entity, AbilityInstance instance, IPowerHolder holder, boolean enabled) {
         if (entity.level().isClientSide) {
-            int timer = entry.getProperty(TIMER);
-            entry.setUniqueProperty(PREV_TIMER, timer);
+            int timer = instance.getProperty(TIMER);
+            instance.setUniqueProperty(PREV_TIMER, timer);
 
             if (enabled && timer < 5) {
-                entry.setUniqueProperty(TIMER, timer + 1);
+                instance.setUniqueProperty(TIMER, timer + 1);
             } else if (!enabled && timer > 0) {
-                entry.setUniqueProperty(TIMER, timer - 1);
+                instance.setUniqueProperty(TIMER, timer - 1);
             }
         }
     }
 
     @Override
-    public void firstTick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
+    public void firstTick(LivingEntity entity, AbilityInstance instance, IPowerHolder holder, boolean enabled) {
         if (enabled) {
             entity.level().playLocalSound(entity.getX(), entity.getEyeY(), entity.getZ(), PSSoundEvents.CAPE.get(), SoundSource.PLAYERS, 1F, 1F, false);
         }
     }
 
     @Override
-    public void lastTick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
+    public void lastTick(LivingEntity entity, AbilityInstance instance, IPowerHolder holder, boolean enabled) {
         if (enabled) {
             entity.level().playLocalSound(entity.getX(), entity.getEyeY(), entity.getZ(), PSSoundEvents.CAPE.get(), SoundSource.PLAYERS, 1F, 1F, false);
         }
@@ -69,15 +69,15 @@ public class MoonKnightBlockingAbility extends Ability implements LivingEntityEv
     }
 
     @Override
-    public float getAnimationValue(AbilityEntry entry, float partialTick) {
-        return Mth.lerp(partialTick, entry.getProperty(PREV_TIMER), entry.getProperty(TIMER)) / 5F;
+    public float getAnimationValue(AbilityInstance instance, float partialTick) {
+        return Mth.lerp(partialTick, instance.getProperty(PREV_TIMER), instance.getProperty(TIMER)) / 5F;
     }
 
     @Override
-    public float getAnimationTimer(AbilityEntry entry, float partialTick, boolean maxedOut) {
+    public float getAnimationTimer(AbilityInstance instance, float partialTick, boolean maxedOut) {
         if (maxedOut) {
             return 5;
         }
-        return entry.getProperty(TIMER);
+        return instance.getProperty(TIMER);
     }
 }

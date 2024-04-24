@@ -5,7 +5,7 @@ import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.threetag.palladium.client.model.animation.PalladiumAnimation;
-import net.threetag.palladium.power.ability.AbilityEntry;
+import net.threetag.palladium.power.ability.AbilityInstance;
 import net.threetag.palladium.power.ability.AbilityUtil;
 import net.threetag.palladium.util.Easing;
 import net.threetag.pantheonsent.ability.MoonKnightBlockingAbility;
@@ -21,13 +21,13 @@ public class BlockingAnimation extends PalladiumAnimation {
 
     public float getProgress(LivingEntity entity, float partialTicks) {
         float max = 0;
-        var entries = AbilityUtil.getEntries(entity, PSAbilities.MOON_KNIGHT_BLOCKING.get());
+        var instances = AbilityUtil.getInstances(entity, PSAbilities.MOON_KNIGHT_BLOCKING.get());
 
-        if (entries.isEmpty()) {
+        if (instances.isEmpty()) {
             return 0F;
         }
 
-        for (AbilityEntry entry : entries) {
+        for (AbilityInstance entry : instances) {
             float timer = ((MoonKnightBlockingAbility) PSAbilities.MOON_KNIGHT_BLOCKING.get()).getAnimationValue(entry, partialTicks);
 
             if (timer > max) {

@@ -5,8 +5,8 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.world.entity.LivingEntity;
-import net.threetag.palladium.client.dynamictexture.DynamicTexture;
-import net.threetag.palladium.client.renderer.renderlayer.ModelLookup;
+import net.threetag.palladium.client.dynamictexture.DynamicTextureManager;
+import net.threetag.palladium.client.renderer.renderlayer.ModelTypes;
 import net.threetag.palladium.compat.curiostinkets.CuriosTrinketsUtil;
 import net.threetag.palladium.event.PalladiumClientEvents;
 import net.threetag.palladiumcore.event.LifecycleEvents;
@@ -49,11 +49,11 @@ public class PantheonSentClient {
         EntityRendererRegistry.addRenderLayerToAll(renderLayerParent -> new EyeOfHorusRenderer((RenderLayerParent<LivingEntity, EntityModel<LivingEntity>>) renderLayerParent));
 
         // Model Types
-        ModelLookup.register(PantheonSent.id("moon_knight_suit"), new ModelLookup.Model(MoonKnightSuitModel::new, (en, model) -> model instanceof HumanoidModel));
-        ModelLookup.register(PantheonSent.id("moon_knight_cape"), new ModelLookup.Model(MoonKnightCapeModel::new, (en, model) -> model instanceof HumanoidModel));
+        ModelTypes.register(PantheonSent.id("moon_knight_suit"), new ModelTypes.Model(MoonKnightSuitModel::new, (en, model) -> model instanceof HumanoidModel));
+        ModelTypes.register(PantheonSent.id("moon_knight_cape"), new ModelTypes.Model(MoonKnightCapeModel::new, (en, model) -> model instanceof HumanoidModel));
 
         // Dynamic Texture Variables
-        DynamicTexture.registerVariable(new MoonKnightCapeTextureVariable.Serializer());
+        DynamicTextureManager.registerVariable(new MoonKnightCapeTextureVariable.Serializer());
 
         // Animations
         PalladiumClientEvents.REGISTER_ANIMATIONS.register(registry -> {

@@ -5,10 +5,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.threetag.palladium.power.IPowerHolder;
-import net.threetag.palladium.power.ability.Ability;
-import net.threetag.palladium.power.ability.AbilityEntry;
-import net.threetag.palladium.power.ability.AbilityUtil;
-import net.threetag.palladium.power.ability.AnimationTimer;
+import net.threetag.palladium.power.ability.*;
 import net.threetag.palladium.util.property.IntegerProperty;
 import net.threetag.palladium.util.property.PalladiumProperty;
 import net.threetag.palladium.util.property.PropertyManager;
@@ -27,15 +24,15 @@ public class MoonKnightGlidingAbility extends Ability implements AnimationTimer 
     }
 
     @Override
-    public void tick(LivingEntity entity, AbilityEntry entry, IPowerHolder holder, boolean enabled) {
+    public void tick(LivingEntity entity, AbilityInstance instance, IPowerHolder holder, boolean enabled) {
         if (entity.level().isClientSide) {
-            int timer = entry.getProperty(TIME_IN_AIR);
-            entry.setUniqueProperty(PREV_TIME_IN_AIR, timer);
+            int timer = instance.getProperty(TIME_IN_AIR);
+            instance.setUniqueProperty(PREV_TIME_IN_AIR, timer);
 
             if ((entity.onGround() || entity.isInWater() || entity.isColliding(entity.blockPosition(), entity.level().getBlockState(entity.blockPosition().below(2)))) && timer > 0) {
-                entry.setUniqueProperty(TIME_IN_AIR, timer = timer - 1);
+                instance.setUniqueProperty(TIME_IN_AIR, timer = timer - 1);
             } else if (enabled && !entity.onGround() && timer < 10) {
-                entry.setUniqueProperty(TIME_IN_AIR, timer = timer + 1);
+                instance.setUniqueProperty(TIME_IN_AIR, timer = timer + 1);
             }
 
             if (timer == 1) {
@@ -58,12 +55,12 @@ public class MoonKnightGlidingAbility extends Ability implements AnimationTimer 
     }
 
     @Override
-    public float getAnimationValue(AbilityEntry entry, float partialTick) {
-        return Mth.lerp(partialTick, entry.getProperty(PREV_TIME_IN_AIR), entry.getProperty(TIME_IN_AIR)) / 10F;
+    public float getAnimationValue(AbilityInstance instance, float partialTick) {
+        return Mth.lerp(partialTick, instance.getProperty(PREV_TIME_IN_AIR), instance.getProperty(TIME_IN_AIR)) / 10F;
     }
 
     @Override
-    public float getAnimationTimer(AbilityEntry entry, float partialTick, boolean maxedOut) {
+    public float getAnimationTimer(AbilityInstance entry, float partialTick, boolean maxedOut) {
         if (maxedOut) {
             return 10;
         }
@@ -72,13 +69,13 @@ public class MoonKnightGlidingAbility extends Ability implements AnimationTimer 
 
     public static float getProgress(LivingEntity entity, float partialTicks) {
         float max = 0;
-        var entries = AbilityUtil.getEntries(entity, PSAbilities.MOON_KNIGHT_GLIDING.get());
+        var instances = AbilityUtil.getInstances(entity, PSAbilities.MOON_KNIGHT_GLIDING.get());
 
-        if (entries.isEmpty()) {
+        if (instances.isEmpty()) {
             return 0F;
         }
 
-        for (AbilityEntry entry : entries) {
+        for (AbilityInstance entry : instances) {
             float timeInAir = ((MoonKnightGlidingAbility) PSAbilities.MOON_KNIGHT_GLIDING.get()).getAnimationValue(entry, partialTicks);
 
             if (timeInAir > max) {

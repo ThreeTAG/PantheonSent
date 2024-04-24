@@ -67,6 +67,10 @@ ability_type_unlocked</a>
 ability_unlocked</a>
 </li>
 <li>
+<a href="#palladium:accessory_selected">
+accessory_selected</a>
+</li>
+<li>
 <a href="#palladium:action">
 action</a>
 </li>
@@ -251,6 +255,10 @@ item_buyable</a>
 item_in_slot</a>
 </li>
 <li>
+<a href="#palladium:item_in_slot_open">
+item_in_slot_open</a>
+</li>
+<li>
 <a href="#palladium:mod_loaded">
 mod_loaded</a>
 </li>
@@ -285,6 +293,14 @@ pose</a>
 <li>
 <a href="#palladium:scoreboard_score_buyable">
 scoreboard_score_buyable</a>
+</li>
+<li>
+<a href="#palladium:size">
+size</a>
+</li>
+<li>
+<a href="#palladium:small_arms">
+small_arms</a>
 </li>
 <li>
 <a href="#palladium:sprinting">
@@ -743,6 +759,62 @@ ability_id</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:ability_unlocked","power":"null","ability":"ability_id"}</pre>
+</div>
+<hr>
+
+<div id="palladium:accessory_selected">
+<h2>
+accessory_selected</h2>
+<p>
+Checks if the entity has a specified accessory selected from a specific accessory slot. An empty string can be used to check for no accessory.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+accessory_slot</td>
+<td>
+AccessorySlot</td>
+<td>
+The ID of the accessory slot to read from</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+palladium:head</td>
+</tr>
+<tr>
+<td>
+accessory</td>
+<td>
+String</td>
+<td>
+The accessory which needs to be selected in order for the condition to return true (include the namespace!)</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+palladium:sea_pickle_hat</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:accessory_selected","accessory_slot":"palladium:head","accessory":"palladium:sea_pickle_hat"}</pre>
 </div>
 <hr>
 
@@ -1854,7 +1926,7 @@ Example:</h3>
 <h2>
 has_tag</h2>
 <p>
-Checks if the entity has a specific tag. These tags are added to entities via /tag command.<br><br>Applicable for: all</p>
+Checks if the entity has a specific tag. These tags are added to entities via /tag command.<br><br>Applicable for: data</p>
 <h3>
 Settings:</h3>
 <table>
@@ -2502,6 +2574,50 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:item_in_slot_open">
+<h2>
+item_in_slot_open</h2>
+<p>
+Checks if the item in the given slot is opened. Needs to be using the openable-system for items.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+slot</td>
+<td>
+PlayerSlot</td>
+<td>
+Slot that must contain an opened item. Example values: [mainhand, offhand, feet, legs, chest, head, curios:back, curios:necklace, trinkets:chest/back, trinkets:chest/necklace]</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+chest</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:item_in_slot_open","slot":"chest"}</pre>
+</div>
+<hr>
+
 <div id="palladium:mod_loaded">
 <h2>
 mod_loaded</h2>
@@ -2903,6 +3019,74 @@ literal{Scoreboard Score}</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:scoreboard_score_buyable","objective":"objective_name","score":3,"icon":"minecraft:command_block","description":{"text":"Scoreboard Score"}}</pre>
+</div>
+<hr>
+
+<div id="palladium:size">
+<h2>
+size</h2>
+<p>
+Checks if an entity is within a certain size (requires Pehkui for real effect). It checks for the "average " size, which is the average of the width and height scale. Usually they are the same.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+min</td>
+<td>
+Float</td>
+<td>
+Minimum required average size</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+0.0</td>
+</tr>
+<tr>
+<td>
+max</td>
+<td>
+Float</td>
+<td>
+Minimum required average size</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+3.4028235E38</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:size","min":0.0,"max":3.4028235E38}</pre>
+</div>
+<hr>
+
+<div id="palladium:small_arms">
+<h2>
+small_arms</h2>
+<p>
+Checks if the entity has small arms. Returns false if the entity is not a player or if this condition is being checked sever-side.<br><br>Applicable for: assets</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:small_arms"}</pre>
 </div>
 <hr>
 
