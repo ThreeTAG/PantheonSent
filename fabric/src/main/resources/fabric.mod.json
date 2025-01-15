@@ -36,7 +36,7 @@
     "pantheonsent-common.mixins.json"
   ],
   "depends": {
-    "fabric": "*",
+    "fabric-api": "*",
     "minecraft": ">=1.20.1",
     "palladium": ">=4.1.0"
   },
