@@ -38,7 +38,7 @@
   "depends": {
     "fabric-api": "*",
     "minecraft": ">=1.20.1",
-    "palladium": ">=4.1.0"
+    "palladium": ">=4.2.0"
   },
   "suggests": {
     "flamingo": "*"

@@ -43,8 +43,16 @@ Palladium</h3>
 ability_enabled</a>
 </li>
 <li>
+<a href="#palladium:ability_first_tick">
+ability_first_tick</a>
+</li>
+<li>
 <a href="#palladium:ability_integer_property">
 ability_integer_property</a>
+</li>
+<li>
+<a href="#palladium:ability_last_tick">
+ability_last_tick</a>
 </li>
 <li>
 <a href="#palladium:ability_on_cooldown">
@@ -65,6 +73,10 @@ ability_type_unlocked</a>
 <li>
 <a href="#palladium:ability_unlocked">
 ability_unlocked</a>
+</li>
+<li>
+<a href="#palladium:ability_wheel">
+ability_wheel</a>
 </li>
 <li>
 <a href="#palladium:accessory_selected">
@@ -149,6 +161,10 @@ float_property</a>
 <li>
 <a href="#palladium:has_effect">
 has_effect</a>
+</li>
+<li>
+<a href="#palladium:has_movement_input">
+has_movement_input</a>
 </li>
 <li>
 <a href="#palladium:has_power">
@@ -283,6 +299,10 @@ objective_score</a>
 on_ground</a>
 </li>
 <li>
+<a href="#palladium:openable_item_progress">
+openable_item_progress</a>
+</li>
+<li>
 <a href="#palladium:or">
 or</a>
 </li>
@@ -317,6 +337,10 @@ true</a>
 <li>
 <a href="#palladium:wears_suit_set">
 wears_suit_set</a>
+</li>
+<li>
+<a href="#palladium:xor">
+xor</a>
 </li>
 </ul>
 </p>
@@ -387,6 +411,62 @@ ability_id</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:ability_enabled","power":"null","ability":"ability_id"}</pre>
+</div>
+<hr>
+
+<div id="palladium:ability_first_tick">
+<h2>
+ability_first_tick</h2>
+<p>
+Checks if the ability is on its first tick.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+power</td>
+<td>
+ResourceLocation</td>
+<td>
+ID of the power where is the desired ability is located. Can be null IF used for abilities, then it will look into the current power</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+ability</td>
+<td>
+String</td>
+<td>
+ID of the desired ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+ability_id</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:ability_first_tick","power":"null","ability":"ability_id"}</pre>
 </div>
 <hr>
 
@@ -479,6 +559,62 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:ability_integer_property","power":"null","ability":"ability_id","property":"value","min":0,"max":0}</pre>
+</div>
+<hr>
+
+<div id="palladium:ability_last_tick">
+<h2>
+ability_last_tick</h2>
+<p>
+Checks if the ability was just on its last tick.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+power</td>
+<td>
+ResourceLocation</td>
+<td>
+ID of the power where is the desired ability is located. Can be null IF used for abilities, then it will look into the current power</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+/</td>
+</tr>
+<tr>
+<td>
+ability</td>
+<td>
+String</td>
+<td>
+ID of the desired ability</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+ability_id</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:ability_last_tick","power":"null","ability":"ability_id"}</pre>
 </div>
 <hr>
 
@@ -759,6 +895,50 @@ ability_id</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:ability_unlocked","power":"null","ability":"ability_id"}</pre>
+</div>
+<hr>
+
+<div id="palladium:ability_wheel">
+<h2>
+ability_wheel</h2>
+<p>
+Allows ability to be used in an ability wheel.<br><br>Applicable for: data</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+cooldown</td>
+<td>
+Integer</td>
+<td>
+Amount of ticks the ability wont be useable for after using it</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+0</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:ability_wheel","cooldown":0}</pre>
 </div>
 <hr>
 
@@ -1483,7 +1663,7 @@ dimension</td>
 <td>
 ResourceLocation</td>
 <td>
-ID of the dimension the player must be in. Example values: minecraft:overworld, minecraft:nether, minecraft:the_end</td>
+ID of the dimension the player must be in. Example values: minecraft:overworld, minecraft:the_nether, minecraft:the_end</td>
 <td style="background-color: lightcoral">
 false</td>
 <td>
@@ -1745,12 +1925,24 @@ false</td>
 <td>
 3</td>
 </tr>
+<tr>
+<td>
+flat_levels</td>
+<td>
+Boolean</td>
+<td>
+Determines if the taken levels should be taken as-is, or be calculated appropriately to Minecraft logic.</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+true</td>
+</tr>
 </tbody>
 </table>
 <h3>
 Example:</h3>
 <pre class="json-snippet">
-{"type":"palladium:experience_level_buyable","xp_level":3}</pre>
+{"type":"palladium:experience_level_buyable","xp_level":3,"flat_levels":true}</pre>
 </div>
 <hr>
 
@@ -1875,6 +2067,18 @@ minecraft:poison</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:has_effect","effect":"minecraft:poison"}</pre>
+</div>
+<hr>
+
+<div id="palladium:has_movement_input">
+<h2>
+has_movement_input</h2>
+<p>
+Checks if the player is moving by itself by using their buttons.<br><br>Applicable for: all</p>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:has_movement_input"}</pre>
 </div>
 <hr>
 
@@ -2854,6 +3058,74 @@ Example:</h3>
 </div>
 <hr>
 
+<div id="palladium:openable_item_progress">
+<h2>
+openable_item_progress</h2>
+<p>
+Checks if the openable item in the given slot has a certain amount of progress. Needs to be using the openable-system for items.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+slot</td>
+<td>
+PlayerSlot</td>
+<td>
+Slot that must contain an opened item. Example values: [mainhand, offhand, feet, legs, chest, head, curios:back, curios:necklace, trinkets:chest/back, trinkets:chest/necklace]</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+chest</td>
+</tr>
+<tr>
+<td>
+min</td>
+<td>
+Integer</td>
+<td>
+Minimum required amount of the progress value</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+0</td>
+</tr>
+<tr>
+<td>
+max</td>
+<td>
+Integer</td>
+<td>
+Maximum required amount of the progress value</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+0</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:openable_item_progress","slot":"chest","min":0,"max":0}</pre>
+</div>
+<hr>
+
 <div id="palladium:or">
 <h2>
 or</h2>
@@ -3235,6 +3507,50 @@ false</td>
 Example:</h3>
 <pre class="json-snippet">
 {"type":"palladium:wears_suit_set","suit_set":"null"}</pre>
+</div>
+<hr>
+
+<div id="palladium:xor">
+<h2>
+xor</h2>
+<p>
+A condition that is active if one of the conditions in the array is active.<br><br>Applicable for: all</p>
+<h3>
+Settings:</h3>
+<table>
+<thead>
+<tr>
+<th>
+Setting</th>
+<th>
+Type</th>
+<th>
+Description</th>
+<th>
+Required</th>
+<th>
+Fallback Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+conditions</td>
+<td>
+Condition[]</td>
+<td>
+Array of conditions, one of which must be active</td>
+<td style="background-color: lightcoral">
+false</td>
+<td>
+0 conditions</td>
+</tr>
+</tbody>
+</table>
+<h3>
+Example:</h3>
+<pre class="json-snippet">
+{"type":"palladium:xor","conditions":[]}</pre>
 </div>
 <script>
 function syntaxHighlight(json) {

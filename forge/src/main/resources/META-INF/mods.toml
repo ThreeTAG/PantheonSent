@@ -36,6 +36,6 @@ side = "BOTH"
 [[dependencies.pantheonsent]]
 modId = "palladium"
 mandatory = true
-versionRange = "[4.1.0,)"
+versionRange = "[4.2.0,)"
 ordering = "AFTER"
 side = "BOTH"

@@ -1,2 +1,2 @@
-- Updated to Palladium 4.1.0
-- Added chinese translation (Junnaturefox)
+- Added Comic Moon Knight skin
+- Changed crescent dart to baton when using Mr Knight
