@@ -84,6 +84,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("ability.pantheonsent.moon_knight.summon_suit", "Summon Suit");
             this.add("ability.pantheonsent.moon_knight.summon_stealth", "Stealth");
             this.add("ability.pantheonsent.moon_knight.crescent_dart", "Crescent Dart");
+            this.add("ability.pantheonsent.moon_knight.baton", "Baton");
 
             // Container
             this.add("container.pantheonsent.restoration", "Restoration");
@@ -97,6 +98,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_5", "...as my...");
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Crescent Dart");
+            this.addEntityType(PSEntityTypes.THROWN_BATON, "Baton");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Archeologist");
             this.add("entity.minecraft.villager.archeologist", "Archeologist");
 
@@ -178,6 +180,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("ability.pantheonsent.moon_knight.summon_suit", "Anzug beschw\u00F6ren");
             this.add("ability.pantheonsent.moon_knight.summon_stealth", "List");
             this.add("ability.pantheonsent.moon_knight.crescent_dart", "Halbmondpfeil");
+            this.add("ability.pantheonsent.moon_knight.baton", "Schlagstock");
 
             // Container
             this.add("container.pantheonsent.restoration", "Restauration");
@@ -191,6 +194,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_5", "Du bist...");
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
+            this.addEntityType(PSEntityTypes.THROWN_BATON, "Schlagstock");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Arch\u00E4ologe");
             this.add("entity.minecraft.villager.archeologist", "Arch\u00E4ologe");
 
@@ -272,6 +276,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("ability.pantheonsent.moon_knight.summon_suit", "Anzuch beschw\u00F6rn");
             this.add("ability.pantheonsent.moon_knight.summon_stealth", "List");
             this.add("ability.pantheonsent.moon_knight.crescent_dart", "Halbmondpfeil");
+            this.add("ability.pantheonsent.moon_knight.baton", "Schlachstock");
 
             // Container
             this.add("container.pantheonsent.restoration", "Restauration");
@@ -285,6 +290,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             this.add("entity.pantheonsent.khonshu.recruitment_line_5", "Du bischd...");
             this.add("entity.pantheonsent.khonshu.recruitment_line_6", "...Moon Knight!");
             this.addEntityType(PSEntityTypes.CRESCENT_DART, "Halbmondpfeil");
+            this.addEntityType(PSEntityTypes.THROWN_BATON, "Schlagstock");
             this.add("entity.minecraft.villager.pantheonsent.archeologist", "Arsch\u00E4oloje");
             this.add("entity.minecraft.villager.archeologist", "Arsch\u00E4oloje");
 

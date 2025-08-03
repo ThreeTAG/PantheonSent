@@ -93,6 +93,41 @@
               }
             ]
           }
+        },
+        {
+          "conditions": [
+            {
+              "type": "palladium:animation_timer_ability",
+              "power": "pantheonsent:moon_knight",
+              "ability": "activate",
+              "min": 19,
+              "max": 20
+            },
+            {
+              "type": "palladium:empty_slot",
+              "slot": "mainhand"
+            },
+            {
+              "type": "palladium:not",
+              "conditions": [
+                {
+                  "type": "palladium:ability_enabled",
+                  "power": "pantheonsent:moon_knight",
+                  "ability": "blocking"
+                },
+                {
+                  "type": "palladium:ability_on_cooldown",
+                  "power": "pantheonsent:moon_knight",
+                  "ability": "throw_baton"
+                },
+                {
+                  "type": "pantheonsent:is_moon_knight_gliding"
+                }
+              ]
+            }
+          ],
+          "model_layer": "pantheonsent:humanoid#baton_in_hand",
+          "texture": "pantheonsent:textures/entity/projectiles/baton.png"
         }
       ]
     },

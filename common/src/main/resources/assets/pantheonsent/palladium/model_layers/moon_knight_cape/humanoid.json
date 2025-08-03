@@ -1,274 +1,350 @@
 {
-    "texture_width": 64,
-    "texture_height": 64,
-    "mesh": {
-        "right_arm": {
-            "part_pose": {
-                "offset": [
-                    5,
-                    2,
-                    0
-                ]
-            },
-            "cubes": [],
-            "children": {}
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "pantheonsent:moon_knight_cape/humanoid#main",
+        "texture_width": 64,
+        "texture_height": 64
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
         },
-        "left_leg": {
-            "part_pose": {
-                "offset": [
-                    -1.9,
-                    12,
-                    0
-                ]
-            },
-            "cubes": [],
-            "children": {}
+        {
+          "name": "right_arm",
+          "pivot": [
+            5.0,
+            22.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
         },
-        "body": {
-            "cubes": [],
-            "children": {
-                "cape": {
-                    "part_pose": {
-                        "offset": [
-                            0,
-                            0,
-                            2
-                        ]
-                    },
-                    "cubes": [
-                        {
-                            "origin": [
-                                -3,
-                                -7,
-                                0.5
-                            ],
-                            "dimensions": [
-                                6,
-                                32,
-                                0
-                            ],
-                            "texture_offset": [
-                                0,
-                                0
-                            ]
-                        }
-                    ],
-                    "children": {
-                        "left1": {
-                            "part_pose": {
-                                "offset": [
-                                    -3,
-                                    9,
-                                    0.5
-                                ]
-                            },
-                            "cubes": [
-                                {
-                                    "origin": [
-                                        -6,
-                                        -16,
-                                        0
-                                    ],
-                                    "dimensions": [
-                                        6,
-                                        32,
-                                        0
-                                    ],
-                                    "texture_offset": [
-                                        12,
-                                        0
-                                    ]
-                                }
-                            ],
-                            "children": {
-                                "left2": {
-                                    "part_pose": {
-                                        "offset": [
-                                            -6,
-                                            0,
-                                            0
-                                        ]
-                                    },
-                                    "cubes": [
-                                        {
-                                            "origin": [
-                                                -5,
-                                                -16,
-                                                0
-                                            ],
-                                            "dimensions": [
-                                                5,
-                                                32,
-                                                0
-                                            ],
-                                            "texture_offset": [
-                                                24,
-                                                0
-                                            ]
-                                        }
-                                    ],
-                                    "children": {
-                                        "left3": {
-                                            "part_pose": {
-                                                "offset": [
-                                                    -5,
-                                                    0,
-                                                    0
-                                                ]
-                                            },
-                                            "cubes": [
-                                                {
-                                                    "origin": [
-                                                        -7,
-                                                        -16,
-                                                        0
-                                                    ],
-                                                    "dimensions": [
-                                                        7,
-                                                        32,
-                                                        0
-                                                    ],
-                                                    "texture_offset": [
-                                                        34,
-                                                        0
-                                                    ]
-                                                }
-                                            ],
-                                            "children": {}
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "right1": {
-                            "part_pose": {
-                                "offset": [
-                                    3,
-                                    9,
-                                    0.5
-                                ]
-                            },
-                            "cubes": [
-                                {
-                                    "origin": [
-                                        0,
-                                        -16,
-                                        0
-                                    ],
-                                    "dimensions": [
-                                        6,
-                                        32,
-                                        0
-                                    ],
-                                    "texture_offset": [
-                                        0,
-                                        32
-                                    ]
-                                }
-                            ],
-                            "children": {
-                                "right2": {
-                                    "part_pose": {
-                                        "offset": [
-                                            6,
-                                            0,
-                                            0
-                                        ]
-                                    },
-                                    "cubes": [
-                                        {
-                                            "origin": [
-                                                0,
-                                                -16,
-                                                0
-                                            ],
-                                            "dimensions": [
-                                                5,
-                                                32,
-                                                0
-                                            ],
-                                            "texture_offset": [
-                                                12,
-                                                32
-                                            ]
-                                        }
-                                    ],
-                                    "children": {
-                                        "right3": {
-                                            "part_pose": {
-                                                "offset": [
-                                                    5,
-                                                    0,
-                                                    0
-                                                ]
-                                            },
-                                            "cubes": [
-                                                {
-                                                    "origin": [
-                                                        0,
-                                                        -16,
-                                                        0
-                                                    ],
-                                                    "dimensions": [
-                                                        7,
-                                                        32,
-                                                        0
-                                                    ],
-                                                    "texture_offset": [
-                                                        22,
-                                                        32
-                                                    ]
-                                                }
-                                            ],
-                                            "children": {}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+        {
+          "name": "left_leg",
+          "pivot": [
+            -1.9,
+            12.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "left_arm",
+          "pivot": [
+            -5.0,
+            22.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.7853981699353301
+          ],
+          "cubes": []
+        },
+        {
+          "name": "right_leg",
+          "pivot": [
+            1.9,
+            12.0,
+            0.0
+          ],
+          "rotation": [
+            0.17453291775882007,
+            0.0,
+            0.0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "hat",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "cape",
+          "parent": "body",
+          "pivot": [
+            0.0,
+            24.0,
+            2.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.0,
+                -1.0,
+                2.5
+              ],
+              "size": [
+                6.0,
+                32.0,
+                0.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                0.0,
+                0.0
+              ],
+              "mirror": false
             }
+          ]
         },
-        "head": {
-            "cubes": [],
-            "children": {}
+        {
+          "name": "right1",
+          "parent": "cape",
+          "pivot": [
+            3.0,
+            15.0,
+            2.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                -1.0,
+                2.5
+              ],
+              "size": [
+                6.0,
+                32.0,
+                0.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                0.0,
+                32.0
+              ],
+              "mirror": false
+            }
+          ]
         },
-        "left_arm": {
-            "part_pose": {
-                "offset": [
-                    -5,
-                    2,
-                    0
-                ],
-                "rotation": [
-                    0,
-                    0,
-                    0.7853981633974483
-                ]
-            },
-            "cubes": [],
-            "children": {}
+        {
+          "name": "right2",
+          "parent": "right1",
+          "pivot": [
+            9.0,
+            15.0,
+            2.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                9.0,
+                -1.0,
+                2.5
+              ],
+              "size": [
+                5.0,
+                32.0,
+                0.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                12.0,
+                32.0
+              ],
+              "mirror": false
+            }
+          ]
         },
-        "right_leg": {
-            "part_pose": {
-                "offset": [
-                    1.9,
-                    12,
-                    0
-                ],
-                "rotation": [
-                    0.17453292519943295,
-                    0,
-                    0
-                ]
-            },
-            "cubes": [],
-            "children": {}
+        {
+          "name": "right3",
+          "parent": "right2",
+          "pivot": [
+            14.0,
+            15.0,
+            2.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                14.0,
+                -1.0,
+                2.5
+              ],
+              "size": [
+                7.0,
+                32.0,
+                0.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                22.0,
+                32.0
+              ],
+              "mirror": false
+            }
+          ]
         },
-        "hat": {
-            "cubes": [],
-            "children": {}
+        {
+          "name": "left1",
+          "parent": "cape",
+          "pivot": [
+            -3.0,
+            15.0,
+            2.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -9.0,
+                -1.0,
+                2.5
+              ],
+              "size": [
+                6.0,
+                32.0,
+                0.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                12.0,
+                0.0
+              ],
+              "mirror": false
+            }
+          ]
+        },
+        {
+          "name": "left2",
+          "parent": "left1",
+          "pivot": [
+            -9.0,
+            15.0,
+            2.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -14.0,
+                -1.0,
+                2.5
+              ],
+              "size": [
+                5.0,
+                32.0,
+                0.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                24.0,
+                0.0
+              ],
+              "mirror": false
+            }
+          ]
+        },
+        {
+          "name": "left3",
+          "parent": "left2",
+          "pivot": [
+            -14.0,
+            15.0,
+            2.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -21.0,
+                -1.0,
+                2.5
+              ],
+              "size": [
+                7.0,
+                32.0,
+                0.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                34.0,
+                0.0
+              ],
+              "mirror": false
+            }
+          ]
         }
+      ]
     }
+  ]
 }

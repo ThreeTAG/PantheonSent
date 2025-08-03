@@ -10,3 +10,6 @@ accessible field net/minecraft/world/level/block/entity/RandomizableContainerBlo
 accessible method net/minecraft/world/item/enchantment/LootBonusEnchantment <init> (Lnet/minecraft/world/item/enchantment/Enchantment$Rarity;Lnet/minecraft/world/item/enchantment/EnchantmentCategory;[Lnet/minecraft/world/entity/EquipmentSlot;)V
 
 accessible field net/minecraft/world/entity/item/FallingBlockEntity cancelDrop Z
+
+accessible field net/minecraft/client/model/geom/EntityModelSet roots Ljava/util/Map;
+mutable field net/minecraft/client/model/geom/EntityModelSet roots Ljava/util/Map;

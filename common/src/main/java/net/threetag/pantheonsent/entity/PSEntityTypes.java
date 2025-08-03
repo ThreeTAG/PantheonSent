@@ -17,6 +17,7 @@ public class PSEntityTypes {
 
     public static final RegistrySupplier<EntityType<Khonshu>> KHONSHU = register("khonshu", () -> EntityType.Builder.<Khonshu>of(Khonshu::new, MobCategory.MISC).sized(1, 3));
     public static final RegistrySupplier<EntityType<CrescentDart>> CRESCENT_DART = register("crescent_dart", () -> EntityType.Builder.of(CrescentDart::new, MobCategory.MISC).sized(0.1F, 0.1F));
+    public static final RegistrySupplier<EntityType<ThrownBaton>> THROWN_BATON = register("thrown_baton", () -> EntityType.Builder.of(ThrownBaton::new, MobCategory.MISC).sized(0.1F, 0.1F));
 
     public static <T extends Entity> RegistrySupplier<EntityType<T>> register(String id, Supplier<EntityType.Builder<T>> builderSupplier) {
         return ENTITIES.register(id, () -> builderSupplier.get().build(PantheonSent.MOD_ID + ":" + id));

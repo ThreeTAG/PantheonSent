@@ -83,6 +83,48 @@
               {
                 "type": "palladium:ability_enabled",
                 "ability": "blocking"
+              },
+              {
+                "type": "palladium:accessory_selected",
+                "accessory_slot": "pantheonsent:moon_knight_suit",
+                "accessory": "pantheonsent:mr_knight"
+              }
+            ]
+          }
+        ],
+        "enabling": {
+          "type": "palladium:action",
+          "cooldown": 60,
+          "key_type": "left_click",
+          "needs_empty_hand": true
+        }
+      }
+    },
+    "throw_baton": {
+      "type": "palladium:projectile",
+      "icon": "pantheonsent:textures/icon/baton.png",
+      "title": {
+        "translate": "ability.pantheonsent.moon_knight.baton"
+      },
+      "entity_type": "pantheonsent:thrown_baton",
+      "list_index": 1,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "activate"
+          },
+          {
+            "type": "palladium:accessory_selected",
+            "accessory_slot": "pantheonsent:moon_knight_suit",
+            "accessory": "pantheonsent:mr_knight"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "blocking"
               }
             ]
           }

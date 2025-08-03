@@ -15,16 +15,14 @@ import net.threetag.palladiumcore.registry.client.OverlayRegistry;
 import net.threetag.palladiumcore.registry.client.RenderTypeRegistry;
 import net.threetag.pantheonsent.block.PSBlocks;
 import net.threetag.pantheonsent.client.PSClientEventHandler;
-import net.threetag.pantheonsent.client.model.CrescentDartModel;
-import net.threetag.pantheonsent.client.model.KhonshuModel;
-import net.threetag.pantheonsent.client.model.MoonKnightCapeModel;
-import net.threetag.pantheonsent.client.model.MoonKnightSuitModel;
+import net.threetag.pantheonsent.client.model.*;
 import net.threetag.pantheonsent.client.model.animation.BlockingAnimation;
 import net.threetag.pantheonsent.client.model.animation.GlidingAnimation;
 import net.threetag.pantheonsent.client.model.animation.KhonshuRecruitmentAnimation;
 import net.threetag.pantheonsent.client.particle.PSParticleTypes;
 import net.threetag.pantheonsent.client.renderer.entity.CrescentDartRenderer;
 import net.threetag.pantheonsent.client.renderer.entity.KhonshuRenderer;
+import net.threetag.pantheonsent.client.renderer.entity.ThrownBatonRenderer;
 import net.threetag.pantheonsent.client.renderer.item.EyeOfHorusRenderer;
 import net.threetag.pantheonsent.client.screen.EyeOfHorusOverlay;
 import net.threetag.pantheonsent.client.variable.MoonKnightCapeTextureVariable;
@@ -43,9 +41,11 @@ public class PantheonSentClient {
 
         // Entity Renderers
         EntityRendererRegistry.registerModelLayer(CrescentDartModel.MODEL_LAYER, CrescentDartModel::createLayer);
+        EntityRendererRegistry.registerModelLayer(ThrownBatonModel.MODEL_LAYER, ThrownBatonModel::createLayer);
         EntityRendererRegistry.registerModelLayer(KhonshuModel.MODEL_LAYER, KhonshuModel::createBodyLayer);
         EntityRendererRegistry.register(PSEntityTypes.KHONSHU, KhonshuRenderer::new);
         EntityRendererRegistry.register(PSEntityTypes.CRESCENT_DART, CrescentDartRenderer::new);
+        EntityRendererRegistry.register(PSEntityTypes.THROWN_BATON, ThrownBatonRenderer::new);
         EntityRendererRegistry.addRenderLayerToAll(renderLayerParent -> new EyeOfHorusRenderer((RenderLayerParent<LivingEntity, EntityModel<LivingEntity>>) renderLayerParent));
 
         // Model Types

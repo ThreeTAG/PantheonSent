@@ -1,6 +1,10 @@
 package net.threetag.pantheonsent.client;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.mojang.blaze3d.shaders.FogShape;
+import dev.architectury.event.events.client.ClientLifecycleEvent;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Camera;
@@ -11,10 +15,18 @@ import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.material.FogType;
+import net.threetag.palladium.Palladium;
+import net.threetag.palladium.client.model.ModelLayerManager;
+import net.threetag.palladium.documentation.HTMLBuilder;
+import net.threetag.palladium.util.BedrockModelUtil;
 import net.threetag.palladiumcore.event.ClientTickEvents;
 import net.threetag.palladiumcore.event.EventResult;
 import net.threetag.palladiumcore.event.ViewportEvents;
+import net.threetag.pantheonsent.PantheonSent;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Environment(EnvType.CLIENT)

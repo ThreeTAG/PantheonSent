@@ -1,5 +1,6 @@
 {
   "ability.pantheonsent.god_stalked": "God Stalked",
+  "ability.pantheonsent.moon_knight.baton": "Baton",
   "ability.pantheonsent.moon_knight.crescent_dart": "Crescent Dart",
   "ability.pantheonsent.moon_knight.summon_stealth": "Stealth",
   "ability.pantheonsent.moon_knight.summon_suit": "Summon Suit",
@@ -43,6 +44,7 @@
   "entity.pantheonsent.khonshu.recruitment_line_4": "Then rise as my fist of vengeance...",
   "entity.pantheonsent.khonshu.recruitment_line_5": "...as my...",
   "entity.pantheonsent.khonshu.recruitment_line_6": "...Moon Knight!",
+  "entity.pantheonsent.thrown_baton": "Baton",
   "item.pantheonsent.ancient_clay_shard": "Ancient Clay Shard",
   "item.pantheonsent.ancient_gold_shard": "Ancient Gold Shard",
   "item.pantheonsent.broken_eye_of_horus": "Broken Eye of Horus",

@@ -1,5 +1,6 @@
 {
   "ability.pantheonsent.god_stalked": "Vom Gott verfolgt",
+  "ability.pantheonsent.moon_knight.baton": "Schlagstock",
   "ability.pantheonsent.moon_knight.crescent_dart": "Halbmondpfeil",
   "ability.pantheonsent.moon_knight.summon_stealth": "List",
   "ability.pantheonsent.moon_knight.summon_suit": "Anzug beschwören",
@@ -43,6 +44,7 @@
   "entity.pantheonsent.khonshu.recruitment_line_4": "Dann erhebe dich als meine Faust der Vergeltung!",
   "entity.pantheonsent.khonshu.recruitment_line_5": "Du bist...",
   "entity.pantheonsent.khonshu.recruitment_line_6": "...Moon Knight!",
+  "entity.pantheonsent.thrown_baton": "Schlagstock",
   "item.pantheonsent.ancient_clay_shard": "Antike Tonscherbe",
   "item.pantheonsent.ancient_gold_shard": "Antike Goldscherbe",
   "item.pantheonsent.broken_eye_of_horus": "Kaputtes Horusauge",

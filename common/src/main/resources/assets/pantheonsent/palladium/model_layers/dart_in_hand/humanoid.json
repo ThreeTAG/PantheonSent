@@ -1,112 +1,164 @@
 {
-    "texture_width": 16,
-    "texture_height": 16,
-    "mesh": {
-        "right_arm": {
-            "part_pose": {
-                "offset": [
-                    -5,
-                    2,
-                    0
-                ]
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "pantheonsent:dart_in_hand/humanoid#main",
+        "texture_width": 16,
+        "texture_height": 16
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "right_arm",
+          "pivot": [
+            -5.0,
+            22.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "dart",
+          "parent": "right_arm",
+          "pivot": [
+            -5.5,
+            11.5,
+            0.0
+          ],
+          "rotation": [
+            -90.00000250447816,
+            0.0,
+            90.00000250447816
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8.0,
+                9.0,
+                0.0
+              ],
+              "size": [
+                3.0,
+                5.0,
+                1.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                0.0,
+                0.0
+              ],
+              "mirror": false
             },
-            "cubes": [],
-            "children": {
-                "dart": {
-                    "part_pose": {
-                        "offset": [
-                            -0.5,
-                            10.5,
-                            0
-                        ],
-                        "rotation": [
-                            -90,
-                            0,
-                            90
-                        ]
-                    },
-                    "cubes": [
-                        {
-                            "origin": [
-                                -2.5,
-                                -2.5,
-                                0
-                            ],
-                            "dimensions": [
-                                3,
-                                5,
-                                1
-                            ],
-                            "texture_offset": [
-                                0,
-                                0
-                            ]
-                        },
-                        {
-                            "origin": [
-                                -2.5,
-                                -3.5,
-                                0.5
-                            ],
-                            "dimensions": [
-                                7,
-                                7,
-                                0
-                            ],
-                            "texture_offset": [
-                                0,
-                                6
-                            ]
-                        }
-                    ],
-                    "children": {}
-                }
+            {
+              "origin": [
+                -8.0,
+                8.0,
+                0.5
+              ],
+              "size": [
+                7.0,
+                7.0,
+                0.0
+              ],
+              "inflate": 0.0,
+              "uv": [
+                0.0,
+                6.0
+              ],
+              "mirror": false
             }
+          ]
         },
-        "left_leg": {
-            "part_pose": {
-                "offset": [
-                    1.9,
-                    12,
-                    0
-                ]
-            },
-            "cubes": [],
-            "children": {}
+        {
+          "name": "left_leg",
+          "pivot": [
+            1.9,
+            12.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
         },
-        "body": {
-            "cubes": [],
-            "children": {}
+        {
+          "name": "left_arm",
+          "pivot": [
+            5.0,
+            22.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
         },
-        "head": {
-            "cubes": [],
-            "children": {}
+        {
+          "name": "right_leg",
+          "pivot": [
+            -1.9,
+            12.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
         },
-        "left_arm": {
-            "part_pose": {
-                "offset": [
-                    5,
-                    2,
-                    0
-                ]
-            },
-            "cubes": [],
-            "children": {}
+        {
+          "name": "hat",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
         },
-        "right_leg": {
-            "part_pose": {
-                "offset": [
-                    -1.9,
-                    12,
-                    0
-                ]
-            },
-            "cubes": [],
-            "children": {}
-        },
-        "hat": {
-            "cubes": [],
-            "children": {}
+        {
+          "name": "body",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": []
         }
+      ]
     }
+  ]
 }
