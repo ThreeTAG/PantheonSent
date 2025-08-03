@@ -28,8 +28,7 @@
                 "power": "pantheonsent:moon_knight",
                 "ability": "activate"
               }
-            },
-            "output": "pantheonsent:textures/models/mr_knight_#TIMER"
+            }
           }
         },
         {
@@ -73,8 +72,7 @@
                 "ability": "activate",
                 "min": 7
               }
-            },
-            "output": "pantheonsent:textures/models/moon_knight_cape/#STAGE_#TIMER.png"
+            }
           },
           "conditions": {
             "type": "palladium:or",

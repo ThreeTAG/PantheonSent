@@ -15,7 +15,7 @@
           "model_layer": "pantheonsent:humanoid#moon_knight_suit",
           "model_type": "pantheonsent:moon_knight_suit",
           "texture": {
-            "base": "pantheonsent:textures/models/moon_knight.png",
+            "base": "pantheonsent:textures/models/comic_moon_knight.png",
             "transformers": [
               {
                 "type": "palladium:alpha_mask",
@@ -65,7 +65,7 @@
         {
           "model_layer": "pantheonsent:humanoid#moon_knight_suit",
           "model_type": "pantheonsent:moon_knight_suit",
-          "texture": "pantheonsent:textures/models/moon_knight_lights.png",
+          "texture": "pantheonsent:textures/models/comic_moon_knight_lights.png",
           "render_type": "glow",
           "conditions": [
             {
@@ -124,7 +124,7 @@
         {
           "model_layer": "pantheonsent:humanoid#moon_knight_suit",
           "model_type": "pantheonsent:moon_knight_suit",
-          "texture": "pantheonsent:textures/models/moon_knight.png",
+          "texture": "pantheonsent:textures/models/comic_moon_knight.png",
           "hidden_body_parts": [
             "head_overlay", "chest_overlay", "right_arm_overlay", "left_arm_overlay", "right_leg_overlay", "left_leg_overlay"
           ]
@@ -138,7 +138,7 @@
         {
           "model_layer": "pantheonsent:humanoid#moon_knight_suit",
           "model_type": "pantheonsent:moon_knight_suit",
-          "texture": "pantheonsent:textures/models/moon_knight_lights.png",
+          "texture": "pantheonsent:textures/models/comic_moon_knight_lights.png",
           "render_type": "glow"
         }
       ]

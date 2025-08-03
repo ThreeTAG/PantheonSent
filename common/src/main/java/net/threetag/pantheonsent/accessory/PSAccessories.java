@@ -16,5 +16,6 @@ public class PSAccessories {
             .setIcon(PantheonSent.id("textures/gui/accessory_slots/moon_knight_suit.png"));
 
     public static final RegistrySupplier<Accessory> MR_KNIGHT = ACCESSORIES.register("mr_knight", () -> new RenderLayerAccessory(PantheonSent.id("mr_knight")).disableRendering().slot(SLOT));
+    public static final RegistrySupplier<Accessory> COMIC_MOON_KNIGHT = ACCESSORIES.register("comic_moon_knight", () -> new RenderLayerAccessory(PantheonSent.id("comic_moon_knight")).disableRendering().slot(SLOT));
 
 }

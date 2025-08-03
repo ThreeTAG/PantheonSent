@@ -103,6 +103,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             // Accessories
             this.add(PSAccessories.SLOT, "Moon Knight Suit");
             this.addAccessory(PSAccessories.MR_KNIGHT, "Mr. Knight");
+            this.addAccessory(PSAccessories.COMIC_MOON_KNIGHT, "Comic Moon Knight");
 
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
@@ -196,6 +197,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             // Accessories
             this.add(PSAccessories.SLOT, "Moon Knight Anzug");
             this.addAccessory(PSAccessories.MR_KNIGHT, "Mr. Knight");
+            this.addAccessory(PSAccessories.COMIC_MOON_KNIGHT, "Comic Moon Knight");
 
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
@@ -289,6 +291,7 @@ public abstract class PSLangProvider extends ExtendedLangProvider {
             // Accessories
             this.add(PSAccessories.SLOT, "Moon Knight Anzuch");
             this.addAccessory(PSAccessories.MR_KNIGHT, "Mr. Knight");
+            this.addAccessory(PSAccessories.COMIC_MOON_KNIGHT, "Comic Moon Knight");
 
             // Subtitles
             this.add(PSSoundDefinitionsProvider.subtitle(PSSoundEvents.CAPE), "Cape");
